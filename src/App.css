@@ -2,18 +2,26 @@
   text-align: center;
 }
 
-.App-logo {
-  height: 40vmin;
+.Mathieu {
+  height: 30vmin;
   pointer-events: none;
+  border-radius: 50%;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
+.Mathieu {
+  animation: Mathieu-spin infinite 16s linear;
+}
+
+@keyframes Mathieu-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
   }
 }
 
-.App-header {
+.Main {
   background-color: #282c34;
   min-height: 100vh;
   display: flex;
@@ -21,18 +29,40 @@
   align-items: center;
   justify-content: center;
   font-size: calc(10px + 2vmin);
+  color: #348d6f;
+}
+
+.All-link {
+  display: flex;
+  justify-content: space-evenly;
+}
+
+.LinkedIn-link {
+  color: #f8f8e6;
+  margin-left: 4vmin;
+  font-size: 6vmin;
+}
+
+.GitHub-link {
+  color: #f8f8e6;
+  font-size: 6vmin;
+}
+
+.Button-batteryProject {
+  background-color: aqua;
+}
+
+.Button-backToMain {
+  background-color: azure;
+}
+
+
+
+.Error404 {
+  display: flex;
+  justify-content: center;
+  align-items: center;
   color: white;
-}
-
-.App-link {
-  color: #61dafb;
-}
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+  font-size: 36px;
+  height: 100vh;
 }
