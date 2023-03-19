@@ -30,6 +30,11 @@
   justify-content: center;
   font-size: calc(10px + 2vmin);
   color: #348d6f;
+  -webkit-animation: fadein 2s; /* Safari, Chrome and Opera > 12.1 */
+  -moz-animation: fadein 2s; /* Firefox < 16 */
+   -ms-animation: fadein 2s; /* Internet Explorer */
+    -o-animation: fadein 2s; /* Opera < 12.1 */
+       animation: fadein 2s;
 }
 
 .All-link {
@@ -49,13 +54,123 @@
 }
 
 .Button-batteryProject {
-  background-color: aqua;
+
+}
+.Button-batteryProject:hover {
+  cursor: pointer;
 }
 
 .Button-backToMain {
-  background-color: azure;
+  background-color:#348d6f;
+  color: #f8f8e6;
+  height: 11vmin;
+  width: 11vmin;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: fixed;
+  margin: 2vmin;
+  border: 1vmin solid #282c34;
+  font-size: 7vmin;
+  -webkit-animation: fadein 2s; /* Safari, Chrome and Opera > 12.1 */
+  -moz-animation: fadein 2s; /* Firefox < 16 */
+   -ms-animation: fadein 2s; /* Internet Explorer */
+    -o-animation: fadein 2s; /* Opera < 12.1 */
+       animation: fadein 2s;
+}
+.Button-backToMain:hover {
+  cursor: pointer;
 }
 
+.BatteryProject {
+  -webkit-animation: fadein 2s; /* Safari, Chrome and Opera > 12.1 */
+  -moz-animation: fadein 2s; /* Firefox < 16 */
+   -ms-animation: fadein 2s; /* Internet Explorer */
+    -o-animation: fadein 2s; /* Opera < 12.1 */
+       animation: fadein 2s;
+}
+
+p {
+  width: 70vmin;
+  font-size: 20px;
+}
+
+.BatterySlide1 {
+  background-color: #f8f8e6;
+  color: #282c34;
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+  height: 100vh;
+}
+
+.BatteryScreenshot1 {
+  height: 40vmin;
+  border-radius: 2vmin;
+}
+
+.BatterySlide2 {
+  background-color: #282c34;
+  color: #f8f8e6;
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+  height: 100vh;
+}
+
+.BatteryScreenshot2 {
+  border-radius: 2vmin;
+  height: 40vmin;
+}
+
+.BatterySlide3 {
+  background-color: #f8f8e6;
+  color: #282c34;
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+  height: 100vh;
+}
+
+.BatteryScreenshot3 {
+  height: 40vmin;
+  border-radius: 2vmin;
+  -webkit-animation: fadein 2s; /* Safari, Chrome and Opera > 12.1 */
+  -moz-animation: fadein 2s; /* Firefox < 16 */
+   -ms-animation: fadein 2s; /* Internet Explorer */
+    -o-animation: fadein 2s; /* Opera < 12.1 */
+       animation: fadein 2s;
+}
+
+@keyframes fadein {
+  from { opacity: 0; }
+  to   { opacity: 1; }
+}
+
+/* Firefox < 16 */
+@-moz-keyframes fadein {
+  from { opacity: 0; }
+  to   { opacity: 1; }
+}
+
+/* Safari, Chrome and Opera > 12.1 */
+@-webkit-keyframes fadein {
+  from { opacity: 0; }
+  to   { opacity: 1; }
+}
+
+/* Internet Explorer */
+@-ms-keyframes fadein {
+  from { opacity: 0; }
+  to   { opacity: 1; }
+}
+
+/* Opera < 12.1 */
+@-o-keyframes fadein {
+  from { opacity: 0; }
+  to   { opacity: 1; }
+}
 
 
 .Error404 {
