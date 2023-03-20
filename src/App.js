@@ -1,18 +1,13 @@
 import { SiGithub } from "react-icons/si"
 import { SiLinkedin } from "react-icons/si"
-import { SlActionUndo } from "react-icons/sl";
-import { BiBattery } from "react-icons/bi";
-import { HiBattery0 } from "react-icons/hi2";
-import { HiBattery100 } from "react-icons/hi2";
 import { GiBatteries } from "react-icons/gi";
-import { GiBatteryPack } from "react-icons/gi";
-import { GiBatteryPackAlt } from "react-icons/gi";
-import { GiBatteryPlus } from "react-icons/gi"
 import { IoArrowBackOutline } from "react-icons/io5";
 import mathieu from './Assets/MathieuProfil.jpg';
-import batteryScreenshot1 from './Assets/BatteryScreenshot1.png';
-import batteryScreenshot2 from './Assets/BatteryScreenshot2.png';
+import batteryScreenshot0 from './Assets/BatteryScreenshot0.png';
 import batteryScreenshot3 from './Assets/BatteryScreenshot3.png';
+import batteryScreenshot4 from './Assets/BatteryScreenshot4.png';
+import batteryScreenshot5 from './Assets/BatteryScreenshot5.png';
+import batteryScreenshot6 from './Assets/BatteryScreenshot6.png';
 import './App.css';
 import { useState } from "react";
 
@@ -33,6 +28,10 @@ function App() {
     return (
       <div className="Main">
         <img src={mathieu} className="Mathieu" alt="Mathieu's face spinnin'" />
+        <h2>Mathieu Huet</h2>
+        <div className="Button-batteryProject" onClick={() => changePage('batteryProject')}>
+          <GiBatteries />
+        </div>
         <br />
         <div className="All-link">
           <a
@@ -52,44 +51,123 @@ function App() {
             <SiLinkedin />
           </a>
         </div>
-        <div className="Button-batteryProject" onClick={() => changePage('batteryProject')}>
-          <BiBattery /> <GiBatteries /> <GiBatteryPack /> <GiBatteryPackAlt /> <GiBatteryPlus /> <HiBattery0 /> <HiBattery100 /> <p>Go to Battery project</p>
-        </div>
       </div>
     );
   }
 
   function BatteryProject () {
-    return (
-      <div className="BatteryProject">
-        <div className="Button-backToMain" onClick={() => changePage('main')}>
-          <IoArrowBackOutline />
+    const [ langue, setLangue ] = useState('FR')
+    function changeLangue (newLangue) {
+      setLangue(newLangue);
+    }
+
+    if (langue === 'FR') {
+      return (
+        <div className="BatteryProject">
+        <div className="TopButtons">
+          <div className="Button-backToMain" onClick={() => changePage('main')}>
+            <IoArrowBackOutline />
+          </div>
+          <div className="Langue" onClick={() => changeLangue('EN')}>EN</div>
         </div>
         <div className="BatterySlide1">
-          <img src={batteryScreenshot1} className="BatteryScreenshot1" alt="Screenshot of Battery Monitoring App" />
-          <p>Cette application vous permet de monitorer l’état des batteries de vos IoT en temps réel. Vous avez accès à des 
-          informations comme le voltage des batteries, la température de l’équipement, la charge et la load des batteries. 
-          Sur la carte interactive vous avez tout vos équipements à leur emplacement, l’icone représente l’état de la batterie 
-          et vous pouvez cliquer dessus pour plus d’informations. L’application vous laisse aussi monitorer les performances de 
-          vos équipements, elle collecte l’état des équipements chaque 10 minutes et vous pouvez visualiser ces informations à 
-          partir d’un graphique. Vous pouvez comparer les performances entre différents équipements pour voir si certaines 
-          batteries sont entrain de se dégrader ou ont besoin d’être remplacées.</p>
+          <div className="BatterySlide1Top">
+            <h1>Battery Monitoring App</h1>
+          </div>
+          <div className="BatterySlide1Bottom">
+            <img src={batteryScreenshot0} className="BatteryScreenshot1" alt="Screenshot of a graph from Battery Monitoring App" />
+            <div className="BatteryParagraph1">This app let you monitor the battery state of your IoT devices in the field. You have live access to 
+            the battery data of the devices and you can monitor the performances of your devices</div>
+          </div>
         </div>
         <div className="BatterySlide2">
-          <img src={batteryScreenshot2} className="BatteryScreenshot2" alt="Screenshot of Battery Monitoring App" />
-          <p>J'ai construit cette application seul, le back-end et le front-end, conçu et mis en œuvre l'API sous-jacente et la 
-          modélisation des données.</p>
+          <div className="BatteryParagraph2">J'ai construit cette application seul. Le back-end, le front-end, conçu et mis en œuvre l'API sous-jacente et la modélisation des données.</div>
         </div>
         <div className="BatterySlide3">
-          <img src={batteryScreenshot3} className="BatteryScreenshot3" alt="Screenshot of Battery Monitoring App" />
-          <p>Cette application est alimentée par React sur le front-end. Sur le back-end, elle utilise Koa et la base de données est PostgreSQL. 
-          Les technologies supplémentaires utilisées incluent Sequelize en tant qu'ORM pour PostgreSQL, Chart.js pour les graphiques illustrant 
-          les performances des équipements, Google Map Platform pour l'API cartographique et OpenWeather pour l'API météo. L'application utilise 
-          les données météorologiques pour vous aidez à prédire les performances de vos appareils à énergie solaires et de vos appareils à énergie 
-          éoliennes.</p>
+          <div className="BatterySlide3Row">
+            <img src={batteryScreenshot5} className="BatteryScreenshot3" alt="Screenshot of Battery Monitoring App" />
+            <div className="BatteryParagraph3">Live Data</div>
+          </div>
+          <div className="BatterySlide3Row">
+            <div className="BatteryParagraph3">You can compare the performances of your devices between each of them.</div>
+            <img src={batteryScreenshot6} className="BatteryScreenshot3" alt="Screenshot of Battery Monitoring App" />
+          </div>
+          <div className="BatterySlide3Row">
+            <img src={batteryScreenshot3} className="BatteryScreenshot3" alt="Screenshot of Battery Monitoring App" />
+            <div className="BatteryParagraph3">Performances</div>
+          </div>
+          <div className="BatterySlide3Row">
+            <div className="BatteryParagraph3">The app provides weather data so you can predict the performance of your Solar-powered devices and also your wind-powered devices.</div>
+            <img src={batteryScreenshot4} className="BatteryScreenshot3" alt="Screenshot of Battery Monitoring App" />
+          </div>
+          <div className="BatterySlide3Bottom">
+            <div className="BatterySlide3BottomTop">
+              <div className="BatteryParagraph3Bottom">This app is powered by React on the front-end. On the back-end it uses Koa and the database is PostgreSQL. 
+              Additional technologies used include Sequelize as an ORM for PostgreSQL</div>
+              <div className="BatteryParagraph3Bottom">Chart.js for graph illustrating past data, Google Map Platform for the map API and OpenWeather for the 
+              weather API.</div>
+            </div>
+            <div className="BatterySlide3BottomBottom">
+              <div className="BottomOfThePage">Mathieu Huet - mathieuhuet@live.ca - 2023</div>
+            </div>
+          </div>
         </div>
       </div>
     );
+    } else {
+      return (
+        <div className="BatteryProject">
+          <div className="TopButtons">
+            <div className="Button-backToMain" onClick={() => changePage('main')}>
+              <IoArrowBackOutline />
+            </div>
+            <div className="Langue" onClick={() => changeLangue('FR')}>FR</div>
+          </div>
+          <div className="BatterySlide1">
+            <div className="BatterySlide1Top">
+              <h1>Battery Monitoring App</h1>
+            </div>
+            <div className="BatterySlide1Bottom">
+              <img src={batteryScreenshot0} className="BatteryScreenshot1" alt="Screenshot of a graph from Battery Monitoring App" />
+              <div className="BatteryParagraph1">This app let you monitor the battery state of your IoT devices in the field. You have live access to 
+              the battery data of the devices and you can monitor the performances of your devices</div>
+            </div>
+          </div>
+          <div className="BatterySlide2">
+            <div className="BatteryParagraph2">I built the app from the ground up, designed and implemented the underlying API and data modeling.</div>
+          </div>
+          <div className="BatterySlide3">
+            <div className="BatterySlide3Row">
+              <img src={batteryScreenshot5} className="BatteryScreenshot3" alt="Screenshot of Battery Monitoring App" />
+              <div className="BatteryParagraph3">Live Data</div>
+            </div>
+            <div className="BatterySlide3Row">
+              <div className="BatteryParagraph3">You can compare the performances of your devices between each of them.</div>
+              <img src={batteryScreenshot6} className="BatteryScreenshot3" alt="Screenshot of Battery Monitoring App" />
+            </div>
+            <div className="BatterySlide3Row">
+              <img src={batteryScreenshot3} className="BatteryScreenshot3" alt="Screenshot of Battery Monitoring App" />
+              <div className="BatteryParagraph3">Performances</div>
+            </div>
+            <div className="BatterySlide3Row">
+              <div className="BatteryParagraph3">The app provides weather data so you can predict the performance of your Solar-powered devices and also your wind-powered devices.</div>
+              <img src={batteryScreenshot4} className="BatteryScreenshot3" alt="Screenshot of Battery Monitoring App" />
+            </div>
+            <div className="BatterySlide3Bottom">
+              <div className="BatterySlide3BottomTop">
+                <div className="BatteryParagraph3Bottom">This app is powered by React on the front-end. On the back-end it uses Koa and the database is PostgreSQL. 
+                Additional technologies used include Sequelize as an ORM for PostgreSQL</div>
+                <div className="BatteryParagraph3Bottom">Chart.js for graph illustrating past data, Google Map Platform for the map API and OpenWeather for the 
+                weather API.</div>
+              </div>
+              <div className="BatterySlide3BottomBottom">
+                <div className="BottomOfThePage">Mathieu Huet - mathieuhuet@live.ca - 2023</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      );
+    }
   }
 
   function Error404 () {

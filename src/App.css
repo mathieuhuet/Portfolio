@@ -29,7 +29,7 @@
   align-items: center;
   justify-content: center;
   font-size: calc(10px + 2vmin);
-  color: #348d6f;
+  color: #f8f8e6;
   -webkit-animation: fadein 2s; /* Safari, Chrome and Opera > 12.1 */
   -moz-animation: fadein 2s; /* Firefox < 16 */
    -ms-animation: fadein 2s; /* Internet Explorer */
@@ -54,34 +54,81 @@
 }
 
 .Button-batteryProject {
-
+  background-color: #f8f8e6;
+  color: #282c34;
+  font-size: 4vmin;
+  height: 7vmin;
+  width: 7vmin;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 1vmin;
 }
 .Button-batteryProject:hover {
   cursor: pointer;
 }
 
+.TopButtons {
+  display: flex;
+  justify-content: space-between;
+  position: fixed;
+  width: 100vw;
+}
+
 .Button-backToMain {
-  background-color:#348d6f;
-  color: #f8f8e6;
+  background-color: #f8f8e6;
+  color: #282c34;
   height: 11vmin;
   width: 11vmin;
   border-radius: 50%;
   display: flex;
   justify-content: center;
   align-items: center;
-  position: fixed;
+  position: relative;
   margin: 2vmin;
-  border: 1vmin solid #282c34;
   font-size: 7vmin;
-  -webkit-animation: fadein 2s; /* Safari, Chrome and Opera > 12.1 */
-  -moz-animation: fadein 2s; /* Firefox < 16 */
-   -ms-animation: fadein 2s; /* Internet Explorer */
-    -o-animation: fadein 2s; /* Opera < 12.1 */
-       animation: fadein 2s;
+  animation: nothover 1s;
 }
 .Button-backToMain:hover {
   cursor: pointer;
+  background-color:#282c34;
+  color: #f8f8e6;
+  animation: hover 1s;
 }
+@keyframes nothover {
+  from {background-color: #282c34;}
+  to {background-color: #f8f8e6;}
+  from {color: #f8f8e6;}
+  to {color: #282c34;}
+}
+@keyframes hover {
+  from {color: #282c34;}
+  to {color: #f8f8e6;}
+  from {background-color: #f8f8e6;}
+  to {background-color: #282c34;}
+}
+
+.Langue {
+  position: relative;
+  height: 5vmin;
+  width: 5vmin;
+  background-color: #f8f8e6;
+  color: #282c34;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 2vmin;
+  border-radius: 1vmin;
+  font-size: 2.5vmin;
+  animation: nothover 1s;
+}
+.Langue:hover {
+  cursor: pointer;
+  background-color:#282c34;
+  color: #f8f8e6;
+  animation: hover 1s;
+}
+
 
 .BatteryProject {
   -webkit-animation: fadein 2s; /* Safari, Chrome and Opera > 12.1 */
@@ -91,46 +138,98 @@
        animation: fadein 2s;
 }
 
-p {
-  width: 70vmin;
-  font-size: 20px;
-}
-
 .BatterySlide1 {
   background-color: #f8f8e6;
   color: #282c34;
   display: flex;
+  flex-direction: column;
   align-items: center;
   justify-content: space-evenly;
   height: 100vh;
 }
 
+.BatterySlide1Top {
+
+}
+
+.BatterySlide1Bottom {
+  width: 100vw;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+}
+
 .BatteryScreenshot1 {
-  height: 40vmin;
-  border-radius: 2vmin;
+  height: 50vmin;
+}
+
+.BatteryParagraph1 {
+  width: 50vmin;
+  font-size: 3vmin;
 }
 
 .BatterySlide2 {
   background-color: #282c34;
+  background-image: url(./Assets/background1.png);
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-position: center;
   color: #f8f8e6;
   display: flex;
   align-items: center;
-  justify-content: space-evenly;
+  justify-content: center;
   height: 100vh;
 }
 
-.BatteryScreenshot2 {
+.BatteryParagraph2 {
+  background: radial-gradient(#282c34, #505050);
+  width: 100vmin;
+  font-size: 3vmin;
+  padding: 3vmin;
   border-radius: 2vmin;
-  height: 40vmin;
+  margin-bottom: 10vmin;
 }
 
 .BatterySlide3 {
   background-color: #f8f8e6;
   color: #282c34;
   display: flex;
+  flex-direction: column;
   align-items: center;
   justify-content: space-evenly;
+  width: 100vw;
+}
+
+.BatterySlide3Row {
+  display: flex;
+  justify-content: space-evenly;
+  position: relative;
+  margin: 10vmin;
+  width: 100vw;
+}
+
+.BatterySlide3Bottom {
   height: 100vh;
+  width: 100vw;
+  background-image: url(./Assets/BatteryBottomDesktop.png);
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-position: center;
+  background-size: cover;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.BatterySlide3BottomTop {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: flex-start;
+}
+
+.BatterySlide3BottomBottom {
+  display: flex;
+  justify-content: center;
 }
 
 .BatteryScreenshot3 {
@@ -141,6 +240,35 @@ p {
    -ms-animation: fadein 2s; /* Internet Explorer */
     -o-animation: fadein 2s; /* Opera < 12.1 */
        animation: fadein 2s;
+}
+
+.BatteryParagraph3 {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 50vmin;
+  font-size: 3vmin;
+}
+
+.BatteryParagraph3Bottom {
+  margin-top: 10vmin;
+  background-color: #f8f8e6;
+  padding: 1vmin;
+  border-radius: 3vmin;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 50vmin;
+  font-size: 3vmin;
+}
+
+.BottomOfThePage {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100vw;
+  font-size: 3vmin;
+  margin-bottom: 2vmin;
 }
 
 @keyframes fadein {
