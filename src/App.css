@@ -22,6 +22,7 @@
 }
 
 .Main {
+  width: calc(100vw - 10px);
   background-color: #282c34;
   min-height: 100vh;
   display: flex;
@@ -72,7 +73,7 @@
   display: flex;
   justify-content: space-between;
   position: fixed;
-  width: 100vw;
+  width: calc(100vw - 10px);
 }
 
 .Button-backToMain {
@@ -131,6 +132,7 @@
 
 
 .BatteryProject {
+  background-color: #f8f8e6;
   -webkit-animation: fadein 2s; /* Safari, Chrome and Opera > 12.1 */
   -moz-animation: fadein 2s; /* Firefox < 16 */
    -ms-animation: fadein 2s; /* Internet Explorer */
@@ -152,8 +154,19 @@
 
 }
 
+.BatteryTitle {
+  font-size: 5vmin;
+  color: #f8f8e6;
+  -webkit-text-stroke: 2px #282c34;
+  text-shadow: 2px 2px #282c34;
+  border: 3px solid #282c34;
+  box-shadow: 3px 3px #282c34;
+  border-radius: 2vmin;
+  padding: 1vmin;
+}
+
 .BatterySlide1Bottom {
-  width: 100vw;
+  width: calc(100vw - 10px);
   display: flex;
   justify-content: space-evenly;
   align-items: center;
@@ -164,7 +177,7 @@
 }
 
 .BatteryParagraph1 {
-  width: 50vmin;
+  width: 60vmin;
   font-size: 3vmin;
 }
 
@@ -197,20 +210,19 @@
   flex-direction: column;
   align-items: center;
   justify-content: space-evenly;
-  width: 100vw;
+  width: calc(100vw - 10px);
 }
 
 .BatterySlide3Row {
   display: flex;
   justify-content: space-evenly;
-  position: relative;
   margin: 10vmin;
-  width: 100vw;
+  width: calc(100vw - 10px);
 }
 
 .BatterySlide3Bottom {
   height: 100vh;
-  width: 100vw;
+  width: calc(100vw - 10px);
   background-image: url(./Assets/BatteryBottomDesktop.png);
   background-repeat: no-repeat;
   background-attachment: fixed;
@@ -233,7 +245,7 @@
 }
 
 .BatteryScreenshot3 {
-  height: 40vmin;
+  height: 50vmin;
   border-radius: 2vmin;
   -webkit-animation: fadein 2s; /* Safari, Chrome and Opera > 12.1 */
   -moz-animation: fadein 2s; /* Firefox < 16 */
@@ -246,7 +258,7 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  width: 50vmin;
+  width: 65vmin;
   font-size: 3vmin;
 }
 
@@ -258,7 +270,7 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  width: 50vmin;
+  width: 60vmin;
   font-size: 3vmin;
 }
 
@@ -266,7 +278,7 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  width: 100vw;
+  width: calc(100vw - 10px);
   font-size: 3vmin;
   margin-bottom: 2vmin;
 }

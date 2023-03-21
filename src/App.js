@@ -12,7 +12,7 @@ import './App.css';
 import { useState } from "react";
 
 function App() {
-  const [ page, setPage ] = useState('main');
+  const [ page, setPage ] = useState('batteryProject');
 
   return (
     <div className="App">
@@ -72,12 +72,14 @@ function App() {
         </div>
         <div className="BatterySlide1">
           <div className="BatterySlide1Top">
-            <h1>Battery Monitoring App</h1>
+            <h1 className="BatteryTitle">Battery Monitoring App</h1>
           </div>
           <div className="BatterySlide1Bottom">
             <img src={batteryScreenshot0} className="BatteryScreenshot1" alt="Screenshot of a graph from Battery Monitoring App" />
-            <div className="BatteryParagraph1">This app let you monitor the battery state of your IoT devices in the field. You have live access to 
-            the battery data of the devices and you can monitor the performances of your devices</div>
+            <div className="BatteryParagraph1">Battery Monitoring est une application qui donne un accès aux données à distance de vos
+            batteries et permet de mesurer leur performance en collectant des informations tout au long de la journée pour créer des diagrammes 
+            qui permet d'analyser les performances entre tout vos équipements.
+            </div>
           </div>
         </div>
         <div className="BatterySlide2">
@@ -86,26 +88,34 @@ function App() {
         <div className="BatterySlide3">
           <div className="BatterySlide3Row">
             <img src={batteryScreenshot5} className="BatteryScreenshot3" alt="Screenshot of Battery Monitoring App" />
-            <div className="BatteryParagraph3">Live Data</div>
+            <div className="BatteryParagraph3">Battery Monitoring va aller chercher les données en temps réel de vos batteries à distance.</div>
           </div>
           <div className="BatterySlide3Row">
-            <div className="BatteryParagraph3">You can compare the performances of your devices between each of them.</div>
+            <div className="BatteryParagraph3">Vous pouvez comparer les performances de vos appareils pour déterminer si certaines batteries sont entrain de se dégrader ou 
+            ont besoin d’être remplacées.</div>
             <img src={batteryScreenshot6} className="BatteryScreenshot3" alt="Screenshot of Battery Monitoring App" />
           </div>
           <div className="BatterySlide3Row">
             <img src={batteryScreenshot3} className="BatteryScreenshot3" alt="Screenshot of Battery Monitoring App" />
-            <div className="BatteryParagraph3">Performances</div>
+            <div className="BatteryParagraph3">
+              <a
+                className="Youtube-Link"
+                href="https://youtu.be/s5RYPeURV8w"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                Démonstration vidéo de l'application.
+              </a>
+            </div>
           </div>
           <div className="BatterySlide3Row">
-            <div className="BatteryParagraph3">The app provides weather data so you can predict the performance of your Solar-powered devices and also your wind-powered devices.</div>
+            <div className="BatteryParagraph3">L'application fourni les prévisions météorologiques pour vous aidez à prédire les performances de vos appareils à énergie solaires et à énergie éoliennes.</div>
             <img src={batteryScreenshot4} className="BatteryScreenshot3" alt="Screenshot of Battery Monitoring App" />
           </div>
           <div className="BatterySlide3Bottom">
             <div className="BatterySlide3BottomTop">
-              <div className="BatteryParagraph3Bottom">This app is powered by React on the front-end. On the back-end it uses Koa and the database is PostgreSQL. 
-              Additional technologies used include Sequelize as an ORM for PostgreSQL</div>
-              <div className="BatteryParagraph3Bottom">Chart.js for graph illustrating past data, Google Map Platform for the map API and OpenWeather for the 
-              weather API.</div>
+              <div className="BatteryParagraph3Bottom">Cette application est alimentée par React sur le front-end. Sur le back-end, elle utilise Koa et la base de données est PostgreSQL. Sequelize est utilisé en tant qu'ORM pour PostgreSQL</div>
+              <div className="BatteryParagraph3Bottom">Les technologies supplémentaires utilisées incluent Chart.js pour les graphiques illustrant les performances des équipements, Google Map Platform pour l'API cartographique et OpenWeather pour l'API météorologique.</div>
             </div>
             <div className="BatterySlide3BottomBottom">
               <div className="BottomOfThePage">Mathieu Huet - mathieuhuet@live.ca - 2023</div>
@@ -129,8 +139,9 @@ function App() {
             </div>
             <div className="BatterySlide1Bottom">
               <img src={batteryScreenshot0} className="BatteryScreenshot1" alt="Screenshot of a graph from Battery Monitoring App" />
-              <div className="BatteryParagraph1">This app let you monitor the battery state of your IoT devices in the field. You have live access to 
-              the battery data of the devices and you can monitor the performances of your devices</div>
+              <div className="BatteryParagraph1">Battery Monitoring is an app that let you monitor remotely the battery state of your IoT devices 
+              and also let you monitor the performances of your batteries, it fetch battery data all day from your devices and let you visualize 
+              them on a graph.</div>
             </div>
           </div>
           <div className="BatterySlide2">
@@ -139,18 +150,28 @@ function App() {
           <div className="BatterySlide3">
             <div className="BatterySlide3Row">
               <img src={batteryScreenshot5} className="BatteryScreenshot3" alt="Screenshot of Battery Monitoring App" />
-              <div className="BatteryParagraph3">Live Data</div>
+              <div className="BatteryParagraph3">Battery Monitoring will remotely fetch live data from your batteries whenever you need it to.</div>
             </div>
             <div className="BatterySlide3Row">
-              <div className="BatteryParagraph3">You can compare the performances of your devices between each of them.</div>
+              <div className="BatteryParagraph3">You can compare the performances of your batteries to see if some are starting to be worn out or in need of a
+              replacement.</div>
               <img src={batteryScreenshot6} className="BatteryScreenshot3" alt="Screenshot of Battery Monitoring App" />
             </div>
             <div className="BatterySlide3Row">
               <img src={batteryScreenshot3} className="BatteryScreenshot3" alt="Screenshot of Battery Monitoring App" />
-              <div className="BatteryParagraph3">Performances</div>
+              <div className="BatteryParagraph3">
+                <a
+                  className="Youtube-Link"
+                  href="https://youtu.be/s5RYPeURV8w"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  Video demonstration of the app.
+                </a>
+              </div>
             </div>
             <div className="BatterySlide3Row">
-              <div className="BatteryParagraph3">The app provides weather data so you can predict the performance of your Solar-powered devices and also your wind-powered devices.</div>
+              <div className="BatteryParagraph3">The app provides weather forecast so you can predict the performance of your Solar-powered and Wind-powered devices.</div>
               <img src={batteryScreenshot4} className="BatteryScreenshot3" alt="Screenshot of Battery Monitoring App" />
             </div>
             <div className="BatterySlide3Bottom">
