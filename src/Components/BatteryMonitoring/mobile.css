@@ -1,0 +1,246 @@
+
+.TopButtons {
+  display: flex;
+  justify-content: space-between;
+  position: fixed;
+  width: calc(100vw - 10px);
+}
+
+.Button-backToMain {
+  background-color: #f8f8e6;
+  color: #282c34;
+  height: 11vmin;
+  width: 11vmin;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  margin: 2vmin;
+  font-size: 7vmin;
+  animation: nothover 1s;
+}
+.Button-backToMain:hover {
+  cursor: pointer;
+  background-color:#282c34;
+  color: #f8f8e6;
+  animation: hover 1s;
+}
+@keyframes nothover {
+  from {background-color: #282c34;}
+  to {background-color: #f8f8e6;}
+  from {color: #f8f8e6;}
+  to {color: #282c34;}
+}
+@keyframes hover {
+  from {color: #282c34;}
+  to {color: #f8f8e6;}
+  from {background-color: #f8f8e6;}
+  to {background-color: #282c34;}
+}
+
+.Langue {
+  position: relative;
+  height: 5vmin;
+  width: 5vmin;
+  background-color: #f8f8e6;
+  color: #282c34;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 2vmin;
+  border-radius: 1vmin;
+  font-size: 2.5vmin;
+  animation: nothover 1s;
+}
+.Langue:hover {
+  cursor: pointer;
+  background-color:#282c34;
+  color: #f8f8e6;
+  animation: hover 1s;
+}
+
+
+.BatteryProject {
+  background-color: #f8f8e6;
+  -webkit-animation: fadein 2s; /* Safari, Chrome and Opera > 12.1 */
+  -moz-animation: fadein 2s; /* Firefox < 16 */
+   -ms-animation: fadein 2s; /* Internet Explorer */
+    -o-animation: fadein 2s; /* Opera < 12.1 */
+       animation: fadein 2s;
+}
+
+.BatterySlide1 {
+  background-color: #f8f8e6;
+  color: #282c34;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-evenly;
+  height: 100vh;
+}
+
+.BatterySlide1Top {
+
+}
+
+.BatteryTitle {
+  font-size: 5vmin;
+  color: #f8f8e6;
+  -webkit-text-stroke: 2px #282c34;
+  text-shadow: 2px 2px #282c34;
+  border: 3px solid #282c34;
+  box-shadow: 3px 3px #282c34;
+  border-radius: 2vmin;
+  padding: 1vmin;
+}
+
+.BatterySlide1Bottom {
+  width: calc(100vw - 10px);
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+}
+
+/* .BatteryScreenshot1 {
+  height: 50vmin;
+} */
+.BatteryScreenshotMobile1 {
+  width: 50vmin;
+}
+
+.BatteryParagraph1 {
+  width: 60vmin;
+  font-size: 3vmin;
+}
+
+.BatterySlide2 {
+  background-color: #282c34;
+  background-image: url(../../Assets/background1.png);
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-position: center;
+  color: #f8f8e6;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+}
+
+.BatteryParagraph2 {
+  background: radial-gradient(#282c34, #505050);
+  width: 100vmin;
+  font-size: 3vmin;
+  padding: 3vmin;
+  border-radius: 2vmin;
+  margin-bottom: 10vmin;
+}
+
+.BatterySlide3 {
+  background-color: #f8f8e6;
+  color: #282c34;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-evenly;
+  width: calc(100vw - 10px);
+}
+
+.BatterySlide3Row {
+  display: flex;
+  justify-content: space-evenly;
+  margin: 10vmin;
+  width: calc(100vw - 10px);
+}
+
+.BatterySlide3Bottom {
+  height: 100vh;
+  width: calc(100vw - 10px);
+  background-image: url(../../Assets/BatteryBottomDesktop.png);
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-position: center;
+  background-size: cover;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.BatterySlide3BottomTop {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: flex-start;
+}
+
+.BatterySlide3BottomBottom {
+  display: flex;
+  justify-content: center;
+}
+
+.BatteryScreenshot3 {
+  height: 51vmin;
+  border-radius: 2vmin;
+  -webkit-animation: fadein 2s; /* Safari, Chrome and Opera > 12.1 */
+  -moz-animation: fadein 2s; /* Firefox < 16 */
+   -ms-animation: fadein 2s; /* Internet Explorer */
+    -o-animation: fadein 2s; /* Opera < 12.1 */
+       animation: fadein 2s;
+}
+
+.BatteryParagraph3 {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 65vmin;
+  font-size: 3vmin;
+}
+
+.BatteryParagraph3Bottom {
+  margin-top: 10vmin;
+  background-color: #f8f8e6;
+  padding: 1vmin;
+  border-radius: 3vmin;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 60vmin;
+  font-size: 3vmin;
+}
+
+.BottomOfThePage {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: calc(100vw - 10px);
+  font-size: 3vmin;
+  margin-bottom: 2vmin;
+}
+
+@keyframes fadein {
+  from { opacity: 0; }
+  to   { opacity: 1; }
+}
+
+/* Firefox < 16 */
+@-moz-keyframes fadein {
+  from { opacity: 0; }
+  to   { opacity: 1; }
+}
+
+/* Safari, Chrome and Opera > 12.1 */
+@-webkit-keyframes fadein {
+  from { opacity: 0; }
+  to   { opacity: 1; }
+}
+
+/* Internet Explorer */
+@-ms-keyframes fadein {
+  from { opacity: 0; }
+  to   { opacity: 1; }
+}
+
+/* Opera < 12.1 */
+@-o-keyframes fadein {
+  from { opacity: 0; }
+  to   { opacity: 1; }
+}
