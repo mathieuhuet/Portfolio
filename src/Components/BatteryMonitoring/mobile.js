@@ -31,13 +31,13 @@ function Mobile ({changePage}) {
           <h1 className="BatteryTitle">Battery Monitoring App</h1>
         </div>
         <div className="BatterySlide1Bottom">
-          <img src={batteryScreenshot0} className="BatteryScreenshotMobile1" alt="Screenshot of a graph from Battery Monitoring App" />
+          <img src={batteryScreenshot0} className="BatteryScreenshot1" alt="Screenshot of a graph from Battery Monitoring App" />
           <div className="BatteryParagraph1">Battery Monitoring est une application qui donne un accès aux données de vos batteries à distance 
           et collecte des informations tout au long de la journée pour créer des diagrammes qui permettent d'analyser les performances de tout vos équipements.
           </div>
         </div>
       </div>
-      <div className="BatterySlide2">
+      <div className="BatterySlide2Tablet">
         <div className="BatteryParagraph2">J'ai construit cette application seul. Le back-end, le front-end, conçu et mis en œuvre l'API sous-jacente et la modélisation des données.</div>
       </div>
       <div className="BatterySlide3">
@@ -54,7 +54,7 @@ function Mobile ({changePage}) {
           <img src={batteryScreenshot3} className="BatteryScreenshot3" alt="Screenshot of Battery Monitoring App" />
           <div className="BatteryParagraph3">
             <a
-              className="Youtube-Link"
+              className="Youtube-LinkMobile"
               href="https://youtu.be/s5RYPeURV8w"
               target="_blank"
               rel="noopener noreferrer"
@@ -102,7 +102,7 @@ function Mobile ({changePage}) {
             It also fetch battery data all day from your devices and let you visualize them on a graph to analyze their performances.</div>
           </div>
         </div>
-        <div className="BatterySlide2">
+        <div className="BatterySlide2Tablet">
           <div className="BatteryParagraph2">I built the app from the ground up, designed and implemented the underlying API and data modeling.</div>
         </div>
         <div className="BatterySlide3">
@@ -119,7 +119,7 @@ function Mobile ({changePage}) {
             <img src={batteryScreenshot3} className="BatteryScreenshot3" alt="Screenshot of Battery Monitoring App" />
             <div className="BatteryParagraph3">
               <a
-                className="Youtube-Link"
+                className="Youtube-LinkMobile"
                 href="https://youtu.be/s5RYPeURV8w"
                 target="_blank"
                 rel="noopener noreferrer"

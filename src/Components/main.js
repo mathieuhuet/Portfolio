@@ -7,13 +7,16 @@ import { GiBatteries } from "react-icons/gi";
 import mathieu from '../Assets/MathieuProfil.jpg';
 
 function Main ({changePage}) {
+
+
+
+
   return (
     <div className="Main">
       <Helmet><title>Mathieu's Portfolio</title></Helmet>
       <img src={mathieu} className="Mathieu" alt="Mathieu's face spinnin'" />
       <h2>Mathieu Huet</h2>
-      <p>(This website is STILL in development.)</p>
-      <p>(not a reponsive website YET, only support desktop.)</p>
+      <br />
       <div className="Button-batteryProject" onClick={() => changePage('batteryProject')}>
         <GiBatteries />
       </div>

@@ -62,13 +62,30 @@
 
 
 .BatteryProject {
-  background-color: #f8f8e6;
   -webkit-animation: fadein 2s; /* Safari, Chrome and Opera > 12.1 */
   -moz-animation: fadein 2s; /* Firefox < 16 */
    -ms-animation: fadein 2s; /* Internet Explorer */
     -o-animation: fadein 2s; /* Opera < 12.1 */
        animation: fadein 2s;
 }
+
+/* .BatteryProject::before {
+  content: "";
+  display: block;
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -10;
+  background-image: url(../../Assets/background1.png);
+  background-repeat: no-repeat;
+  background-position: center;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+} */
 
 .BatterySlide1 {
   background-color: #f8f8e6;
@@ -87,10 +104,9 @@
 .BatteryTitle {
   font-size: 5vmin;
   color: #f8f8e6;
-  -webkit-text-stroke: 2px #282c34;
-  text-shadow: 2px 2px #282c34;
-  border: 3px solid #282c34;
-  box-shadow: 3px 3px #282c34;
+  text-shadow: -2px 0 #282c34, 0 2px #282c34, 2px 0 #282c34, 0 -2px #282c34;
+  border: 0.5vmin solid #282c34;
+  box-shadow: 0.5vmin 0.5vmin #282c34;
   border-radius: 2vmin;
   padding: 1vmin;
 }
@@ -103,7 +119,9 @@
 }
 
 .BatteryScreenshot1 {
-  height: 50vmin;
+  width: 90vmin;
+  max-width: 50vmax;
+  margin: 15px;
 }
 
 .BatteryParagraph1 {
@@ -112,11 +130,6 @@
 }
 
 .BatterySlide2 {
-  background-color: #282c34;
-  background-image: url(../../Assets/background1.png);
-  background-repeat: no-repeat;
-  background-attachment: fixed;
-  background-position: center;
   color: #f8f8e6;
   display: flex;
   align-items: center;
@@ -124,9 +137,27 @@
   height: 100vh;
 }
 
+.BatterySlide2::before {
+  content: "";
+  display: block;
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -10;
+  background-image: url(../../Assets/background1.png);
+  background-repeat: no-repeat;
+  background-position: center;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+}
+
 .BatteryParagraph2 {
   background: radial-gradient(#282c34, #505050);
-  width: 100vmin;
+  width: 95vmin;
   font-size: 3vmin;
   padding: 3vmin;
   border-radius: 2vmin;
@@ -140,7 +171,6 @@
   flex-direction: column;
   align-items: center;
   justify-content: space-evenly;
-  width: calc(100vw - 10px);
 }
 
 .BatterySlide3Row {
@@ -155,7 +185,7 @@
   width: calc(100vw - 10px);
   background-image: url(../../Assets/BatteryBottomDesktop.png);
   background-repeat: no-repeat;
-  background-attachment: fixed;
+  background-attachment: initial;
   background-position: center;
   background-size: cover;
   display: flex;
@@ -175,13 +205,10 @@
 }
 
 .BatteryScreenshot3 {
-  height: 51vmin;
   border-radius: 2vmin;
-  -webkit-animation: fadein 2s; /* Safari, Chrome and Opera > 12.1 */
-  -moz-animation: fadein 2s; /* Firefox < 16 */
-   -ms-animation: fadein 2s; /* Internet Explorer */
-    -o-animation: fadein 2s; /* Opera < 12.1 */
-       animation: fadein 2s;
+  width: 90vmin;
+  max-width: 50vmax;
+  margin: 15px;
 }
 
 .BatteryParagraph3 {
@@ -205,12 +232,14 @@
 }
 
 .BottomOfThePage {
+  background-color: #f8f8e6;
+  border-radius: 2vmin;
   display: flex;
   justify-content: center;
   align-items: center;
   width: calc(100vw - 10px);
   font-size: 3vmin;
-  margin-bottom: 2vmin;
+  margin-bottom: 3vmin;
 }
 
 @keyframes fadein {
@@ -240,4 +269,32 @@
 @-o-keyframes fadein {
   from { opacity: 0; }
   to   { opacity: 1; }
+}
+
+
+.Youtube-Link {
+  border: 0.5vmin solid #282c34;
+  box-shadow: 0.5vmin 0.5vmin #282c34;
+  color: #282c34;
+  text-decoration: none;
+  border-radius: 2vmin;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 3vmin;
+  padding: 1vmin;
+  animation: nothover 1s;
+}
+
+.Youtube-Link:hover {
+  cursor: pointer;
+  background-color:#282c34;
+  color: #f8f8e6;
+  animation: hover 1s;
+}
+
+.Youtube-Link:active {
+  margin-left: 0.5vmin;
+  margin-top: 0.5vmin;
+  box-shadow: 0vmin 0vmin #282c34;
 }
