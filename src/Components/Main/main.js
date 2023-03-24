@@ -1,25 +1,33 @@
 import './main.css';
 import React from 'react'
-import {Helmet} from "react-helmet";
+import { useNavigate } from 'react-router-dom';
+import { Helmet } from "react-helmet";
 import { SiGithub } from "react-icons/si"
 import { SiLinkedin } from "react-icons/si"
 import { GiBatteries } from "react-icons/gi";
-import mathieu from '../Assets/MathieuProfil.jpg';
-
-function Main ({changePage}) {
-
+import { HiOutlineClipboardDocumentList } from "react-icons/hi2";
+import mathieu from '../../Assets/MathieuProfil.jpg';
 
 
+
+
+function Main () {
+  let navigate = useNavigate();
 
   return (
     <div className="Main">
       <Helmet><title>Mathieu's Portfolio</title></Helmet>
       <img src={mathieu} className="Mathieu" alt="Mathieu's face spinnin'" />
       <h2>Mathieu Huet</h2>
-      <br />
-      <div className="Button-batteryProject" onClick={() => changePage('batteryProject')}>
-        <GiBatteries />
+      <div className='MainNavigate'>
+        <div className="Button-BatteryProject" onClick={() => navigate('/battery_monitoring')}>
+          <GiBatteries />
+        </div>
+        <div className="Button-Resume" onClick={() => navigate('/resume')}>
+          <HiOutlineClipboardDocumentList />
+        </div>
       </div>
+      <br />
       <br />
       <div className="All-link">
         <a

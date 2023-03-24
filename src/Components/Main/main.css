@@ -42,25 +42,67 @@
 .LinkedIn-link {
   color: #f8f8e6;
   margin-left: 4vmin;
-  font-size: 6vmin;
+  font-size: 5vmin;
 }
 
 .GitHub-link {
   color: #f8f8e6;
-  font-size: 6vmin;
+  font-size: 5vmin;
 }
 
-.Button-batteryProject {
+.MainNavigate {
+  display: flex;
+}
+
+.Button-BatteryProject {
   background-color: #f8f8e6;
   color: #282c34;
-  font-size: 4vmin;
-  height: 7vmin;
-  width: 7vmin;
+  font-size: 5vmin;
+  width: 8vmin;
+  height: 8vmin;
   display: flex;
   justify-content: center;
   align-items: center;
-  border-radius: 1vmin;
+  border-radius: 2vmin;
+  animation: 1s nothover;
 }
-.Button-batteryProject:hover {
+.Button-BatteryProject:hover {
   cursor: pointer;
+  background-color:#282c34;
+  color: #f8f8e6;
+  animation: hover 1s;
+}
+
+
+.Button-Resume {
+  margin-left: 4vmin;
+  background-color: #f8f8e6;
+  color: #282c34;
+  font-size: 5vmin;
+  width: 8vmin;
+  height: 8vmin;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 2vmin;
+  animation: 1s nothover;
+}
+.Button-Resume:hover {
+  cursor: pointer;
+  background-color:#282c34;
+  color: #f8f8e6;
+  animation: hover 1s;
+}
+
+@keyframes nothover {
+  from {background-color: #282c34;}
+  to {background-color: #f8f8e6;}
+  from {color: #f8f8e6;}
+  to {color: #282c34;}
+}
+@keyframes hover {
+  from {color: #282c34;}
+  to {color: #f8f8e6;}
+  from {background-color: #f8f8e6;}
+  to {background-color: #282c34;}
 }

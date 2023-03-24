@@ -1,0 +1,39 @@
+.TopButtons {
+  display: flex;
+  justify-content: space-between;
+  position: fixed;
+  width: calc(100vw - 10px);
+}
+
+.Button-backToMain {
+  background-color: #f8f8e6;
+  color: #282c34;
+  height: 11vmin;
+  width: 11vmin;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  margin: 2vmin;
+  font-size: 7vmin;
+  animation: nothover 1s;
+}
+.Button-backToMain:hover {
+  cursor: pointer;
+  background-color:#282c34;
+  color: #f8f8e6;
+  animation: hover 1s;
+}
+@keyframes nothover {
+  from {background-color: #282c34;}
+  to {background-color: #f8f8e6;}
+  from {color: #f8f8e6;}
+  to {color: #282c34;}
+}
+@keyframes hover {
+  from {color: #282c34;}
+  to {color: #f8f8e6;}
+  from {background-color: #f8f8e6;}
+  to {background-color: #282c34;}
+}

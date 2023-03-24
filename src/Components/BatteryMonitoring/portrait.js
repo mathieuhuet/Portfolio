@@ -1,6 +1,7 @@
 import './portrait.css';
 import React from 'react'
 import { useState } from "react";
+import { useNavigate } from 'react-router-dom';
 import {Helmet} from "react-helmet";
 import batteryScreenshot0 from '../../Assets/BatteryScreenshot0.png';
 import batteryScreenshot3 from '../../Assets/BatteryScreenshot3.png';
@@ -10,7 +11,8 @@ import batteryScreenshot6 from '../../Assets/BatteryScreenshot6.png';
 import { IoArrowBackOutline } from "react-icons/io5";
 
 
-function Portrait ({changePage}) {
+function Portrait () {
+  let navigate = useNavigate();
   const [ langue, setLangue ] = useState('FR')
   function changeLangue (newLangue) {
     setLangue(newLangue);
@@ -21,7 +23,7 @@ function Portrait ({changePage}) {
       <div className="BatteryProjectMobile">
       <Helmet><title>Mathieu's Battery Monitoring App</title></Helmet>
       <div className="TopButtonsMobile">
-        <div className="Button-backToMainMobile" onClick={() => changePage('main')}>
+        <div className="Button-backToMainMobile" onClick={() => navigate('/')}>
           <IoArrowBackOutline />
         </div>
         <div className="LangueMobile" onClick={() => changeLangue('EN')}>EN</div>
@@ -93,7 +95,7 @@ function Portrait ({changePage}) {
       <div className="BatteryProjectMobile">
         <Helmet><title>Mathieu's Battery Monitoring App</title></Helmet>
         <div className="TopButtonsMobile">
-          <div className="Button-backToMainMobile" onClick={() => changePage('main')}>
+          <div className="Button-backToMainMobile" onClick={() => navigate('/')}>
             <IoArrowBackOutline />
           </div>
           <div className="LangueMobile" onClick={() => changeLangue('FR')}>FR</div>
