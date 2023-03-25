@@ -3,9 +3,17 @@
   pointer-events: none;
   border-radius: 50%;
 }
-
-.Mathieu {
+.motiontest {
   animation: Mathieu-spin infinite 16s linear;
+}
+
+.motiontest:hover {
+  cursor: grab;
+}
+
+.motiontest:active {
+  cursor: grabbing;
+  animation: none;
 }
 
 @keyframes Mathieu-spin {
@@ -18,13 +26,8 @@
 }
 
 .Main {
-  width: calc(100vw - 10px);
   background-color: #282c34;
-  min-height: 100vh;
   display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
   font-size: calc(10px + 2vmin);
   color: #f8f8e6;
   -webkit-animation: fadein 2s; /* Safari, Chrome and Opera > 12.1 */
@@ -33,6 +36,19 @@
     -o-animation: fadein 2s; /* Opera < 12.1 */
        animation: fadein 2s;
 }
+
+.MainLeft {
+  margin: 5vmin 0vmin 0vmin 5vmin;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.MainRight {
+  display: flex;
+}
+
 
 .All-link {
   display: flex;
@@ -64,13 +80,13 @@
   justify-content: center;
   align-items: center;
   border-radius: 2vmin;
-  animation: 1s nothover;
+  animation: 0.5s nothover;
 }
 .Button-BatteryProject:hover {
   cursor: pointer;
   background-color:#282c34;
   color: #f8f8e6;
-  animation: hover 1s;
+  animation: hover 0.5s;
 }
 
 
@@ -85,13 +101,13 @@
   justify-content: center;
   align-items: center;
   border-radius: 2vmin;
-  animation: 1s nothover;
+  animation: 0.5s nothover;
 }
 .Button-Resume:hover {
   cursor: pointer;
   background-color:#282c34;
   color: #f8f8e6;
-  animation: hover 1s;
+  animation: hover 0.5s;
 }
 
 @keyframes nothover {

@@ -20,7 +20,7 @@ function Portrait () {
 
   if (langue === 'FR') {
     return (
-      <div className="BatteryProjectMobile">
+      <div>
       <Helmet><title>Mathieu's Battery Monitoring App</title></Helmet>
       <div className="TopButtonsMobile">
         <div className="Button-backToMainMobile" onClick={() => navigate('/')}>
@@ -92,7 +92,7 @@ function Portrait () {
   );
   } else {
     return (
-      <div className="BatteryProjectMobile">
+      <div>
         <Helmet><title>Mathieu's Battery Monitoring App</title></Helmet>
         <div className="TopButtonsMobile">
           <div className="Button-backToMainMobile" onClick={() => navigate('/')}>

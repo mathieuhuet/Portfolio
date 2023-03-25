@@ -1,3 +1,96 @@
+.Experiences {
+  margin: 5vmin;
+}
+
+.ExperienceList {
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.ExperienceSearch {
+
+}
+
+.SearchBar {
+  background-color: #282c34;
+  color: #f8f8e6;
+  border: 0.5vmin solid #f8f8e6;
+  border-radius: 5vmin;
+  font-size: 3vmin;
+  padding: 2vmin;
+  margin-left: 5vmin;
+  width: 30vmin;
+  display: flex;
+}
+
+::placeholder { /* Chrome, Firefox, Opera, Safari 10.1+ */
+  color: #f8f8e6;
+  opacity: 1; /* Firefox */
+}
+
+:-ms-input-placeholder { /* Internet Explorer 10-11 */
+  color: #f8f8e6;
+}
+
+::-ms-input-placeholder { /* Microsoft Edge */
+  color: #f8f8e6;
+}
+
+.IndividualExperience {
+  width: 60vw;
+  border-style: dashed none none none;
+  border-color: #f8f8e6;
+  color: #f8f8e6;
+  margin: 5vmin 0vmin 0vmin 5vmin;
+  padding-left: 4vmin;
+  padding-top: 4vmin;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.IETop {
+  display: flex;
+  align-items: center;
+  margin-bottom: 2vmin;
+}
+
+.IEBottom {
+  display: flex;
+}
+
+.IEInstitution {
+  font-size: 3vmin;
+  margin-right: 1vmin;
+}
+
+.IEDate {
+  font-size: 1.5vmin;
+  padding: 0vmin 0.5vmin 0vmin 0.5vmin;
+  border: 1px solid #f8f8e6;
+  border-radius: 3vmin;
+}
+
+.IELanguages {
+  font-size: 2.3vmin;
+  display: flex;
+}
+
+.Languages {
+  margin-right: 1vmin;
+  border-left: 1px solid #f8f8e6;
+  padding-left: 1vmin;
+}
+
+
+
+
+
+
+
+
 .TopButtons {
   display: flex;
   justify-content: space-between;

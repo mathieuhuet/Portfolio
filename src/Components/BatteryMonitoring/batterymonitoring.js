@@ -1,3 +1,4 @@
+import './batterymonitoring.css';
 import React from "react";
 import { useMediaQuery } from 'react-responsive';
 import Desktop from "./desktop";
@@ -17,7 +18,7 @@ function BatteryMonitoring() {
 
 
   return (
-    <div>
+    <div className='BatteryProject'>
       {isPortrait ? 
       <Portrait
 

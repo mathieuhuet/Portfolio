@@ -20,7 +20,7 @@ function Mobile () {
 
   if (langue === 'FR') {
     return (
-      <div className="BatteryProject">
+      <div>
       <Helmet><title>Mathieu's Battery Monitoring App</title></Helmet>
       <div className="TopButtons">
         <div className="Button-backToMain" onClick={() => navigate('/')}>
@@ -86,7 +86,7 @@ function Mobile () {
   );
   } else {
     return (
-      <div className="BatteryProject">
+      <div>
         <Helmet><title>Mathieu's Battery Monitoring App</title></Helmet>
         <div className="TopButtons">
           <div className="Button-backToMain" onClick={() => navigate('/')}>
