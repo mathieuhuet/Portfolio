@@ -26,7 +26,7 @@
   font-size: 3vmin;
   padding: 2vmin;
   margin-left: 5vmin;
-  width: 30vmin;
+  width: 50vmin;
   display: flex;
 }
 
@@ -56,6 +56,12 @@
   align-items: flex-start;
 }
 
+.IndividualExperience:hover {
+  cursor: pointer;
+  background-color: #f8f8e6;
+  color: #282c34;
+}
+
 .IETop {
   display: flex;
   align-items: center;
@@ -81,12 +87,14 @@
 .IELanguages {
   font-size: 2.3vmin;
   display: flex;
+  flex-wrap: wrap;
 }
 
 .Languages {
   margin-right: 1vmin;
   border-left: 1px solid #f8f8e6;
   padding-left: 1vmin;
+  margin-bottom: 1vmin;
 }
 
 

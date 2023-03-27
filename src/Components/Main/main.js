@@ -100,9 +100,9 @@ function Main () {
             <div className="Button-BatteryProject" onClick={() => navigate('/battery_monitoring')}>
               <GiBatteries />
             </div>
-            <div className="Button-Resume" onClick={() => navigate('/resume')}>
+            {/* <div className="Button-Resume" onClick={() => navigate('/resume')}>
               <HiOutlineClipboardDocumentList />
-            </div>
+            </div> */}
           </div>
           <br />
           <br />
