@@ -222,7 +222,7 @@ function Experiences () {
           />
         </div>
         <div className='DownloadSection'>
-          <div>Télécharger mon CV &nbsp; {/*&nbsp; is for creating space. */}
+          <div className='Download-Link'>Télécharger mon CV &nbsp;
           <a
             className="PDF-Download"
             href={resumeFrancais}
@@ -231,7 +231,7 @@ function Experiences () {
              <VscFilePdf />
           </a>
           </div>
-          <div>Download my resume &nbsp;
+          <div className='Download-Link'>Download my resume &nbsp;
           <a
             className="PDF-Download"
             href={resumeEnglish}
