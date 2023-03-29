@@ -1,17 +1,17 @@
-import './mobile.css';
+import './desktop.css';
 import React from 'react'
 import { useState } from "react";
 import { useNavigate } from 'react-router-dom';
-import {Helmet} from "react-helmet";
-import batteryScreenshot0 from '../../Assets/BatteryScreenshot0.png';
-import batteryScreenshot3 from '../../Assets/BatteryScreenshot3.png';
-import batteryScreenshot4 from '../../Assets/BatteryScreenshot4.png';
-import batteryScreenshot5 from '../../Assets/BatteryScreenshot5.png';
-import batteryScreenshot6 from '../../Assets/BatteryScreenshot6.png';
+import { Helmet } from "react-helmet";
+import batteryScreenshot0 from '../../../Assets/BatteryScreenshot0.png';
+import batteryScreenshot3 from '../../../Assets/BatteryScreenshot3.png';
+import batteryScreenshot4 from '../../../Assets/BatteryScreenshot4.png';
+import batteryScreenshot5 from '../../../Assets/BatteryScreenshot5.png';
+import batteryScreenshot6 from '../../../Assets/BatteryScreenshot6.png';
 import { IoArrowBackOutline } from "react-icons/io5";
 
 
-function Mobile () {
+function Desktop () {
   let navigate = useNavigate();
   const [ langue, setLangue ] = useState('FR')
   function changeLangue (newLangue) {
@@ -39,7 +39,7 @@ function Mobile () {
           </div>
         </div>
       </div>
-      <div className="BatterySlide2Tablet">
+      <div className="BatterySlide2">
         <div className="BatteryParagraph2">J'ai construit cette application seul. Le back-end, le front-end, conçu et mis en œuvre l'API sous-jacente et la modélisation des données.</div>
       </div>
       <div className="BatterySlide3">
@@ -56,7 +56,7 @@ function Mobile () {
           <img src={batteryScreenshot3} className="BatteryScreenshot3" alt="Screenshot of Battery Monitoring App" />
           <div className="BatteryParagraph3">
             <a
-              className="Youtube-LinkMobile"
+              className="Youtube-Link"
               href="https://youtu.be/s5RYPeURV8w"
               target="_blank"
               rel="noopener noreferrer"
@@ -104,7 +104,7 @@ function Mobile () {
             It also fetch battery data all day from your devices and let you visualize them on a graph to analyze their performances.</div>
           </div>
         </div>
-        <div className="BatterySlide2Tablet">
+        <div className="BatterySlide2">
           <div className="BatteryParagraph2">I built the app from the ground up, designed and implemented the underlying API and data modeling.</div>
         </div>
         <div className="BatterySlide3">
@@ -121,7 +121,7 @@ function Mobile () {
             <img src={batteryScreenshot3} className="BatteryScreenshot3" alt="Screenshot of Battery Monitoring App" />
             <div className="BatteryParagraph3">
               <a
-                className="Youtube-LinkMobile"
+                className="Youtube-Link"
                 href="https://youtu.be/s5RYPeURV8w"
                 target="_blank"
                 rel="noopener noreferrer"
@@ -150,4 +150,4 @@ function Mobile () {
   }
 }
 
-export default Mobile;
+export default Desktop;

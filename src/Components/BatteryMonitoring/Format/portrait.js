@@ -3,11 +3,11 @@ import React from 'react'
 import { useState } from "react";
 import { useNavigate } from 'react-router-dom';
 import {Helmet} from "react-helmet";
-import batteryScreenshot0 from '../../Assets/BatteryScreenshot0.png';
-import batteryScreenshot3 from '../../Assets/BatteryScreenshot3.png';
-import batteryScreenshot4 from '../../Assets/BatteryScreenshot4.png';
-import batteryScreenshot5 from '../../Assets/BatteryScreenshot5.png';
-import batteryScreenshot6 from '../../Assets/BatteryScreenshot6.png';
+import batteryScreenshot0 from '../../../Assets/BatteryScreenshot0.png';
+import batteryScreenshot3 from '../../../Assets/BatteryScreenshot3.png';
+import batteryScreenshot4 from '../../../Assets/BatteryScreenshot4.png';
+import batteryScreenshot5 from '../../../Assets/BatteryScreenshot5.png';
+import batteryScreenshot6 from '../../../Assets/BatteryScreenshot6.png';
 import { IoArrowBackOutline } from "react-icons/io5";
 
 

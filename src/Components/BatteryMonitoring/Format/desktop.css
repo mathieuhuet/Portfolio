@@ -111,19 +111,19 @@
   font-size: 3vmin;
 }
 
-.BatterySlide2Tablet {
+.BatterySlide2 {
   color: #f8f8e6;
   display: flex;
   align-items: center;
   justify-content: center;
   height: 100vh;
-  background-color: #282c34;
-  background-image: url(../../Assets/background1.png);
+  background-image: url(../../../Assets/background1.png);
   background-repeat: no-repeat;
-  background-attachment: scroll;
   background-position: center;
+  background-attachment: fixed;
   background-size: cover;
 }
+
 
 .BatteryParagraph2 {
   background: radial-gradient(#282c34, #505050);
@@ -153,7 +153,7 @@
 .BatterySlide3Bottom {
   height: 100vh;
   width: calc(100vw - 10px);
-  background-image: url(../../Assets/BatteryBottomDesktop.png);
+  background-image: url(../../../Assets/BatteryBottomDesktop.png);
   background-repeat: no-repeat;
   background-attachment: initial;
   background-position: center;
@@ -241,7 +241,8 @@
   to   { opacity: 1; }
 }
 
-.Youtube-LinkMobile {
+
+.Youtube-Link {
   border: 0.5vmin solid #282c34;
   box-shadow: 0.5vmin 0.5vmin #282c34;
   color: #282c34;
@@ -252,13 +253,17 @@
   align-items: center;
   font-size: 3vmin;
   padding: 1vmin;
+  animation: nothover 1s;
 }
 
-.Youtube-LinkMobile:hover {
+.Youtube-Link:hover {
   cursor: pointer;
+  background-color:#282c34;
+  color: #f8f8e6;
+  animation: hover 1s;
 }
 
-.Youtube-LinkMobile:active {
+.Youtube-Link:active {
   margin-left: 0.5vmin;
   margin-top: 0.5vmin;
   box-shadow: 0vmin 0vmin #282c34;

@@ -1,9 +1,9 @@
 import './batterymonitoring.css';
 import React from "react";
 import { useMediaQuery } from 'react-responsive';
-import Desktop from "./desktop";
-import Mobile from "./mobile";
-import Portrait from "./portrait";
+import Desktop from "./Format/desktop";
+import Mobile from "./Format/mobile";
+import Portrait from "./Format/portrait";
 
 
 function BatteryMonitoring() {

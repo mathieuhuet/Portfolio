@@ -1,43 +1,58 @@
 import './experiences.css';
-import React,{ useState, useEffect, useMemo } from 'react'
+import React,{ useState, useEffect, useMemo } from 'react';
+import { useNavigate } from 'react-router-dom';
+import { CgCloseO } from "react-icons/cg";
+import { VscFilePdf } from "react-icons/vsc";
+import { experienceDetail } from './experienceDetail';
+import resumeEnglish from './../../Assets/Mathieu_Huet_Resume_English.pdf';
+import resumeFrancais from './../../Assets/Mathieu_Huet_Resume_Francais.pdf';
+
 
 function Experiences () {
+
+  let navigate = useNavigate();
 
   const experiences = useMemo(() => [
     {
       id: 0,
       institution: 'Battery Monitoring',
-      languages: ['Javascript', 'React', 'Koa', 'PostgreSQL', 'SNMP', 'UDP/IP', 'OpenVPN', 'API'],
+      languages: ['Node.js', 'Javascript', 'React', 'PostgreSQL', 'Koa', 'RESTful API', 'SNMP', 'UDP/IP', 'OpenVPN', 'Git'],
       date: '2023',
     },
     {
       id: 1,
       institution: 'Codeworks Bootcamp',
-      languages: ['Javascript', 'React', 'HTML', 'CSS', 'SQL', 'NoSQL', 'MongoDB', 'Redux', 'TypeScript', "GraphQL", 'Express', 'koa', 'Angular', 'Git', 'JSON', 'API'],
+      languages: ['Node.js', 'Javascript', 'TypeScript', 'React', 'React Native', 'Redux', 'Angular', 'HTML', 'CSS', 'SQL', 'NoSQL', "GraphQL", 'MongoDB', 'Redis', 'Express', 'Koa', 'Expo', 'Git', 'JSON', 'RESTful API', 'Socket.IO', 'Linux/Unix'],
       date: '2022-2023',
+
     },
     {
       id: 2,
       institution: 'Innovation Mi8',
-      languages: ['Python', 'Bash', 'OpenVPN', 'Linux'],
+      languages: ['Python', 'Bash', 'OpenVPN', 'Linux/Unix/Bash', 'TCP/IP', 'UDP/IP'],
       date: '2021-2022',
+
     },
     {
       id: 3,
       institution: 'Université du Québec à Montréal',
-      languages: ['Java', 'Assembly Language', 'MySQL', 'C++', 'Linux', 'Android Studio'],
+      languages: ['Java', 'Assembly Language', 'MySQL', 'C++', 'Linux/Unix/Bash', 'Android Studio', 'GUI', 'HTML', 'CSS'],
       date: '2017-2020',
+
     }
   ], []);
 
+  //displayexperience is use for whether or not display more details about the experience (-1 for don't display anything, 
+  //otherwise set it to the ID of the experience you wanna show more detail)
+  const [displayExperience, setDisplayExperience] = useState(-1);
 
+  const [displayExperienceLanguage, setDisplayExperienceLanguage] = useState('FR');
   const [result, setResult] = useState(experiences);
   const [search, setSearch] = useState('')
   const handleChangeSearch = (event) => {
     const { value } = event.target;
     setSearch(value);
   };
-
   useEffect(() => {
     let res = [];
     for (let i = 0; i < experiences.length; i++) {
@@ -60,21 +75,181 @@ function Experiences () {
   }, [search, experiences])
 
 
+  function DisplayExperience () {
+    switch(displayExperience) {
+      case 0:
+        navigate('/battery_monitoring');
+        break;
+      case 1:
+        if (displayExperienceLanguage === 'FR') {
+          return (
+            <div className='DisplayedExperience'>
+              <div className='TopButtonsDisplayExperience'>
+                <div className='CloseExperience' onClick={() => {
+                  setDisplayExperience(-1);
+                  setResult(experiences);
+                }}>
+                  <CgCloseO />
+                </div>
+                <div className='ChangeLanguage' onClick={() => setDisplayExperienceLanguage('EN')}>
+                  En
+                </div>
+              </div>
+              <div className='SingleExperience'>
+                {experienceDetail.codeworksFR}
+              </div>
+            </div>
+          )
+        } else {
+          return (
+            <div className='DisplayedExperience'>
+              <div className='TopButtonsDisplayExperience'>
+                <div className='CloseExperience' onClick={() => {
+                  setDisplayExperience(-1);
+                  setResult(experiences);
+                }}>
+                  <CgCloseO />
+                </div>
+                <div className='ChangeLanguage' onClick={() => setDisplayExperienceLanguage('FR')}>
+                  Fr
+                </div>
+              </div>
+              <div className='SingleExperience'>
+                {experienceDetail.codeworksEN}
+              </div>
+            </div>
+          )
+        }
+      case 2:
+        if (displayExperienceLanguage === 'FR') {
+          return (
+            <div className='DisplayedExperience'>
+              <div className='TopButtonsDisplayExperience'>
+                <div className='CloseExperience' onClick={() => {
+                  setDisplayExperience(-1);
+                  setResult(experiences);
+                }}>
+                  <CgCloseO />
+                </div>
+                <div className='ChangeLanguage' onClick={() => setDisplayExperienceLanguage('EN')}>
+                  En
+                </div>
+              </div>
+              <div className='SingleExperience'>
+                {experienceDetail.mi8FR}
+              </div>
+            </div>
+          )
+        } else {
+          return (
+            <div className='DisplayedExperience'>
+              <div className='TopButtonsDisplayExperience'>
+                <div className='CloseExperience' onClick={() => {
+                  setDisplayExperience(-1);
+                  setResult(experiences);
+                }}>
+                  <CgCloseO />
+                </div>
+                <div className='ChangeLanguage' onClick={() => setDisplayExperienceLanguage('FR')}>
+                  Fr
+                </div>
+              </div>
+              <div className='SingleExperience'>
+                {experienceDetail.mi8EN}
+              </div>
+            </div>
+          )
+        }
+      case 3:
+        if (displayExperienceLanguage === 'FR') {
+          return (
+            <div className='DisplayedExperience'>
+              <div className='TopButtonsDisplayExperience'>
+                <div className='CloseExperience' onClick={() => {
+                  setDisplayExperience(-1);
+                  setResult(experiences);
+                }}>
+                  <CgCloseO />
+                </div>
+                <div className='ChangeLanguage' onClick={() => setDisplayExperienceLanguage('EN')}>
+                  En
+                </div>
+              </div>
+              <div className='SingleExperience'>
+                {experienceDetail.uqamFR}
+              </div>
+            </div>
+          )
+        } else {
+          return (
+            <div className='DisplayedExperience'>
+              <div className='TopButtonsDisplayExperience'>
+                <div className='CloseExperience' onClick={() => {
+                  setDisplayExperience(-1);
+                  setResult(experiences);
+                }}>
+                  <CgCloseO />
+                </div>
+                <div className='ChangeLanguage' onClick={() => setDisplayExperienceLanguage('FR')}>
+                  Fr
+                </div>
+              </div>
+              <div className='SingleExperience'>
+                {experienceDetail.uqamEN}
+              </div>
+            </div>
+          )
+        }
+      default:
+        return;
+    }
+  }
+
+
 
   return (
     <div className="Experiences">
+      <DisplayExperience />
+      {displayExperience === -1 ? 
       <div className='ExperienceSearch'>
-        <input 
-          type="text" 
-          value={search} 
-          onChange={handleChangeSearch} 
-          placeholder='Search...'
-          className='SearchBar'
-        />
-      </div>
+        <div>
+          <input 
+            type="text" 
+            value={search} 
+            onChange={handleChangeSearch} 
+            placeholder='Search...'
+            className='SearchBar'
+          />
+        </div>
+        <div className='DownloadSection'>
+          <div>Télécharger mon CV &nbsp; {/*&nbsp; is for creating space. */}
+          <a
+            className="PDF-Download"
+            href={resumeFrancais}
+            download='Mathieu_Huet_CV.pdf'
+          >
+             <VscFilePdf />
+          </a>
+          </div>
+          <div>Download my resume &nbsp;
+          <a
+            className="PDF-Download"
+            href={resumeEnglish}
+            download='Mathieu_Huet_Resume.pdf'
+          >
+            <VscFilePdf />
+          </a>
+          </div>
+        </div>
+      </div> : 
+      undefined}
       <div className='ExperienceList'>
         {result.map(exp => 
-          <div className='IndividualExperience' key={exp.id}>
+          <div className='IndividualExperience' key={exp.id} onClick={() => {
+            setDisplayExperience(exp.id);
+            setResult([]);
+            setSearch('');
+          }}>
             <div className='IETop'>
               <div className='IEInstitution'>
                 {exp.institution}

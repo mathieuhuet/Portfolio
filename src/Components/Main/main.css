@@ -14,6 +14,14 @@
        animation: fadein 2s;
 }
 
+.MathieuHuet {
+  margin: 2vmin 0vmin -3vmin 0vmin;
+}
+
+.FullStackDeveloper {
+  text-shadow: 0.5vmin 0.5vmin black;
+}
+
 .Mathieu {
   height: 30vmin;
   pointer-events: none;
@@ -22,16 +30,13 @@
 .motiontest {
   animation: Mathieu-spin infinite 16s linear;
 }
-
 .motiontest:hover {
   cursor: grab;
 }
-
 .motiontest:active {
   cursor: grabbing;
   animation: none;
 }
-
 @keyframes Mathieu-spin {
   from {
     transform: rotate(0deg);
@@ -44,6 +49,7 @@
 .Main {
   background-color: #282c34;
   display: flex;
+  align-items: flex-start;
   font-size: calc(10px + 2vmin);
   color: #f8f8e6;
   -webkit-animation: fadein 2s; /* Safari, Chrome and Opera > 12.1 */
@@ -107,7 +113,7 @@
 
 
 .Button-Resume {
-  margin-left: 4vmin;
+  margin-right: 4vmin;
   background-color: #f8f8e6;
   color: #282c34;
   font-size: 5vmin;

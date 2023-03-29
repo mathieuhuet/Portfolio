@@ -17,11 +17,12 @@ import Experiences from '../Experiences/experiences';
 function Main () {
   let navigate = useNavigate();
 
+  const isTabletOrMobile = useMediaQuery({ query: '(max-width: 1224px)' });
   const isPortrait = useMediaQuery({ query: '(orientation: portrait)' });
 
   return (
     <div>
-      {isPortrait ? <Portrait /> : <Landscape />}
+      {isPortrait || isTabletOrMobile ? <Portrait /> : <Landscape />}
     </div>
   );
 
@@ -43,13 +44,14 @@ function Main () {
         >
           <img src={mathieu} className="Mathieu" alt="Mathieu's face spinnin'" />
         </motion.div>
-        <h2>Mathieu Huet</h2>
+        <h2 className='MathieuHuet'>Mathieu Huet</h2>
+          <h2 className='FullStackDeveloper'>Full Stack Developer</h2>
         <div className='MainNavigate'>
-          <div className="Button-BatteryProject" onClick={() => navigate('/battery_monitoring')}>
-            <GiBatteries />
-          </div>
           <div className="Button-Resume" onClick={() => navigate('/resume')}>
             <HiOutlineClipboardDocumentList />
+          </div>
+          <div className="Button-BatteryProject" onClick={() => navigate('/battery_monitoring')}>
+            <GiBatteries />
           </div>
         </div>
         <br />
@@ -95,7 +97,8 @@ function Main () {
           >
             <img src={mathieu} className="Mathieu" alt="Mathieu's face spinnin'" />
           </motion.div>
-          <h2>Mathieu Huet</h2>
+          <h2 className='MathieuHuet'>Mathieu Huet</h2>
+          <h2 className='FullStackDeveloper'>Full Stack Developer</h2>
           <div className='MainNavigate'>
             <div className="Button-BatteryProject" onClick={() => navigate('/battery_monitoring')}>
               <GiBatteries />

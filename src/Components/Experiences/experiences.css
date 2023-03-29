@@ -15,7 +15,9 @@
 }
 
 .ExperienceSearch {
-
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
 }
 
 .SearchBar {
@@ -26,21 +28,32 @@
   font-size: 3vmin;
   padding: 2vmin;
   margin-left: 5vmin;
-  width: 50vmin;
+  margin-bottom: 5vmin;
+  width: 40vmin;
   display: flex;
 }
-
 ::placeholder { /* Chrome, Firefox, Opera, Safari 10.1+ */
   color: #f8f8e6;
   opacity: 1; /* Firefox */
 }
-
 :-ms-input-placeholder { /* Internet Explorer 10-11 */
   color: #f8f8e6;
 }
-
 ::-ms-input-placeholder { /* Microsoft Edge */
   color: #f8f8e6;
+}
+
+.PDF-Download {
+  color: #f8f8e6;
+}
+
+.DownloadSection {
+  margin: -3vmin 0vmin 0vmin 0vmin;
+  padding: 0vmin 0vmin 0vmin 4vmin;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: flex-start;
 }
 
 .IndividualExperience {
@@ -48,17 +61,19 @@
   border-style: dashed none none none;
   border-color: #f8f8e6;
   color: #f8f8e6;
-  margin: 5vmin 0vmin 0vmin 5vmin;
-  padding-left: 4vmin;
-  padding-top: 4vmin;
+  margin: 0vmin 0vmin 1vmin 5vmin;
+  padding: 4vmin 0vmin 4vmin 4vmin;
   display: flex;
   flex-direction: column;
   align-items: flex-start;
+  text-decoration: none;
 }
 
 .IndividualExperience:hover {
   cursor: pointer;
   background-color: #f8f8e6;
+  margin: 0vmin 0vmin 1vmin 4vmin;
+  box-shadow: 1vmin 1vmin black;
   color: #282c34;
 }
 
@@ -97,52 +112,99 @@
   margin-bottom: 1vmin;
 }
 
-
-
-
-
-
-
-
-.TopButtons {
+.DisplayedExperience {
+  min-width: 80vmin;
+  width: 60vw;
   display: flex;
-  justify-content: space-between;
-  position: fixed;
-  width: calc(100vw - 10px);
-}
-
-.Button-backToMain {
+  flex-direction: column;
+  align-items: flex-start;
   background-color: #f8f8e6;
   color: #282c34;
-  height: 11vmin;
-  width: 11vmin;
-  border-radius: 50%;
+  box-shadow: 4vmin 4vmin black;
+}
+
+.TopButtonsDisplayExperience {
+  min-width: 80vmin;
+  width: 60vw;
+  display: flex;
+  justify-content: space-between;
+}
+
+.CloseExperience {
+  margin: 1vmin 0vmin 0vmin 1vmin;
+  font-size: 5vmin;
+}
+.CloseExperience:hover {
+  cursor: pointer;
+}
+
+.ChangeLanguage {
+  margin: 1vmin 3vmin 0vmin 0vmin;
+  position: relative;
+  height: 5vmin;
+  width: 5vmin;
+  background-color: #f8f8e6;
+  color: #282c34;
   display: flex;
   justify-content: center;
   align-items: center;
-  position: relative;
-  margin: 2vmin;
-  font-size: 7vmin;
-  animation: nothover 1s;
+  border-radius: 1vmin;
+  font-size: 3vmin;
 }
-.Button-backToMain:hover {
+.ChangeLanguage:hover {
   cursor: pointer;
   background-color:#282c34;
   color: #f8f8e6;
-  animation: hover 1s;
 }
-@keyframes nothover {
-  from {background-color: #282c34;}
-  to {background-color: #f8f8e6;}
-  from {color: #f8f8e6;}
-  to {color: #282c34;}
+
+
+.SingleExperience {
+  margin: 0vmin 3vmin 3vmin 3vmin;
+  font-size: calc(10px + 2vmin);
 }
-@keyframes hover {
-  from {color: #282c34;}
-  to {color: #f8f8e6;}
-  from {background-color: #f8f8e6;}
-  to {background-color: #282c34;}
+
+
+.ExperienceDetail {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  flex-wrap: wrap;
+  margin: 0vmin 0vmin 0vmin 5vmin;
 }
+
+.expLine {
+  text-align: left;
+}
+
+.Codeworks-Link {
+  border: 0.5vmin solid #282c34;
+  box-shadow: 0.5vmin 0.5vmin #282c34;
+  color: #282c34;
+  text-decoration: none;
+  border-radius: 2vmin;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 3vmin;
+  padding: 1vmin;
+}
+
+.Codeworks-Link:hover {
+  cursor: pointer;
+  background-color:#282c34;
+  color: #f8f8e6;
+}
+
+.Codeworks-Link:active {
+  margin-left: 0.5vmin;
+  margin-top: 0.5vmin;
+  box-shadow: 0vmin 0vmin #282c34;
+}
+
+
+
+
+
 
 
 @keyframes fadein {
