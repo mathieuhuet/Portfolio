@@ -7,11 +7,12 @@ import { experienceDetail } from './experienceDetail';
 import resumeEnglish from './../../Assets/Mathieu_Huet_Resume_English.pdf';
 import resumeFrancais from './../../Assets/Mathieu_Huet_Resume_Francais.pdf';
 
+/*
+Component that display my past experiences. Might appear on the main page if screen of the user is wide enough, otherwise will appear at http://www.mathieuhuet.com/resume/
+*/
 
 function Experiences () {
-
   let navigate = useNavigate();
-
   const experiences = useMemo(() => [
     {
       id: 0,
@@ -73,6 +74,7 @@ function Experiences () {
     }
     setResult(res);
   }, [search, experiences])
+
 
 
   function DisplayExperience () {

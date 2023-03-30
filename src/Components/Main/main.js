@@ -11,8 +11,9 @@ import { HiOutlineClipboardDocumentList } from "react-icons/hi2";
 import mathieu from '../../Assets/MathieuProfil.jpg';
 import Experiences from '../Experiences/experiences';
 
-
-
+/*
+Main page of the website, where you go when entering http://www.mathieuhuet.com/
+*/
 
 function Main () {
   let navigate = useNavigate();

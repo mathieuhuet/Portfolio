@@ -5,14 +5,10 @@ import Routing from "./Components/Routing/routing";
 
 
 function App() {
-
-
   return (
     <div className="App">
       <Router>
-        <Routing 
-
-        />
+        <Routing />
       </Router>
     </div>
   );
