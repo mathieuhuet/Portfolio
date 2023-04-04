@@ -1,5 +1,5 @@
 .Experiences {
-  margin: 5vmin;
+  margin: 5vmin 0vmin 0vmin 3vmin;
   -webkit-animation: fadein 2s; /* Safari, Chrome and Opera > 12.1 */
   -moz-animation: fadein 2s; /* Firefox < 16 */
    -ms-animation: fadein 2s; /* Internet Explorer */
@@ -49,7 +49,7 @@
 .DownloadSection {
   margin: -3vmin 0vmin 0vmin 0vmin;
   padding: 0vmin 0vmin 0vmin 4vmin;
-  font-size: calc(10px + 2vmin);
+  font-size: 2.2vmin;
   color: #f8f8e6;
   display: flex;
   flex-direction: column;
@@ -58,6 +58,7 @@
 }
 
 .IndividualExperience {
+  min-width: 85vmin;
   width: 60vw;
   border-style: dashed none none none;
   border-color: #f8f8e6;
@@ -69,7 +70,6 @@
   align-items: flex-start;
   text-decoration: none;
 }
-
 .IndividualExperience:hover {
   cursor: pointer;
   background-color: #f8f8e6;
@@ -77,6 +77,7 @@
   box-shadow: 1vmin 1vmin black;
   color: #282c34;
 }
+
 
 .IETop {
   display: flex;
@@ -114,7 +115,7 @@
 }
 
 .DisplayedExperience {
-  min-width: 80vmin;
+  min-width: 85vmin;
   width: 60vw;
   display: flex;
   flex-direction: column;

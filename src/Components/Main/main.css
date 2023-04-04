@@ -23,7 +23,7 @@
 }
 
 .Mathieu {
-  height: 30vmin;
+  height: 25vmin;
   pointer-events: none;
   border-radius: 50%;
 }
@@ -50,7 +50,7 @@
   background-color: #282c34;
   display: flex;
   align-items: flex-start;
-  font-size: calc(10px + 2vmin);
+  font-size: 2.2vmin;
   color: #f8f8e6;
   -webkit-animation: fadein 2s; /* Safari, Chrome and Opera > 12.1 */
   -moz-animation: fadein 2s; /* Firefox < 16 */

@@ -86,7 +86,7 @@ d'afficheurs dynamiques.</div>
   </div>,
 
   uqamEN: <div className="ExperienceDetail">
-    <div className="expLine">cumulative average : 3.37 / 4.3</div>
+    <div className="expLine">GPA : 3.37 / 4.3</div>
     <br />
     <div className="expLine"> - Programmation 1</div>
     <div className="expLine"> - Programmation 2</div>

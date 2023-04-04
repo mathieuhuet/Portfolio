@@ -18,12 +18,11 @@ Main page of the website, where you go when entering http://www.mathieuhuet.com/
 function Main () {
   let navigate = useNavigate();
 
-  const isTabletOrMobile = useMediaQuery({ query: '(max-width: 1224px)' });
   const isPortrait = useMediaQuery({ query: '(orientation: portrait)' });
 
   return (
     <div>
-      {isPortrait || isTabletOrMobile ? <Portrait /> : <Landscape />}
+      {isPortrait ? <Portrait /> : <Landscape />}
     </div>
   );
 

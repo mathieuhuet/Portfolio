@@ -17,20 +17,20 @@ function Experiences () {
     {
       id: 0,
       institution: 'Battery Monitoring',
-      languages: ['Node.js', 'Javascript', 'React', 'PostgreSQL', 'Koa', 'RESTful API', 'SNMP', 'UDP/IP', 'OpenVPN', 'Git'],
+      languages: ['Node.js', 'Javascript', 'React', 'PostgreSQL', 'Sequelize', 'Koa', 'RESTful API', 'SNMP', 'UDP/IP', 'OpenVPN', 'Git', 'IoT'],
       date: '2023',
     },
     {
       id: 1,
       institution: 'Codeworks Bootcamp',
-      languages: ['Node.js', 'Javascript', 'TypeScript', 'React', 'React Native', 'Redux', 'Angular', 'HTML', 'CSS', 'SQL', 'NoSQL', "GraphQL", 'MongoDB', 'Redis', 'Express', 'Koa', 'Expo', 'Git', 'JSON', 'RESTful API', 'Socket.IO', 'Linux/Unix'],
+      languages: ['Node.js', 'Javascript', 'TypeScript', 'React', 'React Native', 'Redux', 'Angular', 'jQuery', 'HTML', 'CSS', 'SQL', 'NoSQL', "GraphQL", 'Sequelize ORM', 'MongoDB', 'Mongoose ORM', 'Redis', 'Express', 'Koa', 'Expo', 'Git', 'JSON', 'RESTful API', 'Socket.IO', 'Linux/Unix'],
       date: '2022-2023',
 
     },
     {
       id: 2,
       institution: 'Innovation Mi8',
-      languages: ['Python', 'Bash', 'OpenVPN', 'Linux/Unix/Bash', 'TCP/IP', 'UDP/IP'],
+      languages: ['Python', 'OpenVPN', 'Linux/Unix/Bash', 'TCP/IP', 'UDP/IP', 'IoT'],
       date: '2021-2022',
 
     },
@@ -207,8 +207,6 @@ function Experiences () {
     }
   }
 
-
-
   return (
     <div className="Experiences">
       <DisplayExperience />
@@ -274,6 +272,7 @@ function Experiences () {
       </div>
     </div>
   );
+
 }
 
 export default Experiences;
