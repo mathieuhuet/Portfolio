@@ -29,7 +29,7 @@ function Main () {
   function Portrait () {
     return (
       <div className='MainPortrait'>
-        <Helmet><title>Mathieu's Portfolio</title></Helmet>
+        <Helmet><title>Mathieu Huet</title></Helmet>
         <motion.div
           className="motiontest"
           initial={{ opacity: 0, rotate: 0 }}
@@ -39,8 +39,6 @@ function Main () {
             transition: { duration: 0.1 },
           }}
           whileTap={{ scale: 1.05, rotate: 360 }}
-          drag={true}
-          dragConstraints={{ left: 0, right: 0, top: 0, bottom: 0 }}
         >
           <img src={mathieu} className="Mathieu" alt="Mathieu's face spinnin'" />
         </motion.div>
@@ -82,7 +80,7 @@ function Main () {
     return (
       <div className="Main">
         <div className='MainLeft'>
-          <Helmet><title>Mathieu's Portfolio</title></Helmet>
+          <Helmet><title>Mathieu Huet</title></Helmet>
           <motion.div
             className="motiontest"
             initial={{ opacity: 0, rotate: 0 }}

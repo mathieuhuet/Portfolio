@@ -42,6 +42,7 @@
   color: #f8f8e6;
 }
 
+
 .PDF-Download {
   color: #f8f8e6;
 }
@@ -69,15 +70,32 @@
   flex-direction: column;
   align-items: flex-start;
   text-decoration: none;
+  animation: individualExp 0.18s;
+  animation-iteration-count: 1;
+}
+@keyframes individualExp {
+  0% {box-shadow: 1vmin 1vmin black; margin: 0vmin 0vmin 1vmin 4vmin; background-color: #f8f8e6; color: #282c34;}
+  25% {box-shadow: 0.75vmin 0.75vmin black; margin: 0vmin 0vmin 1vmin 4.25vmin;}
+  50% {box-shadow: 0.5vmin 0.5vmin black; margin: 0vmin 0vmin 1vmin 4.5vmin;}
+  75% {box-shadow: 0.25vmin 0.25vmin black; margin: 0vmin 0vmin 1vmin 4.75vmin;}
+  100% {box-shadow: 0vmin 0vmin black; margin: 0vmin 0vmin 1vmin 5vmin; background-color: #282c34; color: #f8f8e6;}
 }
 .IndividualExperience:hover {
   cursor: pointer;
   background-color: #f8f8e6;
   margin: 0vmin 0vmin 1vmin 4vmin;
   box-shadow: 1vmin 1vmin black;
+  animation: individualExpHover 0.18s;
+  animation-iteration-count: 1;
   color: #282c34;
 }
-
+@keyframes individualExpHover {
+  0% {box-shadow: 0vmin 0vmin black; margin: 0vmin 0vmin 1vmin 5vmin; background-color: #282c34; color: #f8f8e6;}
+  25% {box-shadow: 0.25vmin 0.25vmin black; margin: 0vmin 0vmin 1vmin 4.75vmin;}
+  50% {box-shadow: 0.5vmin 0.5vmin black; margin: 0vmin 0vmin 1vmin 4.5vmin;}
+  75% {box-shadow: 0.75vmin 0.75vmin black; margin: 0vmin 0vmin 1vmin 4.25vmin;}
+  100% {box-shadow: 1vmin 1vmin black; margin: 0vmin 0vmin 1vmin 4vmin; background-color: #f8f8e6; color: #282c34;}
+}
 
 .IETop {
   display: flex;

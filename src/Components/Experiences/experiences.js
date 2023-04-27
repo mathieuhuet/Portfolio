@@ -2,11 +2,7 @@ import './experiences.css';
 import React,{ useState, useEffect, useMemo } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { CgCloseO } from "react-icons/cg";
-import { VscFilePdf } from "react-icons/vsc";
 import { experienceDetail } from './experienceDetail';
-import resumeEnglish from './../../Assets/Mathieu_Huet_Resume_English.pdf';
-import resumeFrancais from './../../Assets/Mathieu_Huet_Resume_Francais.pdf';
-
 /*
 Component that display my past experiences. Might appear on the main page if screen of the user is wide enough, otherwise will appear at http://www.mathieuhuet.com/resume/
 */
@@ -221,26 +217,7 @@ function Experiences () {
             className='SearchBar'
           />
         </div>
-        <div className='DownloadSection'>
-          <div className='Download-Link'>Télécharger mon CV &nbsp;
-          <a
-            className="PDF-Download"
-            href={resumeFrancais}
-            download='Mathieu_Huet_CV.pdf'
-          >
-             <VscFilePdf />
-          </a>
-          </div>
-          <div className='Download-Link'>Download my resume &nbsp;
-          <a
-            className="PDF-Download"
-            href={resumeEnglish}
-            download='Mathieu_Huet_Resume.pdf'
-          >
-            <VscFilePdf />
-          </a>
-          </div>
-        </div>
+
       </div> : 
       undefined}
       <div className='ExperienceList'>
