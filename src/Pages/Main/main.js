@@ -53,7 +53,6 @@ function Main () {
           </div>
         </div>
         <br />
-        <br />
         <div className="All-link">
           <a
             className="GitHub-link"
@@ -97,16 +96,6 @@ function Main () {
           </motion.div>
           <h2 className='MathieuHuet'>Mathieu Huet</h2>
           <h2 className='FullStackDeveloper'>Full Stack Developer</h2>
-          <div className='MainNavigate'>
-            <div className="Button-BatteryProject" onClick={() => navigate('/battery_monitoring')}>
-              <GiBatteries />
-            </div>
-            {/* <div className="Button-Resume" onClick={() => navigate('/resume')}>
-              <HiOutlineClipboardDocumentList />
-            </div> */}
-          </div>
-          <br />
-          <br />
           <div className="All-link">
             <a
               className="GitHub-link"
