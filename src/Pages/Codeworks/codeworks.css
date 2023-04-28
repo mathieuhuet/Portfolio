@@ -1,0 +1,98 @@
+.PageContainer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 80vh;
+}
+
+.DisplayedExperience {
+  margin-top: 10vmin;
+  min-width: 85vmin;
+  width: 60vw;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  background-color: #f8f8e6;
+  color: #282c34;
+  box-shadow: 4vmin 4vmin black;
+}
+
+.TopButtonsDisplayExperience {
+  min-width: 80vmin;
+  width: 60vw;
+  display: flex;
+  justify-content: space-between;
+}
+
+.CloseExperience {
+  margin: 1vmin 0vmin 0vmin 1vmin;
+  font-size: 5vmin;
+}
+.CloseExperience:hover {
+  cursor: pointer;
+}
+
+.ChangeLanguage {
+  margin: 1vmin 3vmin 0vmin 0vmin;
+  position: relative;
+  height: 5vmin;
+  width: 5vmin;
+  background-color: #f8f8e6;
+  color: #282c34;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 1vmin;
+  font-size: 3vmin;
+  border: 0.5vmin solid #282c34;
+  box-shadow: 0.2vmin 0.2vmin #282c34;
+}
+.ChangeLanguage:hover {
+  cursor: pointer;
+  background-color:#282c34;
+  color: #f8f8e6;
+}
+
+
+.SingleExperience {
+  margin: 0vmin 3vmin 3vmin 3vmin;
+  font-size: calc(10px + 2vmin);
+}
+
+
+.ExperienceDetail {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  flex-wrap: wrap;
+  margin: 0vmin 0vmin 0vmin 5vmin;
+}
+
+.expLine {
+  text-align: left;
+}
+
+.Codeworks-Link {
+  border: 0.5vmin solid #282c34;
+  box-shadow: 0.5vmin 0.5vmin #282c34;
+  color: #282c34;
+  text-decoration: none;
+  border-radius: 2vmin;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 3vmin;
+  padding: 1vmin;
+}
+
+.Codeworks-Link:hover {
+  cursor: pointer;
+  background-color:#282c34;
+  color: #f8f8e6;
+}
+
+.Codeworks-Link:active {
+  margin-left: 0.5vmin;
+  margin-top: 0.5vmin;
+  box-shadow: 0vmin 0vmin #282c34;
+}
