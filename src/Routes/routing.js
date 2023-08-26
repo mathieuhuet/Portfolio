@@ -6,6 +6,8 @@ import Experiences from '../Pages/Experiences/experiences';
 import Codeworks from '../Pages/Codeworks/codeworks';
 import Uqam from '../Pages/UQAM/uqam';
 import Mi8 from '../Pages/Mi8/mi8';
+import FriendlyBets from '../Pages/FriendlyBets/friendlyBets';
+import GPMM from '../Pages/GPMM/gpmm';
 
 
 /*
@@ -32,6 +34,14 @@ const Routing = () => {
         <Route
           path="/battery_monitoring"
           element={<BatteryMonitoring />}
+        />
+        <Route
+          path="/friendly_bets"
+          element={<FriendlyBets />}
+        />
+        <Route
+          path="/gpmm"
+          element={<GPMM />}
         />
         <Route 
           path="/resume" 

@@ -149,6 +149,85 @@
   to {box-shadow: 1vmin 1vmin black; margin: 0vmin 0vmin 1vmin 4vmin; background-color: #f8f8e6; color: #282c34;}
 }
 
+.IndividualExperienceNoClick {
+  min-width: 85vmin;
+  width: 60vw;
+  border-style: dashed none none none;
+  border-color: #f8f8e6;
+  color: #f8f8e6;
+  margin: 0vmin 0vmin 1vmin 5vmin;
+  padding: 4vmin 0vmin 4vmin 4vmin;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  text-decoration: none;
+  -webkit-animation: individualExp 0.25s; /* Safari, Chrome and Opera > 12.1 */
+  -moz-animation: individualExp 0.25s; /* Firefox < 16 */
+   -ms-animation: individualExp 0.25s; /* Internet Explorer */
+    -o-animation: individualExp 0.25s; /* Opera < 12.1 */
+    animation: individualExp 0.25s;
+}
+@keyframes individualExp {
+  from {box-shadow: 1vmin 1vmin black; margin: 0vmin 0vmin 1vmin 4vmin; background-color: #f8f8e6; color: #282c34;}
+  to {box-shadow: 0vmin 0vmin black; margin: 0vmin 0vmin 1vmin 5vmin; background-color: #282c34; color: #f8f8e6;}
+}
+/* Firefox < 16 */
+@-moz-keyframes individualExp {
+  from {box-shadow: 1vmin 1vmin black; margin: 0vmin 0vmin 1vmin 4vmin; background-color: #f8f8e6; color: #282c34;}
+  to {box-shadow: 0vmin 0vmin black; margin: 0vmin 0vmin 1vmin 5vmin; background-color: #282c34; color: #f8f8e6;}
+}
+/* Safari, Chrome and Opera > 12.1 */
+@-webkit-keyframes individualExp {
+  from {box-shadow: 1vmin 1vmin black; margin: 0vmin 0vmin 1vmin 4vmin; background-color: #f8f8e6; color: #282c34;}
+  to {box-shadow: 0vmin 0vmin black; margin: 0vmin 0vmin 1vmin 5vmin; background-color: #282c34; color: #f8f8e6;}
+}
+/* Internet Explorer */
+@-ms-keyframes individualExp {
+  from {box-shadow: 1vmin 1vmin black; margin: 0vmin 0vmin 1vmin 4vmin; background-color: #f8f8e6; color: #282c34;}
+  to {box-shadow: 0vmin 0vmin black; margin: 0vmin 0vmin 1vmin 5vmin; background-color: #282c34; color: #f8f8e6;}
+}
+/* Opera < 12.1 */
+@-o-keyframes individualExp {
+  from {box-shadow: 1vmin 1vmin black; margin: 0vmin 0vmin 1vmin 4vmin; background-color: #f8f8e6; color: #282c34;}
+  to {box-shadow: 0vmin 0vmin black; margin: 0vmin 0vmin 1vmin 5vmin; background-color: #282c34; color: #f8f8e6;}
+}
+
+.IndividualExperienceNoClick:hover {
+  background-color: #f8f8e6;
+  color: #282c34;
+  margin: 0vmin 0vmin 1vmin 4vmin;
+  box-shadow: 1vmin 1vmin black;
+  -webkit-animation: individualExpHover 0.25s; /* Safari, Chrome and Opera > 12.1 */
+  -moz-animation: individualExpHover 0.25s; /* Firefox < 16 */
+   -ms-animation: individualExpHover 0.25s; /* Internet Explorer */
+    -o-animation: individualExpHover 0.25s; /* Opera < 12.1 */
+    animation: individualExpHover 0.25s;
+}
+@keyframes individualExpHover {
+  from {box-shadow: 0vmin 0vmin black; margin: 0vmin 0vmin 1vmin 5vmin; background-color: #282c34; color: #f8f8e6;}
+  to {box-shadow: 1vmin 1vmin black; margin: 0vmin 0vmin 1vmin 4vmin; background-color: #f8f8e6; color: #282c34;}
+}
+/* Firefox < 16 */
+@-moz-keyframes individualExpHover {
+  from {box-shadow: 0vmin 0vmin black; margin: 0vmin 0vmin 1vmin 5vmin; background-color: #282c34; color: #f8f8e6;}
+  to {box-shadow: 1vmin 1vmin black; margin: 0vmin 0vmin 1vmin 4vmin; background-color: #f8f8e6; color: #282c34;}
+}
+/* Safari, Chrome and Opera > 12.1 */
+@-webkit-keyframes individualExpHover {
+  from {box-shadow: 0vmin 0vmin black; margin: 0vmin 0vmin 1vmin 5vmin; background-color: #282c34; color: #f8f8e6;}
+  to {box-shadow: 1vmin 1vmin black; margin: 0vmin 0vmin 1vmin 4vmin; background-color: #f8f8e6; color: #282c34;}
+}
+/* Internet Explorer */
+@-ms-keyframes individualExpHover {
+  from {box-shadow: 0vmin 0vmin black; margin: 0vmin 0vmin 1vmin 5vmin; background-color: #282c34; color: #f8f8e6;}
+  to {box-shadow: 1vmin 1vmin black; margin: 0vmin 0vmin 1vmin 4vmin; background-color: #f8f8e6; color: #282c34;}
+}
+/* Opera < 12.1 */
+@-o-keyframes individualExpHover {
+  from {box-shadow: 0vmin 0vmin black; margin: 0vmin 0vmin 1vmin 5vmin; background-color: #282c34; color: #f8f8e6;}
+  to {box-shadow: 1vmin 1vmin black; margin: 0vmin 0vmin 1vmin 4vmin; background-color: #f8f8e6; color: #282c34;}
+}
+
 
 .IETop {
   display: flex;

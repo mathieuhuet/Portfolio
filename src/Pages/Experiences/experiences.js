@@ -8,28 +8,64 @@ function Experiences () {
   const experiences = useMemo(() => [
     {
       id: 0,
+      institution: 'GPMM_Alertes',
+      blurb: "",
+      languages: ['Node.js', 'Typescript', 'React', 'React Native', 'MongoDB', 'Mongoose', 'Express.js', 'RESTful API', 'Git'],
+      date: '2023',
+      route: 'gpmm',
+    },
+    {
+      id: 1,
+      institution: 'Friendly Bets',
+      blurb: "",
+      languages: ['Node.js', 'Typescript', 'React Native', 'MongoDB', 'Mongoose', 'Express.js', 'RESTful API', 'Git'],
+      date: '2023',
+      route: 'friendly_bets',
+    },
+    {
+      id: 2,
       institution: 'Battery Monitoring',
+      blurb: "",
       languages: ['Node.js', 'Javascript', 'React', 'PostgreSQL', 'Sequelize', 'Koa', 'RESTful API', 'SNMP', 'UDP/IP', 'OpenVPN', 'Git', 'IoT'],
       date: '2023',
       route: 'battery_monitoring',
     },
     {
-      id: 1,
+      id: 3,
       institution: 'Codeworks Bootcamp',
-      languages: ['Node.js', 'Javascript', 'TypeScript', 'React', 'React Native', 'Redux', 'Angular', 'jQuery', 'HTML', 'CSS', 'SQL', 'NoSQL', "GraphQL", 'Sequelize ORM', 'MongoDB', 'Mongoose ORM', 'Redis', 'Express', 'Koa', 'Expo', 'Git', 'JSON', 'RESTful API', 'Socket.IO', 'Linux/Unix'],
+      blurb: "",
+      languages: ['Node.js', 'Javascript', 'TypeScript', 'React', 'React Native', 'Redux', 'Angular', 'jQuery', 'HTML', 'CSS', 'SQL', 'NoSQL', "GraphQL", 'Sequelize ORM', 'MongoDB', 'Mongoose ORM', 'Redis', 'Express', 'Koa', 'Docker', 'Expo', 'Git', 'JSON', 'RESTful API', 'Socket.IO', 'Linux/Unix'],
       date: '2022-2023',
       route: 'codeworks',
     },
     {
-      id: 2,
+      id: 4,
+      institution: 'Learn PHP Course',
+      blurb: "",
+      languages: ['HTML', 'CSS', 'PHP', 'JavaScript'],
+      date: '2022',
+      route: '',
+    },
+    {
+      id: 5,
       institution: 'Innovation Mi8',
+      blurb: "",
       languages: ['Python', 'OpenVPN', 'Linux/Unix/Bash', 'TCP/IP', 'UDP/IP', 'IoT'],
       date: '2021-2022',
       route: 'mi8',
     },
     {
-      id: 3,
+      id: 6,
+      institution: 'Crash Course on Python',
+      blurb: "Certificat obtenu pour le cours en ligne autorisé par Google et proposé par l'intermédiaire de Coursera.",
+      languages: ['Python'],
+      date: '2020',
+      route: '',
+    },
+    {
+      id: 7,
       institution: 'Université du Québec à Montréal',
+      blurb: "",
       languages: ['Java', 'Assembly Language', 'MySQL', 'C++', 'Linux/Unix/Bash', 'Android Studio', 'GUI', 'HTML', 'CSS'],
       date: '2017-2020',
       route: 'uqam',
@@ -81,27 +117,58 @@ function Experiences () {
       </div>
       <div className='ExperienceList'>
         {result.map(exp => 
-          <div className='IndividualExperience' key={exp.id} onClick={() => {
-            navigate(`/${exp.route}`);
-          }}>
-            <div className='IETop'>
-              <div className='IEInstitution'>
-                {exp.institution}
+          <>
+          {exp.route &&
+            <div className='IndividualExperience' key={exp.id} onClick={() => {
+              navigate(`/${exp.route}`);
+            }}>
+              <div className='IETop'>
+                <div className='IEInstitution'>
+                  {exp.institution}
+                </div>
+                <div className='IEDate'>
+                  {exp.date}
+                </div>
               </div>
-              <div className='IEDate'>
-                {exp.date}
+              <div className='IEMiddle'>
+                {exp.blurb}
+              </div>
+              <div className='IEBottom'>
+                <div className='IELanguages'>
+                  {exp.languages.map(lang =>
+                    <div className="Languages" key={lang}>
+                      {lang}
+                    </div>
+                  )}
+                </div>
               </div>
             </div>
-            <div className='IEBottom'>
-              <div className='IELanguages'>
-                {exp.languages.map(lang =>
-                  <div className="Languages" key={lang}>
-                    {lang}
-                  </div>
-                )}
+          }
+          {!exp.route &&
+            <div className='IndividualExperienceNoClick' key={exp.id}>
+              <div className='IETop'>
+                <div className='IEInstitution'>
+                  {exp.institution}
+                </div>
+                <div className='IEDate'>
+                  {exp.date}
+                </div>
+              </div>
+              <div className='IEMiddle'>
+                {exp.blurb}
+              </div>
+              <div className='IEBottom'>
+                <div className='IELanguages'>
+                  {exp.languages.map(lang =>
+                    <div className="Languages" key={lang}>
+                      {lang}
+                    </div>
+                  )}
+                </div>
               </div>
             </div>
-          </div>
+          }
+          </>
         )}
       </div>
     </div>

@@ -1,5 +1,8 @@
 .Main {
-  background-color: #282c34;
+  background: -webkit-linear-gradient(#282c34, #3b4049);
+  background: -o-linear-gradient(#282c34, #3b4049);
+  background: -moz-linear-gradient(#282c34, #3b4049);
+  background: linear-gradient(#282c34, #3b4049);
   display: flex;
   align-items: flex-start;
   font-size: 2.2vmin;
@@ -12,7 +15,6 @@
 }
 .MainPortrait {
   height: 80vh;
-  background-color: #282c34;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -63,24 +65,13 @@
   pointer-events: none;
   border-radius: 50%;
 }
-.motiontest {
-  animation: Mathieu-spin infinite 16s linear;
-}
 .motiontest:hover {
   cursor: grab;
 }
 .motiontest:active {
   cursor: grabbing;
-  animation: none;
 }
-@keyframes Mathieu-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
-}
+
 
 .MainLeft {
   margin: 5vmin 0vmin 0vmin 5vmin;
