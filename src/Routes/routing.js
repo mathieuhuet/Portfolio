@@ -2,7 +2,7 @@ import React from 'react';
 import { Routes, Route } from 'react-router-dom';
 import Main from '../Pages/Main/main'
 import BatteryMonitoring from '../Pages/BatteryMonitoring/batterymonitoring'
-import Experiences from '../Pages/Experiences/experiences';
+import Experiences from '../Components/Experiences/experiences';
 import Codeworks from '../Pages/Codeworks/codeworks';
 import Uqam from '../Pages/UQAM/uqam';
 import Mi8 from '../Pages/Mi8/mi8';

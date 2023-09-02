@@ -65,7 +65,7 @@ function Experiences () {
     {
       id: 7,
       institution: 'Université du Québec à Montréal',
-      blurb: "",
+      blurb: "Première introduction à la programmation avec le cours de Programmation 1 et 2 (Java), Fichiers et bases de données (SQL), Oraganisation des ordinateurs et language d'assembleur (Assembly Language) et Construction et maintenance de logiciel (C++)",
       languages: ['Java', 'Assembly Language', 'MySQL', 'C++', 'Linux/Unix/Bash', 'Android Studio', 'GUI', 'HTML', 'CSS'],
       date: '2017-2020',
       route: 'uqam',

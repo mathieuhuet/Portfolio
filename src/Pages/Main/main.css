@@ -1,26 +1,30 @@
 .Main {
-  background: -webkit-linear-gradient(#282c34, #3b4049);
-  background: -o-linear-gradient(#282c34, #3b4049);
-  background: -moz-linear-gradient(#282c34, #3b4049);
-  background: linear-gradient(#282c34, #3b4049);
+  background-color: #f6f6f6;
   display: flex;
+  flex-direction: column;
   align-items: flex-start;
   font-size: 2.2vmin;
-  color: #f8f8e6;
+  color: #004638;
   -webkit-animation: fadein 2s; /* Safari, Chrome and Opera > 12.1 */
   -moz-animation: fadein 2s; /* Firefox < 16 */
    -ms-animation: fadein 2s; /* Internet Explorer */
     -o-animation: fadein 2s; /* Opera < 12.1 */
        animation: fadein 2s;
 }
+
+.Body {
+  display: flex;
+  flex-direction: row;
+}
+
 .MainPortrait {
-  height: 80vh;
+  height: 60vh;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
   font-size: calc(10px + 2vmin);
-  color: #f8f8e6;
+  color: #004638;
   -webkit-animation: fadein 2s; /* Safari, Chrome and Opera > 12.1 */
   -moz-animation: fadein 2s; /* Firefox < 16 */
    -ms-animation: fadein 2s; /* Internet Explorer */
@@ -55,11 +59,6 @@
 .MathieuHuet {
   margin: 2vmin 0vmin -3vmin 0vmin;
 }
-
-.FullStackDeveloper {
-  text-shadow: 0.5vmin 0.5vmin black;
-}
-
 .Mathieu {
   height: 25vmin;
   pointer-events: none;
@@ -91,66 +90,17 @@
 }
 
 .LinkedIn-link {
-  color: #f8f8e6;
-  margin-left: 4vmin;
-  font-size: 6vmin;
+  color: #004638;
+  margin-left: 2vmin;
+  font-size: 4vmin;
 }
 
 .GitHub-link {
-  color: #f8f8e6;
-  font-size: 6vmin;
+  color: #004638;
+  font-size: 4vmin;
 }
 
 .MainNavigate {
   display: flex;
 }
 
-.Button-BatteryProject {
-  background-color: #f8f8e6;
-  color: #282c34;
-  font-size: 5vmin;
-  width: 8vmin;
-  height: 8vmin;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  border-radius: 2vmin;
-  animation: 0.5s nothover;
-}
-.Button-BatteryProject:hover {
-  cursor: pointer;
-  background-color:#282c34;
-  color: #f8f8e6;
-  animation: hover 0.5s;
-}
-.Button-Resume {
-  margin-right: 4vmin;
-  background-color: #f8f8e6;
-  color: #282c34;
-  font-size: 5vmin;
-  width: 8vmin;
-  height: 8vmin;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  border-radius: 2vmin;
-  animation: 0.5s nothover;
-}
-.Button-Resume:hover {
-  cursor: pointer;
-  background-color:#282c34;
-  color: #f8f8e6;
-  animation: hover 0.5s;
-}
-@keyframes nothover {
-  from {background-color: #282c34;}
-  to {background-color: #f8f8e6;}
-  from {color: #f8f8e6;}
-  to {color: #282c34;}
-}
-@keyframes hover {
-  from {color: #282c34;}
-  to {color: #f8f8e6;}
-  from {background-color: #f8f8e6;}
-  to {background-color: #282c34;}
-}
