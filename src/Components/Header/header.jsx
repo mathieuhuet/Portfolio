@@ -1,31 +1,26 @@
 import './header.css'
 import React,{ useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 
 
 
-
-const Codeworks = () => {
-
+const Header = () => {
+  let navigate = useNavigate();
 
   return (
     <div className='Header'>
-      <div className='HeaderSelection'>
-        Choix 1
+      <div className='HeaderSelection'
+        onClick={() => navigate('/')}
+      >
+        Mathieu
       </div>
-      <div className='HeaderSelection'>
-        Choix 2
-      </div>
-      <div className='HeaderSelection'>
-        Choix 3
-      </div>
-      <div className='HeaderSelection'>
-        Choix 4
-      </div>
-      <div className='HeaderSelection'>
-        Choix 5
+      <div className='HeaderSelection'
+        onClick={() => navigate('/resume')}
+      >
+        Expériences
       </div>
     </div>
   )
 }
 
-export default Codeworks;
+export default Header;

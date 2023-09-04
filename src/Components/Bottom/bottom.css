@@ -1,0 +1,48 @@
+.Bottom {
+  padding-top: 8px;
+  width: 100vw;
+  height: auto;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  background-color: #004638;
+  color: #f6f6f6;
+}
+
+.BottomSection {
+  max-width: 1280px;
+  width: 98vw;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+}
+
+.BottomSelection {
+  font-size: 16px;
+  margin-top: 30px;
+  padding-bottom: 10px;
+  border:none;
+  position: relative;
+  transition: all 0.3s ease-in-out;
+  margin-bottom: 30px;
+}
+
+.BottomSelection:hover {
+  border: none;
+}
+
+.BottomSelection::after{
+  content: '';
+  position: absolute;
+  width: 0px;
+  height: 4px;
+  left: 50%;
+  bottom:0;
+  background:#82bf00;
+  transition: all ease-in-out .15s;
+}
+
+.BottomSelection:hover::after {
+  width: 100%;
+  left: 0;
+}

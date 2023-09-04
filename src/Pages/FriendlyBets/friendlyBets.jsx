@@ -1,25 +1,10 @@
 import './friendlyBets.css';
-import React from "react";
+import React, {useEffect} from "react";
 import { useMediaQuery } from 'react-responsive';
 
 /*
 Component that display the page about the Battery Montiroring project. http://www.mathieuhuet.com/friendly_bets/
 */
-
-const colors = {
-  white: "#fff",
-  black: "#000",
-  primary: "#2c365a",
-  secondary: "#969bad",
-  tertiary: "#fde6bb",
-  accent: "#9ed885",
-  darkGray: "#111827",
-  lightGray: "#6B7280",
-  success: "#22C55E",
-  failure: "#EF4444",
-  purple: "#a377fb",
-  orange: "#ef835d",
-}
 
 function FriendlyBets () {
   // const isDesktopOrLaptop = useMediaQuery({query: '(min-width: 1224px)'});
@@ -27,9 +12,17 @@ function FriendlyBets () {
   const isTabletOrMobile = useMediaQuery({ query: '(max-width: 1224px)' });
   const isPortrait = useMediaQuery({ query: '(orientation: portrait)' });
   // const isRetina = useMediaQuery({ query: '(min-resolution: 2dppx)' });
+  useEffect(() => {
+    window.scrollTo(0, 0)
+  }, [])
   return (
     <div className='FriendlyBets'>
-      test
+      <div className='FriendlyBetsTop'>
+        Work in progress
+      </div>
+      <div className='FriendlyBetsDescription'>
+        Application mobile pour faire des paris avec vos amis et faire les suivi de vos paris.
+      </div>
     </div>
   );
 }

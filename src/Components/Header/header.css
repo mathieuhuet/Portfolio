@@ -1,83 +1,42 @@
 .Header {
-  width: 100%;
+  max-width: 1280px;
+  width: 98vw;
   height: auto;
   display: flex;
   flex-direction: row;
-  justify-content: space-evenly;
-  border-bottom: 4px solid #82bf00; 
+  justify-content: flex-start;
+  border-bottom: 10px solid #82bf00; 
 }
 
 .HeaderSelection {
+  font-size: 24px;
+  font-weight: 700;
+  cursor: pointer;
   margin-top: 30px;
-  font-weight: bold;
-  padding-bottom: 6px;
-  border-bottom: 4px solid #82bf00;
-  border-bottom-width: 0%;
-  margin-bottom: 50px;
-  -webkit-animation: selection 0.25s; /* Safari, Chrome and Opera > 12.1 */
-  -moz-animation: selection 0.25s; /* Firefox < 16 */
-   -ms-animation: selection 0.25s; /* Internet Explorer */
-    -o-animation: selection 0.25s; /* Opera < 12.1 */
-    animation: selection 0.25s;
-}
-@keyframes selection {
-  from {border-bottom-width: 100%;}
-  to {border-bottom-width: 0%;}
-}
-/* Firefox < 16 */
-@-moz-keyframes selection {
-  from {border-bottom-width: 100%;}
-  to {border-bottom-width: 0%;}
-}
-/* Safari, Chrome and Opera > 12.1 */
-@-webkit-keyframes selection {
-  from {border-bottom-width: 100%;}
-  to {border-bottom-width: 0%;}
-}
-/* Internet Explorer */
-@-ms-keyframes selection {
-  from {border-bottom-width: 100%;}
-  to {border-bottom-width: 0%;}
-}
-/* Opera < 12.1 */
-@-o-keyframes selection {
-  from {border-bottom-width: 100%;}
-  to {border-bottom-width: 0%;}
+  padding-bottom: 16px;
+  border:none;
+  position: relative;
+  transition: all 0.3s ease-in-out;
+  margin-bottom: 30px;
+  margin-left: 64px;
 }
 
 .HeaderSelection:hover {
-  cursor: pointer;
-  padding-bottom: 6px;
-  border-bottom: 4px solid #82bf00;
-  border-bottom-width: 100%;
-  margin-bottom: 50px;
-  -webkit-animation: selectionHover 0.25s; /* Safari, Chrome and Opera > 12.1 */
-  -moz-animation: selectionHover 0.25s; /* Firefox < 16 */
-   -ms-animation: selectionHover 0.25s; /* Internet Explorer */
-    -o-animation: selectionHover 0.25s; /* Opera < 12.1 */
-    animation: selectionHover 0.25s;
+  border: none;
 }
-@keyframes selectionHover {
-  from {border-bottom-width: 0%;}
-  to {border-bottom-width: 100%;}
+
+.HeaderSelection::after{
+  content: '';
+  position: absolute;
+  width: 0px;
+  height: 5px;
+  left: 50%;
+  bottom:0;
+  background:#82bf00;
+  transition: all ease-in-out .15s;
 }
-/* Firefox < 16 */
-@-moz-keyframes selectionHover {
-  from {border-bottom-width: 0%;}
-  to {border-bottom-width: 100%;}
-}
-/* Safari, Chrome and Opera > 12.1 */
-@-webkit-keyframes selectionHover {
-  from {border-bottom-width: 0%;}
-  to {border-bottom-width: 100%;}
-}
-/* Internet Explorer */
-@-ms-keyframes selectionHover {
-  from {border-bottom-width: 0%;}
-  to {border-bottom-width: 100%;}
-}
-/* Opera < 12.1 */
-@-o-keyframes selectionHover {
-  from {border-bottom-width: 0%;}
-  to {border-bottom-width: 100%;}
+
+.HeaderSelection:hover::after {
+  width: 100%;
+  left: 0;
 }

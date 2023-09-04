@@ -4,6 +4,8 @@ import Main from '../Pages/Main/main'
 import BatteryMonitoring from '../Pages/BatteryMonitoring/batterymonitoring'
 import Experiences from '../Components/Experiences/experiences';
 import Codeworks from '../Pages/Codeworks/codeworks';
+import Coursera from '../Pages/Coursera/coursera';
+import Codecademy from '../Pages/Codecademy/codecademy';
 import Uqam from '../Pages/UQAM/uqam';
 import Mi8 from '../Pages/Mi8/mi8';
 import FriendlyBets from '../Pages/FriendlyBets/friendlyBets';
@@ -30,6 +32,14 @@ const Routing = () => {
         <Route
           path="/codeworks"
           element={<Codeworks />}
+        />
+        <Route
+          path="/coursera"
+          element={<Coursera />}
+        />
+        <Route
+          path="/codecademy"
+          element={<Codecademy />}
         />
         <Route
           path="/battery_monitoring"

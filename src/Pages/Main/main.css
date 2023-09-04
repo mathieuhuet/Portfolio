@@ -1,29 +1,20 @@
 .Main {
-  background-color: #f6f6f6;
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-  font-size: 2.2vmin;
-  color: #004638;
-  -webkit-animation: fadein 2s; /* Safari, Chrome and Opera > 12.1 */
-  -moz-animation: fadein 2s; /* Firefox < 16 */
-   -ms-animation: fadein 2s; /* Internet Explorer */
-    -o-animation: fadein 2s; /* Opera < 12.1 */
-       animation: fadein 2s;
-}
-
-.Body {
   display: flex;
   flex-direction: row;
+  justify-content: flex-start;
+  align-items: flex-start;
+  font-size: 18px;
+  color: #004638;
+  background-color: #f6f6f6;
 }
 
 .MainPortrait {
-  height: 60vh;
+  height: 512px;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  font-size: calc(10px + 2vmin);
+  font-size: 24px;
   color: #004638;
   -webkit-animation: fadein 2s; /* Safari, Chrome and Opera > 12.1 */
   -moz-animation: fadein 2s; /* Firefox < 16 */
@@ -57,10 +48,10 @@
 }
 
 .MathieuHuet {
-  margin: 2vmin 0vmin -3vmin 0vmin;
+  margin: 16px 0px -24px 0px;
 }
 .Mathieu {
-  height: 25vmin;
+  height: 200px;
   pointer-events: none;
   border-radius: 50%;
 }
@@ -73,15 +64,11 @@
 
 
 .MainLeft {
-  margin: 5vmin 0vmin 0vmin 5vmin;
+  margin: 40px 0px 0px 40px;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-}
-
-.MainRight {
-  display: flex;
 }
 
 .All-link {
@@ -91,16 +78,12 @@
 
 .LinkedIn-link {
   color: #004638;
-  margin-left: 2vmin;
-  font-size: 4vmin;
+  margin-left: 16px;
+  font-size: 32px;
 }
 
 .GitHub-link {
   color: #004638;
-  font-size: 4vmin;
-}
-
-.MainNavigate {
-  display: flex;
+  font-size: 32px;
 }
 

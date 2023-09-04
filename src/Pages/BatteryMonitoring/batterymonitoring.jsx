@@ -1,5 +1,5 @@
 import './batterymonitoring.css';
-import React from "react";
+import React, {useEffect} from "react";
 import { useMediaQuery } from 'react-responsive';
 import Desktop from "./Format/desktop";
 import Mobile from "./Format/mobile";
@@ -15,6 +15,9 @@ function BatteryMonitoring() {
   const isTabletOrMobile = useMediaQuery({ query: '(max-width: 1224px)' });
   const isPortrait = useMediaQuery({ query: '(orientation: portrait)' });
   // const isRetina = useMediaQuery({ query: '(min-resolution: 2dppx)' });
+  useEffect(() => {
+    window.scrollTo(0, 0)
+  }, [])
   return (
     <div className='BatteryProject'>
       {isPortrait ? 

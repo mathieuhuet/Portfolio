@@ -1,78 +1,13 @@
 
-.TopButtonsMobile {
-  display: flex;
-  justify-content: space-between;
-  position: fixed;
-  width: calc(100vw - 10px);
-}
 
-.Button-backToMainMobile {
-  background-color: #f8f8e6;
-  color: #282c34;
-  height: 12vmin;
-  width: 12vmin;
-  border-radius: 50%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  position: relative;
-  margin: 2vmin;
-  font-size: 7vmin;
-  animation: nothover 1s;
-}
-.Button-backToMainMobile:hover {
-  cursor: pointer;
-  background-color:#282c34;
-  color: #f8f8e6;
-  animation: hover 1s;
-}
-@keyframes nothover {
-  from {background-color: #282c34;}
-  to {background-color: #f8f8e6;}
-  from {color: #f8f8e6;}
-  to {color: #282c34;}
-}
-@keyframes hover {
-  from {color: #282c34;}
-  to {color: #f8f8e6;}
-  from {background-color: #f8f8e6;}
-  to {background-color: #282c34;}
-}
-
-.LangueMobile {
-  position: relative;
-  height: 6vmin;
-  width: 6vmin;
-  background-color: #f8f8e6;
-  color: #282c34;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  margin: 2vmin;
-  border-radius: 1vmin;
-  font-size: 2.5vmin;
-  animation: nothover 1s;
-}
-.LangueMobile:hover {
-  cursor: pointer;
-  background-color:#282c34;
-  color: #f8f8e6;
-  animation: hover 1s;
-}
+.BatteryProjectContainerMobile {
 
 
-.BatteryProjectMobile {
-  background-color: #f8f8e6;
-  -webkit-animation: fadein 2s; /* Safari, Chrome and Opera > 12.1 */
-  -moz-animation: fadein 2s; /* Firefox < 16 */
-   -ms-animation: fadein 2s; /* Internet Explorer */
-    -o-animation: fadein 2s; /* Opera < 12.1 */
-       animation: fadein 2s;
 }
 
 .BatterySlide1Mobile {
   background-color: #f8f8e6;
-  color: #282c34;
+  color: #004638;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -85,13 +20,13 @@
 }
 
 .BatteryTitleMobile {
-  font-size: 5vmin;
+  font-size: 40px;
   color: #f8f8e6;
-  text-shadow: -2px 0 #282c34, 0 2px #282c34, 2px 0 #282c34, 0 -2px #282c34;
-  border: 0.5vmin solid #282c34;
-  box-shadow: 0.5vmin 0.5vmin #282c34;
-  border-radius: 2vmin;
-  padding: 1vmin;
+  text-shadow: -2px 0 #004638, 0 2px #004638, 2px 0 #004638, 0 -2px #004638;
+  border: 4px solid #004638;
+  box-shadow: 4px 4px #004638;
+  border-radius: 16px;
+  padding: 8px;
 }
 
 .BatterySlide1BottomMobile {
@@ -103,24 +38,23 @@
 }
 
 .BatteryScreenshot1Mobile {
-  width: 90vmin;
+  width: 640px;
   max-width: 50vmax;
-  margin: 15px;
+  margin: 16px;
 }
 
 .BatteryParagraph1Mobile {
-  width: 60vmin;
-  font-size: 3vmin;
+  width: 480px;
+  font-size: 24px;
 }
 
 .BatterySlide2Mobile {
-  background-color: #282c34;
+  background-color: #004638;
   background-image: url(../../../Assets/background1.png);
   background-repeat: no-repeat;
   background-attachment: scroll;
   background-position: center;
   background-size: cover;
-  color: #f8f8e6;
   display: flex;
   align-items: flex-start;
   justify-content: center;
@@ -128,18 +62,19 @@
 }
 
 .BatteryParagraph2Mobile {
-  background: radial-gradient(#282c34, #505050);
-  width: 90vmin;
-  font-size: 3vmin;
-  padding: 3vmin;
-  border-radius: 2vmin;
-  margin-top: 10vmin;
-  margin-bottom: 10vmin;
+  color: #004638;
+  background: #d8f537;
+  width: 720px;
+  font-size: 24px;
+  padding: 24px;
+  border-radius: 16px;
+  margin-top: 80px;
+  margin-bottom: 80px;
 }
 
 .BatterySlide3Mobile {
   background-color: #f8f8e6;
-  color: #282c34;
+  color: #004638;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -152,7 +87,7 @@
   flex-direction: column;
   justify-content: space-evenly;
   align-items: center;
-  margin: 10vmin;
+  margin: 80px;
   width: calc(100vw - 10px);
 }
 
@@ -176,89 +111,44 @@
   align-items: center;
 }
 
-.BatterySlide3BottomBottomMobile {
-  display: flex;
-  justify-content: center;
-}
-
 .BatteryScreenshot3Mobile {
-  border-radius: 2vmin;
-  width: 90vmin;
+  border-radius: 16px;
+  width: 640px;
   max-width: 50vmax;
-  margin: 15px;
+  margin: 16px;
 }
 
 .BatteryParagraph3Mobile {
   display: flex;
   justify-content: center;
   align-items: center;
-  width: 65vmin;
-  font-size: 3vmin;
+  width: 480px;
+  font-size: 24px;
 }
 
 .BatteryParagraph3BottomMobile {
-  margin-top: 10vmin;
+  margin-top: 80px;
   background-color: #f8f8e6;
-  padding: 1vmin;
-  border-radius: 3vmin;
+  padding: 8px;
+  border-radius: 24px;
   display: flex;
   justify-content: center;
   align-items: center;
-  width: 60vmin;
-  font-size: 3vmin;
-}
-
-.BottomOfThePageMobile {
-  background-color: #f8f8e6;
-  border-radius: 2vmin;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  width: calc(100vw - 10px);
-  font-size: 3vmin;
-  margin-bottom: 3vmin;
-}
-
-@keyframes fadein {
-  from { opacity: 0; }
-  to   { opacity: 1; }
-}
-
-/* Firefox < 16 */
-@-moz-keyframes fadein {
-  from { opacity: 0; }
-  to   { opacity: 1; }
-}
-
-/* Safari, Chrome and Opera > 12.1 */
-@-webkit-keyframes fadein {
-  from { opacity: 0; }
-  to   { opacity: 1; }
-}
-
-/* Internet Explorer */
-@-ms-keyframes fadein {
-  from { opacity: 0; }
-  to   { opacity: 1; }
-}
-
-/* Opera < 12.1 */
-@-o-keyframes fadein {
-  from { opacity: 0; }
-  to   { opacity: 1; }
+  width: 480px;
+  font-size: 24px;
 }
 
 .Youtube-LinkMobile {
-  border: 0.5vmin solid #282c34;
-  box-shadow: 0.5vmin 0.5vmin #282c34;
-  color: #282c34;
+  border: 4px solid #004638;
+  box-shadow: 4px 4px #004638;
+  color: #004638;
   text-decoration: none;
-  border-radius: 2vmin;
+  border-radius: 16px;
   display: flex;
   justify-content: center;
   align-items: center;
-  font-size: 3vmin;
-  padding: 1vmin;
+  font-size: 24px;
+  padding: 8px;
 }
 
 .Youtube-LinkMobile:hover {
@@ -266,7 +156,7 @@
 }
 
 .Youtube-LinkMobile:active {
-  margin-left: 0.5vmin;
-  margin-top: 0.5vmin;
-  box-shadow: 0vmin 0vmin #282c34;
+  margin-left: 4px;
+  margin-top: 4px;
+  box-shadow: 0px 0px #004638;
 }

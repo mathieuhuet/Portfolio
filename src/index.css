@@ -1,8 +1,9 @@
 body {
   margin: 0;
   display: flex;
+  overflow-x: hidden;
   justify-content: center;
-  font-family: gilroy,Helvetica,Arial,sans-serif;
+  font-family: Gilroy-Medium,Helvetica,Arial,sans-serif;
   --fa-style-family-classic: "Font Awesome 6 Free";
   --fa-font-solid: normal 900 1em/1 "Font Awesome 6 Free";
   --fa-font-regular: normal 400 1em/1 "Font Awesome 6 Free";
@@ -18,13 +19,14 @@ body::-webkit-scrollbar-track {
   background: #f6f6f6; 
 }
 body::-webkit-scrollbar-thumb {
-  background: #004638; 
-}
-body::-webkit-scrollbar-thumb:hover {
   background: #82bf00; 
 }
-
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+body::-webkit-scrollbar-thumb:hover {
+  background: #004638; 
 }
+
+@font-face {
+  font-family: 'Gilroy-Medium';
+  src: local('Gilroy-Medium'), url(./Assets/Fonts/Gilroy-Medium.ttf) format('truetype');
+}
+

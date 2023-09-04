@@ -1,33 +1,17 @@
 import './desktop.css';
 import React from 'react'
-import { useState } from "react";
-import { useNavigate } from 'react-router-dom';
 import { Helmet } from "react-helmet";
 import batteryScreenshot0 from '../../../Assets/BatteryScreenshot0.png';
 import batteryScreenshot3 from '../../../Assets/BatteryScreenshot3.png';
 import batteryScreenshot4 from '../../../Assets/BatteryScreenshot4.png';
 import batteryScreenshot5 from '../../../Assets/BatteryScreenshot5.png';
 import batteryScreenshot6 from '../../../Assets/BatteryScreenshot6.png';
-import { IoArrowBackOutline } from "react-icons/io5";
 
 
 function Desktop () {
-  let navigate = useNavigate();
-  const [ langue, setLangue ] = useState('FR')
-  function changeLangue (newLangue) {
-    setLangue(newLangue);
-  }
-
-  if (langue === 'FR') {
-    return (
-      <div>
+  return (
+    <div className='BatteryProjectContainer'>
       <Helmet><title>Mathieu's Battery Monitoring App</title></Helmet>
-      <div className="TopButtons">
-        <div className="Button-backToMain" onClick={() => navigate('/')}>
-          <IoArrowBackOutline />
-        </div>
-        <div className="Langue" onClick={() => changeLangue('EN')}>EN</div>
-      </div>
       <div className="BatterySlide1">
         <div className="BatterySlide1Top">
           <h1 className="BatteryTitle">Battery Monitoring App</h1>
@@ -77,77 +61,10 @@ function Desktop () {
             <div className="BatteryParagraph3Bottom">Les technologies supplémentaires utilisées incluent Chart.js pour les graphiques illustrant les performances des équipements, 
             Google Map Platform pour l'API cartographique et OpenWeather pour l'API météorologique.</div>
           </div>
-          <div className="BatterySlide3BottomBottom">
-            <div className="BottomOfThePage">Mathieu Huet - mathieuhuet@live.ca - 2023</div>
-          </div>
         </div>
       </div>
     </div>
   );
-  } else {
-    return (
-      <div>
-        <Helmet><title>Mathieu's Battery Monitoring App</title></Helmet>
-        <div className="TopButtons">
-          <div className="Button-backToMain" onClick={() => navigate('/')}>
-            <IoArrowBackOutline />
-          </div>
-          <div className="Langue" onClick={() => changeLangue('FR')}>FR</div>
-        </div>
-        <div className="BatterySlide1">
-          <div className="BatterySlide1Top">
-            <h1 className="BatteryTitle">Battery Monitoring App</h1>
-          </div>
-          <div className="BatterySlide1Bottom">
-            <img src={batteryScreenshot0} className="BatteryScreenshot1" alt="Screenshot of a graph from Battery Monitoring App" />
-            <div className="BatteryParagraph1">Battery Monitoring is an app that let you monitor remotely the battery state of your IoT devices. 
-            It also fetch battery data all day from your devices and let you visualize them on a graph to analyze their performances.</div>
-          </div>
-        </div>
-        <div className="BatterySlide2">
-          <div className="BatteryParagraph2">I built the app from the ground up, designed and implemented the underlying API and data modeling.</div>
-        </div>
-        <div className="BatterySlide3">
-          <div className="BatterySlide3Row">
-            <img src={batteryScreenshot5} className="BatteryScreenshot3" alt="Screenshot of Battery Monitoring App" />
-            <div className="BatteryParagraph3">Battery Monitoring will remotely fetch live data from your batteries whenever you need it to.</div>
-          </div>
-          <div className="BatterySlide3Row">
-            <div className="BatteryParagraph3">You can compare the performances of your batteries to see if some are starting to be worn out or in need of a
-            replacement.</div>
-            <img src={batteryScreenshot6} className="BatteryScreenshot3" alt="Screenshot of Battery Monitoring App" />
-          </div>
-          <div className="BatterySlide3Row">
-            <img src={batteryScreenshot3} className="BatteryScreenshot3" alt="Screenshot of Battery Monitoring App" />
-            <div className="BatteryParagraph3">
-              <a
-                className="Youtube-Link"
-                href="https://youtu.be/s5RYPeURV8w"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                Video demonstration of the app.
-              </a>
-            </div>
-          </div>
-          <div className="BatterySlide3Row">
-            <div className="BatteryParagraph3">The app provides weather forecast so you can predict the performance of your Solar-powered and Wind-powered devices.</div>
-            <img src={batteryScreenshot4} className="BatteryScreenshot3" alt="Screenshot of Battery Monitoring App" />
-          </div>
-          <div className="BatterySlide3Bottom">
-            <div className="BatterySlide3BottomTop">
-              <div className="BatteryParagraph3Bottom">This app is powered by React on the front-end, on the back-end it uses Koa and the database is PostgreSQL.</div>
-              <div className="BatteryParagraph3Bottom">Additional technologies used include Sequelize as an ORM for PostgreSQL, Chart.js for graph illustrating past data, 
-              Google Map Platform for the map API and OpenWeather for the weather API.</div>
-            </div>
-            <div className="BatterySlide3BottomBottom">
-              <div className="BottomOfThePage">Mathieu Huet - mathieuhuet@live.ca - 2023</div>
-            </div>
-          </div>
-        </div>
-      </div>
-    );
-  }
 }
 
 export default Desktop;

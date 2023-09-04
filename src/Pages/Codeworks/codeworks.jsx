@@ -1,14 +1,9 @@
 import './codeworks.css'
-import React,{ useState } from 'react';
-import { useNavigate } from 'react-router-dom';
-import { CgCloseO } from "react-icons/cg";
+import React from 'react';
 
 
 
 const Codeworks = () => {
-  let navigate = useNavigate();
-  const [displayExperienceLanguage, setDisplayExperienceLanguage] = useState('FR');
-
 
   const codeworksFR = (
   <div className="ExperienceDetail">
@@ -29,41 +24,14 @@ const Codeworks = () => {
     <br />
   </div>);
 
-  const codeworksEN = (
-  <div className="ExperienceDetail">
-    <div className="expLine"> - Codeworks is an intensive bootcamp, 6 days a week, from 9am until 9pm.</div>
-    <br />
-    <div className="expLine"> - Learning multiple new technologies and implementing them.</div>
-    <br />
-    <div className="expLine"> - Completing projects in solo or in teams.</div>
-    <br />
-    <a
-      className="Codeworks-Link"
-      href="https://codeworks.me/"
-      target="_blank"
-      rel="noopener noreferrer"
-    >
-      Codeworks Website
-    </a>
-    <br />
-  </div>);
 
   return (
-    <div className='PageContainer'>
-      <div className='DisplayedExperience'>
-        <div className='TopButtonsDisplayExperience'>
-          <div className='CloseExperience' onClick={() => {
-            navigate('/');
-          }}>
-            <CgCloseO />
-          </div>
-          <div className='ChangeLanguage' onClick={() => displayExperienceLanguage === 'FR' ? setDisplayExperienceLanguage('EN') : setDisplayExperienceLanguage('FR')}>
-            {displayExperienceLanguage === 'FR' ? 'EN' : 'FR'}
-          </div>
-        </div>
-        <div className='SingleExperience'>
-          {displayExperienceLanguage === 'FR' ? codeworksFR : codeworksEN}
-        </div>
+    <div className='DisplayedExperience'>
+      <div className='TitleExperience'>
+        Codeworks
+      </div>
+      <div className='SingleExperience'>
+        {codeworksFR}
       </div>
     </div>
   )
