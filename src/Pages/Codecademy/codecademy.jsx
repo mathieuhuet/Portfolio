@@ -1,10 +1,12 @@
 import './codecademy.css'
-import React from 'react';
+import React, { useEffect } from 'react';
 
 
 
 const Codecademy = () => {
-
+  useEffect(() => {
+    window.scrollTo(0, 0)
+  }, [])
   const codeworksFR = (
   <div className="ExperienceDetail">
     <div className="expLine">Compléter "Learn PHP Course" de Codecademy</div>

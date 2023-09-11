@@ -1,6 +1,7 @@
 import './header.css'
-import React,{ useState } from 'react';
+import React from 'react';
 import { useNavigate } from 'react-router-dom';
+import MHRem from '../Icons/MHRem';
 
 
 
@@ -9,6 +10,11 @@ const Header = () => {
 
   return (
     <div className='Header'>
+      <MHRem 
+        size={70}
+        style={{cursor: 'pointer', marginLeft: 16}}
+        onClick={() => navigate('/')}
+      />
       <div className='HeaderSelection'
         onClick={() => navigate('/')}
       >

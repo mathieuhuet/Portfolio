@@ -1,8 +1,9 @@
 import React from 'react';
 import { Routes, Route } from 'react-router-dom';
-import Main from '../Pages/Main/main'
-import BatteryMonitoring from '../Pages/BatteryMonitoring/batterymonitoring'
-import Experiences from '../Components/Experiences/experiences';
+import Experiences from '../Pages/Experiences/experiences';
+import Mathieu from '../Pages/Mathieu/mathieu';
+import MathieuPlus from '../Pages/MathieuPlus/mathieuPlus';
+import BatteryMonitoring from '../Pages/BatteryMonitoring/batterymonitoring';
 import Codeworks from '../Pages/Codeworks/codeworks';
 import Coursera from '../Pages/Coursera/coursera';
 import Codecademy from '../Pages/Codecademy/codecademy';
@@ -58,8 +59,12 @@ const Routing = () => {
           element={<Experiences />} 
         />
         <Route 
+          path="/mathieu" 
+          element={<MathieuPlus />} 
+        />
+        <Route 
           path="/" 
-          element={<Main />} 
+          element={<Mathieu />} 
         />
       </Routes>
     </section>

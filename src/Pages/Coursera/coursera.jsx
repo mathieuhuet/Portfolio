@@ -1,10 +1,12 @@
 import './coursera.css'
-import React from 'react';
+import React, { useEffect } from 'react';
 
 
 
 const Coursera = () => {
-
+  useEffect(() => {
+    window.scrollTo(0, 0)
+  }, [])
   const codeworksFR = (
   <div className="ExperienceDetail">
     <div className="expLine">Certificat obtenu pour le cours en ligne autorisé par Google et proposé par l'intermédiaire de Coursera.</div>

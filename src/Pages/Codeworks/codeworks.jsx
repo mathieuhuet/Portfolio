@@ -1,10 +1,12 @@
 import './codeworks.css'
-import React from 'react';
+import React, { useEffect } from 'react';
 
 
 
 const Codeworks = () => {
-
+  useEffect(() => {
+    window.scrollTo(0, 0)
+  }, [])
   const codeworksFR = (
   <div className="ExperienceDetail">
     <div className="expLine"> - Codeworks est un bootcamp intensif, 6 jours par semaine, de 9h jusqu'à 21h.</div>

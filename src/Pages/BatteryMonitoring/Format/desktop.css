@@ -55,7 +55,7 @@
   justify-content: center;
   height: 100vh;
   width: 100vw;
-  background-image: url(../../../Assets/background1.png);
+  background-image: url(../../../Assets/Battery_Monitoring/background1.png);
   background-repeat: no-repeat;
   background-position: center;
   background-attachment: fixed;
@@ -91,7 +91,7 @@
 .BatterySlide3Bottom {
   height: 100vh;
   width: 100vw;
-  background-image: url(../../../Assets/BatteryBottomDesktop.png);
+  background-image: url(../../../Assets/Battery_Monitoring/BatteryBottomDesktop.png);
   background-repeat: no-repeat;
   background-attachment: initial;
   background-position: center;

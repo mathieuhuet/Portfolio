@@ -1,4 +1,4 @@
-import './experiences.css';
+import './displayExperiences.css';
 import React,{ useState, useEffect, useMemo } from 'react';
 import { useNavigate } from 'react-router-dom';
 import JavaScript from '../Icons/JavaScript';
@@ -16,14 +16,14 @@ import Redux from '../Icons/Redux';
 import Cplusplus from '../Icons/Cplusplus';
 import { SiMysql } from "react-icons/si"
 
-function Experiences () {
+function DisplayExperiences () {
   let navigate = useNavigate();
   const experiences = useMemo(() => [
     {
       id: 0,
       institution: 'GPMM_Alertes',
       blurb: "Application mobile et web pour monitorer les activitées de maintenance sur le réseau du REM pour les employés de GPMM O&M. L'application permet de faire des rapports des activités et de faire un suivi.",
-      languages: ['Node.js', 'TypeScript', 'React', 'React Native', 'MongoDB', 'Mongoose', 'Express.js', 'RESTful API', 'Git'],
+      languages: ['Node.js', 'TypeScript', 'React', 'React Native', 'JavaScript', 'MongoDB', 'Mongoose', 'Express.js', 'RESTful API', 'Git'],
       date: '2023',
       route: 'gpmm',
     },
@@ -31,7 +31,7 @@ function Experiences () {
       id: 1,
       institution: 'Friendly Bets',
       blurb: "Application mobile pour faire des paris avec vos amis et faire les suivi de vos paris.",
-      languages: ['Node.js', 'TypeScript', 'React Native', 'MongoDB', 'Mongoose', 'Express.js', 'RESTful API', 'Git'],
+      languages: ['Node.js', 'TypeScript', 'React Native', 'JavaScript', 'MongoDB', 'Mongoose', 'Express.js', 'RESTful API', 'Git'],
       date: '2023',
       route: 'friendly_bets',
     },
@@ -55,7 +55,7 @@ function Experiences () {
       id: 4,
       institution: 'Learn PHP Course',
       blurb: "Compléter < Learn PHP Course > de Codecademy",
-      languages: ['HTML', 'CSS', 'PHP'],
+      languages: ['HTML', 'CSS', 'PHP', 'JavaScript'],
       date: '2022',
       route: 'codecademy',
     },
@@ -118,15 +118,18 @@ function Experiences () {
   return (
     <div className="Experiences">
       <div className='ExperienceSearch'>
-        <div>
-          <input 
-            type="text" 
-            value={search} 
-            onChange={handleChangeSearch} 
-            placeholder='Rechercher...'
-            className='SearchBar'
-          />
+        <div
+          style={{fontWeight: 700, marginLeft: 16, marginBottom: 4}}
+        >
+          Rechercher une compétence :
         </div>
+        <input 
+          type="text" 
+          value={search} 
+          onChange={handleChangeSearch} 
+          placeholder='Ex : Javascript'
+          className='SearchBar'
+        />
       </div>
       <div className='ExperienceList'>
 
@@ -246,5 +249,5 @@ function Experiences () {
 
 }
 
-export default Experiences;
+export default DisplayExperiences;
 

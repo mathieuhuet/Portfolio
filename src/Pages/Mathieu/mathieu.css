@@ -1,0 +1,127 @@
+.MainPortrait {
+  min-height: 90vh;
+  font-weight: 700;
+  max-width: 1280px;
+  width: 98vw;
+  text-align: left;
+}
+
+.MainGrid {
+  min-height: 90vh;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  font-weight: 700;
+  max-width: 1280px;
+  width: 98vw;
+  text-align: left;
+}
+
+.TitlePortrait {
+  color: #004638;
+  font-size: 56px;
+  line-height: 68px;
+
+}
+
+.SecondaryTitlePortrait {
+  color: #82bf00;
+  font-size: 24px;
+}
+
+.MainTextPortrait {
+  display: flex;
+  flex-direction: column;
+}
+
+.UpperTextPortrait {
+  color: #004638;
+  background: linear-gradient(180deg,#f6f6f6 0%,#f6f6f6 30%,#d8f537 31%,#d8f537 100%);
+  font-size: 40px;
+}
+
+.LowerTextPortrait {
+  color: #004638;
+  font-size: 21px;
+  line-height: 1.524;
+}
+
+.LinksPortrait {
+  display: flex;
+}
+
+.Link1Portrait {
+  background: #f1f4f5;
+  margin: 32px;
+  width: 40%;
+  height: 40%;
+}
+
+.Link2Portrait {
+  background: #f1f4f5;
+  margin: 32px;
+  width: 40%;
+  height: 40%;
+}
+
+.MainTop {
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+}
+
+.MainBottom {
+  display: flex;
+}
+
+.Title {
+  color: #004638;
+  font-size: 80px;
+  line-height: 85px;
+  width: 50%;
+}
+
+.SecondaryTitle {
+  color: #82bf00;
+  font-size: 24px;
+  width: 50%;
+}
+
+.MainText {
+  display: flex;
+  flex-direction: column;
+  width: 50%;
+}
+
+.UpperText {
+  color: #004638;
+  background: linear-gradient(180deg,#f6f6f6 0%,#f6f6f6 30%,#d8f537 31%,#d8f537 100%);
+  font-size: 40px;
+}
+
+.LowerText {
+  color: #004638;
+  font-size: 21px;
+  line-height: 1.524;
+  font-weight: 500;
+}
+
+.Links {
+  display: flex;
+  justify-content: center;
+  width: 50%;
+}
+
+.Link1 {
+  background: #f1f4f5;
+  margin: 32px;
+  width: 40%;
+  height: 40%;
+}
+
+.Link2 {
+  background: #f1f4f5;
+  width: 40%;
+  height: 40%;
+  margin: 32px;
+}

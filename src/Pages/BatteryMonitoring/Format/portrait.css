@@ -1,10 +1,5 @@
 
 
-.BatteryProjectContainerMobile {
-
-
-}
-
 .BatterySlide1Mobile {
   background-color: #f8f8e6;
   color: #004638;
@@ -50,7 +45,7 @@
 
 .BatterySlide2Mobile {
   background-color: #004638;
-  background-image: url(../../../Assets/background1.png);
+  background-image: url(../../../Assets/Battery_Monitoring/background1.png);
   background-repeat: no-repeat;
   background-attachment: scroll;
   background-position: center;
@@ -94,7 +89,7 @@
 .BatterySlide3BottomMobile {
   height: 100vh;
   width: calc(100vw - 10px);
-  background-image: url(../../../Assets/BatteryBottomMobile.png);
+  background-image: url(../../../Assets/Battery_Monitoring/BatteryBottomMobile.png);
   background-repeat: no-repeat;
   background-attachment: scroll;
   background-position: center;

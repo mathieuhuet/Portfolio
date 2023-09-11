@@ -14,7 +14,8 @@
 
 .ExperienceSearch {
   display: flex;
-  align-items: center;
+  flex-direction: column;
+  align-items: flex-start;
 }
 
 .SearchBar {
@@ -33,7 +34,7 @@
   color: #004638;
   font-family: Gilroy-Medium,Helvetica,Arial,sans-serif;
   font-weight: bold;
-  opacity: 1; /* Firefox */
+  opacity: 0.5; /* Firefox */
 }
 :-ms-input-placeholder { /* Internet Explorer 10-11 */
   color: #004638;

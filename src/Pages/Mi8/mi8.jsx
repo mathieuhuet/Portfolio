@@ -1,11 +1,14 @@
 import './mi8.css'
-import React from 'react';
+import React, { useEffect } from 'react';
 
 
 
 
 const Mi8 = () => {
 
+  useEffect(() => {
+    window.scrollTo(0, 0)
+  }, [])
 
   const mi8FR = (
   <div className="ExperienceDetail">
