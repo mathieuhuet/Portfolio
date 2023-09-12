@@ -1,11 +1,11 @@
 import './uqam.css'
 import React, { useEffect } from 'react';
-
+import { useMediaQuery } from 'react-responsive';
 
 
 
 const Uqam = () => {
-
+  const isMobile = useMediaQuery({ query: '(max-width: 1023px)' });
   useEffect(() => {
     window.scrollTo(0, 0)
   }, [])
@@ -32,19 +32,37 @@ const Uqam = () => {
     <div className="expLine">Peut fournir un relevé de notes sur demande.</div>
   </div>);
 
-
-return (
-
-  <div className='DisplayedExperience'>
-    <div className='TitleExperience'>
-      Université du Québec À Montréal
+  return (
+    <div>
+      {isMobile ? <Portrait /> : <Landscape />}
     </div>
-    <div className='SingleExperience'>
-      {uqamFR}
-    </div>
-  </div>
+  );
 
-)
+  function Portrait () {
+    return (
+      <div className='DisplayedExperience'>
+        <div className='TitleExperience'>
+          Université du Québec À Montréal
+        </div>
+        <div className='SingleExperience'>
+          {uqamFR}
+        </div>
+      </div>
+    )
+  }
+
+  function Landscape () {
+    return (
+      <div className='DisplayedExperience'>
+        <div className='TitleExperience'>
+          Université du Québec À Montréal
+        </div>
+        <div className='SingleExperience'>
+          {uqamFR}
+        </div>
+      </div>
+    ) 
+  }
 }
 
 export default Uqam;

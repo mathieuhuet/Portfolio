@@ -11,15 +11,31 @@ Main page of the website, where you go when entering http://www.mathieuhuet.com/
 function Mathieu () {
   let navigate = useNavigate();
 
-  const isPortrait = useMediaQuery({ query: '(orientation: portrait)' });
+  const isMobile = useMediaQuery({ query: '(max-width: 1023px)' });
 
   useEffect(() => {
     window.scrollTo(0, 0)
   }, [])
 
+    // Function will execute on click of button
+    const onButtonClick = () => {
+      // using Java Script method to get PDF file
+      fetch('Mathieu_Huet_Resume.pdf').then(response => {
+        response.blob().then(blob => {
+          // Creating new object of PDF file
+          const fileURL = window.URL.createObjectURL(blob);
+          // Setting various property values
+          let alink = document.createElement('a');
+          alink.href = fileURL;
+          alink.download = 'SamplePDF.pdf';
+          alink.click();
+        })
+      })
+    }
+
   return (
     <div>
-      {isPortrait ? <Portrait /> : <Landscape />}
+      {isMobile ? <Portrait /> : <Landscape />}
     </div>
   );
 
@@ -39,9 +55,9 @@ function Mathieu () {
         </div>
         <div className='LinksPortrait'>
           <div className='Link1Portrait'
-            onClick={() => navigate('/mathieu')}
+            onClick={onButtonClick}
           >
-            En savoir un peu plus à propos de moi
+            Téléchargez mon C.V.
           </div>
           <div className='Link2Portrait'
             onClick={() => navigate('/resume')}
@@ -72,9 +88,9 @@ function Mathieu () {
           </div>
           <div className='Links'>
             <div className='Link1'
-              onClick={() => navigate('/mathieu')}
+              onClick={onButtonClick}
             >
-              En savoir un peu plus à propos de moi
+              Télécharger mon C.V.
             </div>
             <div className='Link2'
               onClick={() => navigate('/resume')}

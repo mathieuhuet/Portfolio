@@ -11,7 +11,7 @@ Main page of the website, where you go when entering http://www.mathieuhuet.com/
 function MathieuPlus () {
   let navigate = useNavigate();
 
-  const isPortrait = useMediaQuery({ query: '(orientation: portrait)' });
+  const isMobile = useMediaQuery({ query: '(max-width: 1023px)' });
 
   useEffect(() => {
     window.scrollTo(0, 0)
@@ -19,7 +19,7 @@ function MathieuPlus () {
 
   return (
     <div>
-      {isPortrait ? <Portrait /> : <Landscape />}
+      {isMobile ? <Portrait /> : <Landscape />}
     </div>
   );
 

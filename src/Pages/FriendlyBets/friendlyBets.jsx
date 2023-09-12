@@ -15,7 +15,7 @@ Component that display the page about the Battery Montiroring project. http://ww
 */
 
 function FriendlyBets () {
-  const isPortrait = useMediaQuery({ query: '(orientation: portrait)' });
+  const isMobile = useMediaQuery({ query: '(max-width: 1023px)' });
 
   const [currentImage, setCurrentImage] = useState(0);
   const [isViewerOpen, setIsViewerOpen] = useState(false);
@@ -43,7 +43,7 @@ function FriendlyBets () {
 
   return (
     <div>
-      {isPortrait ? <Portrait /> : <Landscape />}
+      {isMobile ? <Portrait /> : <Landscape />}
     </div>
   );
 

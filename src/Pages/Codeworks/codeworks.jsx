@@ -1,9 +1,11 @@
 import './codeworks.css'
 import React, { useEffect } from 'react';
+import { useMediaQuery } from 'react-responsive';
 
 
 
 const Codeworks = () => {
+  const isMobile = useMediaQuery({ query: '(max-width: 1023px)' });
   useEffect(() => {
     window.scrollTo(0, 0)
   }, [])
@@ -26,17 +28,37 @@ const Codeworks = () => {
     <br />
   </div>);
 
-
   return (
-    <div className='DisplayedExperience'>
-      <div className='TitleExperience'>
-        Codeworks
-      </div>
-      <div className='SingleExperience'>
-        {codeworksFR}
-      </div>
+    <div>
+      {isMobile ? <Portrait /> : <Landscape />}
     </div>
-  )
+  );
+
+  function Portrait () {
+    return (
+      <div className='DisplayedExperience'>
+        <div className='TitleExperience'>
+          Codeworks
+        </div>
+        <div className='SingleExperience'>
+          {codeworksFR}
+        </div>
+      </div>
+    )
+  }
+
+  function Landscape () {
+    return (
+      <div className='DisplayedExperience'>
+        <div className='TitleExperience'>
+          Codeworks
+        </div>
+        <div className='SingleExperience'>
+          {codeworksFR}
+        </div>
+      </div>
+    ) 
+  }
 }
 
 export default Codeworks;

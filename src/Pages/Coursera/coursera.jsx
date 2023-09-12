@@ -1,9 +1,11 @@
 import './coursera.css'
 import React, { useEffect } from 'react';
+import { useMediaQuery } from 'react-responsive';
 
 
 
 const Coursera = () => {
+  const isMobile = useMediaQuery({ query: '(max-width: 1023px)' });
   useEffect(() => {
     window.scrollTo(0, 0)
   }, [])
@@ -22,17 +24,37 @@ const Coursera = () => {
     <br />
   </div>);
 
-
   return (
-    <div className='DisplayedExperience'>
-      <div className='TitleExperience'>
-        Coursera
-      </div>
-      <div className='SingleExperience'>
-        {codeworksFR}
-      </div>
+    <div>
+      {isMobile ? <Portrait /> : <Landscape />}
     </div>
-  )
+  );
+
+  function Portrait () {
+    return (
+      <div className='DisplayedExperience'>
+        <div className='TitleExperience'>
+          Coursera
+        </div>
+        <div className='SingleExperience'>
+          {codeworksFR}
+        </div>
+      </div>
+    )
+  }
+
+  function Landscape () {
+    return (
+      <div className='DisplayedExperience'>
+        <div className='TitleExperience'>
+          Coursera
+        </div>
+        <div className='SingleExperience'>
+          {codeworksFR}
+        </div>
+      </div>
+    ) 
+  }
 }
 
 export default Coursera;

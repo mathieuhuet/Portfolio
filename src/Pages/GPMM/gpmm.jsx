@@ -17,6 +17,7 @@ import Img8 from '../../Assets/GPMM_Alertes/GPMM_003.png';
 import Img9 from '../../Assets/GPMM_Alertes/GPMM_010.png';
 import Img10 from '../../Assets/GPMM_Alertes/GPMM_005.png';
 import Img11 from '../../Assets/GPMM_Alertes/GPMM_Desktop_02.png';
+import Img12 from '../../Assets/GPMM_Alertes/GPMM_009.png';
 
 
 
@@ -26,7 +27,7 @@ Component that display the page about the Battery Montiroring project. http://ww
 
 
 function GPMM () {
-  const isPortrait = useMediaQuery({ query: '(orientation: portrait)' });
+  const isMobile = useMediaQuery({ query: '(max-width: 1023px)' });
 
   const [currentImage, setCurrentImage] = useState(0);
   const [isViewerOpen, setIsViewerOpen] = useState(false);
@@ -35,6 +36,7 @@ function GPMM () {
     Img3,
     Img4,
     Img2,
+    Img12,
     Img5,
     Img6,
     Img7,
@@ -60,7 +62,7 @@ function GPMM () {
 
   return (
     <div>
-      {isPortrait ? <Portrait /> : <Landscape />}
+      {isMobile ? <Portrait /> : <Landscape />}
     </div>
   );
 

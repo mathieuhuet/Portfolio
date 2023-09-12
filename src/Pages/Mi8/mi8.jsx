@@ -1,11 +1,11 @@
 import './mi8.css'
 import React, { useEffect } from 'react';
-
+import { useMediaQuery } from 'react-responsive';
 
 
 
 const Mi8 = () => {
-
+  const isMobile = useMediaQuery({ query: '(max-width: 1023px)' });
   useEffect(() => {
     window.scrollTo(0, 0)
   }, [])
@@ -23,17 +23,37 @@ const Mi8 = () => {
     <div className="expLine">Peut fournir des références sur demande.</div>
   </div>);
 
-
   return (
-    <div className='DisplayedExperience'>
-      <div className='TitleExperience'>
-        Innovation Mi8
-      </div>
-      <div className='SingleExperience'>
-        {mi8FR}
-      </div>
+    <div>
+      {isMobile ? <Portrait /> : <Landscape />}
     </div>
-  )
+  );
+
+  function Portrait () {
+    return (
+      <div className='DisplayedExperience'>
+        <div className='TitleExperience'>
+          Innovation Mi8
+        </div>
+        <div className='SingleExperience'>
+          {mi8FR}
+        </div>
+      </div>
+    )
+  }
+
+  function Landscape () {
+    return (
+      <div className='DisplayedExperience'>
+        <div className='TitleExperience'>
+          Innovation Mi8
+        </div>
+        <div className='SingleExperience'>
+          {mi8FR}
+        </div>
+      </div>
+    ) 
+  }
 }
 
 export default Mi8;

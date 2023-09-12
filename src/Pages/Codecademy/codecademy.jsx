@@ -1,9 +1,10 @@
 import './codecademy.css'
 import React, { useEffect } from 'react';
-
+import { useMediaQuery } from 'react-responsive';
 
 
 const Codecademy = () => {
+  const isMobile = useMediaQuery({ query: '(max-width: 1023px)' });
   useEffect(() => {
     window.scrollTo(0, 0)
   }, [])
@@ -22,17 +23,37 @@ const Codecademy = () => {
     <br />
   </div>);
 
-
   return (
-    <div className='DisplayedExperience'>
-      <div className='TitleExperience'>
-        Codecademy
-      </div>
-      <div className='SingleExperience'>
-        {codeworksFR}
-      </div>
+    <div>
+      {isMobile ? <Portrait /> : <Landscape />}
     </div>
-  )
+  );
+
+  function Portrait () {
+    return (
+      <div className='DisplayedExperience'>
+        <div className='TitleExperience'>
+          Codecademy
+        </div>
+        <div className='SingleExperience'>
+          {codeworksFR}
+        </div>
+      </div>
+    )
+  }
+
+  function Landscape () {
+    return (
+      <div className='DisplayedExperience'>
+        <div className='TitleExperience'>
+          Codecademy
+        </div>
+        <div className='SingleExperience'>
+          {codeworksFR}
+        </div>
+      </div>
+    )
+  }
 }
 
 export default Codecademy;
