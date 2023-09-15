@@ -1,0 +1,17 @@
+@media (max-width: 1023px) {
+  .header {
+    left: 0;
+    position: fixed;
+    width: 98vw;
+    height: auto;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    border-bottom: 10px solid #82bf00; 
+    transition: all 0.3s ease-out;
+  }
+
+  .sticky-hidden {
+    transform: translateY(-200%);
+  }
+}

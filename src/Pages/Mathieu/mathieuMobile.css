@@ -1,42 +1,27 @@
-@media (min-width: 1024px) {
+@media (max-width: 1023px) {
   .main {
     min-height: 90vh;
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
     font-weight: 700;
     max-width: 1280px;
     width: 98vw;
     text-align: left;
   }
-  
-  .main-top {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-  }
-  
-  .main-bottom {
-    display: flex;
-  }
-  
+
   .title {
     color: #004638;
-    font-size: 80px;
-    line-height: 85px;
-    width: 50%;
+    font-size: 56px;
+    line-height: 68px;
+  
   }
   
   .secondary-title {
     color: #82bf00;
     font-size: 24px;
-    width: 50%;
   }
   
   .main-text {
     display: flex;
     flex-direction: column;
-    width: 50%;
   }
   
   .upper-text {
@@ -49,13 +34,10 @@
     color: #004638;
     font-size: 21px;
     line-height: 1.524;
-    font-weight: 500;
   }
   
   .links {
     display: flex;
-    justify-content: center;
-    width: 50%;
   }
   
   .link1 {
@@ -67,8 +49,8 @@
   
   .link2 {
     background: #f1f4f5;
+    margin: 32px;
     width: 40%;
     height: 40%;
-    margin: 32px;
   }
 }

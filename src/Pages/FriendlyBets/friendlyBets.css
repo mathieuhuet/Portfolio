@@ -1,92 +1,94 @@
-.FriendlyBets {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  min-height: 90vh;
-  max-width: 1280px;
-  width: 98vw;
-  color: #004638;
-  font-weight: 700;
-}
-
-.FriendlyBetsTop {
-  margin-top: 32px;
-  width: 100vw;
-  font-size: 48px;
-  font-weight: 800;
-  background: linear-gradient(180deg,#f6f6f6 0%,#f6f6f6 30%,#d8f537 31%,#d8f537 100%);
-}
-
-.FriendlyBetsTitle {
-  font-size: 48px;
-  text-align: left;
-  background: linear-gradient(180deg,#f6f6f6 0%,#f6f6f6 30%,#d8f537 31%,#d8f537 100%);
-  width: fit-content;
-}
-
-.FriendlyBetsDescription {
-  margin-top: 40px;
-  text-align: left;
-  color: #82bf00;
-  font-size: 24px;
-}
-
-.FriendlyBetsAllLink {
-  margin-top: 40px;
-  display: flex;
-  flex-direction: column;
-  text-align: left;
-  width: fit-content;
-}
-
-.FriendlyBetsHoverAnimation {
-  width: fit-content;
-  cursor: pointer;
-  border:none;
-  position: relative;
-  transition: all 0.3s ease-in-out;
-  margin-bottom: 30px;
-  color: #004638;
-}
-
-.FriendlyBetsHoverAnimation::after {
-  content: '';
-  position: absolute;
-  width: 0px;
-  height: 5px;
-  left: 50%;
-  bottom: 4;
-  background:#82bf00;
-  transition: all ease-in-out .15s;
-}
-
-.FriendlyBetsHoverAnimation:hover {
-  border: none;
-}
-
-.FriendlyBetsHoverAnimation:hover::after {
-  width: 100%;
-  left: 0;
-}
-
-.FriendlyBetsContainer {
-  display: flex;
-  margin-top: 32px;
-}
-
-.FriendlyBetsLeft {
-  width: 50%;
-}
-
-.FriendlyBetsRight {
-  width: 50%;
-  display: flex;
-  flex-direction: column;
-}
-
-.FriendlyBetsScreenshotTitle {
-  font-size: 32px;
-  text-align: left;
-  background: linear-gradient(180deg,#f6f6f6 0%,#f6f6f6 30%,#d8f537 31%,#d8f537 100%);
-  width: fit-content;
+@media (min-width: 1024px) {
+  .friendly-bets {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    min-height: 90vh;
+    max-width: 1280px;
+    width: 98vw;
+    color: #004638;
+    font-weight: 700;
+  }
+  
+  .friendly-bets-top {
+    margin-top: 32px;
+    width: 100vw;
+    font-size: 48px;
+    font-weight: 800;
+    background: linear-gradient(180deg,#f6f6f6 0%,#f6f6f6 30%,#d8f537 31%,#d8f537 100%);
+  }
+  
+  .friendly-bets-title {
+    font-size: 48px;
+    text-align: left;
+    background: linear-gradient(180deg,#f6f6f6 0%,#f6f6f6 30%,#d8f537 31%,#d8f537 100%);
+    width: fit-content;
+  }
+  
+  .friendly-bets-description {
+    margin-top: 40px;
+    text-align: left;
+    color: #82bf00;
+    font-size: 24px;
+  }
+  
+  .friendly-bets-all-link {
+    margin-top: 40px;
+    display: flex;
+    flex-direction: column;
+    text-align: left;
+    width: fit-content;
+  }
+  
+  .friendly-bets-hover-animation {
+    width: fit-content;
+    cursor: pointer;
+    border:none;
+    position: relative;
+    transition: all 0.3s ease-in-out;
+    margin-bottom: 30px;
+    color: #004638;
+  }
+  
+  .friendly-bets-hover-animation::after {
+    content: '';
+    position: absolute;
+    width: 0px;
+    height: 5px;
+    left: 50%;
+    bottom: 4;
+    background:#82bf00;
+    transition: all ease-in-out .15s;
+  }
+  
+  .friendly-bets-hover-animation:hover {
+    border: none;
+  }
+  
+  .friendly-bets-hover-animation:hover::after {
+    width: 100%;
+    left: 0;
+  }
+  
+  .friendly-bets-container {
+    display: flex;
+    margin-top: 32px;
+  }
+  
+  .friendly-bets-left {
+    width: 50%;
+  }
+  
+  .friendly-bets-right {
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .friendly-bets-screenshot-title {
+    font-size: 32px;
+    text-align: left;
+    background: linear-gradient(180deg,#f6f6f6 0%,#f6f6f6 30%,#d8f537 31%,#d8f537 100%);
+    width: fit-content;
+  }
 }

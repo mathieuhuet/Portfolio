@@ -8,9 +8,9 @@ const Bottom = () => {
 
 
   return (
-    <div className='Bottom'>
-      <div className='BottomSection'>
-        <div className='BottomSelection'>
+    <div className='bottom'>
+      <div className='bottom-section'>
+        <div className='bottom-selection'>
           Mathieu Huet - mathieuhuet@live.ca - 2023
         </div>
       </div>

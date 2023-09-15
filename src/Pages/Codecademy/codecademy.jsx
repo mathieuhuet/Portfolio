@@ -1,4 +1,5 @@
-import './codecademy.css'
+import './codecademy.css';
+import './codecademyMobile.css';
 import React, { useEffect } from 'react';
 import { useMediaQuery } from 'react-responsive';
 
@@ -8,12 +9,12 @@ const Codecademy = () => {
   useEffect(() => {
     window.scrollTo(0, 0)
   }, [])
-  const codeworksFR = (
-  <div className="ExperienceDetail">
-    <div className="expLine">Compléter "Learn PHP Course" de Codecademy</div>
+  const codecademyFR = (
+  <div className="experience-detail">
+    <div className="exp-line">Compléter "Learn PHP Course" de Codecademy</div>
     <br />
     <a
-      className="Codeworks-Link"
+      className="codeworks-link"
       href="https://www.codecademy.com/profiles/mathieuhuet/certificates/d24ce3aa4ed99ac04afffec4a78e2e44"
       target="_blank"
       rel="noopener noreferrer"
@@ -24,36 +25,15 @@ const Codecademy = () => {
   </div>);
 
   return (
-    <div>
-      {isMobile ? <Portrait /> : <Landscape />}
+    <div className='displayed-experience'>
+      <div className='title-experience'>
+        Codecademy
+      </div>
+      <div className='single-experience'>
+        {codecademyFR}
+      </div>
     </div>
   );
-
-  function Portrait () {
-    return (
-      <div className='DisplayedExperience'>
-        <div className='TitleExperience'>
-          Codecademy
-        </div>
-        <div className='SingleExperience'>
-          {codeworksFR}
-        </div>
-      </div>
-    )
-  }
-
-  function Landscape () {
-    return (
-      <div className='DisplayedExperience'>
-        <div className='TitleExperience'>
-          Codecademy
-        </div>
-        <div className='SingleExperience'>
-          {codeworksFR}
-        </div>
-      </div>
-    )
-  }
 }
 
 export default Codecademy;

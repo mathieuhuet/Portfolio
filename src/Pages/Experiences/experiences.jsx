@@ -1,4 +1,5 @@
 import './experiences.css';
+import './experiencesMobile.css';
 import React, { useEffect } from 'react'
 import { motion } from "framer-motion";
 import { useMediaQuery } from 'react-responsive';
@@ -21,24 +22,24 @@ function Experiences () {
 
   return (
     <div>
-      {isMobile ? <Portrait /> : <Landscape />}
+      {isMobile ? <Mobile /> : <Desktop />}
     </div>
   );
 
-  function Portrait () {
+  function Mobile () {
     return (
-      <div className='ExperiencePortrait'>
+      <div className='experience'>
         <DisplayExperiences />
       </div>
     );
   }
 
-  function Landscape () {
+  function Desktop () {
     return (
-      <div className='Experience'>
-        <div className='ExperienceLeft'>
+      <div className='experience'>
+        <div className='experience-left'>
           <motion.div
-            className="motiontest"
+            className="motion-test"
             initial={{ opacity: 0, rotate: 0 }}
             animate={{ opacity: 1, rotate: 720 }}
             whileHover={{ 
@@ -49,13 +50,13 @@ function Experiences () {
             drag={true}
             dragConstraints={{ left: 0, right: 0, top: 0, bottom: 0 }}
           >
-            <img src={mathieu} className="Mathieu" alt="Mathieu's face spinnin'" />
+            <img src={mathieu} className="mathieu" alt="Mathieu's face spinnin'" />
           </motion.div>
-          <h3 className='MathieuHuet'>Mathieu Huet</h3>
-          <h3 className='FullStackDeveloper'>Full Stack Developer</h3>
-          <div className="All-link">
+          <h3 className='mathieu-huet'>Mathieu Huet</h3>
+          <h3 className='fullstack-developer'>Full Stack Developer</h3>
+          <div className="all-link">
             <a
-              className="GitHub-link"
+              className="github-link"
               href="https://github.com/mathieuhuet"
               target="_blank"
               rel="noopener noreferrer"
@@ -63,7 +64,7 @@ function Experiences () {
               <SiGithub />
             </a>
             <a
-              className="LinkedIn-link"
+              className="linkedin-link"
               href="https://www.linkedin.com/in/mathieu--huet/"
               target="_blank"
               rel="noopener noreferrer"
@@ -72,7 +73,7 @@ function Experiences () {
             </a>
           </div>
         </div>
-        <div className='ExperienceRight'>
+        <div className='experience-right'>
           <DisplayExperiences />
         </div>
       </div>

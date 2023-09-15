@@ -1,0 +1,11 @@
+@media (max-width: 1023px) {
+  .experience {
+    width: 100vw;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    font-size: 24px;
+    color: #004638;
+  }
+}

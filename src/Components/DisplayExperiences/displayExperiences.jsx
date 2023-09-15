@@ -1,4 +1,5 @@
 import './displayExperiences.css';
+import './displayExperiencesMobile.css';
 import React,{ useState, useEffect, useMemo } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { useMediaQuery } from 'react-responsive';
@@ -115,280 +116,137 @@ function DisplayExperiences () {
     setResult(res);
   }, [search, experiences])
 
-
   return (
-    <div>
-      {isMobile ? <Portrait /> : <Landscape />}
+    <div className="experiences">
+      <div className='experience-search'>
+        <div
+          style={{fontWeight: 700, marginLeft: 16, marginBottom: 4}}
+        >
+          Rechercher une compétence :
+        </div>
+        <input 
+          type="text" 
+          value={search} 
+          onChange={handleChangeSearch} 
+          placeholder='Ex : Javascript'
+          className='search-bar'
+        />
+      </div>
+      <div className='experience-list'>
+
+        {result.map(exp => 
+          <div className='individual-experience' key={exp.id} onClick={() => {
+            navigate(`/${exp.route}`);
+          }}>
+            <div className='ie-top'>
+              <div className='ie-institution'>
+                {exp.institution}
+              </div>
+              <div className='ie-date'>
+                {exp.date}
+              </div>
+              {exp.languages.includes('PHP') &&
+                <PHP
+                  color='#82bf00'
+                  size={isMobile ? 20 : 40}
+                />
+              }
+              {exp.languages.includes('JavaScript') &&
+                <JavaScript
+                  color='#82bf00'
+                  size={isMobile ? 20 : 40}
+                />
+              }
+              {exp.languages.includes('TypeScript') &&
+                <TypeScript
+                  color='#82bf00'
+                  size={isMobile ? 20 : 40}
+                />
+              }
+              {exp.languages.includes('Java') &&
+                <Java
+                  color='#82bf00'
+                  size={isMobile ? 20 : 40}
+                />
+              }
+              {exp.languages.includes('Python') &&
+                <Python
+                  color='#82bf00'
+                  size={isMobile ? 20 : 40}
+                />
+              }
+              {exp.languages.includes('C++') &&
+                <Cplusplus
+                  color='#82bf00'
+                  size={isMobile ? 20 : 40}
+                />
+              }
+              {exp.languages.includes('Angular') &&
+                <Angular
+                  color='#82bf00'
+                  size={isMobile ? 20 : 40}
+                />
+              }
+              {(exp.languages.includes('React') || exp.languages.includes('React Native')) &&
+                <ReactIcon
+                  color='#82bf00'
+                  size={isMobile ? 20 : 40}
+                />
+              }
+              {exp.languages.includes('PostgreSQL') &&
+                <PostgreSQL
+                  color='#82bf00'
+                  size={isMobile ? 20 : 40}
+                />
+              }
+              {exp.languages.includes('MongoDB') &&
+                <MongoDB
+                  color='#82bf00'
+                  size={isMobile ? 20 : 40}
+                />
+              }
+              {exp.languages.includes('GraphQL') &&
+                <GraphQL
+                  color='#82bf00'
+                  size={isMobile ? 20 : 40}
+                />
+              }
+              {exp.languages.includes('Redux') &&
+                <Redux
+                  color='#82bf00'
+                  size={isMobile ? 20 : 40}
+                />
+              }
+              {exp.languages.includes('Docker') &&
+                <Docker
+                  color='#82bf00'
+                  size={isMobile ? 20 : 40}
+                />
+              }
+              {exp.languages.includes('MySQL') &&
+                <SiMysql 
+                  size={isMobile ? 18 : 36}
+                  color='#82bf00'
+                />
+              }
+            </div>
+            <div className='ie-middle'>
+              {exp.blurb}
+            </div>
+            <div className='ie-bottom'>
+              <div className='ie-languages'>
+                {exp.languages.map(lang =>
+                  <div className="languages" key={lang}>
+                    {lang}
+                  </div>
+                )}
+              </div>
+            </div>
+          </div>
+        )}
+      </div>
     </div>
   );
-
-  function Portrait () {
-    return (
-      <div className="Experiences">
-        <div className='ExperienceSearch'>
-          <div
-            style={{fontWeight: 700, marginLeft: 16, marginBottom: 4}}
-          >
-            Rechercher une compétence :
-          </div>
-          <input 
-            type="text" 
-            value={search} 
-            onChange={handleChangeSearch} 
-            placeholder='Ex : Javascript'
-            className='SearchBar'
-          />
-        </div>
-        <div className='ExperienceList'>
-  
-          {result.map(exp => 
-            <div className='IndividualExperience' key={exp.id} onClick={() => {
-              navigate(`/${exp.route}`);
-            }}>
-              <div className='IETop'>
-                <div className='IEInstitution'>
-                  {exp.institution}
-                </div>
-                <div className='IEDate'>
-                  {exp.date}
-                </div>
-                {exp.languages.includes('PHP') &&
-                  <PHP
-                    color='#82bf00'
-                    size={40}
-                  />
-                }
-                {exp.languages.includes('JavaScript') &&
-                  <JavaScript
-                    color='#82bf00'
-                    size={40}
-                  />
-                }
-                {exp.languages.includes('TypeScript') &&
-                  <TypeScript
-                    color='#82bf00'
-                    size={40}
-                  />
-                }
-                {exp.languages.includes('Java') &&
-                  <Java
-                    color='#82bf00'
-                    size={40}
-                  />
-                }
-                {exp.languages.includes('Python') &&
-                  <Python
-                    color='#82bf00'
-                    size={40}
-                  />
-                }
-                {exp.languages.includes('C++') &&
-                  <Cplusplus
-                    color='#82bf00'
-                    size={40}
-                  />
-                }
-                {exp.languages.includes('Angular') &&
-                  <Angular
-                    color='#82bf00'
-                    size={40}
-                  />
-                }
-                {(exp.languages.includes('React') || exp.languages.includes('React Native')) &&
-                  <ReactIcon
-                    color='#82bf00'
-                    size={40}
-                  />
-                }
-                {exp.languages.includes('PostgreSQL') &&
-                  <PostgreSQL
-                    color='#82bf00'
-                    size={40}
-                  />
-                }
-                {exp.languages.includes('MongoDB') &&
-                  <MongoDB
-                    color='#82bf00'
-                    size={40}
-                  />
-                }
-                {exp.languages.includes('GraphQL') &&
-                  <GraphQL
-                    color='#82bf00'
-                    size={40}
-                  />
-                }
-                {exp.languages.includes('Redux') &&
-                  <Redux
-                    color='#82bf00'
-                    size={40}
-                  />
-                }
-                {exp.languages.includes('Docker') &&
-                  <Docker
-                    color='#82bf00'
-                    size={40}
-                  />
-                }
-                {exp.languages.includes('MySQL') &&
-                  <SiMysql 
-                    size={36}
-                    color='#82bf00'
-                  />
-                }
-              </div>
-              <div className='IEMiddle'>
-                {exp.blurb}
-              </div>
-              <div className='IEBottom'>
-                <div className='IELanguages'>
-                  {exp.languages.map(lang =>
-                    <div className="Languages" key={lang}>
-                      {lang}
-                    </div>
-                  )}
-                </div>
-              </div>
-            </div>
-          )}
-        </div>
-      </div>
-    );
-  }
-
-  function Landscape () {
-    return (
-      <div className="Experiences">
-        <div className='ExperienceSearch'>
-          <div
-            style={{fontWeight: 700, marginLeft: 16, marginBottom: 4}}
-          >
-            Rechercher une compétence :
-          </div>
-          <input 
-            type="text" 
-            value={search} 
-            onChange={handleChangeSearch} 
-            placeholder='Ex : Javascript'
-            className='SearchBar'
-          />
-        </div>
-        <div className='ExperienceList'>
-  
-          {result.map(exp => 
-            <div className='IndividualExperience' key={exp.id} onClick={() => {
-              navigate(`/${exp.route}`);
-            }}>
-              <div className='IETop'>
-                <div className='IEInstitution'>
-                  {exp.institution}
-                </div>
-                <div className='IEDate'>
-                  {exp.date}
-                </div>
-                {exp.languages.includes('PHP') &&
-                  <PHP
-                    color='#82bf00'
-                    size={40}
-                  />
-                }
-                {exp.languages.includes('JavaScript') &&
-                  <JavaScript
-                    color='#82bf00'
-                    size={40}
-                  />
-                }
-                {exp.languages.includes('TypeScript') &&
-                  <TypeScript
-                    color='#82bf00'
-                    size={40}
-                  />
-                }
-                {exp.languages.includes('Java') &&
-                  <Java
-                    color='#82bf00'
-                    size={40}
-                  />
-                }
-                {exp.languages.includes('Python') &&
-                  <Python
-                    color='#82bf00'
-                    size={40}
-                  />
-                }
-                {exp.languages.includes('C++') &&
-                  <Cplusplus
-                    color='#82bf00'
-                    size={40}
-                  />
-                }
-                {exp.languages.includes('Angular') &&
-                  <Angular
-                    color='#82bf00'
-                    size={40}
-                  />
-                }
-                {(exp.languages.includes('React') || exp.languages.includes('React Native')) &&
-                  <ReactIcon
-                    color='#82bf00'
-                    size={40}
-                  />
-                }
-                {exp.languages.includes('PostgreSQL') &&
-                  <PostgreSQL
-                    color='#82bf00'
-                    size={40}
-                  />
-                }
-                {exp.languages.includes('MongoDB') &&
-                  <MongoDB
-                    color='#82bf00'
-                    size={40}
-                  />
-                }
-                {exp.languages.includes('GraphQL') &&
-                  <GraphQL
-                    color='#82bf00'
-                    size={40}
-                  />
-                }
-                {exp.languages.includes('Redux') &&
-                  <Redux
-                    color='#82bf00'
-                    size={40}
-                  />
-                }
-                {exp.languages.includes('Docker') &&
-                  <Docker
-                    color='#82bf00'
-                    size={40}
-                  />
-                }
-                {exp.languages.includes('MySQL') &&
-                  <SiMysql 
-                    size={36}
-                    color='#82bf00'
-                  />
-                }
-              </div>
-              <div className='IEMiddle'>
-                {exp.blurb}
-              </div>
-              <div className='IEBottom'>
-                <div className='IELanguages'>
-                  {exp.languages.map(lang =>
-                    <div className="Languages" key={lang}>
-                      {lang}
-                    </div>
-                  )}
-                </div>
-              </div>
-            </div>
-          )}
-        </div>
-      </div>
-    );
-  }
 }
 
 export default DisplayExperiences;

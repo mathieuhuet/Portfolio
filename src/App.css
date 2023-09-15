@@ -1,16 +1,17 @@
-.App {
+.app {
   text-align: center;
   display: flex;
   flex-direction: column;
   align-items: center;
+  width: 100%;
 }
 
-.AppRouting {
+.app-main {
   max-width: 1280px;
   width: 98vw;
 }
 
-.Error404 {
+.error404 {
   display: flex;
   justify-content: center;
   align-items: center;

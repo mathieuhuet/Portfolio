@@ -1,4 +1,5 @@
-import './codeworks.css'
+import './codeworks.css';
+import './codeworksMobile.css';
 import React, { useEffect } from 'react';
 import { useMediaQuery } from 'react-responsive';
 
@@ -10,15 +11,15 @@ const Codeworks = () => {
     window.scrollTo(0, 0)
   }, [])
   const codeworksFR = (
-  <div className="ExperienceDetail">
-    <div className="expLine"> - Codeworks est un bootcamp intensif, 6 jours par semaine, de 9h jusqu'à 21h.</div>
+  <div className="experience-detail">
+    <div className="exp-line"> - Codeworks est un bootcamp intensif, 6 jours par semaine, de 9h jusqu'à 21h.</div>
     <br />
-    <div className="expLine"> - Apprendre des nouvelles technologies de programmation et les implémenter.</div>
+    <div className="exp-line"> - Apprendre des nouvelles technologies de programmation et les implémenter.</div>
     <br />
-    <div className="expLine"> - Compléter des projets en solo ou en équipe.</div>
+    <div className="exp-line"> - Compléter des projets en solo ou en équipe.</div>
     <br />
     <a
-      className="Codeworks-Link"
+      className="codeworks-link"
       href="https://codeworks.me/"
       target="_blank"
       rel="noopener noreferrer"
@@ -29,36 +30,15 @@ const Codeworks = () => {
   </div>);
 
   return (
-    <div>
-      {isMobile ? <Portrait /> : <Landscape />}
+    <div className='displayed-experience'>
+      <div className='title-experience'>
+        Codeworks
+      </div>
+      <div className='single-experience'>
+        {codeworksFR}
+      </div>
     </div>
   );
-
-  function Portrait () {
-    return (
-      <div className='DisplayedExperience'>
-        <div className='TitleExperience'>
-          Codeworks
-        </div>
-        <div className='SingleExperience'>
-          {codeworksFR}
-        </div>
-      </div>
-    )
-  }
-
-  function Landscape () {
-    return (
-      <div className='DisplayedExperience'>
-        <div className='TitleExperience'>
-          Codeworks
-        </div>
-        <div className='SingleExperience'>
-          {codeworksFR}
-        </div>
-      </div>
-    ) 
-  }
 }
 
 export default Codeworks;

@@ -1,6 +1,8 @@
 body {
   margin: 0;
+  position: relative;
   display: flex;
+  width: 100%;
   overflow-x: hidden;
   justify-content: center;
   font-family: Gilroy-Medium,Helvetica,Arial,sans-serif;

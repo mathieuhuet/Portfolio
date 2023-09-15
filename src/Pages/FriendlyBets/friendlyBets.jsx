@@ -1,4 +1,5 @@
 import './friendlyBets.css';
+import './friendlyBetsMobile.css';
 import React, { useEffect, useState, useCallback } from "react";
 import { useMediaQuery } from 'react-responsive';
 import { FaServer } from 'react-icons/fa';
@@ -42,152 +43,76 @@ function FriendlyBets () {
   }, [])
 
   return (
-    <div>
-      {isMobile ? <Portrait /> : <Landscape />}
+    <div className='friendly-bets'>
+      <div className='friendly-bets-top'>
+        Work in progress
+      </div>
+      <div className='friendly-bets-container'>
+        <div className='friendly-bets-left'>
+          <div className='friendly-bets-title'>
+            FriendlyBets
+          </div>
+          <div className='friendly-bets-description'>
+            Application mobile pour faire des paris avec vos amis et faire le suivi de vos paris et de vos comptes a rendre.
+          </div>
+          <div className='friendly-bets-all-link'>
+            <div className='friendly-bets-hover-animation'>
+              <a className='friendly-bets-client-link'
+                href='https://github.com/mathieuhuet/FriendlyBetsClient'
+                target="_blank"
+                rel="noopener noreferrer"
+                style={{textDecoration: 'none', color: '#004638', display: 'flex', alignItems: 'center', marginLeft: 16, marginRight: 16, fontSize: 32}}
+              >
+              <HiDevicePhoneMobile />
+                &nbsp; Code pour le Front-end
+              </a>
+            </div>
+            <div className='friendly-bets-hover-animation'>
+              <a className='friendly-bets-client-link'
+                href='https://github.com/mathieuhuet/FriendlyBetsServer'
+                target="_blank"
+                rel="noopener noreferrer"
+                style={{textDecoration: 'none', color: '#004638', display: 'flex', alignItems: 'center', marginLeft: 16, marginRight: 16, fontSize: 32}}
+              >
+                <FaServer />
+                &nbsp; Code pour le Back-end
+              </a>
+            </div>
+          </div>
+        </div>
+        <div className='friendly-bets-right'>
+          <div>
+            <div className='friendly-bets-screenshot-title'>
+              Captures d'écran ({images.length}) :
+            </div>
+            <img
+              src={ Img1 }
+              onClick={ () => openImageViewer(0) }
+              width="200"
+              style={{ margin: '2px', cursor: 'pointer' }}
+              alt=""
+            />
+            <img
+              src={ Img3 }
+              onClick={ () => openImageViewer(2) }
+              width="200"
+              style={{ margin: '2px', cursor: 'pointer' }}
+              alt=""
+            />
+            {isViewerOpen && (
+              <ImageViewer
+                src={ images }
+                currentIndex={ currentImage }
+                disableScroll={ true }
+                closeOnClickOutside={ true }
+                onClose={ closeImageViewer }
+              />
+            )}
+          </div>
+        </div>
+      </div>
     </div>
   );
-
-  function Portrait () {
-    return (
-      <div className='FriendlyBets'>
-        <div className='FriendlyBetsTop'>
-          Work in progress
-        </div>
-        <div className='FriendlyBetsTitle'>
-          FriendlyBets
-        </div>
-        <div className='FriendlyBetsDescription'>
-          Application mobile pour faire des paris avec vos amis et faire le suivi de vos paris et de vos comptes a rendre.
-        </div>
-        <div className='FriendlyBetsAllLink'>
-          <div className='FriendlyBetsHoverAnimation'>
-            <a className='FriendlyBetsClientLink'
-              href='https://github.com/mathieuhuet/FriendlyBetsClient'
-              target="_blank"
-              rel="noopener noreferrer"
-              style={{textDecoration: 'none', color: '#004638', display: 'flex', alignItems: 'center', marginLeft: 16, marginRight: 16, fontSize: 32}}
-            >
-            <HiDevicePhoneMobile />
-              &nbsp; Code pour le Front-end
-            </a>
-          </div>
-          <div className='FriendlyBetsHoverAnimation'>
-            <a className='FriendlyBetsServerLink'
-              href='https://github.com/mathieuhuet/FriendlyBetsServer'
-              target="_blank"
-              rel="noopener noreferrer"
-              style={{textDecoration: 'none', color: '#004638', display: 'flex', alignItems: 'center', marginLeft: 16, marginRight: 16, fontSize: 32}}
-            >
-              <FaServer />
-              &nbsp; Code pour le Back-end
-            </a>
-          </div>
-        </div>
-        <div>
-          <div className='FriendlyBetsScreenshotTitle'>
-            Captures d'écran ({images.length}) :
-          </div>
-          <img
-            src={ Img1 }
-            onClick={ () => openImageViewer(0) }
-            width="200"
-            style={{ margin: '2px', cursor: 'pointer' }}
-            alt=""
-          />
-          <img
-            src={ Img3 }
-            onClick={ () => openImageViewer(2) }
-            width="200"
-            style={{ margin: '2px', cursor: 'pointer' }}
-            alt=""
-          />
-          {isViewerOpen && (
-            <ImageViewer
-              src={ images }
-              currentIndex={ currentImage }
-              disableScroll={ true }
-              closeOnClickOutside={ true }
-              onClose={ closeImageViewer }
-            />
-          )}
-        </div>
-      </div>
-    );
-  }
-
-  function Landscape () {
-    return (
-      <div className='FriendlyBets'>
-        <div className='FriendlyBetsTop'>
-          Work in progress
-        </div>
-        <div className='FriendlyBetsContainer'>
-          <div className='FriendlyBetsLeft'>
-            <div className='FriendlyBetsTitle'>
-              FriendlyBets
-            </div>
-            <div className='FriendlyBetsDescription'>
-              Application mobile pour faire des paris avec vos amis et faire le suivi de vos paris et de vos comptes a rendre.
-            </div>
-            <div className='FriendlyBetsAllLink'>
-              <div className='FriendlyBetsHoverAnimation'>
-                <a className='FriendlyBetsClientLink'
-                  href='https://github.com/mathieuhuet/FriendlyBetsClient'
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  style={{textDecoration: 'none', color: '#004638', display: 'flex', alignItems: 'center', marginLeft: 16, marginRight: 16, fontSize: 32}}
-                >
-                <HiDevicePhoneMobile />
-                  &nbsp; Code pour le Front-end
-                </a>
-              </div>
-              <div className='FriendlyBetsHoverAnimation'>
-                <a className='FriendlyBetsServerLink'
-                  href='https://github.com/mathieuhuet/FriendlyBetsServer'
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  style={{textDecoration: 'none', color: '#004638', display: 'flex', alignItems: 'center', marginLeft: 16, marginRight: 16, fontSize: 32}}
-                >
-                  <FaServer />
-                  &nbsp; Code pour le Back-end
-                </a>
-              </div>
-            </div>
-          </div>
-          <div className='FriendlyBetsRight'>
-            <div>
-              <div className='FriendlyBetsScreenshotTitle'>
-                Captures d'écran ({images.length}) :
-              </div>
-              <img
-                src={ Img1 }
-                onClick={ () => openImageViewer(0) }
-                width="200"
-                style={{ margin: '2px', cursor: 'pointer' }}
-                alt=""
-              />
-              <img
-                src={ Img3 }
-                onClick={ () => openImageViewer(2) }
-                width="200"
-                style={{ margin: '2px', cursor: 'pointer' }}
-                alt=""
-              />
-              {isViewerOpen && (
-                <ImageViewer
-                  src={ images }
-                  currentIndex={ currentImage }
-                  disableScroll={ true }
-                  closeOnClickOutside={ true }
-                  onClose={ closeImageViewer }
-                />
-              )}
-            </div>
-          </div>
-        </div>
-      </div>
-    );
-  }
 }
 
 export default FriendlyBets;

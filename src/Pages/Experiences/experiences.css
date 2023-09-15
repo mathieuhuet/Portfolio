@@ -1,59 +1,50 @@
-.Experience {
-  display: flex;
-  flex-direction: row;
-  justify-content: flex-start;
-  align-items: flex-start;
-  font-size: 18px;
-  color: #004638;
-  background-color: #f6f6f6;
+@media (min-width: 1024px) {
+  .experience {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: flex-start;
+    font-size: 18px;
+    color: #004638;
+    background-color: #f6f6f6;
+  }
+  
+  .mathieu-huet {
+    margin: 16px 0px -24px 0px;
+  }
+  .mathieu {
+    height: 200px;
+    pointer-events: none;
+    border-radius: 50%;
+  }
+  .motion-test:hover {
+    cursor: grab;
+  }
+  .motion-test:active {
+    cursor: grabbing;
+  }
+  
+  .experience-left {
+    margin: 40px 0px 0px 40px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .all-link {
+    display: flex;
+    justify-content: space-evenly;
+  }
+  
+  .linkedin-link {
+    color: #004638;
+    margin-left: 16px;
+    font-size: 32px;
+  }
+  
+  .github-link {
+    color: #004638;
+    font-size: 32px;
+  }
 }
-
-.ExperiencePortrait {
-  width: 100vw;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  font-size: 24px;
-  color: #004638;
-}
-
-.MathieuHuet {
-  margin: 16px 0px -24px 0px;
-}
-.Mathieu {
-  height: 200px;
-  pointer-events: none;
-  border-radius: 50%;
-}
-.motiontest:hover {
-  cursor: grab;
-}
-.motiontest:active {
-  cursor: grabbing;
-}
-
-.ExperienceLeft {
-  margin: 40px 0px 0px 40px;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-}
-
-.All-link {
-  display: flex;
-  justify-content: space-evenly;
-}
-
-.LinkedIn-link {
-  color: #004638;
-  margin-left: 16px;
-  font-size: 32px;
-}
-
-.GitHub-link {
-  color: #004638;
-  font-size: 32px;
-}
-

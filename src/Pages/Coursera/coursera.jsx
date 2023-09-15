@@ -1,4 +1,5 @@
-import './coursera.css'
+import './coursera.css';
+import './courseraMobile.css';
 import React, { useEffect } from 'react';
 import { useMediaQuery } from 'react-responsive';
 
@@ -9,12 +10,12 @@ const Coursera = () => {
   useEffect(() => {
     window.scrollTo(0, 0)
   }, [])
-  const codeworksFR = (
-  <div className="ExperienceDetail">
-    <div className="expLine">Certificat obtenu pour le cours en ligne autorisé par Google et proposé par l'intermédiaire de Coursera.</div>
+  const courseraFR = (
+  <div className="experience-detail">
+    <div className="exp-line">Certificat obtenu pour le cours en ligne autorisé par Google et proposé par l'intermédiaire de Coursera.</div>
     <br />
     <a
-      className="Codeworks-Link"
+      className="codeworks-link"
       href="https://www.coursera.org/account/accomplishments/certificate/LD4GWWKVMYF5"
       target="_blank"
       rel="noopener noreferrer"
@@ -25,36 +26,15 @@ const Coursera = () => {
   </div>);
 
   return (
-    <div>
-      {isMobile ? <Portrait /> : <Landscape />}
+    <div className='displayed-experience'>
+      <div className='title-experience'>
+        Coursera
+      </div>
+      <div className='single-experience'>
+        {courseraFR}
+      </div>
     </div>
   );
-
-  function Portrait () {
-    return (
-      <div className='DisplayedExperience'>
-        <div className='TitleExperience'>
-          Coursera
-        </div>
-        <div className='SingleExperience'>
-          {codeworksFR}
-        </div>
-      </div>
-    )
-  }
-
-  function Landscape () {
-    return (
-      <div className='DisplayedExperience'>
-        <div className='TitleExperience'>
-          Coursera
-        </div>
-        <div className='SingleExperience'>
-          {codeworksFR}
-        </div>
-      </div>
-    ) 
-  }
 }
 
 export default Coursera;

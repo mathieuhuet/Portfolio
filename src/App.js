@@ -8,10 +8,10 @@ import Bottom from "./Components/Bottom/bottom";
 
 function App() {
   return (
-    <div className="App">
+    <div className="app">
       <Router>
         <Header />
-        <div className="AppMain">
+        <div className="app-main">
           <Routing />
         </div>
         <Bottom />

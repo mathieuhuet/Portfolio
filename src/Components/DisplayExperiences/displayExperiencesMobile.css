@@ -1,0 +1,119 @@
+@media (max-width: 1023px) {
+  .experiences {
+    margin: 5vmin 0vmin 5vmin 3vmin;
+    min-height: 90vh;
+    width: 100vw;
+  }
+  
+  
+  .experience-list {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  
+  .experience-search {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    font-size: 3vmin;
+  }
+  
+  .search-bar {
+    background-color: #f6f6f6;
+    color: #004638;
+    border: 0.5vmin solid #004638;
+    border-radius: 2vmin;
+    font-size: 3vmin;
+    padding: 2vmin;
+    margin-left: 5vmin;
+    margin-bottom: 5vmin;
+    width: 70vw;
+    display: flex;
+  }
+  ::placeholder { /* Chrome, Firefox, Opera, Safari 10.1+ */
+    color: #004638;
+    font-family: Gilroy-Medium,Helvetica,Arial,sans-serif;
+    font-weight: bold;
+    opacity: 0.5; /* Firefox */
+  }
+  :-ms-input-placeholder { /* Internet Explorer 10-11 */
+    color: #004638;
+    font-family: Gilroy-Medium,Helvetica,Arial,sans-serif;
+    font-weight: bold;
+  }
+  ::-ms-input-placeholder { /* Microsoft Edge */
+    color: #004638;
+    font-family: Gilroy-Medium,Helvetica,Arial,sans-serif;
+    font-weight: bold;
+  }
+  
+  
+  
+  
+  
+  .individual-experience {
+    width: 90vw;
+    border-style: dashed none none none;
+    border-color: #004638;
+    color: #004638;
+    margin: 0vmin 0vmin 1vmin 0vmin;
+    padding: 4vmin 2vmin 4vmin 1vmin;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    text-decoration: none;
+  }
+  
+  
+  .individual-experience:hover {
+    cursor: pointer;
+    background-color: #004638;
+    color: #f6f6f6;
+    margin: 0vmin 0vmin 1vmin 1vmin;
+    box-shadow: 1vmin 1vmin black;
+  }
+  
+  .ie-top {
+    display: flex;
+    align-items: center;
+    margin-bottom: 2vmin;
+  }
+  
+  .ie-middle {
+    text-align: start;
+    margin-bottom: 2vmin;
+    color: #82bf00;
+    font-size: 3vmin;
+  }
+  
+  .ie-bottom {
+    display: flex;
+  }
+  
+  .ie-institution {
+    font-size: 3vmin;
+    margin-right: 1vmin;
+  }
+  
+  .ie-date {
+    font-size: 1.5vmin;
+    padding: 0vmin 0.5vmin 0vmin 0.5vmin;
+    border: 1px solid #004638;
+    border-radius: 3vmin;
+    margin-right: 1vmin;
+  }
+  
+  .ie-languages {
+    font-size: 2vmin;
+    display: flex;
+    flex-wrap: wrap;
+  }
+  
+  .languages {
+    margin-right: 1vmin;
+    border-left: 1px solid #004638;
+    padding-left: 1vmin;
+    margin-bottom: 1vmin;
+  } 
+}

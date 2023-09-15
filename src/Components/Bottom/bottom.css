@@ -1,4 +1,4 @@
-.Bottom {
+.bottom {
   padding-top: 8px;
   width: 100vw;
   height: auto;
@@ -9,7 +9,7 @@
   color: #f6f6f6;
 }
 
-.BottomSection {
+.bottom-section {
   max-width: 1280px;
   width: 98vw;
   display: flex;
@@ -17,7 +17,7 @@
   justify-content: space-evenly;
 }
 
-.BottomSelection {
+.bottom-selection {
   font-size: 16px;
   margin-top: 30px;
   padding-bottom: 10px;
@@ -27,11 +27,11 @@
   margin-bottom: 30px;
 }
 
-.BottomSelection:hover {
+.bottom-selection:hover {
   border: none;
 }
 
-.BottomSelection::after{
+.bottom-selection::after{
   content: '';
   position: absolute;
   width: 0px;
@@ -42,7 +42,7 @@
   transition: all ease-in-out .15s;
 }
 
-.BottomSelection:hover::after {
+.bottom-selection:hover::after {
   width: 100%;
   left: 0;
 }
