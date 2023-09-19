@@ -1,3 +1,104 @@
 @media (max-width: 1023px) {
-
+  .gpmm {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    min-height: 90vh;
+    max-width: 1280px;
+    width: 98vw;
+    color: #004638;
+    font-weight: 700;
+  }
+  
+  .gpmm-top {
+    margin-top: 4vmin;
+    width: 100vw;
+    font-size: 6vmin;
+    font-weight: 800;
+    background: linear-gradient(180deg,#f6f6f6 0%,#f6f6f6 30%,#d8f537 31%,#d8f537 100%);
+  }
+  
+  .gpmm-title {
+    font-size: 6vmin;
+    text-align: left;
+    background: linear-gradient(180deg,#f6f6f6 0%,#f6f6f6 30%,#d8f537 31%,#d8f537 100%);
+    width: fit-content;
+  }
+  
+  .gpmm-description {
+    margin-top: 5vmin;
+    text-align: left;
+    color: #82bf00;
+    font-size: 3vmin;
+  }
+  
+  .gpmm-disclaimer {
+    text-align: left;
+    font-size: 2.5vmin;
+    margin-top: 2vmin;
+  }
+  
+  .gpmm-all-link {
+    margin-top: 5vmin;
+    display: flex;
+    flex-direction: column;
+    text-align: left;
+    width: fit-content;
+  }
+  
+  .gpmm-hover-animation {
+    cursor: pointer;
+    width: fit-content;
+    border:none;
+    position: relative;
+    transition: all 0.3s ease-in-out;
+    margin-bottom: 4vmin;
+    color: #004638;
+  }
+  
+  .gpmm-hover-animation::after {
+    content: '';
+    position: absolute;
+    width: 0px;
+    height: 5px;
+    left: 50%;
+    bottom: 4;
+    background:#82bf00;
+    transition: all ease-in-out .15s;
+  }
+  
+  .gpmm-hover-animation:hover {
+    border: none;
+  }
+  
+  .gpmm-hover-animation:hover::after {
+    width: 100%;
+    left: 0;
+  }
+  
+  .gpmm-container {
+    display: flex;
+    width: 98vw;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-top: 4vmin;
+  }
+  
+  .gpmm-left {
+    width: 95%;
+  }
+  
+  .gpmm-right {
+    width: 95%;
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .gpmm-screenshot-title {
+    font-size: 4vmin;
+    text-align: left;
+    background: linear-gradient(180deg,#f6f6f6 0%,#f6f6f6 30%,#d8f537 31%,#d8f537 100%);
+    width: fit-content;
+  }
 }

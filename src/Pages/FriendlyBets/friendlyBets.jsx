@@ -95,20 +95,22 @@ function FriendlyBets () {
             <div className='friendly-bets-screenshot-title'>
               Captures d'écran ({images.length}) :
             </div>
-            <img
-              src={ Img1 }
-              onClick={ () => openImageViewer(0) }
-              width="200"
-              style={{ margin: '2px', cursor: 'pointer' }}
-              alt=""
-            />
-            <img
-              src={ Img3 }
-              onClick={ () => openImageViewer(2) }
-              width="200"
-              style={{ margin: '2px', cursor: 'pointer' }}
-              alt=""
-            />
+            <div className='friendly-bets-images'>
+              <img
+                src={ Img1 }
+                onClick={ () => openImageViewer(0) }
+                width="160"
+                style={{ margin: '2px', cursor: 'pointer' }}
+                alt=""
+              />
+              <img
+                src={ Img3 }
+                onClick={ () => openImageViewer(2) }
+                width="160"
+                style={{ margin: '2px', cursor: 'pointer' }}
+                alt=""
+              />
+            </div>
             {isViewerOpen && (
               <ImageViewer
                 src={ images }

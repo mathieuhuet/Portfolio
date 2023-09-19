@@ -83,7 +83,12 @@ function GPMM () {
                 href='https://github.com/mathieuhuet/GPMM_Alertes'
                 target="_blank"
                 rel="noopener noreferrer"
-                style={{textDecoration: 'none', color: '#004638', display: 'flex', alignItems: 'center', marginLeft: 16, marginRight: 16, fontSize: 32}}
+                style={
+                  isMobile ? 
+                  {textDecoration: 'none', color: '#004638', display: 'flex', alignItems: 'center', marginLeft: '2vmin', marginRight: '2vmin', fontSize: '4vmin'}
+                  :
+                  {textDecoration: 'none', color: '#004638', display: 'flex', alignItems: 'center', marginLeft: 16, marginRight: 16, fontSize: 32}
+              }
               >
               <HiDevicePhoneMobile />
                 &nbsp; Code pour l'application
@@ -94,7 +99,12 @@ function GPMM () {
                 href='https://github.com/mathieuhuet/GPMM_Alertes_Desktop'
                 target="_blank"
                 rel="noopener noreferrer"
-                style={{textDecoration: 'none', color: '#004638', display: 'flex', alignItems: 'center', marginLeft: 16, marginRight: 16, fontSize: 32}}
+                style={
+                  isMobile ? 
+                  {textDecoration: 'none', color: '#004638', display: 'flex', alignItems: 'center', marginLeft: '2vmin', marginRight: '2vmin', fontSize: '4vmin'}
+                  :
+                  {textDecoration: 'none', color: '#004638', display: 'flex', alignItems: 'center', marginLeft: 16, marginRight: 16, fontSize: 32}
+              }
               >
                 <MdMonitor />
                 &nbsp; Code pour la version web
@@ -105,7 +115,12 @@ function GPMM () {
                 href='https://github.com/mathieuhuet/GPMM_Alertes_server'
                 target="_blank"
                 rel="noopener noreferrer"
-                style={{textDecoration: 'none', color: '#004638', display: 'flex', alignItems: 'center', marginLeft: 16, marginRight: 16, fontSize: 32}}
+                style={
+                  isMobile ? 
+                  {textDecoration: 'none', color: '#004638', display: 'flex', alignItems: 'center', marginLeft: '2vmin', marginRight: '2vmin', fontSize: '4vmin'}
+                  :
+                  {textDecoration: 'none', color: '#004638', display: 'flex', alignItems: 'center', marginLeft: 16, marginRight: 16, fontSize: 32}
+              }
               >
                 <FaServer />
                 &nbsp; Code pour le serveur
@@ -116,7 +131,12 @@ function GPMM () {
                 href='https://github.com/mathieuhuet/GPMM_Alertes_CREATEUSER'
                 target="_blank"
                 rel="noopener noreferrer"
-                style={{textDecoration: 'none', color: '#004638', display: 'flex', alignItems: 'center', marginLeft: 16, marginRight: 16, fontSize: 32}}
+                style={
+                  isMobile ? 
+                  {textDecoration: 'none', color: '#004638', display: 'flex', alignItems: 'center', marginLeft: '2vmin', marginRight: '2vmin', fontSize: '4vmin'}
+                  :
+                  {textDecoration: 'none', color: '#004638', display: 'flex', alignItems: 'center', marginLeft: 16, marginRight: 16, fontSize: 32}
+              }
               >
                 <FaUserPlus />
                 &nbsp; Code ajout d'utilisateur
@@ -129,38 +149,60 @@ function GPMM () {
             <div className='gpmm-screenshot-title'>
               Captures d'écran ({images.length}) :
             </div>
-            <div>
-              <img
-                src={ Img1 }
-                onClick={ () => openImageViewer(0) }
-                width="160"
-                style={{ margin: '2px', cursor: 'pointer' }}
-                alt=""
-              />
-              <img
-                src={ Img3 }
-                onClick={ () => openImageViewer(1) }
-                width="160"
-                style={{ margin: '2px', cursor: 'pointer' }}
-                alt=""
-              />
-            </div>
-            <div>
-              <img
-                src={ Img4 }
-                onClick={ () => openImageViewer(2) }
-                width="160"
-                style={{ margin: '2px', cursor: 'pointer' }}
-                alt=""
-              />
-              <img
-                src={ Img2 }
-                onClick={ () => openImageViewer(3) }
-                width="160"
-                style={{ margin: '2px', cursor: 'pointer' }}
-                alt=""
-              />
-            </div>
+            {isMobile &&
+              <div>
+                  <img
+                    src={ Img3 }
+                    onClick={ () => openImageViewer(0) }
+                    width="160"
+                    style={{ margin: '2px', cursor: 'pointer' }}
+                    alt=""
+                  />
+                  <img
+                    src={ Img2 }
+                    onClick={ () => openImageViewer(1) }
+                    width="160"
+                    style={{ margin: '2px', cursor: 'pointer' }}
+                    alt=""
+                  />
+              </div>
+            }
+            {!isMobile && 
+              <>
+                <div>
+                  <img
+                    src={ Img1 }
+                    onClick={ () => openImageViewer(0) }
+                    width="160"
+                    style={{ margin: '2px', cursor: 'pointer' }}
+                    alt=""
+                  />
+                  <img
+                    src={ Img3 }
+                    onClick={ () => openImageViewer(1) }
+                    width="160"
+                    style={{ margin: '2px', cursor: 'pointer' }}
+                    alt=""
+                  />
+                </div>
+                <div>
+                  <img
+                    src={ Img4 }
+                    onClick={ () => openImageViewer(2) }
+                    width="160"
+                    style={{ margin: '2px', cursor: 'pointer' }}
+                    alt=""
+                  />
+                  <img
+                    src={ Img2 }
+                    onClick={ () => openImageViewer(3) }
+                    width="160"
+                    style={{ margin: '2px', cursor: 'pointer' }}
+                    alt=""
+                  />
+                </div>
+              </>
+            }
             {isViewerOpen && (
               <ImageViewer
                 src={ images }
