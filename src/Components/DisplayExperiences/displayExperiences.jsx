@@ -3,6 +3,7 @@ import './displayExperiencesMobile.css';
 import React,{ useState, useEffect, useMemo } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { useMediaQuery } from 'react-responsive';
+import { useWindowDimensions } from '../../Utilities/windowDimension';
 import JavaScript from '../Icons/JavaScript';
 import Java from '../Icons/Java';
 import PostgreSQL from '../Icons/PostgreSQL';
@@ -20,6 +21,7 @@ import { SiMysql } from "react-icons/si"
 
 function DisplayExperiences () {
   let navigate = useNavigate();
+  const { height, width } = useWindowDimensions();
   const isMobile = useMediaQuery({ query: '(max-width: 1023px)' });
   const experiences = useMemo(() => [
     {
@@ -116,6 +118,7 @@ function DisplayExperiences () {
     setResult(res);
   }, [search, experiences])
 
+
   return (
     <div className="experiences">
       <div className='experience-search'>
@@ -148,84 +151,84 @@ function DisplayExperiences () {
               {exp.languages.includes('PHP') &&
                 <PHP
                   color='#82bf00'
-                  size={isMobile ? 20 : 40}
+                  size={isMobile ? width / 20 : 40}
                 />
               }
               {exp.languages.includes('JavaScript') &&
                 <JavaScript
                   color='#82bf00'
-                  size={isMobile ? 20 : 40}
+                  size={isMobile ? width / 20 : 40}
                 />
               }
               {exp.languages.includes('TypeScript') &&
                 <TypeScript
                   color='#82bf00'
-                  size={isMobile ? 20 : 40}
+                  size={isMobile ? width / 20 : 40}
                 />
               }
               {exp.languages.includes('Java') &&
                 <Java
                   color='#82bf00'
-                  size={isMobile ? 20 : 40}
+                  size={isMobile ? width / 20 : 40}
                 />
               }
               {exp.languages.includes('Python') &&
                 <Python
                   color='#82bf00'
-                  size={isMobile ? 20 : 40}
+                  size={isMobile ? width / 20 : 40}
                 />
               }
               {exp.languages.includes('C++') &&
                 <Cplusplus
                   color='#82bf00'
-                  size={isMobile ? 20 : 40}
+                  size={isMobile ? width / 20 : 40}
                 />
               }
               {exp.languages.includes('Angular') &&
                 <Angular
                   color='#82bf00'
-                  size={isMobile ? 20 : 40}
+                  size={isMobile ? width / 20 : 40}
                 />
               }
               {(exp.languages.includes('React') || exp.languages.includes('React Native')) &&
                 <ReactIcon
                   color='#82bf00'
-                  size={isMobile ? 20 : 40}
+                  size={isMobile ? width / 20 : 40}
                 />
               }
               {exp.languages.includes('PostgreSQL') &&
                 <PostgreSQL
                   color='#82bf00'
-                  size={isMobile ? 20 : 40}
+                  size={isMobile ? width / 20 : 40}
                 />
               }
               {exp.languages.includes('MongoDB') &&
                 <MongoDB
                   color='#82bf00'
-                  size={isMobile ? 20 : 40}
+                  size={isMobile ? width / 20 : 40}
                 />
               }
               {exp.languages.includes('GraphQL') &&
                 <GraphQL
                   color='#82bf00'
-                  size={isMobile ? 20 : 40}
+                  size={isMobile ? width / 20 : 40}
                 />
               }
               {exp.languages.includes('Redux') &&
                 <Redux
                   color='#82bf00'
-                  size={isMobile ? 20 : 40}
+                  size={isMobile ? width / 20 : 40}
                 />
               }
               {exp.languages.includes('Docker') &&
                 <Docker
                   color='#82bf00'
-                  size={isMobile ? 20 : 40}
+                  size={isMobile ? width / 20 : 40}
                 />
               }
               {exp.languages.includes('MySQL') &&
                 <SiMysql 
-                  size={isMobile ? 18 : 36}
+                  size={isMobile ? width / 22 : 36}
                   color='#82bf00'
                 />
               }

@@ -1,3 +1,56 @@
 @media (max-width: 1023px) {
+  .displayed-experience {
+    margin-bottom: 32px;
+    max-width: 1280px;
+    width: 98vw;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    min-height: 90vh;
+  }
+  
+  
+  .single-experience {
+    background-color: #d8f537;
+    width: 90%;
+    color: #004638;
+    margin: 0vmin 3vmin 3vmin 3vmin;
+    padding: 3vmin 0vmin 3vmin 3vmin;
+    font-size: 3vmin;
+    box-shadow: 3vmin 3vmin black;
+  }
+  
+  .title-experience {
+    margin-top: 4vmin;
+    margin-bottom: 4vmin;
+    background: linear-gradient(180deg,#f6f6f6 0%,#f6f6f6 30%,#d8f537 31%,#d8f537 100%);
+    font-size: 4vmin;
+    font-weight: 800;
+  }
+  
+  
+  .experience-detail {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    flex-wrap: wrap;
+    margin: 0vmin 0vmin 0vmin 5vmin;
+  }
+  
+  .exp-line {
+    text-align: left;
+  }
+  
+  .codeworks-link {
+    font-weight: 700;
+    background-color: #004638;
+    color: #d8f537;
+    text-decoration: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 3vmin;
+    padding: 1vmin;
+  }
 
 }

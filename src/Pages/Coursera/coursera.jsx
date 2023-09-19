@@ -20,7 +20,7 @@ const Coursera = () => {
       target="_blank"
       rel="noopener noreferrer"
     >
-      Lien
+      Certificat d'accomplissement
     </a>
     <br />
   </div>);

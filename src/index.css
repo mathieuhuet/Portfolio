@@ -15,7 +15,7 @@ body {
   -webkit-font-smoothing: antialiased;
 }
 body::-webkit-scrollbar {
-  width: 10px;
+  width: 8px;
 }
 body::-webkit-scrollbar-track {
   background: #f6f6f6; 

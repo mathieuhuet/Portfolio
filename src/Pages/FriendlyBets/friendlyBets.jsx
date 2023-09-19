@@ -61,7 +61,12 @@ function FriendlyBets () {
                 href='https://github.com/mathieuhuet/FriendlyBetsClient'
                 target="_blank"
                 rel="noopener noreferrer"
-                style={{textDecoration: 'none', color: '#004638', display: 'flex', alignItems: 'center', marginLeft: 16, marginRight: 16, fontSize: 32}}
+                style={
+                  isMobile ? 
+                  {textDecoration: 'none', color: '#004638', display: 'flex', alignItems: 'center', marginLeft: '2vmin', marginRight: '2vmin', fontSize: '4vmin'}
+                  :
+                  {textDecoration: 'none', color: '#004638', display: 'flex', alignItems: 'center', marginLeft: 16, marginRight: 16, fontSize: 32}
+              }
               >
               <HiDevicePhoneMobile />
                 &nbsp; Code pour le Front-end
@@ -72,7 +77,12 @@ function FriendlyBets () {
                 href='https://github.com/mathieuhuet/FriendlyBetsServer'
                 target="_blank"
                 rel="noopener noreferrer"
-                style={{textDecoration: 'none', color: '#004638', display: 'flex', alignItems: 'center', marginLeft: 16, marginRight: 16, fontSize: 32}}
+                style={
+                  isMobile ? 
+                  {textDecoration: 'none', color: '#004638', display: 'flex', alignItems: 'center', marginLeft: '2vmin', marginRight: '2vmin', fontSize: '4vmin'}
+                  :
+                  {textDecoration: 'none', color: '#004638', display: 'flex', alignItems: 'center', marginLeft: 16, marginRight: 16, fontSize: 32}
+              }
               >
                 <FaServer />
                 &nbsp; Code pour le Back-end
