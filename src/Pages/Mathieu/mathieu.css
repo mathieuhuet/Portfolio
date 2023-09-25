@@ -2,8 +2,7 @@
   .main {
     min-height: 90vh;
     display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
+    flex-direction: column;
     font-weight: 700;
     max-width: 1280px;
     width: 98vw;
@@ -12,12 +11,15 @@
   
   .main-top {
     display: flex;
-    justify-content: center;
+    flex-direction: column;
     align-items: center;
+    margin-top: 100px;
   }
   
   .main-bottom {
     display: flex;
+    flex-direction: column;
+    margin-top: 100px;
   }
   
   .title {
@@ -29,20 +31,25 @@
   
   .secondary-title {
     color: #82bf00;
-    font-size: 24px;
-    width: 50%;
+    font-size: 32px;
+    width: 90%;
   }
   
   .main-text {
     display: flex;
     flex-direction: column;
-    width: 50%;
   }
   
   .upper-text {
+    display: flex;
+    margin-bottom: 100px;
+  }
+
+  .highlighted-text {
     color: #004638;
     background: linear-gradient(180deg,#f6f6f6 0%,#f6f6f6 30%,#d8f537 31%,#d8f537 100%);
     font-size: 40px;
+    margin-top: 60px;
   }
   
   .lower-text {
@@ -55,7 +62,7 @@
   .links {
     display: flex;
     justify-content: center;
-    width: 50%;
+    width: 100%;
   }
   
   .link1 {

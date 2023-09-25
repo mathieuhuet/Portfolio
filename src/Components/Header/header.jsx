@@ -103,14 +103,14 @@ const Header = () => {
       <div>
         <div className={"header" + (!showNavbar ? ' sticky-hidden' : '')} role='banner'>
           <React.Fragment>
-            <Button
-              className="toggle"
+            <div
+              className="toggle-menu"
               onClick={toggleDrawer()}
             >
-              {drawerState ? 'close' : 'open'}
-            </Button>
+              Menu
+            </div>
             <Drawer
-              anchor={'menu'}
+              anchor={'right'}
               open={drawerState}
               onClose={toggleDrawer()}
             >

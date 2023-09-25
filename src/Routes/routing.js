@@ -2,7 +2,6 @@ import React from 'react';
 import { Routes, Route } from 'react-router-dom';
 import Experiences from '../Pages/Experiences/experiences';
 import Mathieu from '../Pages/Mathieu/mathieu';
-import MathieuPlus from '../Pages/MathieuPlus/mathieuPlus';
 import BatteryMonitoring from '../Pages/BatteryMonitoring/batterymonitoring';
 import Codeworks from '../Pages/Codeworks/codeworks';
 import Coursera from '../Pages/Coursera/coursera';
@@ -57,10 +56,6 @@ const Routing = () => {
         <Route 
           path="/resume" 
           element={<Experiences />} 
-        />
-        <Route 
-          path="/mathieu" 
-          element={<MathieuPlus />} 
         />
         <Route 
           path="/" 

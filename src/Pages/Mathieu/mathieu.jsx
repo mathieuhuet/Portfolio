@@ -37,8 +37,13 @@ function Mathieu () {
   return (
     <div className='main'>
       <div className='main-top'>
-        <div className='title'>
-          Mathieu Huet
+        <div className='upper-text'>
+          <div className='title'>
+            Mathieu Huet
+          </div>
+          <div className='highlighted-text'>
+            Je suis présentement à la recherche d'emploi.
+          </div>
         </div>
         <div className='secondary-title'>
           Je suis un développeur spécialisé Javascript & Python. Mon framework préféré est de loin React.
@@ -46,9 +51,7 @@ function Mathieu () {
       </div>
       <div className='main-bottom'>
         <div className='main-text'>
-          <div className='upper-text'>
-            Je suis présentement à la recherche d'emploi.
-          </div>
+          J'ai commencé à faire de la programmation en 2017 avec Java grâce aux cours de programmation de l'UQÀM, j'ai vu plusieurs language de programmation mais j'ai décidé d'accorder le plus d'importance à Python car c'était facile, rapide et pratique pour faire des scripts d'automatisations pour m'aider dans mes derniers emplois. En 2022 j'ai entâmé les étapes pour devenir un développeur web, alors je me suis tourné complétement sur Javascript, j'ai pris des cours en ligne sur divers site d'apprentissage et j'ai complété le bootcamp intensif de Codeworks. Maintenant je travail sur des projets personnels pour profiner mon art.
         </div>
         <div className='links'>
           <div className='link1'
@@ -60,6 +63,16 @@ function Mathieu () {
             onClick={() => navigate('/resume')}
           >
             Expériences
+          </div>
+          <div className='link2'
+            onClick={() => navigate('/resume')}
+          >
+            GPMM Alertes
+          </div>
+          <div className='link2'
+            onClick={() => navigate('/resume')}
+          >
+            Friendly Bets
           </div>
         </div>
       </div>
