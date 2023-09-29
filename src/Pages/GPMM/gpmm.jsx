@@ -2,6 +2,7 @@ import './gpmm.css';
 import './gpmmMobile.css';
 import React, { useEffect, useState, useCallback } from "react";
 import { useMediaQuery } from 'react-responsive';
+import { useWindowDimensions } from '../../Utilities/windowDimension';
 import { FaServer } from 'react-icons/fa';
 import { FaUserPlus } from 'react-icons/fa';
 import { MdMonitor } from 'react-icons/md';
@@ -27,9 +28,9 @@ Component that display the page about the Battery Montiroring project. http://ww
 */
 
 
-function GPMM () {
+function GPMM (props) {
   const isMobile = useMediaQuery({ query: '(max-width: 1023px)' });
-
+  const { height, width } = useWindowDimensions();
   const [currentImage, setCurrentImage] = useState(0);
   const [isViewerOpen, setIsViewerOpen] = useState(false);
   const images = [
@@ -50,11 +51,13 @@ function GPMM () {
   const openImageViewer = useCallback((index) => {
     setCurrentImage(index);
     setIsViewerOpen(true);
+    props.setAllowMobileMenu(false);
   }, []);
 
   const closeImageViewer = () => {
     setCurrentImage(0);
     setIsViewerOpen(false);
+    props.setAllowMobileMenu(true);
   };
 
   useEffect(() => {
@@ -63,9 +66,6 @@ function GPMM () {
 
   return (
     <div className='gpmm'>
-      <div className='gpmm-top'>
-        Work in progress
-      </div>
       <div className='gpmm-container'>
         <div className='gpmm-left'>
           <div className='gpmm-title'>
@@ -75,7 +75,7 @@ function GPMM () {
             Application mobile et web pour monitorer les activitées de maintenance sur le réseau du REM pour les employés de GPMM O&M. L'application permet de faire des rapports des activités et de faire un suivi des évenements.
           </div>
           <div className='gpmm-disclaimer'>
-            *Cette application n'est pas utilisé par GPMM O&M ils préfèrent outsource leur logiciels, ils utilisent présentement l'application Maximo de IBM pour faire le suivi des évenements.
+            *Cette application n'est pas utilisé par GPMM O&M ils préfèrent out-source leur logiciels, ils utilisent présentement l'application Maximo de IBM pour faire le suivi des interventions.
           </div>
           <div className='gpmm-all-link'>
             <div className='gpmm-hover-animation'>
@@ -153,15 +153,15 @@ function GPMM () {
               <div>
                   <img
                     src={ Img3 }
-                    onClick={ () => openImageViewer(0) }
-                    width="160"
+                    onClick={ () => openImageViewer(1) }
+                    width={width > height ? height / 2.5 : width / 2.5}
                     style={{ margin: '2px', cursor: 'pointer' }}
                     alt=""
                   />
                   <img
                     src={ Img2 }
-                    onClick={ () => openImageViewer(1) }
-                    width="160"
+                    onClick={ () => openImageViewer(3) }
+                    width={width > height ? height / 2.5 : width / 2.5}
                     style={{ margin: '2px', cursor: 'pointer' }}
                     alt=""
                   />
@@ -178,8 +178,8 @@ function GPMM () {
                     alt=""
                   />
                   <img
-                    src={ Img3 }
-                    onClick={ () => openImageViewer(1) }
+                    src={ Img2 }
+                    onClick={ () => openImageViewer(3) }
                     width="160"
                     style={{ margin: '2px', cursor: 'pointer' }}
                     alt=""
@@ -194,8 +194,8 @@ function GPMM () {
                     alt=""
                   />
                   <img
-                    src={ Img2 }
-                    onClick={ () => openImageViewer(3) }
+                    src={ Img3 }
+                    onClick={ () => openImageViewer(1) }
                     width="160"
                     style={{ margin: '2px', cursor: 'pointer' }}
                     alt=""
@@ -210,6 +210,7 @@ function GPMM () {
                 disableScroll={ true }
                 closeOnClickOutside={ true }
                 onClose={ closeImageViewer }
+                backgroundStyle={{backgroundColor: 'rgba(0, 0, 0, 0.8)'}}
               />
             )}
           </div>

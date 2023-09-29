@@ -37,15 +37,7 @@ function BatteryMonitoring() {
         <div className="battery-paragraph-2">J'ai construit cette application seul. Le back-end, le front-end, conçu et mis en œuvre le RESTful API et la modélisation des données.</div>
       </div>
       <div className="battery-slide-3">
-        <div className="battery-slide-3-row">
-          <img src={batteryScreenshot5} className="battery-screenshot-3" alt="Screenshot of Battery Monitoring App" />
-          <div className="battery-paragraph-3">Battery Monitoring va chercher les données en temps réel de vos batteries.</div>
-        </div>
-        <div className="battery-slide-3-row">
-          <div className="battery-paragraph-3">Vous pouvez comparer les performances de vos équipements pour déterminer si certaines batteries sont entrain de se dégrader ou 
-          ont besoin d’être remplacées.</div>
-          <img src={batteryScreenshot6} className="battery-screenshot-3" alt="Screenshot of Battery Monitoring App" />
-        </div>
+        {isMobile &&
         <div className="battery-slide-3-row">
           <img src={batteryScreenshot0} className="battery-screenshot-3" alt="Screenshot of Battery Monitoring App" />
           <div className="battery-paragraph-3">
@@ -59,6 +51,39 @@ function BatteryMonitoring() {
             </a>
           </div>
         </div>
+        }
+        {isMobile &&
+        <div className="battery-slide-3-row">
+          <div className="battery-paragraph-3">Battery Monitoring va chercher les données en temps réel de vos batteries.</div>
+          <img src={batteryScreenshot5} className="battery-screenshot-3" alt="Screenshot of Battery Monitoring App" />
+        </div>
+        }
+        {!isMobile &&
+        <div className="battery-slide-3-row">
+          <img src={batteryScreenshot5} className="battery-screenshot-3" alt="Screenshot of Battery Monitoring App" />
+          <div className="battery-paragraph-3">Battery Monitoring va chercher les données en temps réel de vos batteries.</div>
+        </div>
+        }
+        <div className="battery-slide-3-row">
+          <div className="battery-paragraph-3">Vous pouvez comparer les performances de vos équipements pour déterminer si certaines batteries sont entrain de se dégrader ou 
+          ont besoin d’être remplacées.</div>
+          <img src={batteryScreenshot6} className="battery-screenshot-3" alt="Screenshot of Battery Monitoring App" />
+        </div>
+        {!isMobile &&
+        <div className="battery-slide-3-row">
+          <img src={batteryScreenshot0} className="battery-screenshot-3" alt="Screenshot of Battery Monitoring App" />
+          <div className="battery-paragraph-3">
+            <a
+              className="youtube-link"
+              href="https://youtu.be/s5RYPeURV8w"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              Démonstration vidéo de l'application.
+            </a>
+          </div>
+        </div>
+        }
         <div className="battery-slide-3-row">
           <div className="battery-paragraph-3">L'application fourni aussi les prévisions météorologiques pour vous aidez à prédire les performances de vos appareils à énergie solaires 
           et à énergie éoliennes.</div>

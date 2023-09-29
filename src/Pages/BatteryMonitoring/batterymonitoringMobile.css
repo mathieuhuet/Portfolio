@@ -1,6 +1,9 @@
 @media (max-width: 1023px) {
   .battery-project-container{
-    width: calc(100vw - 8px);
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
   }
 
   .battery-slide-1 {
@@ -10,7 +13,7 @@
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    height: 100vh;
+    margin: 5vmin 0vmin 5vmin 0vmin;
   }
   
   .battery-slide-1-top {
@@ -56,8 +59,8 @@
     display: flex;
     align-items: flex-start;
     justify-content: center;
-    height: 70vh;
-    width: 100%;
+    padding: 5vmin 0vmin 5vmin 0vmin;
+    width: 100vw;
   }
   
   .battery-paragraph-2 {
@@ -78,7 +81,7 @@
     flex-direction: column;
     align-items: center;
     justify-content: space-evenly;
-    width: 100%;
+    width: 100vw;
   }
   
   .battery-slide-3-row {
@@ -92,7 +95,7 @@
   
   .battery-slide-3-bottom {
     height: 100vh;
-    width: 100%;
+    width: 100vw;
     background-image: url(../../Assets/Battery_Monitoring/BatteryBottomMobile.png);
     background-repeat: no-repeat;
     background-attachment: scroll;

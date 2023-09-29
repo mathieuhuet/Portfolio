@@ -3,14 +3,16 @@
     background-color: #f6f6f6;
     left: 0;
     position: fixed;
-    width: 98vw;
+    width: 100vw;
     height: 80px;
     display: flex;
     flex-direction: row;
-    justify-content: flex-start;
+    justify-content: flex-end;
     align-items: center;
     border-bottom: 4px solid #82bf00; 
-    transition: all 0.3s ease-out;
+    z-index: 10;
+    transform: translateY(0%);
+    transition: all 0.5s ease-out;
   }
 
   .sticky-hidden {
@@ -19,7 +21,26 @@
 
   .toggle-menu {
     color: #004638;
-    border: 2px 0px 2px 0px #004638;
+    border-top: 3px solid #004638;
+    border-bottom: 3px solid #004638;
     font-weight: 700;
+    font-size: 20px;
+    margin-right: 20px;
+    padding-top: 12px;
+    padding-bottom: 12px;
+    cursor: pointer;
   }
+
+  .menu-button {
+    color: #004638;
+    font-weight: 700;
+    font-size: 32px;
+    margin: 8px;
+  }
+
+  .menu-button:active {
+    border-bottom: 8px solid #82bf00;
+    margin-bottom: 0px;
+  }
+
 }

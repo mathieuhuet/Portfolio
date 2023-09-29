@@ -1,12 +1,10 @@
 import './codeworks.css';
 import './codeworksMobile.css';
 import React, { useEffect } from 'react';
-import { useMediaQuery } from 'react-responsive';
-
 
 
 const Codeworks = () => {
-  const isMobile = useMediaQuery({ query: '(max-width: 1023px)' });
+
   useEffect(() => {
     window.scrollTo(0, 0)
   }, [])

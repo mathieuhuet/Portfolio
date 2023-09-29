@@ -28,15 +28,15 @@ function DisplayExperiences () {
       id: 0,
       institution: 'GPMM_Alertes',
       blurb: "Application mobile et web pour monitorer les activitées de maintenance sur le réseau du REM pour les employés de GPMM O&M. L'application permet de faire des rapports des activités et de faire un suivi.",
-      languages: ['Node.js', 'TypeScript', 'React', 'React Native', 'JavaScript', 'MongoDB', 'Mongoose', 'Express.js', 'RESTful API', 'Git'],
+      languages: ['TypeScript', 'React', 'React Native', 'JavaScript', 'Node.js', 'MongoDB', 'Mongoose', 'Express.js', 'RESTful API', 'Git'],
       date: '2023',
       route: 'gpmm',
     },
     {
       id: 1,
       institution: 'Friendly Bets',
-      blurb: "Application mobile pour faire des paris avec vos amis et faire les suivi de vos paris.",
-      languages: ['Node.js', 'TypeScript', 'React Native', 'JavaScript', 'MongoDB', 'Mongoose', 'Express.js', 'RESTful API', 'Git'],
+      blurb: "Application mobile pour faire des paris avec vos amis et faire le suivi de vos paris.",
+      languages: ['TypeScript', 'React Native', 'JavaScript', 'Node.js', 'MongoDB', 'Mongoose', 'Express.js', 'RESTful API', 'Git'],
       date: '2023',
       route: 'friendly_bets',
     },
@@ -44,15 +44,15 @@ function DisplayExperiences () {
       id: 2,
       institution: 'Battery Monitoring',
       blurb: "Application web pour monitorer l'état des équipements d'Innovation Mi8 qui se trouve dans les chantiers de construction.",
-      languages: ['Node.js', 'JavaScript', 'React', 'PostgreSQL', 'Sequelize', 'Koa', 'RESTful API', 'SNMP', 'UDP/IP', 'OpenVPN', 'Git', 'IoT'],
+      languages: ['JavaScript', 'React', 'Node.js', 'PostgreSQL', 'Sequelize', 'Koa', 'RESTful API', 'SNMP', 'UDP/IP', 'OpenVPN', 'Git', 'IoT'],
       date: '2023',
       route: 'battery_monitoring',
     },
     {
       id: 3,
-      institution: 'Codeworks Bootcamp',
+      institution: 'Codeworks',
       blurb: "Codeworks est un bootcamp intensif 6jours/semaine, 12heures par jour, d'une durée de 3mois.",
-      languages: ['Node.js', 'JavaScript', 'TypeScript', 'React', 'React Native', 'Redux', 'Angular', 'jQuery', 'HTML', 'CSS', 'SQL', 'NoSQL', "GraphQL", "PostgreSQL", 'Sequelize ORM', 'MongoDB', 'Mongoose ORM', 'Redis', 'Express', 'Koa', 'Docker', 'Expo', 'Git', 'JSON', 'RESTful API', 'Socket.IO', 'Linux/Unix'],
+      languages: ['JavaScript', 'TypeScript', 'React', 'React Native', 'Node.js', 'Redux', 'Angular', 'jQuery', 'HTML', 'CSS', 'SQL', 'NoSQL', "GraphQL", "PostgreSQL", 'Sequelize ORM', 'MongoDB', 'Mongoose ORM', 'Redis', 'Express', 'Koa', 'Docker', 'Expo', 'Git', 'JSON', 'RESTful API', 'Socket.IO', 'Linux/Unix'],
       date: '2022-2023',
       route: 'codeworks',
     },
@@ -67,7 +67,7 @@ function DisplayExperiences () {
     {
       id: 5,
       institution: 'Innovation Mi8',
-      blurb: "Écrire des scripts pour l'opération et la maintenance des équipements Innovation Mi8.",
+      blurb: "Écrire des scripts d'automatisation pour l'opération et la maintenance des équipements de Innovation Mi8.",
       languages: ['Python', 'OpenVPN', 'Linux/Unix/Bash', 'TCP/IP', 'UDP/IP', 'IoT'],
       date: '2021-2022',
       route: 'mi8',
@@ -75,7 +75,7 @@ function DisplayExperiences () {
     {
       id: 6,
       institution: 'Crash Course on Python',
-      blurb: "Certificat obtenu pour le cours en ligne autorisé par Google et proposé par l'intermédiaire de Coursera.",
+      blurb: "Certificat obtenu pour le cours en ligne Python autorisé par Google et proposé par l'intermédiaire de Coursera.",
       languages: ['Python'],
       date: '2020',
       route: 'coursera',
@@ -151,84 +151,84 @@ function DisplayExperiences () {
               {exp.languages.includes('PHP') &&
                 <PHP
                   color='#82bf00'
-                  size={isMobile ? width / 20 : 40}
+                  size={isMobile ? width > height ? height / 20 : width / 20 : 40}
                 />
               }
               {exp.languages.includes('JavaScript') &&
                 <JavaScript
                   color='#82bf00'
-                  size={isMobile ? width / 20 : 40}
+                  size={isMobile ? width > height ? height / 20 : width / 20 : 40}
                 />
               }
               {exp.languages.includes('TypeScript') &&
                 <TypeScript
                   color='#82bf00'
-                  size={isMobile ? width / 20 : 40}
+                  size={isMobile ? width > height ? height / 20 : width / 20 : 40}
                 />
               }
               {exp.languages.includes('Java') &&
                 <Java
                   color='#82bf00'
-                  size={isMobile ? width / 20 : 40}
+                  size={isMobile ? width > height ? height / 20 : width / 20 : 40}
                 />
               }
               {exp.languages.includes('Python') &&
                 <Python
                   color='#82bf00'
-                  size={isMobile ? width / 20 : 40}
+                  size={isMobile ? width > height ? height / 20 : width / 20 : 40}
                 />
               }
               {exp.languages.includes('C++') &&
                 <Cplusplus
                   color='#82bf00'
-                  size={isMobile ? width / 20 : 40}
+                  size={isMobile ? width > height ? height / 20 : width / 20 : 40}
                 />
               }
               {exp.languages.includes('Angular') &&
                 <Angular
                   color='#82bf00'
-                  size={isMobile ? width / 20 : 40}
+                  size={isMobile ? width > height ? height / 20 : width / 20 : 40}
                 />
               }
               {(exp.languages.includes('React') || exp.languages.includes('React Native')) &&
                 <ReactIcon
                   color='#82bf00'
-                  size={isMobile ? width / 20 : 40}
+                  size={isMobile ? width > height ? height / 20 : width / 20 : 40}
                 />
               }
               {exp.languages.includes('PostgreSQL') &&
                 <PostgreSQL
                   color='#82bf00'
-                  size={isMobile ? width / 20 : 40}
+                  size={isMobile ? width > height ? height / 20 : width / 20 : 40}
                 />
               }
               {exp.languages.includes('MongoDB') &&
                 <MongoDB
                   color='#82bf00'
-                  size={isMobile ? width / 20 : 40}
+                  size={isMobile ? width > height ? height / 20 : width / 20 : 40}
                 />
               }
               {exp.languages.includes('GraphQL') &&
                 <GraphQL
                   color='#82bf00'
-                  size={isMobile ? width / 20 : 40}
+                  size={isMobile ? width > height ? height / 20 : width / 20 : 40}
                 />
               }
               {exp.languages.includes('Redux') &&
                 <Redux
                   color='#82bf00'
-                  size={isMobile ? width / 20 : 40}
+                  size={isMobile ? width > height ? height / 20 : width / 20 : 40}
                 />
               }
               {exp.languages.includes('Docker') &&
                 <Docker
                   color='#82bf00'
-                  size={isMobile ? width / 20 : 40}
+                  size={isMobile ? width > height ? height / 20 : width / 20 : 40}
                 />
               }
               {exp.languages.includes('MySQL') &&
                 <SiMysql 
-                  size={isMobile ? width / 22 : 36}
+                  size={isMobile ? width > height ? height / 22 : width / 22 : 36}
                   color='#82bf00'
                 />
               }

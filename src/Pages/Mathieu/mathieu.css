@@ -13,12 +13,12 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    margin-top: 100px;
+    margin-top: 80px;
   }
   
   .main-bottom {
     display: flex;
-    flex-direction: column;
+    justify-content: center;
     margin-top: 100px;
   }
   
@@ -26,56 +26,81 @@
     color: #004638;
     font-size: 80px;
     line-height: 85px;
-    width: 50%;
+    width: 55%;
+  }
+
+  .secondary-title {
+    margin-top: 64px;
   }
   
-  .secondary-title {
+  .tertiary-title {
     color: #82bf00;
     font-size: 32px;
     width: 90%;
   }
   
   .main-text {
-    display: flex;
-    flex-direction: column;
+    color: #004638;
+    font-size: 20px;
+    line-height: 30px;
+    text-align: justify;
+    margin-left: 20px;
   }
   
   .upper-text {
     display: flex;
-    margin-bottom: 100px;
+    justify-content: center;
+    margin-bottom: 40px;
+    width: 100%;
   }
 
   .highlighted-text {
     color: #004638;
     background: linear-gradient(180deg,#f6f6f6 0%,#f6f6f6 30%,#d8f537 31%,#d8f537 100%);
     font-size: 40px;
-    margin-top: 60px;
-  }
-  
-  .lower-text {
-    color: #004638;
-    font-size: 21px;
-    line-height: 1.524;
-    font-weight: 500;
+    width: fit-content;
   }
   
   .links {
     display: flex;
+    flex-direction: column;
     justify-content: center;
-    width: 100%;
+    width: 60%;
+    flex-wrap: wrap;
+    margin-top: -100px;
+    margin-left: 40px;
+  }
+
+  .link-group {
+    display: flex;
   }
   
-  .link1 {
+  .individual-link {
     background: #f1f4f5;
     margin: 32px;
-    width: 40%;
-    height: 40%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    width: 256px;
+    height: 256px;
+    color: #004638;
+  }
+
+  .individual-link:hover {
+    cursor: pointer;
+    color: #82bf00;
   }
   
-  .link2 {
-    background: #f1f4f5;
-    width: 40%;
-    height: 40%;
-    margin: 32px;
+  .individual-link-text::after {
+    color: #82bf00;
+    content: "\f105";
+    font-family: FontAwesome;
+    margin-left: 10px;
+  }
+
+  .individual-link-image {
+    width: 150px;
+    height: 150px;
   }
 }

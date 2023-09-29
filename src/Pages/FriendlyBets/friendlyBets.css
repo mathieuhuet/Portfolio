@@ -31,6 +31,11 @@
     color: #82bf00;
     font-size: 24px;
   }
+
+  .friendly-bets-disclaimer {
+    text-align: left;
+    margin-top: 16px;
+  }
   
   .friendly-bets-all-link {
     margin-top: 40px;
@@ -54,7 +59,7 @@
     content: '';
     position: absolute;
     width: 0px;
-    height: 5px;
+    height: 8px;
     left: 50%;
     bottom: 4;
     background:#82bf00;

@@ -10,14 +10,6 @@
     font-weight: 700;
   }
   
-  .gpmm-top {
-    margin-top: 32px;
-    width: 100vw;
-    font-size: 48px;
-    font-weight: 800;
-    background: linear-gradient(180deg,#f6f6f6 0%,#f6f6f6 30%,#d8f537 31%,#d8f537 100%);
-  }
-  
   .gpmm-title {
     font-size: 48px;
     text-align: left;
@@ -59,7 +51,7 @@
     content: '';
     position: absolute;
     width: 0px;
-    height: 5px;
+    height: 8px;
     left: 50%;
     bottom: 4;
     background:#82bf00;

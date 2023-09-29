@@ -17,7 +17,7 @@ Routing to go between the different component
 */
 
 
-const Routing = () => {
+const Routing = (props) => {
   return (
     <section className="Routing">
       <Routes>
@@ -47,11 +47,11 @@ const Routing = () => {
         />
         <Route
           path="/friendly_bets"
-          element={<FriendlyBets />}
+          element={<FriendlyBets setAllowMobileMenu={props.setAllowMobileMenu}/>}
         />
         <Route
           path="/gpmm"
-          element={<GPMM />}
+          element={<GPMM setAllowMobileMenu={props.setAllowMobileMenu}/>}
         />
         <Route 
           path="/resume" 

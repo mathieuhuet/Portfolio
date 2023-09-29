@@ -1,12 +1,10 @@
 import './mi8.css';
 import './mi8Mobile.css';
 import React, { useEffect } from 'react';
-import { useMediaQuery } from 'react-responsive';
-
 
 
 const Mi8 = () => {
-  const isMobile = useMediaQuery({ query: '(max-width: 1023px)' });
+
   useEffect(() => {
     window.scrollTo(0, 0)
   }, [])

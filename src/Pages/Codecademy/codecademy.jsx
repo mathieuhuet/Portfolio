@@ -1,11 +1,10 @@
 import './codecademy.css';
 import './codecademyMobile.css';
 import React, { useEffect } from 'react';
-import { useMediaQuery } from 'react-responsive';
 
 
 const Codecademy = () => {
-  const isMobile = useMediaQuery({ query: '(max-width: 1023px)' });
+
   useEffect(() => {
     window.scrollTo(0, 0)
   }, [])

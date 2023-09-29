@@ -5,18 +5,15 @@ import { useNavigate } from 'react-router-dom';
 import { useMediaQuery } from 'react-responsive';
 import Box from '@mui/material/Box';
 import Drawer from '@mui/material/Drawer';
-import Button from '@mui/material/Button';
 import List from '@mui/material/List';
 import Divider from '@mui/material/Divider';
 import ListItem from '@mui/material/ListItem';
 import ListItemButton from '@mui/material/ListItemButton';
-import ListItemIcon from '@mui/material/ListItemIcon';
-import ListItemText from '@mui/material/ListItemText';
 import MHRem from '../Icons/MHRem';
 
 
 
-const Header = () => {
+const Header = (props) => {
   let navigate = useNavigate();
   const isMobile = useMediaQuery({ query: '(max-width: 1023px)' });
   const [showNavbar, setShowNavbar] = useState(true);
@@ -34,7 +31,7 @@ const Header = () => {
   // Drawer
   const list = () => (
     <Box
-      sx={{ width: '100vw' }}
+      sx={{ width: '85vmin' }}
       role="presentation"
       onClick={toggleDrawer()}
       onKeyDown={toggleDrawer()}
@@ -44,25 +41,31 @@ const Header = () => {
           <ListItemButton
             onClick={() => navigate('/')}
           >
-            <ListItemIcon>
-
-            </ListItemIcon>
-            <ListItemText primary={'Mathieu'} />
+            <div className='menu-button'>
+              - Mathieu
+            </div>
           </ListItemButton>
         </ListItem>
         <ListItem disablePadding>
           <ListItemButton
             onClick={() => navigate('/resume')}
           >
-            <ListItemIcon>
-
-            </ListItemIcon>
-            <ListItemText primary={'Experiences'} />
+            <div className='menu-button'>
+              - Expériences
+            </div>
           </ListItemButton>
         </ListItem>
       </List>
       <Divider />
-      <MHRem />
+      <div
+        style={{display: 'flex', justifyContent: 'center'}}
+      >
+        <div
+          style={{width: '80%'}}
+        >
+          <MHRem />
+        </div>
+      </div>
     </Box>
   );
 
@@ -79,16 +82,17 @@ const Header = () => {
     };
   }, []);
   useEffect(() => {
-    if (scrollTop > prevScrollTop + 5 && showNavbar) {
-      console.log('HIDE HEADER');
+    if (!props.allowMobileMenu) {
       setShowNavbar(false);
-    } else if (scrollTop < prevScrollTop - 1 && !showNavbar) {
-      console.log('SHOW HEADER');
-      setShowNavbar(true);
+    } else {
+      if (scrollTop > prevScrollTop + 5 && showNavbar && scrollTop > 40) {
+        setShowNavbar(false);
+      } else if ((scrollTop < prevScrollTop - 1 && !showNavbar) || scrollTop < 40) {
+        setShowNavbar(true);
+      }
+      setPrevScrollTop(scrollTop);
     }
-    setPrevScrollTop(scrollTop);
-  }, [scrollTop]);
-
+  }, [scrollTop, props.allowMobileMenu]);
 
 
   return (
@@ -100,8 +104,10 @@ const Header = () => {
 
   function Mobile () {
     return (
-      <div>
-        <div className={"header" + (!showNavbar ? ' sticky-hidden' : '')} role='banner'>
+        <div 
+          className={"header" + (!showNavbar ? ' sticky-hidden' : '')} 
+          role='banner'
+        >
           <React.Fragment>
             <div
               className="toggle-menu"
@@ -118,7 +124,6 @@ const Header = () => {
             </Drawer>
           </React.Fragment>
         </div>
-      </div>
     )
   }
 

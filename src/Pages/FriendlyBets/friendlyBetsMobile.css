@@ -12,7 +12,7 @@
   
   .friendly-bets-top {
     margin-top: 4vmin;
-    width: 99vw;
+    width: 100vw;
     font-size: 6vmin;
     font-weight: 800;
     background: linear-gradient(180deg,#f6f6f6 0%,#f6f6f6 30%,#d8f537 31%,#d8f537 100%);
@@ -30,6 +30,12 @@
     text-align: left;
     color: #82bf00;
     font-size: 3vmin;
+  }
+  
+  .friendly-bets-disclaimer {
+    text-align: left;
+    font-size: 2.5vmin;
+    margin-top: 2vmin;
   }
   
   .friendly-bets-all-link {
@@ -54,7 +60,7 @@
     content: '';
     position: absolute;
     width: 0px;
-    height: 5px;
+    height: 1vmin;
     left: 50%;
     bottom: 4;
     background:#82bf00;
@@ -96,7 +102,4 @@
     width: fit-content;
   }
 
-  .friendly-bets-images {
-    display: flex;
-  }
 }

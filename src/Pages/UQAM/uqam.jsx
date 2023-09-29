@@ -1,12 +1,9 @@
 import './uqam.css';
 import './uqamMobile.css';
 import React, { useEffect } from 'react';
-import { useMediaQuery } from 'react-responsive';
-
-
 
 const Uqam = () => {
-  const isMobile = useMediaQuery({ query: '(max-width: 1023px)' });
+
   useEffect(() => {
     window.scrollTo(0, 0)
   }, [])

@@ -2,55 +2,93 @@
   .main {
     min-height: 90vh;
     font-weight: 700;
-    max-width: 1280px;
+    margin-top: 32px;
     width: 98vw;
     text-align: left;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .main-top {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .main-bottom {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
   }
 
   .title {
     color: #004638;
-    font-size: 56px;
-    line-height: 68px;
-  
+    font-size: 13vmin;
+    line-height: 8vmin;
+    margin-bottom: 12vmin;
   }
   
-  .secondary-title {
+  .tertiary-title {
     color: #82bf00;
-    font-size: 24px;
+    font-size: 7vmin;
+    margin-bottom: 40px;
   }
   
   .main-text {
-    display: flex;
-    flex-direction: column;
+    color: #004638;
+    font-size: 4vmin;
+    line-height: 5vmin;
+    text-align: justify;
+    width: 95%;
   }
   
   .upper-text {
+    margin-bottom: 5vmin;
+  }
+
+  .highlighted-text {
     color: #004638;
     background: linear-gradient(180deg,#f6f6f6 0%,#f6f6f6 30%,#d8f537 31%,#d8f537 100%);
-    font-size: 40px;
+    font-size: 7vmin;
+    width: fit-content;
   }
-  
-  .lower-text {
-    color: #004638;
-    font-size: 21px;
-    line-height: 1.524;
-  }
-  
+
   .links {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .link-group {
     display: flex;
   }
   
-  .link1 {
+  .individual-link {
     background: #f1f4f5;
-    margin: 32px;
-    width: 40%;
-    height: 40%;
+    margin: 4vmin;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    width: 42vmin;
+    height: 42vmin;
+    color: #004638;
+  }
+
+  .individual-link:hover {
+    cursor: pointer;
+    color: #82bf00;
   }
   
-  .link2 {
-    background: #f1f4f5;
-    margin: 32px;
-    width: 40%;
-    height: 40%;
+  .individual-link-text::after {
+    color: #82bf00;
+    content: "\f105";
+    font-family: FontAwesome;
+    margin-left: 2vmin;
   }
+
+  .individual-link-image {
+    width: 24vmin;
+    height: 24vmin;
+  }
+  
 }
