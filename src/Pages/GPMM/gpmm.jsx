@@ -20,6 +20,15 @@ import Img9 from '../../Assets/GPMM_Alertes/GPMM_010.png';
 import Img10 from '../../Assets/GPMM_Alertes/GPMM_005.png';
 import Img11 from '../../Assets/GPMM_Alertes/GPMM_Desktop_02.png';
 import Img12 from '../../Assets/GPMM_Alertes/GPMM_009.png';
+import Img13 from '../../Assets/GPMM_Alertes/GPMM_Android_001.png';
+import Img15 from '../../Assets/GPMM_Alertes/GPMM_002.png';
+import Img16 from '../../Assets/GPMM_Alertes/GPMM_008.png';
+import Img17 from '../../Assets/GPMM_Alertes/GPMM_Desktop_01.png';
+import Img18 from '../../Assets/GPMM_Alertes/GPMM_CreateUser_01.png';
+import Img19 from '../../Assets/GPMM_Alertes/GPMM_CreateUser_02.png';
+import Img20 from '../../Assets/GPMM_Alertes/GPMM_CreateUser_03.png';
+import Img21 from '../../Assets/GPMM_Alertes/GPMM_Desktop_03.png';
+import Img22 from '../../Assets/GPMM_Alertes/GPMM_CreateUser_04.png';
 
 
 
@@ -34,18 +43,27 @@ function GPMM (props) {
   const [currentImage, setCurrentImage] = useState(0);
   const [isViewerOpen, setIsViewerOpen] = useState(false);
   const images = [
-    Img1,
-    Img3,
-    Img4,
-    Img2,
-    Img12,
-    Img5,
-    Img6,
     Img7,
-    Img8,
+    Img6,
+    Img1,
     Img9,
-    Img10,
-    Img11
+    Img15,
+    Img5,
+    Img3,
+    Img12,
+    Img16,
+    Img4,
+    Img13,
+    Img8,
+    Img2,
+    Img19,
+    Img22,
+    Img20,
+    Img18,
+    Img17,
+    Img11,
+    Img21,
+    Img10
   ];
 
   const openImageViewer = useCallback((index) => {
@@ -153,14 +171,14 @@ function GPMM (props) {
               <div>
                   <img
                     src={ Img3 }
-                    onClick={ () => openImageViewer(1) }
+                    onClick={ () => openImageViewer(6) }
                     width={width > height ? height / 2.5 : width / 2.5}
                     style={{ margin: '2px', cursor: 'pointer' }}
                     alt=""
                   />
                   <img
                     src={ Img2 }
-                    onClick={ () => openImageViewer(3) }
+                    onClick={ () => openImageViewer(12) }
                     width={width > height ? height / 2.5 : width / 2.5}
                     style={{ margin: '2px', cursor: 'pointer' }}
                     alt=""
@@ -172,14 +190,14 @@ function GPMM (props) {
                 <div>
                   <img
                     src={ Img1 }
-                    onClick={ () => openImageViewer(0) }
+                    onClick={ () => openImageViewer(2) }
                     width="160"
                     style={{ margin: '2px', cursor: 'pointer' }}
                     alt=""
                   />
                   <img
                     src={ Img2 }
-                    onClick={ () => openImageViewer(3) }
+                    onClick={ () => openImageViewer(12) }
                     width="160"
                     style={{ margin: '2px', cursor: 'pointer' }}
                     alt=""
@@ -188,14 +206,14 @@ function GPMM (props) {
                 <div>
                   <img
                     src={ Img4 }
-                    onClick={ () => openImageViewer(2) }
+                    onClick={ () => openImageViewer(9) }
                     width="160"
                     style={{ margin: '2px', cursor: 'pointer' }}
                     alt=""
                   />
                   <img
                     src={ Img3 }
-                    onClick={ () => openImageViewer(1) }
+                    onClick={ () => openImageViewer(6) }
                     width="160"
                     style={{ margin: '2px', cursor: 'pointer' }}
                     alt=""
