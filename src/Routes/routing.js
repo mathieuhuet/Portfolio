@@ -1,5 +1,5 @@
 import React from 'react';
-import { Routes, Route } from 'react-router-dom';
+import { Routes, Route, Navigate } from 'react-router-dom';
 import Experiences from '../Pages/Experiences/experiences';
 import Mathieu from '../Pages/Mathieu/mathieu';
 import BatteryMonitoring from '../Pages/BatteryMonitoring/batterymonitoring';
