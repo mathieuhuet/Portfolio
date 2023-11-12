@@ -61,6 +61,10 @@ const Routing = (props) => {
           path="/" 
           element={<Mathieu />} 
         />
+        <Route
+          path="*"
+          element={<Navigate to="/" replace={true} />}
+        />
       </Routes>
     </section>
   );
