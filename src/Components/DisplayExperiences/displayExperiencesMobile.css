@@ -1,6 +1,6 @@
 @media (max-width: 1023px) {
   .experiences {
-    margin: 5vmin 3vmin 5vmin 0vmin;
+    margin: 1vmin 3vmin 5vmin 0vmin;
     min-height: 90vh;
     width: 98vw;
     display: flex;
@@ -94,6 +94,7 @@
   
   .ie-middle {
     font-size: 3vmin;
+    font-weight: 500;
     text-align: start;
     margin-bottom: 2vmin;
     color: #82bf00;
@@ -117,10 +118,10 @@
   }
   
   .ie-languages {
-    font-size: 2.5vmin;
+    font-size: 2.2vmin;
     display: flex;
     flex-wrap: wrap;
-    font-weight: 900;
+    font-weight: 700;
   }
   
   .languages {

@@ -18,7 +18,7 @@ function Mathieu () {
     // Function will execute on click of button
     const onButtonClick = () => {
       // using Java Script method to get PDF file
-      fetch('Mathieu_Huet_Resume_27_Septembre.pdf').then(response => {
+      fetch('Mathieu_Huet_Resume.pdf').then(response => {
         response.blob().then(blob => {
           // Creating new object of PDF file
           const fileURL = window.URL.createObjectURL(blob);
@@ -43,12 +43,18 @@ function Mathieu () {
               Je suis présentement
             </div>
             <div className='highlighted-text'>
-              à la recherche d'emploi.
+              Gestionnaire technique en
+            </div>
+            <div className='highlighted-text'>
+              Systèmes de Transport
+            </div>
+            <div className='highlighted-text'>
+              Intelligent (STI) chez Grimard
             </div>
           </div>
         </div>
         <div className='tertiary-title'>
-          Je suis un développeur spécialisé Javascript/TypeScript & Python. Ma librairie préféré est de loin <u>React</u>.
+          Je suis aussi un développeur spécialisé Javascript/TypeScript & Python. Ma librairie préféré est de loin React.
         </div>
       </div>
       <div className='main-bottom'>
@@ -70,15 +76,15 @@ function Mathieu () {
               </div>
             </div>
             <div className='individual-link'
-              onClick={() => navigate('/resume')}
+              onClick={() => navigate('/battery_monitoring')}
             >
               <img 
-                src={require("../../Assets/MathieuExp.png")} 
+                src={require("../../Assets/MathieuBattery.png")} 
                 alt="Liens vers une liste de projets et d'expériences de travail"
                 className='individual-link-image'
               />
               <div className='individual-link-text'>
-                Expériences
+                Battery Monitoring
               </div>
             </div>
           </div>

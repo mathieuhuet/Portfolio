@@ -24,13 +24,14 @@
   .title {
     color: #004638;
     font-size: 13vmin;
+    font-weight: 900;
     line-height: 8vmin;
     margin-bottom: 12vmin;
   }
   
   .tertiary-title {
     color: #82bf00;
-    font-size: 7vmin;
+    font-size: 6vmin;
     margin-bottom: 40px;
   }
   
@@ -49,13 +50,15 @@
   .highlighted-text {
     color: #004638;
     background: linear-gradient(180deg,#f6f6f6 0%,#f6f6f6 30%,#d8f537 31%,#d8f537 100%);
-    font-size: 7vmin;
+    font-size: 6vmin;
     width: fit-content;
   }
 
   .links {
     display: flex;
     flex-direction: column;
+    margin-top: 40px;
+    margin-bottom: 30px;
   }
 
   .link-group {
