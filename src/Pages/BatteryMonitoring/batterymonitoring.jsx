@@ -28,13 +28,11 @@ function BatteryMonitoring() {
         </div>
         <div className="battery-slide-1-bottom">
           <img src={batteryScreenshot3} className="battery-screenshot-1" alt="Screenshot of a graph from Battery Monitoring App" />
-          <div className="battery-paragraph-1">Battery Monitoring est une application qui donne un accès aux statistiques de consommation d'énergie de vos équipements à batteries  
-          et collecte des informations tout au long de la journée pour créer des diagrammes qui permettent d'analyser les performances de toutes vos batteries.
+          <div className="battery-paragraph-1">Battery Monitoring est une application pour monitorer en temps réel les batteries de vos équipements sur le chantier.
           </div>
         </div>
       </div>
       <div className="battery-slide-2">
-        <div className="battery-paragraph-2">J'ai construit cette application seul. Le back-end, le front-end, conçu et mis en œuvre le RESTful API et la modélisation des données.</div>
       </div>
       <div className="battery-slide-3">
         {isMobile &&

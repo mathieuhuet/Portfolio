@@ -40,9 +40,6 @@ function Mathieu () {
           </div>
           <div className='secondary-title'>
             <div className='highlighted-text'>
-              Je suis présentement
-            </div>
-            <div className='highlighted-text'>
               Gestionnaire technique en
             </div>
             <div className='highlighted-text'>
