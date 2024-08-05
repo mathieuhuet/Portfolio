@@ -55,6 +55,24 @@ const Header = (props) => {
             </div>
           </ListItemButton>
         </ListItem>
+        <ListItem disablePadding>
+          <ListItemButton
+            onClick={() => navigate('/its')}
+          >
+            <div className='menu-button'>
+              - ITS (Intelligent Transport System)
+            </div>
+          </ListItemButton>
+        </ListItem>
+        <ListItem disablePadding>
+          <ListItemButton
+            onClick={() => navigate('/telecom')}
+          >
+            <div className='menu-button'>
+              - Télécommunications
+            </div>
+          </ListItemButton>
+        </ListItem>
       </List>
       <Divider />
       <div
@@ -144,6 +162,16 @@ const Header = (props) => {
           onClick={() => navigate('/resume')}
         >
           Expériences
+        </div>
+        <div className='header-selection'
+          onClick={() => navigate('/its')}
+        >
+          ITS (Intelligent Transport System)
+        </div>
+        <div className='header-selection'
+          onClick={() => navigate('/telecom')}
+        >
+          Télécommunications
         </div>
       </div>
     )

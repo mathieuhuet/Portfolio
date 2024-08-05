@@ -10,6 +10,8 @@ import Uqam from '../Pages/UQAM/uqam';
 import Mi8 from '../Pages/Mi8/mi8';
 import FriendlyBets from '../Pages/FriendlyBets/friendlyBets';
 import GPMM from '../Pages/GPMM/gpmm';
+import ITS from '../Pages/ITS/ITS';
+import Telecom from '../Pages/Telecom/telecom';
 
 
 /*
@@ -56,6 +58,14 @@ const Routing = (props) => {
         <Route 
           path="/resume" 
           element={<Experiences />} 
+        />
+        <Route
+          path='/telecom'
+          element={<Telecom />}
+        />
+        <Route
+          path='/its'
+          element={<ITS />}
         />
         <Route 
           path="/" 
