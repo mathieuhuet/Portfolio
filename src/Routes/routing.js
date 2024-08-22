@@ -1,6 +1,6 @@
 import React from 'react';
 import { Routes, Route, Navigate } from 'react-router-dom';
-import Experiences from '../Pages/Experiences/experiences';
+import Dev from '../Pages/Dev/dev';
 import Mathieu from '../Pages/Mathieu/mathieu';
 import BatteryMonitoring from '../Pages/BatteryMonitoring/batterymonitoring';
 import Codeworks from '../Pages/Codeworks/codeworks';
@@ -10,7 +10,7 @@ import Uqam from '../Pages/UQAM/uqam';
 import Mi8 from '../Pages/Mi8/mi8';
 import FriendlyBets from '../Pages/FriendlyBets/friendlyBets';
 import GPMM from '../Pages/GPMM/gpmm';
-import ITS from '../Pages/ITS/ITS';
+import STI from '../Pages/STI/STI';
 import Telecom from '../Pages/Telecom/telecom';
 
 
@@ -56,16 +56,16 @@ const Routing = (props) => {
           element={<GPMM setAllowMobileMenu={props.setAllowMobileMenu}/>}
         />
         <Route 
-          path="/resume" 
-          element={<Experiences />} 
+          path="/dev" 
+          element={<Dev />} 
         />
         <Route
           path='/telecom'
           element={<Telecom />}
         />
         <Route
-          path='/its'
-          element={<ITS />}
+          path='/sti'
+          element={<STI />}
         />
         <Route 
           path="/" 

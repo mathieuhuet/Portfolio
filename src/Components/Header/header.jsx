@@ -3,6 +3,9 @@ import './headerMobile.css';
 import React, { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { useMediaQuery } from 'react-responsive';
+import { RiRadarFill } from "react-icons/ri";
+import { RiUserHeartFill } from "react-icons/ri";
+import { MdCable } from "react-icons/md";
 import Box from '@mui/material/Box';
 import Drawer from '@mui/material/Drawer';
 import List from '@mui/material/List';
@@ -42,25 +45,8 @@ const Header = (props) => {
             onClick={() => navigate('/')}
           >
             <div className='menu-button'>
-              - Mathieu
-            </div>
-          </ListItemButton>
-        </ListItem>
-        <ListItem disablePadding>
-          <ListItemButton
-            onClick={() => navigate('/resume')}
-          >
-            <div className='menu-button'>
-              - Expériences
-            </div>
-          </ListItemButton>
-        </ListItem>
-        <ListItem disablePadding>
-          <ListItemButton
-            onClick={() => navigate('/its')}
-          >
-            <div className='menu-button'>
-              - ITS (Intelligent Transport System)
+              {"- Mathieu "}
+              <RiUserHeartFill />
             </div>
           </ListItemButton>
         </ListItem>
@@ -69,7 +55,27 @@ const Header = (props) => {
             onClick={() => navigate('/telecom')}
           >
             <div className='menu-button'>
-              - Télécommunications
+              {"- Télécom "}
+              <MdCable />
+            </div>
+          </ListItemButton>
+        </ListItem>
+        <ListItem disablePadding>
+          <ListItemButton
+            onClick={() => navigate('/sti')}
+          >
+            <div className='menu-button'>
+              {"- STI "}
+              <RiRadarFill />
+            </div>
+          </ListItemButton>
+        </ListItem>
+        <ListItem disablePadding>
+          <ListItemButton
+            onClick={() => navigate('/dev')}
+          >
+            <div className='menu-button'>
+              - {`< Dev >`}
             </div>
           </ListItemButton>
         </ListItem>
@@ -156,22 +162,25 @@ const Header = (props) => {
         <div className='header-selection'
           onClick={() => navigate('/')}
         >
-          Mathieu
-        </div>
-        <div className='header-selection'
-          onClick={() => navigate('/resume')}
-        >
-          Expériences
-        </div>
-        <div className='header-selection'
-          onClick={() => navigate('/its')}
-        >
-          ITS (Intelligent Transport System)
+          {"Mathieu"}
+          <RiUserHeartFill />
         </div>
         <div className='header-selection'
           onClick={() => navigate('/telecom')}
         >
-          Télécommunications
+          {"Télécom"}
+          <MdCable />
+        </div>
+        <div className='header-selection'
+          onClick={() => navigate('/sti')}
+        >
+          {" STI"}
+          <RiRadarFill />
+        </div>
+        <div className='header-selection'
+          onClick={() => navigate('/dev')}
+        >
+          {`< Dev >`}
         </div>
       </div>
     )

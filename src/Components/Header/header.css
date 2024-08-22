@@ -19,8 +19,11 @@
     position: relative;
     transition: all 0.3s ease-in-out;
     margin-bottom: 30px;
-    margin-left: 64px;
+    margin-left: 96px;
     color: #004638;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
   }
   
   .header-selection:hover {

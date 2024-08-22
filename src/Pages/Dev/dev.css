@@ -1,5 +1,5 @@
 @media (min-width: 1024px) {
-  .experience {
+  .dev {
     display: flex;
     flex-direction: row;
     justify-content: flex-start;
@@ -24,7 +24,7 @@
     cursor: grabbing;
   }
   
-  .experience-left {
+  .dev-left {
     margin: 40px 0px 0px 40px;
     display: flex;
     flex-direction: column;

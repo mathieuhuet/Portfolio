@@ -1,11 +1,11 @@
-import './ITS.css';
-import './ITSMobile.css';
+import './STI.css';
+import './STIMobile.css';
 import React, {useEffect} from "react";
 import { useMediaQuery } from 'react-responsive';
 
 
 
-function ITS() {
+function STI() {
   const isMobile = useMediaQuery({ query: '(max-width: 1023px)' });
 
   useEffect(() => {
@@ -14,10 +14,10 @@ function ITS() {
 
 
   return (
-    <div className='its'>
+    <div className='sti'>
       Système de Transport Intelligent (STI)
     </div>
   );
 }
 
-export default ITS;
+export default STI;

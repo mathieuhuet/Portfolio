@@ -1,5 +1,5 @@
-import './experiences.css';
-import './experiencesMobile.css';
+import './dev.css';
+import './devMobile.css';
 import React, { useEffect } from 'react'
 import { motion } from "framer-motion";
 import { useMediaQuery } from 'react-responsive';
@@ -12,7 +12,7 @@ import DisplayExperiences from '../../Components/DisplayExperiences/displayExper
 Main page of the website, where you go when entering http://www.mathieuhuet.com/
 */
 
-function Experiences () {
+function Dev () {
 
   const isMobile = useMediaQuery({ query: '(max-width: 1023px)' });
 
@@ -28,7 +28,7 @@ function Experiences () {
 
   function Mobile () {
     return (
-      <div className='experience'>
+      <div className='dev'>
         <DisplayExperiences />
       </div>
     );
@@ -36,8 +36,8 @@ function Experiences () {
 
   function Desktop () {
     return (
-      <div className='experience'>
-        <div className='experience-left'>
+      <div className='dev'>
+        <div className='dev-left'>
           <motion.div
             className="motion-test"
             initial={{ opacity: 0, rotate: 0 }}
@@ -73,7 +73,7 @@ function Experiences () {
             </a>
           </div>
         </div>
-        <div className='experience-right'>
+        <div className='dev-right'>
           <DisplayExperiences />
         </div>
       </div>
@@ -81,4 +81,4 @@ function Experiences () {
   }
 }
 
-export default Experiences;
+export default Dev;

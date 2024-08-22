@@ -51,7 +51,7 @@ function Mathieu () {
           </div>
         </div>
         <div className='tertiary-title'>
-          Je suis aussi un développeur spécialisé Javascript/TypeScript & Python. Ma librairie préféré est de loin React.
+          Je suis aussi un développeur spécialisé Javascript/TypeScript & Python.<br></br>Ma librairie préféré est de loin React.
         </div>
       </div>
       <div className='main-bottom'>

@@ -25,6 +25,14 @@ function DisplayExperiences () {
   const isMobile = useMediaQuery({ query: '(max-width: 1023px)' });
   const experiences = useMemo(() => [
     {
+      id: 99,
+      institution: 'mathieuhuet.com',
+      blurb: "Site web pour présenter mon portfolio",
+      languages: ['React', 'JavaScript', 'Node.js', 'Git'],
+      date: '2023-2024',
+      route: '',
+    },
+    {
       id: 0,
       institution: 'GPMM_Alertes',
       blurb: "Application mobile et web pour monitorer les activitées de maintenance sur le réseau du REM pour les employés de GPMM O&M. L'application permet de faire des rapports des activités et de faire un suivi.",
