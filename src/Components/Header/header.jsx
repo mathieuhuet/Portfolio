@@ -132,6 +132,11 @@ const Header = (props) => {
           className={"header" + (!showNavbar ? ' sticky-hidden' : '')} 
           role='banner'
         >
+          <MHRem 
+            size={48}
+            style={{cursor: 'pointer', marginLeft: 16}}
+            onClick={() => navigate('/')}
+          />
           <React.Fragment>
             <div
               className="toggle-menu"

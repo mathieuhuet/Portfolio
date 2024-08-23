@@ -93,7 +93,7 @@ function GPMM (props) {
             Application mobile et web pour monitorer les activitées de maintenance sur le réseau du REM pour les employés de GPMM O&M. L'application permet de faire des rapports des activités et de faire un suivi des évenements.
           </div>
           <div className='gpmm-disclaimer'>
-            *Cette application n'est pas utilisé par GPMM O&M ils préfèrent out-source leur logiciels, ils utilisent présentement l'application Maximo de IBM pour faire le suivi des interventions.
+            *Cette application n'est pas utilisé par GPMM O&M.
           </div>
           <div className='gpmm-all-link'>
             <div className='gpmm-hover-animation'>

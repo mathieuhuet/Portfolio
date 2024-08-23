@@ -63,7 +63,7 @@
     left: 50%;
     bottom: 4;
     background:#82bf00;
-    transition: all ease-in-out .15s;
+    transition: all ease-in-out .3s;
   }
   
   .friendly-bets-hover-animation:hover {
