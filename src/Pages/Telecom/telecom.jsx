@@ -16,6 +16,9 @@ function Telecom() {
   return (
     <div className='telecom'>
       Télécommunications
+      <div className='telecom-top'>
+        Work in progress
+      </div>
     </div>
   );
 }

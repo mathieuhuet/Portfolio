@@ -16,6 +16,9 @@ function STI() {
   return (
     <div className='sti'>
       Système de Transport Intelligent (STI)
+      <div className='sti-top'>
+        Work in progress
+      </div>
     </div>
   );
 }

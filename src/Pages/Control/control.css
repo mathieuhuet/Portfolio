@@ -1,0 +1,31 @@
+.ControlPage {
+    height: 100vh;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+  }
+  
+  h1 {
+    color: #82bf00;
+  }
+  
+  .AcButtons {
+    display: flex;
+    width: 400px;
+    justify-content: space-evenly;
+  }
+
+  .DisconnectButton {
+    background-color: #004638;
+    color: #f6f6f6;
+    border: none;
+    padding: 3vh;
+    border-radius: 10px;
+    font-size: larger;
+  }
+  
+  .DisconnectButton:hover {
+    cursor: pointer;
+  }

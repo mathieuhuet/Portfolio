@@ -52,6 +52,15 @@ const Header = (props) => {
         </ListItem>
         <ListItem disablePadding>
           <ListItemButton
+            onClick={() => navigate('/dev')}
+          >
+            <div className='menu-button'>
+              - {`< Dev >`}
+            </div>
+          </ListItemButton>
+        </ListItem>
+        <ListItem disablePadding>
+          <ListItemButton
             onClick={() => navigate('/telecom')}
           >
             <div className='menu-button'>
@@ -67,15 +76,6 @@ const Header = (props) => {
             <div className='menu-button'>
               {"- STI "}
               <RiRadarFill />
-            </div>
-          </ListItemButton>
-        </ListItem>
-        <ListItem disablePadding>
-          <ListItemButton
-            onClick={() => navigate('/dev')}
-          >
-            <div className='menu-button'>
-              - {`< Dev >`}
             </div>
           </ListItemButton>
         </ListItem>
@@ -171,6 +171,11 @@ const Header = (props) => {
           <RiUserHeartFill />
         </div>
         <div className='header-selection'
+          onClick={() => navigate('/dev')}
+        >
+          {`< Dev >`}
+        </div>
+        <div className='header-selection'
           onClick={() => navigate('/telecom')}
         >
           {"Télécom"}
@@ -181,11 +186,6 @@ const Header = (props) => {
         >
           {" STI"}
           <RiRadarFill />
-        </div>
-        <div className='header-selection'
-          onClick={() => navigate('/dev')}
-        >
-          {`< Dev >`}
         </div>
       </div>
     )

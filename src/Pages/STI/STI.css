@@ -1,7 +1,22 @@
 @media (min-width: 1024px) {
 
   .sti {
-    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    min-height: 90vh;
+    max-width: 1280px;
+    width: 98vw;
+    color: #004638;
+    font-weight: 700;
+  }
+
+  .sti-top {
+    margin-top: 32px;
+    width: 100vw;
+    font-size: 48px;
+    font-weight: 800;
+    background: linear-gradient(180deg,#f6f6f6 0%,#f6f6f6 30%,#d8f537 31%,#d8f537 100%);
   }
   
 }

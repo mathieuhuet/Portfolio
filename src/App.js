@@ -4,11 +4,16 @@ import { BrowserRouter as Router } from 'react-router-dom';
 import Routing from "./Routes/routing";
 import Header from "./Components/Header/header";
 import Bottom from "./Components/Bottom/bottom";
+// Auth
+import { useCookies } from 'react-cookie';
+import SignedInRoute from './Routes/signedInRoute';
+import SignedOutRoute from './Routes/signedOutRoute';
 
 
 function App() {
   // ONLY USED WHEN RENDERING MOBILE MODE This is to disable the mobile menu to pop at the top (it is use when looking through screenshots for example)
   const [allowMobileMenu, setAllowMobileMenu] = useState(true);
+  const [cookies, setCookie] = useCookies(['accessToken']);
 
   return (
     <div className="app">
@@ -17,9 +22,14 @@ function App() {
           allowMobileMenu={allowMobileMenu}
         />
         <div className="app-main">
-          <Routing 
-            setAllowMobileMenu={setAllowMobileMenu}
-          />
+          {cookies.accessToken ?           
+            <SignedInRoute
+              setAllowMobileMenu={setAllowMobileMenu}
+            /> :
+            <SignedOutRoute
+              setAllowMobileMenu={setAllowMobileMenu}
+            />
+          }
         </div>
         <Bottom />
       </Router>
