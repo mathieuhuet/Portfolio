@@ -11,26 +11,30 @@ import { stateOfAC } from '../../Services/controlServices/stateOfAC';
 const Control = () => {
   const [cookies, setCookie] = useCookies(['accessToken']);
   const [acState, setAcState] = useState('unknown');
+  const [refresh, setRefresh] = useState(0);
 
 
   useEffect(() => {
     async function fetchData(accessToken) {
       const userInfo = await stateOfAC(accessToken);
       if (userInfo) {
-        setAcState(userInfo);
+        console.log(userInfo);
+        setAcState(userInfo.data.state);
       } else {
         console.log('No user info found 😞');
       }
     }
     fetchData(cookies.accessToken);
-  }, [cookies.userToken]);
+  }, [cookies.userToken, refresh]);
 
   const turnOff = async () => {
     const off = await turnOffAC(cookies.accessToken);
+    setRefresh(refresh + 1);
   }
 
   const turnOn = async () => {
     const off = await turnOnAC(cookies.accessToken);
+    setRefresh(refresh + 1);
   }
 
   return (
@@ -40,7 +44,7 @@ const Control = () => {
           Control
         </h1>
         <h1>
-          {acState}
+          A/C is {acState}
         </h1>
       </div>
       <div className='AcButtons'>
