@@ -87,7 +87,9 @@ const Header = (props) => {
         <div
           style={{width: '80%'}}
         >
-          <MHRem />
+          <MHRem 
+            onClick={() => navigate('/login')}
+          />
         </div>
       </div>
     </Box>
@@ -135,7 +137,7 @@ const Header = (props) => {
           <MHRem 
             size={48}
             style={{cursor: 'pointer', marginLeft: 16}}
-            onClick={() => navigate('/')}
+            onClick={() => navigate('/login')}
           />
           <React.Fragment>
             <div
@@ -162,7 +164,7 @@ const Header = (props) => {
         <MHRem 
           size={70}
           style={{cursor: 'pointer', marginLeft: 16}}
-          onClick={() => navigate('/')}
+          onClick={() => navigate('/login')}
         />
         <div className='header-selection'
           onClick={() => navigate('/')}

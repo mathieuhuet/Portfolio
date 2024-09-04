@@ -21,6 +21,10 @@ const SignedInRoute = (props) => {
   return (
     <Routes>
         <Route
+          path="/login"
+          element={<Navigate to="/control" replace={true} />}
+        />
+        <Route
           path="/user"
           element={<User />}
         />

@@ -18,6 +18,14 @@ import Login from '../Pages/Login/login';
 const SignedOutRoute = (props) => {
   return (
     <Routes>
+      <Route
+        path="/control"
+        element={<Navigate to="/login" replace={true} />}
+      />
+      <Route
+        path="/user"
+        element={<Navigate to="/login" replace={true} />}
+      />
       <Route 
         path="/login" 
         element={<Login/>}
