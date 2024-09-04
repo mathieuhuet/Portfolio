@@ -45,6 +45,7 @@ const Login = (props) => {
   return (
     <div className='LoginPage'>
       <div className='Login'>
+        Bonjour
         <div className='Formik'>
           <Formik
             initialValues={{ email: '' }}

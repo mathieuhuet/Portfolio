@@ -1,8 +1,5 @@
 import axios from 'axios';
-import { API } from '../../secret';
-const url = API
-? API
-: 'http://192.168.1.25:3030';
+const url = 'http://135.19.35.171:3030';
 
 export const loginUser = (credentials) => {
   return new Promise((resolve, reject) => {

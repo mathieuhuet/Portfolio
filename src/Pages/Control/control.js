@@ -2,6 +2,8 @@ import './control.css';
 import './controlMobile.css';
 import React, { useEffect, useState } from 'react';
 import { useCookies } from "react-cookie";
+import { RiUserSharedFill } from "react-icons/ri";
+import { useNavigate } from 'react-router-dom';
 import { turnOffAC } from '../../Services/controlServices/turnOffAC';
 import { turnOnAC } from '../../Services/controlServices/turnOnAC';
 import { stateOfAC } from '../../Services/controlServices/stateOfAC';
@@ -9,6 +11,7 @@ import { stateOfAC } from '../../Services/controlServices/stateOfAC';
 
 
 const Control = () => {
+  let navigate = useNavigate();
   const [cookies, setCookie] = useCookies(['accessToken']);
   const [acState, setAcState] = useState('unknown');
   const [refresh, setRefresh] = useState(0);
@@ -39,7 +42,12 @@ const Control = () => {
 
   return (
     <div className='ControlPage'>
-      <div>
+      <div className='UserPageButton'>
+        <RiUserSharedFill 
+          onClick={() => navigate('/user')}
+        />
+      </div>
+      <div className='AcState'>
         <h1>
           Control
         </h1>
@@ -49,13 +57,13 @@ const Control = () => {
       </div>
       <div className='AcButtons'>
         <button
-          className='DisconnectButton'
+          className='TurnOnButton'
           onClick={turnOn}
         >
           Turn ON A/C
         </button>
         <button
-          className='DisconnectButton'
+          className='TurnOffButton'
           onClick={turnOff}
         >
           Turn OFF A/C
