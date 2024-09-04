@@ -4,7 +4,7 @@ const url = 'http://135.19.35.171:3030';
 export const stateOfAC = (accessToken) => {
   return new Promise((resolve, reject) => {
     axios.get(
-      `${url}/acstate`, 
+      `${url}/acstate/`, 
       {
         headers: {
           "Content-Type": "application/json",

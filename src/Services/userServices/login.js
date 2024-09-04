@@ -4,7 +4,7 @@ const url = 'http://135.19.35.171:3030';
 export const loginUser = (credentials) => {
   return new Promise((resolve, reject) => {
     axios.post(
-      `${url}/login`, 
+      `${url}/login/`, 
       credentials,
       {
         headers: {

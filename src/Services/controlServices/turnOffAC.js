@@ -5,7 +5,7 @@ const url = 'http://135.19.35.171:3030';
 export const turnOffAC = (accessToken) => {
   return new Promise((resolve, reject) => {
     axios.post(
-      `${url}/turnoffac`,
+      `${url}/turnoffac/`,
       {data: 'no data'},
       {
         headers: {
