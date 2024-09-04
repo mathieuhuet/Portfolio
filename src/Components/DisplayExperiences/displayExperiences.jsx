@@ -27,8 +27,8 @@ function DisplayExperiences () {
     {
       id: 99,
       institution: 'mathieuhuet.com',
-      blurb: "Site web pour présenter mon portfolio",
-      languages: ['React', 'JavaScript', 'Node.js', 'Git'],
+      blurb: "Site web pour présenter mon portfolio et contrôller mes IoT à distance.",
+      languages: ['React', 'JavaScript', 'PostgreSQL', 'Node.js', 'Git', 'Koa', 'IoT'],
       date: '2023-2024',
       route: '',
     },

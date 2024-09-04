@@ -34,22 +34,20 @@
     margin-bottom: 5vmin;
     width: 70vw;
     display: flex;
+    font-family: Arial, Helvetica, sans-serif;
   }
   ::placeholder { /* Chrome, Firefox, Opera, Safari 10.1+ */
     color: #004638;
-    font-family: Gilroy-Medium,Helvetica,Arial,sans-serif;
-    font-weight: bold;
+    font-family: Arial, Helvetica, sans-serif;
     opacity: 0.5; /* Firefox */
   }
   :-ms-input-placeholder { /* Internet Explorer 10-11 */
     color: #004638;
-    font-family: Gilroy-Medium,Helvetica,Arial,sans-serif;
-    font-weight: bold;
+    font-family: Arial, Helvetica, sans-serif;
   }
   ::-ms-input-placeholder { /* Microsoft Edge */
     color: #004638;
-    font-family: Gilroy-Medium,Helvetica,Arial,sans-serif;
-    font-weight: bold;
+    font-family: Arial, Helvetica, sans-serif;
   }
   
   
