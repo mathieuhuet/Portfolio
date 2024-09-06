@@ -1,0 +1,96 @@
+@media (max-width: 1023px) {
+
+  .ControlPage {
+    height: 90vh;
+    width: 100vw;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+    background-color: #d8f537;
+  }
+  
+  .AcState {
+    align-self: center;
+    margin-bottom: 50px;
+    width: 70vw;
+    border-radius: 10px;
+    padding: 3vh;
+    background-color: #004638;
+    color: #f6f6f6;
+  }
+  
+  h1 {
+    color: #f6f6f6;
+  }
+  
+  .AcButtons {
+    align-self: center;
+    display: flex;
+    width: 400px;
+    justify-content: space-evenly;
+  }
+  
+  .TurnOnButton {
+    background-color: #004638;
+    color: #f6f6f6;
+    border: none;
+    padding: 3vh;
+    border-radius: 10px;
+    font-size: larger;
+  }
+  
+  .TurnOnButton:hover {
+    cursor: pointer;
+    background-color: #82bf00;
+  }
+  
+  .TurnOnButton:active {
+    cursor: pointer;
+    background-color: #82bf00;
+  }
+  
+  .TurnOffButton {
+    background-color: #004638;
+    color: #f6f6f6;
+    border: none;
+    padding: 3vh;
+    border-radius: 10px;
+    font-size: larger;
+  }
+  
+  .TurnOffButton:hover {
+    cursor: pointer;
+    background-color: #bf0000;
+  }
+  
+  .TurnOffButton:active {
+    cursor: pointer;
+    background-color: #bf0000;
+  }
+  
+  .UserPageButton {
+    background-color: #004638;
+    color: #f6f6f6;
+    height: 48px;
+    width: 48px;
+    font-size: 32px;
+    border-radius: 4px;
+    justify-content: center;
+    align-items: center;
+    display: flex;
+    margin: 24px 0px 24px 50px;
+  }
+  
+  .UserPageButton:hover {
+    cursor: pointer;
+    background-color: #82bf00;
+  }
+  
+  .UserPageButton:active {
+    background-color: #82bf00;
+    color: #004638;
+  }  
+
+  
+}

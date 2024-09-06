@@ -41,7 +41,7 @@ const User = () => {
   }
   return (
     <div className='UserPage'>
-      <div>
+      <div className='namefield'>
         <h1>
           {state.firstName}
         </h1>

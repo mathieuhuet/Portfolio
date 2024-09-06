@@ -36,7 +36,7 @@ const Control = () => {
   }
 
   const turnOn = async () => {
-    const off = await turnOnAC(cookies.accessToken);
+    const on = await turnOnAC(cookies.accessToken);
     setRefresh(refresh + 1);
   }
 
