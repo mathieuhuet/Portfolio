@@ -27,7 +27,6 @@ const Login = (props) => {
     try {
       const result = await loginUser(credentials);
       if (result.data) {
-        console.log(result.data.accessToken);
         setCookie('accessToken', result.data.accessToken);
         setMessage('Vous êtes connecté.');
       }

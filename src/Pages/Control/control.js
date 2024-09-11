@@ -19,10 +19,9 @@ const Control = () => {
 
   useEffect(() => {
     async function fetchData(accessToken) {
-      const userInfo = await stateOfAC(accessToken);
-      if (userInfo) {
-        console.log(userInfo);
-        setAcState(userInfo.data.state);
+      const deviceInfo = await stateOfAC(accessToken);
+      if (deviceInfo) {
+        setAcState(deviceInfo.data.state);
       } else {
         console.log('No user info found 😞');
       }
