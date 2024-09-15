@@ -74,7 +74,9 @@ const Login = (props) => {
             }) => (
               <form onSubmit={handleSubmit} className='EmailForm'>
                 <div className='EmailInput'>
-                  <label>
+                  <label
+                    className='label'
+                  >
                     Email
                   </label>
                   <input
@@ -85,7 +87,9 @@ const Login = (props) => {
                     value={values.email}
                     className='Email'
                   />
-                  <label>
+                  <label
+                    className='label'
+                  >
                     Password
                   </label>
                   <input

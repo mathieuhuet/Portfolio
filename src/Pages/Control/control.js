@@ -41,10 +41,11 @@ const Control = () => {
 
   return (
     <div className='ControlPage'>
-      <div className='UserPageButton'>
-        <RiUserSharedFill 
-          onClick={() => navigate('/user')}
-        />
+      <div 
+        className='UserPageButton'
+        onClick={() => navigate('/user')}
+      >
+        <RiUserSharedFill />
       </div>
       <div className='AcState'>
         <h1>

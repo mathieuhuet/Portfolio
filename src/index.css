@@ -27,6 +27,15 @@ body::-webkit-scrollbar-thumb:hover {
   background: #004638; 
 }
 
+button {
+  font-family: Gilroy-Medium,Helvetica,Arial,sans-serif;
+  --fa-style-family-classic: "Font Awesome 6 Free";
+  --fa-font-solid: normal 900 1em/1 "Font Awesome 6 Free";
+  --fa-font-regular: normal 400 1em/1 "Font Awesome 6 Free";
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
 @font-face {
   font-family: 'Gilroy-Medium';
   src: local('Gilroy-Medium'), url(./Assets/Fonts/Gilroy-Medium.ttf) format('truetype');

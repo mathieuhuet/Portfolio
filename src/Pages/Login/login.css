@@ -57,11 +57,30 @@
     border-radius: 10px;
     color: #f6f6f6;
     border: none;
+    font-family: Gilroy-Medium,Helvetica,Arial,sans-serif;
+    --fa-style-family-classic: "Font Awesome 6 Free";
+    --fa-font-solid: normal 900 1em/1 "Font Awesome 6 Free";
+    --fa-font-regular: normal 400 1em/1 "Font Awesome 6 Free";
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    -webkit-font-smoothing: antialiased;
   }
   
   .SubmitEmail:hover {
     cursor: pointer;
     background-color: #82bf00;
+  }
+
+  .label {
+    font-family: Gilroy-Medium,Helvetica,Arial,sans-serif;
+    --fa-style-family-classic: "Font Awesome 6 Free";
+    --fa-font-solid: normal 900 1em/1 "Font Awesome 6 Free";
+    --fa-font-regular: normal 400 1em/1 "Font Awesome 6 Free";
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    -webkit-font-smoothing: antialiased;
+    color: #004638;
+    font-weight: bold;
   }
 
 }
