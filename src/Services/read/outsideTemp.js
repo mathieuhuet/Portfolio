@@ -1,17 +1,15 @@
 import axios from 'axios';
-const url = 'https://mathieuhuet.com:3031';
+import { API } from '../../secret';
 
-
-export const turnOnAC = (accessToken) => {
+export const readOutsideTemp = (accessToken) => {
   return new Promise((resolve, reject) => {
-    axios.post(
-      `${url}/turnonac/`,
-      {data: 'no data'},
+    axios.get(
+      `${API}/readOutsideTemp/`, 
       {
         headers: {
           "Content-Type": "application/json",
-          'Authorization': `Bearer ${accessToken}`
-        }
+          Authorization: `Bearer ${accessToken}`
+        },
       }
     ).then((response) => {
       const { data } = response;
@@ -22,8 +20,8 @@ export const turnOnAC = (accessToken) => {
           reject(err.response.data);
         }
       } catch (error) {
-        reject(err);
+        reject(error);
       }
     })
   })
-}
+};

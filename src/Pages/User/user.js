@@ -2,7 +2,7 @@ import './user.css';
 import './userMobile.css';
 import React, { useEffect, useState } from 'react';
 import { useCookies } from "react-cookie";
-import { getUserInfo } from '../../Services/userServices/getUserInfo';
+import { getUserInfo } from '../../Services/user/getUserInfo';
 
 const initialState = {
   firstName: '',

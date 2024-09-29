@@ -1,10 +1,10 @@
 import axios from 'axios';
-const url = 'https://mathieuhuet.com:3031';
+import { API } from '../../secret';
 
-export const getUserInfo = (accessToken) => {
+export const getAllDataHistory = (accessToken) => {
   return new Promise((resolve, reject) => {
     axios.get(
-      `${url}/me/`, 
+      `${API}/readAllDataHistory/`, 
       {
         headers: {
           "Content-Type": "application/json",

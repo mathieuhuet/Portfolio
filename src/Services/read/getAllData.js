@@ -1,17 +1,15 @@
 import axios from 'axios';
-const url = 'https://mathieuhuet.com:3031';
+import { API } from '../../secret';
 
-
-export const logoutUser = (accessToken) => {
+export const getAllData = (accessToken) => {
   return new Promise((resolve, reject) => {
-    axios.post(
-      `${url}/logout/`,
-      {data: 'no data'},
+    axios.get(
+      `${API}/readAllData/`, 
       {
         headers: {
           "Content-Type": "application/json",
-          'Authorization': `Bearer ${accessToken}`
-        }
+          Authorization: `Bearer ${accessToken}`
+        },
       }
     ).then((response) => {
       const { data } = response;
@@ -22,8 +20,8 @@ export const logoutUser = (accessToken) => {
           reject(err.response.data);
         }
       } catch (error) {
-        reject(err);
+        reject(error);
       }
     })
   })
-}
+};

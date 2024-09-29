@@ -1,10 +1,10 @@
 import axios from 'axios';
-const url = 'https://mathieuhuet.com:3031';
+import { API } from '../../secret';
 
 export const stateOfAC = (accessToken) => {
   return new Promise((resolve, reject) => {
     axios.get(
-      `${url}/acstate/`, 
+      `${API}/acstate/`, 
       {
         headers: {
           "Content-Type": "application/json",

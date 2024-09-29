@@ -42,7 +42,7 @@ const Header = (props) => {
       <List>
         <ListItem disablePadding>
           <ListItemButton
-            onClick={() => navigate('/')}
+            onClick={() => navigate('/me')}
           >
             <div className='menu-button'>
               {"- Mathieu "}
@@ -88,7 +88,7 @@ const Header = (props) => {
           style={{width: '80%'}}
         >
           <MHRem 
-            onClick={() => navigate('/login')}
+            onClick={() => navigate('/')}
           />
         </div>
       </div>
@@ -164,10 +164,10 @@ const Header = (props) => {
         <MHRem 
           size={70}
           style={{cursor: 'pointer', marginLeft: 16}}
-          onClick={() => navigate('/login')}
+          onClick={() => navigate('/')}
         />
         <div className='header-selection'
-          onClick={() => navigate('/')}
+          onClick={() => navigate('/me')}
         >
           {"Mathieu"}
           <RiUserHeartFill />

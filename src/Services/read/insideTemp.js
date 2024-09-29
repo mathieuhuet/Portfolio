@@ -1,14 +1,14 @@
 import axios from 'axios';
-const url = 'https://mathieuhuet.com:3031';
+import { API } from '../../secret';
 
-export const loginUser = (credentials) => {
+export const readInsideTemp = (accessToken) => {
   return new Promise((resolve, reject) => {
-    axios.post(
-      `${url}/login/`, 
-      credentials,
+    axios.get(
+      `${API}/readInsideTemp/`, 
       {
         headers: {
           "Content-Type": "application/json",
+          Authorization: `Bearer ${accessToken}`
         },
       }
     ).then((response) => {
@@ -20,8 +20,8 @@ export const loginUser = (credentials) => {
           reject(err.response.data);
         }
       } catch (error) {
-        reject(err);
+        reject(error);
       }
     })
   })
-}
+};

@@ -5,7 +5,7 @@ import Header from "./Components/Header/header";
 import Bottom from "./Components/Bottom/bottom";
 // Auth
 import { useCookies } from 'react-cookie';
-import { getUserInfo } from './Services/userServices/getUserInfo';
+import { getUserInfo } from './Services/user/getUserInfo';
 import SignedInRoute from './Routes/signedInRoute';
 import SignedOutRoute from './Routes/signedOutRoute';
 

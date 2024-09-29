@@ -20,15 +20,11 @@ const SignedOutRoute = (props) => {
     <Routes>
       <Route
         path="/control"
-        element={<Navigate to="/login" replace={true} />}
+        element={<Navigate to="/" replace={true} />}
       />
       <Route
         path="/user"
-        element={<Navigate to="/login" replace={true} />}
-      />
-      <Route 
-        path="/login" 
-        element={<Login/>}
+        element={<Navigate to="/" replace={true} />}
       />
       <Route
         path="/mi8"
@@ -75,8 +71,12 @@ const SignedOutRoute = (props) => {
         element={<STI />}
       />
       <Route 
-        path="/" 
+        path="/me" 
         element={<Mathieu />} 
+      />
+      <Route 
+        path="/" 
+        element={<Login/>}
       />
       <Route
         path="*"

@@ -1,11 +1,11 @@
 import axios from 'axios';
-const url = 'https://mathieuhuet.com:3031';
+import { API } from '../../secret';
 
 
-export const turnOffAC = (accessToken) => {
+export const turnOnAC = (accessToken) => {
   return new Promise((resolve, reject) => {
     axios.post(
-      `${url}/turnoffac/`,
+      `${API}/turnonac/`,
       {data: 'no data'},
       {
         headers: {

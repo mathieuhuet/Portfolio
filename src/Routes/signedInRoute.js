@@ -20,9 +20,9 @@ import Control from '../Pages/Control/control';
 const SignedInRoute = (props) => {
   return (
     <Routes>
-        <Route
-          path="/login"
-          element={<Navigate to="/control" replace={true} />}
+        <Route 
+          path="/me" 
+          element={<Mathieu />} 
         />
         <Route
           path="/user"
@@ -76,9 +76,9 @@ const SignedInRoute = (props) => {
           path='/sti'
           element={<STI />}
         />
-        <Route 
-          path="/" 
-          element={<Mathieu />} 
+        <Route
+          path="/"
+          element={<Navigate to="/control" replace={true} />}
         />
         <Route
           path="*"
