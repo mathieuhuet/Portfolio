@@ -58,6 +58,14 @@ function DisplayExperiences () {
     },
     {
       id: 3,
+      institution: 'Université du Québec à Montréal',
+      blurb: "Première introduction à la programmation avec le cours de Programmation 1 et 2 (Java), Fichiers et bases de données (MySQL), Oraganisation des ordinateurs et language d'assembleur (Assembly Language) et Construction, maintenance de logiciel (C++). Pour mon projet final j'ai fais une application Android via Android Studio qui permettait d'analyser les signaux Wi-Fi et Bluetooth que le cellulaire reçoit.",
+      languages: ['Java', 'Assembly Language', 'MySQL', 'C++', 'Linux/Unix/Bash', 'Android Studio', 'GUI', 'HTML', 'CSS'],
+      date: '2017-2020',
+      route: 'uqam',
+    },
+    {
+      id: 4,
       institution: 'Codeworks',
       blurb: "Codeworks est un bootcamp intensif 6jours/semaine, 12heures par jour, d'une durée de 3mois.",
       languages: ['JavaScript', 'TypeScript', 'React', 'React Native', 'Node.js', 'Redux', 'Angular', 'jQuery', 'HTML', 'CSS', 'SQL', 'NoSQL', "GraphQL", "PostgreSQL", 'Sequelize ORM', 'MongoDB', 'Mongoose ORM', 'Redis', 'Express', 'Koa', 'Docker', 'Expo', 'Git', 'JSON', 'RESTful API', 'Socket.IO', 'Linux/Unix'],
@@ -65,7 +73,7 @@ function DisplayExperiences () {
       route: 'codeworks',
     },
     {
-      id: 4,
+      id: 5,
       institution: 'Learn PHP Course',
       blurb: "Compléter < Learn PHP Course > de Codecademy",
       languages: ['HTML', 'CSS', 'PHP', 'JavaScript'],
@@ -73,7 +81,7 @@ function DisplayExperiences () {
       route: 'codecademy',
     },
     {
-      id: 5,
+      id: 6,
       institution: 'Innovation Mi8',
       blurb: "Écrire des scripts d'automatisation pour l'opération et la maintenance des équipements de Innovation Mi8.",
       languages: ['Python', 'OpenVPN', 'Linux/Unix/Bash', 'TCP/IP', 'UDP/IP', 'IoT'],
@@ -81,20 +89,12 @@ function DisplayExperiences () {
       route: 'mi8',
     },
     {
-      id: 6,
+      id: 7,
       institution: 'Crash Course on Python',
       blurb: "Certificat obtenu pour le cours en ligne Python autorisé par Google et proposé par l'intermédiaire de Coursera.",
       languages: ['Python'],
       date: '2020',
       route: 'coursera',
-    },
-    {
-      id: 7,
-      institution: 'Université du Québec à Montréal',
-      blurb: "Première introduction à la programmation avec le cours de Programmation 1 et 2 (Java), Fichiers et bases de données (MySQL), Oraganisation des ordinateurs et language d'assembleur (Assembly Language) et Construction, maintenance de logiciel (C++). Pour mon projet final j'ai fais une application Android via Android Studio qui permettait d'analyser les signaux Wi-Fi et Bluetooth que le cellulaire reçoit.",
-      languages: ['Java', 'Assembly Language', 'MySQL', 'C++', 'Linux/Unix/Bash', 'Android Studio', 'GUI', 'HTML', 'CSS'],
-      date: '2017-2020',
-      route: 'uqam',
     }
   ], []);
 

@@ -1,9 +1,11 @@
 @media (min-width: 1024px) {
 
   .Charts {
-    color: black;
+    color: #004638;
     height: 400px;
     width: 700px;
+    font-weight: bold;
+    font-size: larger;
   }
 
 

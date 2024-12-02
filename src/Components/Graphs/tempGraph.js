@@ -32,12 +32,18 @@ function TempGraph({ acstate, insideTemp, insideTemp2, outsideTemp, timelabels }
       data: insideTemp,
       borderColor: '#004638',
       backgroundColor: '#004638',
+      fill: false,
+      cubicInterpolationMode: 'monotone',
+      tension: 0.4
     })
     result.push({
       label: 'Extérieur',
       data: outsideTemp,
       borderColor: '#82bf00',
       backgroundColor: '#82bf00',
+      fill: false,
+      cubicInterpolationMode: 'monotone',
+      tension: 0.4
     })
     // result.push({
     //   label: 'A/C',
@@ -111,7 +117,7 @@ function TempGraph({ acstate, insideTemp, insideTemp2, outsideTemp, timelabels }
   
     return (
       <div className="Charts">
-        Température
+        Température (°C)
         <Line 
           options={config} 
           data={data}

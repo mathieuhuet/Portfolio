@@ -46,7 +46,7 @@ const Login = (props) => {
     const acstate = [];
 
     for (let k = 0; k < allData.length; k++) {
-      timeLabels.push(new Date(allData[k].createdAt).toLocaleTimeString("en-GB").slice(0, -3));
+      timeLabels.push(new Date(allData[k].createdAt).toString().slice(4, -46) + new Date(allData[k].createdAt).toString().slice(16, -36));
       !allData[k].InsideTemp ? insideTemp.push(NaN) : insideTemp.push(allData[k].InsideTemp);
       !allData[k].InsideHumi ? insideHumi.push(NaN) : insideHumi.push(allData[k].InsideHumi);
       !allData[k].InsideTemp2 ? insideTemp2.push(NaN) : insideTemp2.push(allData[k].InsideTemp2);
@@ -102,7 +102,7 @@ const Login = (props) => {
       } else {
         console.log('problem fetching data');
       }
-      const allDataHistory = await getAllDataHistory();
+      const allDataHistory = await getAllDataHistory({numberOfDays: 4});
       if (allDataHistory.data) {
         setAllData(allDataHistory.data);
         console.log(allDataHistory.data);

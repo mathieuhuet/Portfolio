@@ -1,14 +1,13 @@
 import axios from 'axios';
 import { API } from '../../secret';
 
-export const getAllData = (accessToken) => {
+export const getAllData = () => {
   return new Promise((resolve, reject) => {
     axios.get(
       `${API}/readAllData/`, 
       {
         headers: {
           "Content-Type": "application/json",
-          Authorization: `Bearer ${accessToken}`
         },
       }
     ).then((response) => {

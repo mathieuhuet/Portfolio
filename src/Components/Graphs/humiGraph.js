@@ -32,12 +32,18 @@ function HumiGraph({ insideHumi, insideHumi2, outsideHumi, timelabels }) {
       data: insideHumi,
       borderColor: '#004638',
       backgroundColor: '#004638',
+      fill: false,
+      cubicInterpolationMode: 'monotone',
+      tension: 0.4
     })
     result.push({
       label: 'Extérieur',
       data: outsideHumi,
       borderColor: '#82bf00',
       backgroundColor: '#82bf00',
+      fill: false,
+      cubicInterpolationMode: 'monotone',
+      tension: 0.4
     })
     setGraphDatasets(result)
   }, [insideHumi]);
@@ -108,7 +114,7 @@ function HumiGraph({ insideHumi, insideHumi2, outsideHumi, timelabels }) {
   
     return (
       <div className="Charts">
-        Humidité
+        Humidité (%)
         <Line 
           config={config} 
           data={data}

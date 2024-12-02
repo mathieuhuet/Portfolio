@@ -1,14 +1,14 @@
 import axios from 'axios';
 import { API } from '../../secret';
 
-export const getAllDataHistory = (accessToken) => {
+export const getAllDataHistory = (numberOfDays) => {
   return new Promise((resolve, reject) => {
-    axios.get(
+    axios.post(
       `${API}/readAllDataHistory/`, 
+      numberOfDays,
       {
         headers: {
           "Content-Type": "application/json",
-          Authorization: `Bearer ${accessToken}`
         },
       }
     ).then((response) => {
