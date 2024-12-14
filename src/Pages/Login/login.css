@@ -151,4 +151,24 @@
     width: 200px;                               
   }
 
+  .OptionSelect {
+    display: flex;
+    justify-content: space-evenly;
+    margin-bottom: 16px;
+    margin-top: -64px;
+  }
+
+  .DateSelect {
+    display: flex;
+    align-items: center;
+    font-weight: 600;
+  }
+
+  .ButtonSelect {
+    display: flex;
+    align-items: center;
+    font-weight: bold;
+    font-size: larger;
+  }
+
 }

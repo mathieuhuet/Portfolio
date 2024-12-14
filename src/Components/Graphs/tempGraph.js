@@ -29,19 +29,18 @@ function TempGraph({ acstate, insideTemp, insideTemp2, outsideTemp, timelabels }
     let result = [];
     result.push({
       label: 'Intérieur',
-      data: insideTemp,
+      data: insideTemp.slice(2),
       borderColor: '#004638',
       backgroundColor: '#004638',
-      fill: false,
       cubicInterpolationMode: 'monotone',
       tension: 0.4
     })
     result.push({
       label: 'Extérieur',
-      data: outsideTemp,
+      drawActiveElementsOnTop: false,
+      data: outsideTemp.slice(2),
       borderColor: '#82bf00',
       backgroundColor: '#82bf00',
-      fill: false,
       cubicInterpolationMode: 'monotone',
       tension: 0.4
     })
@@ -54,7 +53,7 @@ function TempGraph({ acstate, insideTemp, insideTemp2, outsideTemp, timelabels }
     //   yAxisID: 'y2',
     // })
     setGraphDatasets(result)
-  }, [insideTemp]);
+  }, [insideTemp, outsideTemp]);
 
   return (
     <div>
@@ -77,7 +76,7 @@ function TempGraph({ acstate, insideTemp, insideTemp2, outsideTemp, timelabels }
     );
 
     const data = {
-      labels: timelabels,
+      labels: timelabels.slice(2),
       datasets: graphDatasets,
     }
 
@@ -86,31 +85,13 @@ function TempGraph({ acstate, insideTemp, insideTemp2, outsideTemp, timelabels }
       data: data,
       options: {
         responsive: true,
-        plugins: {
-          legend: {
-            position: 'top',
-          },
-          title: {
-            display: true,
-            text: 'Dernier 48h',
-          }
-        },
         scales: {
-          y2: {
-            type: 'category',
-            labels: ['ON', 'OFF'],
-            offset: true,
-            position: 'left',
-            stackWeight: 1,
-            border: {
-              color: 'blue'
-            }
+          x: {
+            display: true,
           },
           y: {
-            type: 'linear',
-            position: 'left',
-            stackWeight: 2,
-          },
+            display: true,
+          }
         }
       },
     };

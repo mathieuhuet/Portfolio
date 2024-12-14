@@ -29,24 +29,22 @@ function HumiGraph({ insideHumi, insideHumi2, outsideHumi, timelabels }) {
     let result = [];
     result.push({
       label: 'Intérieur',
-      data: insideHumi,
+      data: insideHumi.slice(2),
       borderColor: '#004638',
       backgroundColor: '#004638',
-      fill: false,
       cubicInterpolationMode: 'monotone',
       tension: 0.4
     })
     result.push({
       label: 'Extérieur',
-      data: outsideHumi,
+      data: outsideHumi.slice(2),
       borderColor: '#82bf00',
       backgroundColor: '#82bf00',
-      fill: false,
       cubicInterpolationMode: 'monotone',
       tension: 0.4
     })
     setGraphDatasets(result)
-  }, [insideHumi]);
+  }, [insideHumi, outsideHumi]);
 
   return (
     <div>
@@ -69,7 +67,7 @@ function HumiGraph({ insideHumi, insideHumi2, outsideHumi, timelabels }) {
     );
 
     const data = {
-      labels: timelabels,
+      labels: timelabels.slice(2),
       datasets: graphDatasets,
     }
 
@@ -78,20 +76,6 @@ function HumiGraph({ insideHumi, insideHumi2, outsideHumi, timelabels }) {
       data: data,
       options: {
         responsive: true,
-        plugins: {
-          title: {
-            display: true,
-            text: 'Dernier 48h',
-            font: {
-              size: 20,
-              weight: 'bold',
-            },
-            color: 'black',
-          },
-          colors: {
-            enabled: true,
-          },
-        },
         interaction: {
           intersect: false,
         },
@@ -101,11 +85,7 @@ function HumiGraph({ insideHumi, insideHumi2, outsideHumi, timelabels }) {
           },
           y: {
             display: true,
-            title: {
-              display: true,
-              text: 'Humidité'
-            },
-            suggestedMin: -10,
+            suggestedMin: 0,
             suggestedMax: 100
           }
         }

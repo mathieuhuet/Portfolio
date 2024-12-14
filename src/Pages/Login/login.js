@@ -1,6 +1,10 @@
 import './login.css';
 import './loginMobile.css';
 import React, {useState, useEffect, useMemo} from 'react';
+import FormControlLabel from '@mui/material/FormControlLabel';
+import Checkbox from '@mui/material/Checkbox';
+import FormControl from '@mui/material/FormControl';
+import Select from '@mui/material/Select';
 import { Formik } from 'formik';
 import { loginUser } from '../../Services/user/login';
 import { getAllData } from '../../Services/read/getAllData';
@@ -11,6 +15,7 @@ import TempGraph from '../../Components/Graphs/tempGraph';
 import { useCookies } from 'react-cookie';
 import { useMediaQuery } from 'react-responsive';
 import { useWindowDimensions } from '../../Utilities/windowDimension';
+import { MenuItem } from '@mui/material';
 
 
 /*
@@ -33,6 +38,9 @@ const Login = (props) => {
   const [insideHumi, setInsideHumi] = useState('');
   const [outsideTemp, setOutsideTemp] = useState('');
   const [outsideHumi, setOutsideHumi] = useState('');
+  const [insideCheck, setInsideCheck] = useState(true);
+  const [outsideCheck, setOutsideCheck] = useState(true);
+  const [nbJours, setNbJours] = useState(4);
   
 
   const graphData = useMemo(() => {
@@ -66,7 +74,6 @@ const Login = (props) => {
       outsideHumi: outsideHumi,
       acstate: acstate
     }
-    console.log(result);
 
     return result;
   }, [allData])
@@ -91,6 +98,18 @@ const Login = (props) => {
     }
   }
 
+  const handleInsideCheckChange = () => {
+    setInsideCheck(!insideCheck);
+  }
+
+  const handleOutsideCheckChange = () => {
+    setOutsideCheck(!outsideCheck);
+  }
+
+  const handleNbJoursChange = (event) => {
+    setNbJours(event.target.value);
+  };
+
   useEffect(() => {
     async function fetchData() {
       const allData = await getAllData();
@@ -102,16 +121,16 @@ const Login = (props) => {
       } else {
         console.log('problem fetching data');
       }
-      const allDataHistory = await getAllDataHistory({numberOfDays: 4});
+      const allDataHistory = await getAllDataHistory({numberOfDays: nbJours});
       if (allDataHistory.data) {
         setAllData(allDataHistory.data);
-        console.log(allDataHistory.data);
+        console.log(allDataHistory.data[0].createdAt);
       } else {
         console.log('problem fetching data');
       }
     }
     fetchData();
-  }, [refresh]);
+  }, [nbJours]);
 
   return (
     <div>
@@ -119,15 +138,43 @@ const Login = (props) => {
           <div className='LoginPage'>
           <div className='Login'>
             <div className='TempBox'>
+            <div className='OptionSelect'>
+                <div className='DateSelect'>
+                  Données des 
+                    <FormControl variant='standard' sx={{ m: 1, maxWidth: 50}}>
+                      <Select
+                        labelId="demo-simple-select-standard-label"
+                        id="demo-simple-select-standard"
+                        value={nbJours}
+                        onChange={handleNbJoursChange}
+                      >
+                        <MenuItem value={1}>1</MenuItem>
+                        <MenuItem value={2}>2</MenuItem>
+                        <MenuItem value={3}>3</MenuItem>
+                        <MenuItem value={4}>4</MenuItem>
+                        <MenuItem value={5}>5</MenuItem>
+                        <MenuItem value={6}>6</MenuItem>
+                        <MenuItem value={7}>7</MenuItem>
+                      </Select>
+                    </FormControl>
+                  derniers jour(s)
+                </div>
+                <div className='ButtonSelect'>
+                  Intérieur
+                  <FormControlLabel control={<Checkbox checked={insideCheck} onChange={handleInsideCheckChange} sx={{color: '#004638', '&.Mui-checked': {color: '#004638'}}} size='large' />} />
+                  Extérieur
+                  <FormControlLabel control={<Checkbox checked={outsideCheck} onChange={handleOutsideCheckChange} sx={{color: '#82bf00', '&.Mui-checked': {color: '#82bf00'}}} size='large'/>} />
+                </div>
+              </div>
               <TempGraph 
-                insideTemp={graphData.insideTemp}
+                insideTemp={insideCheck ? graphData.insideTemp : []}
                 acstate={graphData.acstate}
-                outsideTemp={graphData.outsideTemp}
+                outsideTemp={outsideCheck ? graphData.outsideTemp : []}
                 timelabels={graphData.timeLabels}
               />
               <HumiGraph 
-                insideHumi={graphData.insideHumi}
-                outsideHumi={graphData.outsideHumi}
+                insideHumi={insideCheck ? graphData.insideHumi : []}
+                outsideHumi={outsideCheck ? graphData.outsideHumi : []}
                 timelabels={graphData.timeLabels}
               />
             </div>
@@ -178,7 +225,6 @@ const Login = (props) => {
                 </div>
               </div>
             <div className='Formik'>
-              Bonjour
               <Formik
                 initialValues={{ email: '' }}
                 validate={values => {
@@ -258,15 +304,43 @@ const Login = (props) => {
           <div className='LoginPage'>
           <div className='Login'>
             <div className='TempBox'>
+              <div className='OptionSelect'>
+                <div className='DateSelect'>
+                  Données des 
+                    <FormControl variant='standard' sx={{ m: 1, maxWidth: 50}}>
+                      <Select
+                        labelId="demo-simple-select-standard-label"
+                        id="demo-simple-select-standard"
+                        value={nbJours}
+                        onChange={handleNbJoursChange}
+                      >
+                        <MenuItem value={1}>1</MenuItem>
+                        <MenuItem value={2}>2</MenuItem>
+                        <MenuItem value={3}>3</MenuItem>
+                        <MenuItem value={4}>4</MenuItem>
+                        <MenuItem value={5}>5</MenuItem>
+                        <MenuItem value={6}>6</MenuItem>
+                        <MenuItem value={7}>7</MenuItem>
+                      </Select>
+                    </FormControl>
+                  derniers jour(s)
+                </div>
+                <div className='ButtonSelect'>
+                  Intérieur
+                  <FormControlLabel control={<Checkbox checked={insideCheck} onChange={handleInsideCheckChange} sx={{color: '#004638', '&.Mui-checked': {color: '#004638'}}} size='large'/>} />
+                  Extérieur
+                  <FormControlLabel control={<Checkbox checked={outsideCheck} onChange={handleOutsideCheckChange} sx={{color: '#82bf00', '&.Mui-checked': {color: '#82bf00'}}} size='large'/>} />
+                </div>
+              </div>
               <TempGraph 
-                insideTemp={graphData.insideTemp}
+                insideTemp={insideCheck ? graphData.insideTemp : []}
                 acstate={graphData.acstate}
-                outsideTemp={graphData.outsideTemp}
+                outsideTemp={outsideCheck ? graphData.outsideTemp : []}
                 timelabels={graphData.timeLabels}
               />
               <HumiGraph 
-                insideHumi={graphData.insideHumi}
-                outsideHumi={graphData.outsideHumi}
+                insideHumi={insideCheck ? graphData.insideHumi : []}
+                outsideHumi={outsideCheck ? graphData.outsideHumi : []}
                 timelabels={graphData.timeLabels}
               />
             </div>

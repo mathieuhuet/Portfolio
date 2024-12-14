@@ -149,5 +149,25 @@
     width: 200px;                               
   }
 
-  
+  .OptionSelect {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 8px;
+  }
+
+  .DateSelect {
+    display: flex;
+    align-items: center;
+    height: 32px;
+    font-weight: 600;
+  }
+
+  .ButtonSelect {
+    display: flex;
+    align-items: center;
+    font-weight: bold;
+    font-size: larger;
+  }
+
 }
