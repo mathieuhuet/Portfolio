@@ -5,7 +5,17 @@
     display: flex;
     flex-direction: column;
     justify-content: flex-start;
-    align-items: flex-start;
+    align-items: center;
+  }
+
+  .LeftControl {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .MobileControl {
+    display: flex;
+    margin-top: 16px;
   }
 
   .RightControl {
@@ -29,11 +39,10 @@
   }
   
   .AcState {
-    align-self: center;
-    margin-bottom: 50px;
-    width: 70vw;
-    border-radius: 10px;
-    padding: 1vh;
+    margin-bottom: 32px;
+    width: 60vw;
+    border-radius: 8px;
+    padding: 0.2vh;
     background-color: #004638;
     color: #f6f6f6;
   }
@@ -45,16 +54,16 @@
   .AcButtons {
     align-self: center;
     display: flex;
-    width: 400px;
+    width: 300px;
     justify-content: space-evenly;
-    margin-bottom: 8vh;
+    margin-bottom: 2vh;
   }
   
   .TurnOnButton {
     background-color: #004638;
     color: #f6f6f6;
     border: none;
-    padding: 3vh;
+    padding: 2vh;
     border-radius: 10px;
     font-size: larger;
   }
@@ -73,7 +82,7 @@
     background-color: #004638;
     color: #f6f6f6;
     border: none;
-    padding: 3vh;
+    padding: 2vh;
     border-radius: 10px;
     font-size: larger;
   }
@@ -98,7 +107,7 @@
     justify-content: center;
     align-items: center;
     display: flex;
-    margin: 24px 0px 24px 50px;
+    margin: 24px 0px 24px 16px;
   }
   
   .UserPageButton:hover {

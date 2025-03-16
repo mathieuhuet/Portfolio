@@ -1,7 +1,6 @@
 @media (min-width: 1024px) {
 
   .ControlPage {
-    height: 100vh;
     display: flex;
     justify-content: flex-start;
     align-items: flex-start;
@@ -21,11 +20,13 @@
     width: 98vw;
     display: flex;
     justify-content: flex-end;
+    align-items: center;
     margin-top: -32px;
   }
 
   .UserPageButton {
     background-color: #004638;
+    align-self: flex-end;
     color: #f6f6f6;
     height: 96px;
     width: 96px;
@@ -50,16 +51,16 @@
   .Ac {
     display: flex;
     flex-direction: column;
-    align-items: flex-end;
+    align-items: center;
     margin-top: 32px;
   }
   
   .AcState {
     align-self: center;
     margin-bottom: 32px;
-    width: 10vw;
+    width: 12vw;
     border-radius: 10px;
-    padding: 3vh;
+    padding: 2vh;
     background-color: #004638;
     color: #f6f6f6;
   }

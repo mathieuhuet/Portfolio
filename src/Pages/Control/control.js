@@ -22,6 +22,7 @@ import { MenuItem } from '@mui/material';
 
 const Control = () => {
   let navigate = useNavigate();
+  const isMobile = useMediaQuery({ query: '(max-width: 1023px)' });
   const [cookies, setCookie] = useCookies(['accessToken']);
   const [acState, setAcState] = useState('unknown');
   const [refresh, setRefresh] = useState(0);
@@ -117,128 +118,259 @@ const Control = () => {
   }
 
   return (
-    <div className='ControlPage'>
-      <div className='LeftControl'>
-        <div className='LoggedInTempHumi'>
-          <div className='OptionSelect'>
-            <div className='DateSelect'>
-              Données des 
-                <FormControl variant='standard' sx={{ m: 1, maxWidth: 50}}>
-                  <Select
-                    labelId="demo-simple-select-standard-label"
-                    id="demo-simple-select-standard"
-                    value={nbJours}
-                    onChange={handleNbJoursChange}
-                  >
-                    <MenuItem value={1}>1</MenuItem>
-                    <MenuItem value={2}>2</MenuItem>
-                    <MenuItem value={3}>3</MenuItem>
-                    <MenuItem value={4}>4</MenuItem>
-                    <MenuItem value={5}>5</MenuItem>
-                    <MenuItem value={6}>6</MenuItem>
-                    <MenuItem value={7}>7</MenuItem>
-                  </Select>
-                </FormControl>
-              derniers jour(s)
+    <div>
+      {isMobile &&
+        <div className='ControlPage'>
+          <div className='LeftControl'>
+            <div className='Ac'>
+              <div className='MobileControl'>
+                <div className='AcState'>
+                  <h1>
+                    Control
+                  </h1>
+                  <h1>
+                    A/C is {acState}
+                  </h1>
+                </div>
+                <div 
+                  className='UserPageButton'
+                  onClick={() => navigate('/user')}
+                >
+                  <RiUserSharedFill />
+                </div>
+              </div>
+              <div className='AcButtons'>
+                <button
+                  className='TurnOnButton'
+                  onClick={turnOn}
+                >
+                  Turn ON A/C
+                </button>
+                <button
+                  className='TurnOffButton'
+                  onClick={turnOff}
+                >
+                  Turn OFF A/C
+                </button>
+              </div>
+              <div className='WeatherBoxTemp'>
+                <div className='TopWeatherBox'>
+                  Température Actuelle
+                </div>
+                <div className='BottomWeatherBox'>
+                  <div className='LeftWeatherBox'>
+                    <div>
+                      Intérieur
+                    </div>
+                    <div>
+                      {insideTemp}°C
+                    </div>
+                  </div>
+                  <div className='RightWeatherBox'>
+                    <div>
+                      Extérieur
+                    </div>
+                    <div>
+                      {outsideTemp}°C
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div className='WeatherBoxHumi'>
+                <div className='TopWeatherBox'>
+                  Humidité Actuelle
+                </div>
+                <div className='BottomWeatherBox'>
+                  <div className='LeftWeatherBox'>
+                    <div>
+                      Intérieur
+                    </div>
+                    <div>
+                      {insideHumi}%
+                    </div>
+                  </div>
+                  <div className='RightWeatherBox'>
+                    <div>
+                      Extérieur
+                    </div>
+                    <div>
+                      {outsideHumi}%
+                    </div>
+                  </div>
+                </div>
+              </div>
             </div>
-            <div className='ButtonSelect'>
-              Intérieur
-              <FormControlLabel control={<Checkbox checked={insideCheck} onChange={handleInsideCheckChange} sx={{color: '#004638', '&.Mui-checked': {color: '#004638'}}} size='large' />} />
-              Extérieur
-              <FormControlLabel control={<Checkbox checked={outsideCheck} onChange={handleOutsideCheckChange} sx={{color: '#82bf00', '&.Mui-checked': {color: '#82bf00'}}} size='large'/>} />
-            </div>
           </div>
-          <TempGraph 
-            insideTemp={insideCheck ? graphData.insideTemp : []}
-            acstate={graphData.acstate}
-            outsideTemp={outsideCheck ? graphData.outsideTemp : []}
-            timelabels={graphData.timeLabels}
-          />
-          <HumiGraph 
-            insideHumi={insideCheck ? graphData.insideHumi : []}
-            outsideHumi={outsideCheck ? graphData.outsideHumi : []}
-            timelabels={graphData.timeLabels}
-          />
-        </div>
-      </div>
-      <div className='RightControl'>
-        <div className='Ac'>
-          <div 
-            className='UserPageButton'
-            onClick={() => navigate('/user')}
-          >
-            <RiUserSharedFill />
-          </div>
-          <div className='AcState'>
-            <h1>
-              Control
-            </h1>
-            <h1>
-              A/C is {acState}
-            </h1>
-          </div>
-          <div className='AcButtons'>
-            <button
-              className='TurnOnButton'
-              onClick={turnOn}
-            >
-              Turn ON A/C
-            </button>
-            <button
-              className='TurnOffButton'
-              onClick={turnOff}
-            >
-              Turn OFF A/C
-            </button>
-          </div>
-          <div className='WeatherBoxTemp'>
-            <div className='TopWeatherBox'>
-              Température Actuelle
-            </div>
-            <div className='BottomWeatherBox'>
-              <div className='LeftWeatherBox'>
-                <div>
+          <div className='RightControl'>
+            <div className='LoggedInTempHumi'>
+              <div className='OptionSelect'>
+                <div className='DateSelect'>
+                  Données des 
+                    <FormControl variant='standard' sx={{ m: 1, maxWidth: 50}}>
+                      <Select
+                        labelId="demo-simple-select-standard-label"
+                        id="demo-simple-select-standard"
+                        value={nbJours}
+                        onChange={handleNbJoursChange}
+                      >
+                        <MenuItem value={1}>1</MenuItem>
+                        <MenuItem value={2}>2</MenuItem>
+                        <MenuItem value={3}>3</MenuItem>
+                        <MenuItem value={4}>4</MenuItem>
+                        <MenuItem value={5}>5</MenuItem>
+                        <MenuItem value={6}>6</MenuItem>
+                        <MenuItem value={7}>7</MenuItem>
+                      </Select>
+                    </FormControl>
+                  derniers jour(s)
+                </div>
+                <div className='ButtonSelect'>
                   Intérieur
-                </div>
-                <div>
-                  {insideTemp}°C
-                </div>
-              </div>
-              <div className='RightWeatherBox'>
-                <div>
+                  <FormControlLabel control={<Checkbox checked={insideCheck} onChange={handleInsideCheckChange} sx={{color: '#004638', '&.Mui-checked': {color: '#004638'}}} size='large' />} />
                   Extérieur
-                </div>
-                <div>
-                  {outsideTemp}°C
+                  <FormControlLabel control={<Checkbox checked={outsideCheck} onChange={handleOutsideCheckChange} sx={{color: '#82bf00', '&.Mui-checked': {color: '#82bf00'}}} size='large'/>} />
                 </div>
               </div>
+              <TempGraph 
+                insideTemp={insideCheck ? graphData.insideTemp : []}
+                acstate={graphData.acstate}
+                outsideTemp={outsideCheck ? graphData.outsideTemp : []}
+                timelabels={graphData.timeLabels}
+              />
+              <HumiGraph 
+                insideHumi={insideCheck ? graphData.insideHumi : []}
+                outsideHumi={outsideCheck ? graphData.outsideHumi : []}
+                timelabels={graphData.timeLabels}
+              />
             </div>
           </div>
-          <div className='WeatherBoxHumi'>
-            <div className='TopWeatherBox'>
-              Humidité Actuelle
-            </div>
-            <div className='BottomWeatherBox'>
-              <div className='LeftWeatherBox'>
-                <div>
-                  Intérieur
+        </div>
+      }
+      {!isMobile &&
+        <div className='ControlPage'>
+          <div className='LeftControl'>
+            <div className='LoggedInTempHumi'>
+              <div className='OptionSelect'>
+                <div className='DateSelect'>
+                  Données des 
+                    <FormControl variant='standard' sx={{ m: 1, maxWidth: 50}}>
+                      <Select
+                        labelId="demo-simple-select-standard-label"
+                        id="demo-simple-select-standard"
+                        value={nbJours}
+                        onChange={handleNbJoursChange}
+                      >
+                        <MenuItem value={1}>1</MenuItem>
+                        <MenuItem value={2}>2</MenuItem>
+                        <MenuItem value={3}>3</MenuItem>
+                        <MenuItem value={4}>4</MenuItem>
+                        <MenuItem value={5}>5</MenuItem>
+                        <MenuItem value={6}>6</MenuItem>
+                        <MenuItem value={7}>7</MenuItem>
+                      </Select>
+                    </FormControl>
+                  derniers jour(s)
                 </div>
-                <div>
-                  {insideHumi}%
+                <div className='ButtonSelect'>
+                  Intérieur
+                  <FormControlLabel control={<Checkbox checked={insideCheck} onChange={handleInsideCheckChange} sx={{color: '#004638', '&.Mui-checked': {color: '#004638'}}} size='large' />} />
+                  Extérieur
+                  <FormControlLabel control={<Checkbox checked={outsideCheck} onChange={handleOutsideCheckChange} sx={{color: '#82bf00', '&.Mui-checked': {color: '#82bf00'}}} size='large'/>} />
                 </div>
               </div>
-              <div className='RightWeatherBox'>
-                <div>
-                  Extérieur
+              <TempGraph 
+                insideTemp={insideCheck ? graphData.insideTemp : []}
+                acstate={graphData.acstate}
+                outsideTemp={outsideCheck ? graphData.outsideTemp : []}
+                timelabels={graphData.timeLabels}
+              />
+              <HumiGraph 
+                insideHumi={insideCheck ? graphData.insideHumi : []}
+                outsideHumi={outsideCheck ? graphData.outsideHumi : []}
+                timelabels={graphData.timeLabels}
+              />
+            </div>
+          </div>
+          <div className='RightControl'>
+            <div className='Ac'>
+              <div 
+                className='UserPageButton'
+                onClick={() => navigate('/user')}
+              >
+                <RiUserSharedFill />
+              </div>
+              <div className='AcState'>
+                <h1>
+                  Control
+                </h1>
+                <h1>
+                  A/C is {acState}
+                </h1>
+              </div>
+              <div className='AcButtons'>
+                <button
+                  className='TurnOnButton'
+                  onClick={turnOn}
+                >
+                  Turn ON A/C
+                </button>
+                <button
+                  className='TurnOffButton'
+                  onClick={turnOff}
+                >
+                  Turn OFF A/C
+                </button>
+              </div>
+              <div className='WeatherBoxTemp'>
+                <div className='TopWeatherBox'>
+                  Température Actuelle
                 </div>
-                <div>
-                  {outsideHumi}%
+                <div className='BottomWeatherBox'>
+                  <div className='LeftWeatherBox'>
+                    <div>
+                      Intérieur
+                    </div>
+                    <div>
+                      {insideTemp}°C
+                    </div>
+                  </div>
+                  <div className='RightWeatherBox'>
+                    <div>
+                      Extérieur
+                    </div>
+                    <div>
+                      {outsideTemp}°C
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div className='WeatherBoxHumi'>
+                <div className='TopWeatherBox'>
+                  Humidité Actuelle
+                </div>
+                <div className='BottomWeatherBox'>
+                  <div className='LeftWeatherBox'>
+                    <div>
+                      Intérieur
+                    </div>
+                    <div>
+                      {insideHumi}%
+                    </div>
+                  </div>
+                  <div className='RightWeatherBox'>
+                    <div>
+                      Extérieur
+                    </div>
+                    <div>
+                      {outsideHumi}%
+                    </div>
+                  </div>
                 </div>
               </div>
             </div>
           </div>
         </div>
-      </div>
+      }
     </div>
   );
 };

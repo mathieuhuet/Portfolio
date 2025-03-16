@@ -18,6 +18,7 @@
   .Formik {
     display: flex;
     flex-direction: column;
+    margin-bottom: 64px;
   }
   
   .Loading {
@@ -152,9 +153,9 @@
   .LoginAcState {
     font-size: 12px;
     margin-top: 16px;
+    margin-bottom: 64px;
     width: 256px;
     border-radius: 10px;
-    padding: 0.2vh;
     background-color: #004638;
     color: #f6f6f6;
   }
