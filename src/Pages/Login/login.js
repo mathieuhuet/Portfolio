@@ -38,9 +38,10 @@ const Login = (props) => {
   const [insideHumi, setInsideHumi] = useState('');
   const [outsideTemp, setOutsideTemp] = useState('');
   const [outsideHumi, setOutsideHumi] = useState('');
+  const [acState, setAcState] = useState('');
   const [insideCheck, setInsideCheck] = useState(true);
   const [outsideCheck, setOutsideCheck] = useState(true);
-  const [nbJours, setNbJours] = useState(4);
+  const [nbJours, setNbJours] = useState(2);
   
 
   const graphData = useMemo(() => {
@@ -53,8 +54,18 @@ const Login = (props) => {
     const insideHumi2 = [];
     const acstate = [];
 
+    // for (let k = 0; k < allData.length; k++) {
+    //   timeLabels.push(new Date(allData[k].createdAt).toString().slice(4, -46) + new Date(allData[k].createdAt).toString().slice(16, -36));
+    //   !allData[k].InsideTemp ? insideTemp.push(NaN) : insideTemp.push(allData[k].InsideTemp);
+    //   !allData[k].InsideHumi ? insideHumi.push(NaN) : insideHumi.push(allData[k].InsideHumi);
+    //   !allData[k].InsideTemp2 ? insideTemp2.push(NaN) : insideTemp2.push(allData[k].InsideTemp2);
+    //   !allData[k].InsideHumi2 ? insideHumi2.push(NaN) : insideHumi2.push(allData[k].InsideHumi2);
+    //   !allData[k].OutsideTemp ? outsideTemp.push(NaN) : outsideTemp.push(allData[k].OutsideTemp);
+    //   !allData[k].OutsideHumi ? outsideHumi.push(NaN) : outsideHumi.push(allData[k].OutsideHumi);
+    //   allData[k].acstate == 'ON' ? acstate.push('ON') : acstate.push('OFF');
+    // }
     for (let k = 0; k < allData.length; k++) {
-      timeLabels.push(new Date(allData[k].createdAt).toString().slice(4, -46) + new Date(allData[k].createdAt).toString().slice(16, -36));
+      timeLabels.push(new Date(allData[k].createdAt).toLocaleTimeString("en-GB").slice(0, -3));
       !allData[k].InsideTemp ? insideTemp.push(NaN) : insideTemp.push(allData[k].InsideTemp);
       !allData[k].InsideHumi ? insideHumi.push(NaN) : insideHumi.push(allData[k].InsideHumi);
       !allData[k].InsideTemp2 ? insideTemp2.push(NaN) : insideTemp2.push(allData[k].InsideTemp2);
@@ -118,13 +129,13 @@ const Login = (props) => {
         setInsideHumi(allData.data.insideHumi);
         setOutsideTemp(allData.data.outsideTemp);
         setOutsideHumi(allData.data.outsideHumi);
+        setAcState(allData.data.acstate);
       } else {
         console.log('problem fetching data');
       }
       const allDataHistory = await getAllDataHistory({numberOfDays: nbJours});
       if (allDataHistory.data) {
         setAllData(allDataHistory.data);
-        console.log(allDataHistory.data[0].createdAt);
       } else {
         console.log('problem fetching data');
       }
@@ -222,6 +233,11 @@ const Login = (props) => {
                       {outsideHumi}%
                     </div>
                   </div>
+                </div>
+                <div className='LoginAcState'>
+                  <h1>
+                    A/C est {acState}
+                  </h1>
                 </div>
               </div>
             <div className='Formik'>
@@ -461,6 +477,11 @@ const Login = (props) => {
                       {outsideHumi}%
                     </div>
                   </div>
+                </div>
+                <div className='LoginAcState'>
+                  <h1>
+                    A/C est {acState}
+                  </h1>
                 </div>
               </div>
             </div>

@@ -32,7 +32,7 @@ const Control = () => {
   const [outsideHumi, setOutsideHumi] = useState('');
   const [insideCheck, setInsideCheck] = useState(true);
   const [outsideCheck, setOutsideCheck] = useState(true);
-  const [nbJours, setNbJours] = useState(4);
+  const [nbJours, setNbJours] = useState(2);
   
 
   const graphData = useMemo(() => {
@@ -104,7 +104,7 @@ const Control = () => {
       }
     }
     fetchData();
-  }, [cookies.userToken, refresh]);
+  }, [nbJours, refresh]);
 
   const turnOff = async () => {
     const off = await turnOffAC(cookies.accessToken);
@@ -119,56 +119,78 @@ const Control = () => {
   return (
     <div className='ControlPage'>
       <div className='LeftControl'>
-        <div 
-          className='UserPageButton'
-          onClick={() => navigate('/user')}
-        >
-          <RiUserSharedFill />
+        <div className='LoggedInTempHumi'>
+          <div className='OptionSelect'>
+            <div className='DateSelect'>
+              Données des 
+                <FormControl variant='standard' sx={{ m: 1, maxWidth: 50}}>
+                  <Select
+                    labelId="demo-simple-select-standard-label"
+                    id="demo-simple-select-standard"
+                    value={nbJours}
+                    onChange={handleNbJoursChange}
+                  >
+                    <MenuItem value={1}>1</MenuItem>
+                    <MenuItem value={2}>2</MenuItem>
+                    <MenuItem value={3}>3</MenuItem>
+                    <MenuItem value={4}>4</MenuItem>
+                    <MenuItem value={5}>5</MenuItem>
+                    <MenuItem value={6}>6</MenuItem>
+                    <MenuItem value={7}>7</MenuItem>
+                  </Select>
+                </FormControl>
+              derniers jour(s)
+            </div>
+            <div className='ButtonSelect'>
+              Intérieur
+              <FormControlLabel control={<Checkbox checked={insideCheck} onChange={handleInsideCheckChange} sx={{color: '#004638', '&.Mui-checked': {color: '#004638'}}} size='large' />} />
+              Extérieur
+              <FormControlLabel control={<Checkbox checked={outsideCheck} onChange={handleOutsideCheckChange} sx={{color: '#82bf00', '&.Mui-checked': {color: '#82bf00'}}} size='large'/>} />
+            </div>
+          </div>
+          <TempGraph 
+            insideTemp={insideCheck ? graphData.insideTemp : []}
+            acstate={graphData.acstate}
+            outsideTemp={outsideCheck ? graphData.outsideTemp : []}
+            timelabels={graphData.timeLabels}
+          />
+          <HumiGraph 
+            insideHumi={insideCheck ? graphData.insideHumi : []}
+            outsideHumi={outsideCheck ? graphData.outsideHumi : []}
+            timelabels={graphData.timeLabels}
+          />
         </div>
       </div>
       <div className='RightControl'>
-        <div className='LoggedInTempHumi'>
-          <div className='OptionSelect'>
-              <div className='DateSelect'>
-                Données des 
-                  <FormControl variant='standard' sx={{ m: 1, maxWidth: 50}}>
-                    <Select
-                      labelId="demo-simple-select-standard-label"
-                      id="demo-simple-select-standard"
-                      value={nbJours}
-                      onChange={handleNbJoursChange}
-                    >
-                      <MenuItem value={1}>1</MenuItem>
-                      <MenuItem value={2}>2</MenuItem>
-                      <MenuItem value={3}>3</MenuItem>
-                      <MenuItem value={4}>4</MenuItem>
-                      <MenuItem value={5}>5</MenuItem>
-                      <MenuItem value={6}>6</MenuItem>
-                      <MenuItem value={7}>7</MenuItem>
-                    </Select>
-                  </FormControl>
-                derniers jour(s)
-              </div>
-              <div className='ButtonSelect'>
-                Intérieur
-                <FormControlLabel control={<Checkbox checked={insideCheck} onChange={handleInsideCheckChange} sx={{color: '#004638', '&.Mui-checked': {color: '#004638'}}} size='large' />} />
-                Extérieur
-                <FormControlLabel control={<Checkbox checked={outsideCheck} onChange={handleOutsideCheckChange} sx={{color: '#82bf00', '&.Mui-checked': {color: '#82bf00'}}} size='large'/>} />
-              </div>
-            </div>
-            <TempGraph 
-              insideTemp={insideCheck ? graphData.insideTemp : []}
-              acstate={graphData.acstate}
-              outsideTemp={outsideCheck ? graphData.outsideTemp : []}
-              timelabels={graphData.timeLabels}
-            />
-            <HumiGraph 
-              insideHumi={insideCheck ? graphData.insideHumi : []}
-              outsideHumi={outsideCheck ? graphData.outsideHumi : []}
-              timelabels={graphData.timeLabels}
-            />
-        </div>
         <div className='Ac'>
+          <div 
+            className='UserPageButton'
+            onClick={() => navigate('/user')}
+          >
+            <RiUserSharedFill />
+          </div>
+          <div className='AcState'>
+            <h1>
+              Control
+            </h1>
+            <h1>
+              A/C is {acState}
+            </h1>
+          </div>
+          <div className='AcButtons'>
+            <button
+              className='TurnOnButton'
+              onClick={turnOn}
+            >
+              Turn ON A/C
+            </button>
+            <button
+              className='TurnOffButton'
+              onClick={turnOff}
+            >
+              Turn OFF A/C
+            </button>
+          </div>
           <div className='WeatherBoxTemp'>
             <div className='TopWeatherBox'>
               Température Actuelle
@@ -214,28 +236,6 @@ const Control = () => {
                 </div>
               </div>
             </div>
-          </div>
-          <div className='AcState'>
-            <h1>
-              Control
-            </h1>
-            <h1>
-              A/C is {acState}
-            </h1>
-          </div>
-          <div className='AcButtons'>
-            <button
-              className='TurnOnButton'
-              onClick={turnOn}
-            >
-              Turn ON A/C
-            </button>
-            <button
-              className='TurnOffButton'
-              onClick={turnOff}
-            >
-              Turn OFF A/C
-            </button>
           </div>
         </div>
       </div>

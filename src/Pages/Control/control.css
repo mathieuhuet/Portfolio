@@ -3,7 +3,6 @@
   .ControlPage {
     height: 100vh;
     display: flex;
-    flex-direction: column;
     justify-content: flex-start;
     align-items: flex-start;
   }
@@ -13,24 +12,51 @@
     flex-direction: column;
   }
 
+  .LoggedInTempHumi {
+    margin-top: 128px;
+  }
+
   .RightControl {
     max-width: 1280px;
     width: 98vw;
     display: flex;
-    justify-content: center;
+    justify-content: flex-end;
     margin-top: -32px;
   }
+
+  .UserPageButton {
+    background-color: #004638;
+    color: #f6f6f6;
+    height: 96px;
+    width: 96px;
+    font-size: 64px;
+    border-radius: 8px;
+    justify-content: center;
+    align-items: center;
+    display: flex;
+    margin: 16px 16px 16px 0px;
+  }
+  
+  .UserPageButton:hover {
+    cursor: pointer;
+    background-color: #82bf00;
+  }
+  
+  .UserPageButton:active {
+    background-color: #82bf00;
+    color: #004638;
+  }  
 
   .Ac {
     display: flex;
     flex-direction: column;
-    align-items: center;
-    margin-top: 128px;
+    align-items: flex-end;
+    margin-top: 32px;
   }
   
   .AcState {
     align-self: center;
-    margin-bottom: 100px;
+    margin-bottom: 32px;
     width: 10vw;
     border-radius: 10px;
     padding: 3vh;
@@ -86,28 +112,5 @@
     cursor: pointer;
     background-color: #bf0000;
   }
-  
-  .UserPageButton {
-    background-color: #004638;
-    color: #f6f6f6;
-    height: 96px;
-    width: 96px;
-    font-size: 64px;
-    border-radius: 8px;
-    justify-content: center;
-    align-items: center;
-    display: flex;
-    margin: 16px 0px 16px 100px;
-  }
-  
-  .UserPageButton:hover {
-    cursor: pointer;
-    background-color: #82bf00;
-  }
-  
-  .UserPageButton:active {
-    background-color: #82bf00;
-    color: #004638;
-  }  
 
 }
