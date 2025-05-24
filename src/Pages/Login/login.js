@@ -16,6 +16,8 @@ import { useCookies } from 'react-cookie';
 import { useMediaQuery } from 'react-responsive';
 import { useWindowDimensions } from '../../Utilities/windowDimension';
 import { MenuItem } from '@mui/material';
+import AutomaticState from '../../Components/State/automatic';
+import { getAutomaticModeData } from '../../Services/read/getAutomaticModeData';
 
 
 /*
@@ -42,6 +44,9 @@ const Login = (props) => {
   const [insideCheck, setInsideCheck] = useState(true);
   const [outsideCheck, setOutsideCheck] = useState(true);
   const [nbJours, setNbJours] = useState(2);
+  const [actualMin, setactualMin] = useState(0);
+  const [actualMax, setactualMax] = useState(0);
+  const [isAutoOn, setIsAutoOn] = useState(false);
   
 
   const graphData = useMemo(() => {
@@ -138,6 +143,14 @@ const Login = (props) => {
         setAllData(allDataHistory.data);
       } else {
         console.log('problem fetching data');
+      }
+      const autoInfo = await getAutomaticModeData();
+      if (autoInfo) {
+        setIsAutoOn(autoInfo.data.automaticMode)
+        setactualMin(autoInfo.data.lowerThreshold)
+        setactualMax(autoInfo.data.upperThreshold)
+      } else {
+        console.log('No info about Automatic Mode found 😞');
       }
     }
     fetchData();
@@ -483,6 +496,13 @@ const Login = (props) => {
                     A/C est {acState}
                   </h1>
                 </div>
+              </div>
+              <div style={{marginTop: 5, width: 'fit-content', justifySelf: 'center'}}>
+                <AutomaticState
+                  automaticMode={isAutoOn}
+                  lowerThreshold={actualMin}
+                  upperThreshold={actualMax}
+                />
               </div>
             </div>
           </div>

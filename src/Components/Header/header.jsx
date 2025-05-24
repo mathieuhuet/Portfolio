@@ -186,7 +186,7 @@ const Header = (props) => {
         <div className='header-selection'
           onClick={() => navigate('/sti')}
         >
-          {" STI"}
+          {"STI"}
           <RiRadarFill />
         </div>
       </div>

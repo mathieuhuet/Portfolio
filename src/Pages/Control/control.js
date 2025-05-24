@@ -2,7 +2,7 @@ import './control.css';
 import './controlMobile.css';
 import React, { useEffect, useState, useMemo } from 'react';
 import { useCookies } from "react-cookie";
-import { RiUserSharedFill } from "react-icons/ri";
+import { RiSettings4Line } from "react-icons/ri";
 import { useNavigate } from 'react-router-dom';
 import { turnOffAC } from '../../Services/control/turnOffAC';
 import { turnOnAC } from '../../Services/control/turnOnAC';
@@ -17,6 +17,8 @@ import { getAllDataHistory } from '../../Services/read/getAllDataHistory';
 import { useMediaQuery } from 'react-responsive';
 import { useWindowDimensions } from '../../Utilities/windowDimension';
 import { MenuItem } from '@mui/material';
+import AutomaticState from '../../Components/State/automatic';
+import { getAutomaticModeData } from '../../Services/read/getAutomaticModeData';
 
 
 
@@ -34,6 +36,9 @@ const Control = () => {
   const [insideCheck, setInsideCheck] = useState(true);
   const [outsideCheck, setOutsideCheck] = useState(true);
   const [nbJours, setNbJours] = useState(2);
+  const [actualMin, setactualMin] = useState(0);
+  const [actualMax, setactualMax] = useState(0);
+  const [isAutoOn, setIsAutoOn] = useState(false);
   
 
   const graphData = useMemo(() => {
@@ -86,6 +91,7 @@ const Control = () => {
 
   useEffect(() => {
     async function fetchData() {
+      setCookie('accessToken', cookies.accessToken);
       const allData = await getAllData();
       if (allData.data) {
         setInsideTemp(allData.data.insideTemp);
@@ -102,6 +108,14 @@ const Control = () => {
         console.log(allDataHistory.data[0].createdAt);
       } else {
         console.log('problem fetching data');
+      }
+      const autoInfo = await getAutomaticModeData();
+      if (autoInfo) {
+        setIsAutoOn(autoInfo.data.automaticMode)
+        setactualMin(autoInfo.data.lowerThreshold)
+        setactualMax(autoInfo.data.upperThreshold)
+      } else {
+        console.log('No info about Automatic Mode found 😞');
       }
     }
     fetchData();
@@ -136,7 +150,7 @@ const Control = () => {
                   className='UserPageButton'
                   onClick={() => navigate('/user')}
                 >
-                  <RiUserSharedFill />
+                  <RiSettings4Line />
                 </div>
               </div>
               <div className='AcButtons'>
@@ -297,7 +311,7 @@ const Control = () => {
                 className='UserPageButton'
                 onClick={() => navigate('/user')}
               >
-                <RiUserSharedFill />
+                <RiSettings4Line />
               </div>
               <div className='AcState'>
                 <h1>
@@ -366,6 +380,13 @@ const Control = () => {
                     </div>
                   </div>
                 </div>
+              </div>
+              <div style={{marginTop: 5}}>
+                <AutomaticState
+                  automaticMode={isAutoOn}
+                  lowerThreshold={actualMin}
+                  upperThreshold={actualMax}
+                />
               </div>
             </div>
           </div>
