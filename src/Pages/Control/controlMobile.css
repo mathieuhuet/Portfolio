@@ -68,11 +68,6 @@
     font-size: larger;
   }
   
-  .TurnOnButton:hover {
-    cursor: pointer;
-    background-color: #82bf00;
-  }
-  
   .TurnOnButton:active {
     cursor: pointer;
     background-color: #82bf00;
@@ -86,12 +81,7 @@
     border-radius: 10px;
     font-size: larger;
   }
-  
-  .TurnOffButton:hover {
-    cursor: pointer;
-    background-color: #bf0000;
-  }
-  
+
   .TurnOffButton:active {
     cursor: pointer;
     background-color: #bf0000;
@@ -108,11 +98,6 @@
     align-items: center;
     display: flex;
     margin: 24px 0px 24px 16px;
-  }
-  
-  .UserPageButton:hover {
-    cursor: pointer;
-    background-color: #82bf00;
   }
   
   .UserPageButton:active {

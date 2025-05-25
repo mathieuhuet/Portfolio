@@ -29,11 +29,6 @@
     font-size: larger;
   }
   
-  .DisconnectButton:hover {
-    cursor: pointer;
-    background-color: #82bf00;
-  }
-  
   .DisconnectButton:active {
     background-color: #82bf00;
     cursor: pointer;
@@ -68,11 +63,6 @@
     margin-top: 8px;
   }
   
-  .TurnOnAuto:hover {
-    cursor: pointer;
-    background-color: #82bf00;
-  }
-  
   .TurnOnAuto:active {
     cursor: pointer;
     background-color: #82bf00;
@@ -88,11 +78,6 @@
     margin-top: 8px;
   }
   
-  .TurnOffAuto:hover {
-    cursor: pointer;
-    background-color: #bf0000;
-  }
-  
   .TurnOffAuto:active {
     cursor: pointer;
     background-color: #bf0000;
@@ -106,12 +91,6 @@
     border-radius: 10px;
     font-size: larger;
     margin-top: 8px;
-  }
-  
-  .SendSettingsButton:hover {
-    cursor: pointer;
-    color: #004638;
-    background-color: #d8f537;
   }
   
   .SendSettingsButton:active {
