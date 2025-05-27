@@ -21,11 +21,21 @@ Graphs to compare data Humidity
 
 // id & name are arrays[]
 
-function HumiGraph({ insideHumi, insideHumi2, outsideHumi, timelabels }) {
+function HumiGraph({ acstate, insideHumi, insideHumi2, outsideHumi, timelabels }) {
 
   const [ graphDatasets, setGraphDatasets ] = useState([]);
 
   useEffect(() => {
+    let acResult = [];
+    let biggestNumber = 0;
+    for (let k = 0; k < insideHumi.slice(2).length; k++) {
+      if (insideHumi.slice(2)[k] > biggestNumber) { biggestNumber = insideHumi.slice(2)[k] } 
+      if (outsideHumi.slice(2)[k] > biggestNumber) { biggestNumber = outsideHumi.slice(2)[k] }
+    }
+    for (let j = 0; j < acstate.slice(2).length; j++) {
+      acstate.slice(2)[j] ? acResult.push(biggestNumber) : acResult.push(NaN);
+    }
+
     let result = [];
     result.push({
       label: 'Intérieur',
@@ -42,6 +52,17 @@ function HumiGraph({ insideHumi, insideHumi2, outsideHumi, timelabels }) {
       backgroundColor: '#82bf00',
       cubicInterpolationMode: 'monotone',
       tension: 0.4
+    })
+    result.push({
+      label: 'A/C',
+      data: acResult,
+      borderColor: '#51b2fd00',
+      backgroundColor: '#51b2fd77',
+      fill: true,
+      pointRadius: 0,
+      pointHoverRadius: 0,
+      borderWidth: 0,
+      pointHitRadius: 0,
     })
     setGraphDatasets(result)
   }, [insideHumi, outsideHumi]);
@@ -76,9 +97,6 @@ function HumiGraph({ insideHumi, insideHumi2, outsideHumi, timelabels }) {
       data: data,
       options: {
         responsive: true,
-        interaction: {
-          intersect: false,
-        },
         scales: {
           x: {
             display: true,

@@ -77,7 +77,7 @@ const Login = (props) => {
       !allData[k].InsideHumi2 ? insideHumi2.push(NaN) : insideHumi2.push(allData[k].InsideHumi2);
       !allData[k].OutsideTemp ? outsideTemp.push(NaN) : outsideTemp.push(allData[k].OutsideTemp);
       !allData[k].OutsideHumi ? outsideHumi.push(NaN) : outsideHumi.push(allData[k].OutsideHumi);
-      allData[k].acstate == 'ON' ? acstate.push('ON') : acstate.push('OFF');
+      allData[k].acstate == 'ON' ? acstate.push(27) : acstate.push(NaN);
     }
 
     const result = {
@@ -192,12 +192,13 @@ const Login = (props) => {
               </div>
               <TempGraph 
                 insideTemp={insideCheck ? graphData.insideTemp : []}
-                acstate={graphData.acstate}
+                acstate={insideCheck ? graphData.acstate : []}
                 outsideTemp={outsideCheck ? graphData.outsideTemp : []}
                 timelabels={graphData.timeLabels}
               />
               <HumiGraph 
                 insideHumi={insideCheck ? graphData.insideHumi : []}
+                acstate={insideCheck ? graphData.acstate : []}
                 outsideHumi={outsideCheck ? graphData.outsideHumi : []}
                 timelabels={graphData.timeLabels}
               />
@@ -252,6 +253,13 @@ const Login = (props) => {
                     A/C est {acState}
                   </h1>
                 </div>
+                <div style={{ width: 'fit-content', justifySelf: 'center'}}>
+                <AutomaticState
+                  automaticMode={isAutoOn}
+                  lowerThreshold={actualMin}
+                  upperThreshold={actualMax}
+                />
+              </div>
               </div>
             <div className='Formik'>
               <Formik
@@ -363,12 +371,13 @@ const Login = (props) => {
               </div>
               <TempGraph 
                 insideTemp={insideCheck ? graphData.insideTemp : []}
-                acstate={graphData.acstate}
+                acstate={insideCheck ? graphData.acstate : []}
                 outsideTemp={outsideCheck ? graphData.outsideTemp : []}
                 timelabels={graphData.timeLabels}
               />
               <HumiGraph 
                 insideHumi={insideCheck ? graphData.insideHumi : []}
+                acstate={insideCheck ? graphData.acstate : []}
                 outsideHumi={outsideCheck ? graphData.outsideHumi : []}
                 timelabels={graphData.timeLabels}
               />
