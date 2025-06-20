@@ -40,6 +40,8 @@ const User = () => {
         setIsAutoOn(autoInfo.data.automaticMode)
         setactualMin(autoInfo.data.lowerThreshold)
         setactualMax(autoInfo.data.upperThreshold)
+        setValueMax(autoInfo.data.upperThreshold)
+        setValueMin(autoInfo.data.lowerThreshold)
       } else {
         console.log('No info about Automatic Mode found 😞');
       }
