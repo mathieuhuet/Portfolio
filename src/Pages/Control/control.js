@@ -1,6 +1,7 @@
 import './control.css';
 import './controlMobile.css';
 import React, { useEffect, useState, useMemo } from 'react';
+import User from '../User/user';
 import { useCookies } from "react-cookie";
 import { RiSettings4Line } from "react-icons/ri";
 import { useNavigate } from 'react-router-dom';
@@ -146,12 +147,6 @@ const Control = () => {
                     A/C is {acState}
                   </h1>
                 </div>
-                <div 
-                  className='UserPageButton'
-                  onClick={() => navigate('/user')}
-                >
-                  <RiSettings4Line />
-                </div>
               </div>
               <div className='AcButtons'>
                 <button
@@ -245,6 +240,7 @@ const Control = () => {
                   <FormControlLabel control={<Checkbox checked={outsideCheck} onChange={handleOutsideCheckChange} sx={{color: '#82bf00', '&.Mui-checked': {color: '#82bf00'}}} size='large'/>} />
                 </div>
               </div>
+              <User/>
               <TempGraph 
                 insideTemp={insideCheck ? graphData.insideTemp : []}
                 acstate={insideCheck ? graphData.acstate : []}
