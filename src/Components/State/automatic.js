@@ -24,10 +24,10 @@ function AutomaticState({ automaticMode, lowerThreshold, upperThreshold }) {
         <div>
           {automaticMode ? 'ON' : 'OFF'}
         </div>
-        <div className='UpperBorder' style={{color: 'blue'}}>
+        <div className='UpperBorder' style={{color: '#d32f2f'}}>
           {lowerThreshold}°C
         </div>
-        <div className='UpperBorder' style={{color: 'red'}}>
+        <div className='UpperBorder' style={{color: '#82bf00'}}>
           {upperThreshold}°C
         </div>
       </div>

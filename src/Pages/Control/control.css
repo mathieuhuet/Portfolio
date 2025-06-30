@@ -60,7 +60,6 @@
     margin-bottom: 32px;
     width: 12vw;
     border-radius: 10px;
-    padding: 2vh;
     background-color: #004638;
     color: #f6f6f6;
   }
@@ -106,12 +105,12 @@
   
   .TurnOffButton:hover {
     cursor: pointer;
-    background-color: #bf0000;
+    background-color: #d32f2f;
   }
   
   .TurnOffButton:active {
     cursor: pointer;
-    background-color: #bf0000;
+    background-color: #d32f2f;
   }
 
 }

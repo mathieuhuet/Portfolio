@@ -9,5 +9,5 @@ export const colors = {
   failure: "#EF4444",
   blue: '#0063bf',
   yellow: '#bcbf00',
-  red: '#bf0000',
+  red: '#d32f2f',
 };

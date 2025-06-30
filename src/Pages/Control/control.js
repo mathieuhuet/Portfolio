@@ -60,7 +60,7 @@ const Control = () => {
       !allData[k].InsideHumi2 ? insideHumi2.push(NaN) : insideHumi2.push(allData[k].InsideHumi2);
       !allData[k].OutsideTemp ? outsideTemp.push(NaN) : outsideTemp.push(allData[k].OutsideTemp);
       !allData[k].OutsideHumi ? outsideHumi.push(NaN) : outsideHumi.push(allData[k].OutsideHumi);
-      allData[k].acstate == 'ON' ? acstate.push(27) : acstate.push(NaN);
+      allData[k].acstate === 'ON' ? acstate.push(27) : acstate.push(NaN);
     }
 
     const result = {
@@ -141,10 +141,7 @@ const Control = () => {
               <div className='MobileControl'>
                 <div className='AcState'>
                   <h1>
-                    Control
-                  </h1>
-                  <h1>
-                    A/C is {acState}
+                    A/C {acState === 'OFF' ? <p style={{backgroundColor: '#d32f2f'}}>OFF</p> : acState === 'ON' ? <p style={{backgroundColor: '#82bf00'}}>ON</p> : acState}
                   </h1>
                 </div>
               </div>
@@ -207,6 +204,7 @@ const Control = () => {
                     </div>
                   </div>
                 </div>
+                <User/>
               </div>
             </div>
           </div>
@@ -240,7 +238,6 @@ const Control = () => {
                   <FormControlLabel control={<Checkbox checked={outsideCheck} onChange={handleOutsideCheckChange} sx={{color: '#82bf00', '&.Mui-checked': {color: '#82bf00'}}} size='large'/>} />
                 </div>
               </div>
-              <User/>
               <TempGraph 
                 insideTemp={insideCheck ? graphData.insideTemp : []}
                 acstate={insideCheck ? graphData.acstate : []}
@@ -313,10 +310,7 @@ const Control = () => {
               </div>
               <div className='AcState'>
                 <h1>
-                  Control
-                </h1>
-                <h1>
-                  A/C is {acState}
+                  A/C {acState === 'OFF' ? <p style={{backgroundColor: '#d32f2f'}}>OFF</p> : acState === 'ON' ? <p style={{backgroundColor: '#82bf00'}}>ON</p> : acState}
                 </h1>
               </div>
               <div className='AcButtons'>

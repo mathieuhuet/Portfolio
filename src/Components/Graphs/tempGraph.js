@@ -27,13 +27,13 @@ function TempGraph({ acstate, insideTemp, insideTemp2, outsideTemp, timelabels }
 
   useEffect(() => {
     let acResult = [];
-    let biggestNumber = 0;
-    for (let k = 0; k < insideTemp.slice(2).length; k++) {
-      if (insideTemp.slice(2)[k] > biggestNumber) { biggestNumber = insideTemp.slice(2)[k] } 
-      if (outsideTemp.slice(2)[k] > biggestNumber) { biggestNumber = outsideTemp.slice(2)[k] }
-    }
+    // let biggestNumber = 0;
+    // for (let k = 0; k < insideTemp.slice(2).length; k++) {
+    //   if (insideTemp.slice(2)[k] > biggestNumber) { biggestNumber = insideTemp.slice(2)[k] } 
+    //   if (outsideTemp.slice(2)[k] > biggestNumber) { biggestNumber = outsideTemp.slice(2)[k] }
+    // }
     for (let j = 0; j < acstate.slice(2).length; j++) {
-      acstate.slice(2)[j] ? acResult.push(biggestNumber) : acResult.push(NaN);
+      acstate.slice(2)[j] ? acResult.push(insideTemp[j]) : acResult.push(NaN);
     }
 
 

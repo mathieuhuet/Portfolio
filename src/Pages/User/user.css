@@ -88,12 +88,12 @@
   
   .TurnOffAuto:hover {
     cursor: pointer;
-    background-color: #bf0000;
+    background-color: #d32f2f;
   }
   
   .TurnOffAuto:active {
     cursor: pointer;
-    background-color: #bf0000;
+    background-color: #d32f2f;
   }
 
   .SendSettingsButton {

@@ -42,7 +42,6 @@
     margin-bottom: 32px;
     width: 60vw;
     border-radius: 8px;
-    padding: 0.2vh;
     background-color: #004638;
     color: #f6f6f6;
   }
@@ -84,7 +83,7 @@
 
   .TurnOffButton:active {
     cursor: pointer;
-    background-color: #bf0000;
+    background-color: #d32f2f;
   }
   
   .UserPageButton {

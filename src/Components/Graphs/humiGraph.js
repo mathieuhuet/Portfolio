@@ -27,13 +27,13 @@ function HumiGraph({ acstate, insideHumi, insideHumi2, outsideHumi, timelabels }
 
   useEffect(() => {
     let acResult = [];
-    let biggestNumber = 0;
-    for (let k = 0; k < insideHumi.slice(2).length; k++) {
-      if (insideHumi.slice(2)[k] > biggestNumber) { biggestNumber = insideHumi.slice(2)[k] } 
-      if (outsideHumi.slice(2)[k] > biggestNumber) { biggestNumber = outsideHumi.slice(2)[k] }
-    }
+    // let biggestNumber = 0;
+    // for (let k = 0; k < insideHumi.slice(2).length; k++) {
+    //   if (insideHumi.slice(2)[k] > biggestNumber) { biggestNumber = insideHumi.slice(2)[k] } 
+    //   if (outsideHumi.slice(2)[k] > biggestNumber) { biggestNumber = outsideHumi.slice(2)[k] }
+    // }
     for (let j = 0; j < acstate.slice(2).length; j++) {
-      acstate.slice(2)[j] ? acResult.push(biggestNumber) : acResult.push(NaN);
+      acstate.slice(2)[j] ? acResult.push(insideHumi[j]) : acResult.push(NaN);
     }
 
     let result = [];

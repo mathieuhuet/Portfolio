@@ -250,7 +250,7 @@ const Login = (props) => {
                 </div>
                 <div className='LoginAcState'>
                   <h1>
-                    A/C est {acState}
+                    A/C {acState === 'OFF' ? <p style={{backgroundColor: '#d32f2f'}}>OFF</p> : acState === 'ON' ? <p style={{backgroundColor: '#82bf00'}}>ON</p> : acState}
                   </h1>
                 </div>
                 <div style={{ width: 'fit-content', justifySelf: 'center'}}>
@@ -502,7 +502,7 @@ const Login = (props) => {
                 </div>
                 <div className='LoginAcState'>
                   <h1>
-                    A/C est {acState}
+                    A/C {acState === 'OFF' ? <p style={{backgroundColor: '#d32f2f'}}>OFF</p> : acState === 'ON' ? <p style={{backgroundColor: '#82bf00'}}>ON</p> : acState}
                   </h1>
                 </div>
               </div>
