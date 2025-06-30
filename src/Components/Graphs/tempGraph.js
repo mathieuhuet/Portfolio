@@ -32,8 +32,8 @@ function TempGraph({ acstate, insideTemp, insideTemp2, outsideTemp, timelabels }
     //   if (insideTemp.slice(2)[k] > biggestNumber) { biggestNumber = insideTemp.slice(2)[k] } 
     //   if (outsideTemp.slice(2)[k] > biggestNumber) { biggestNumber = outsideTemp.slice(2)[k] }
     // }
-    for (let j = 0; j < acstate.slice(2).length; j++) {
-      acstate.slice(2)[j] ? acResult.push(insideTemp[j]) : acResult.push(NaN);
+    for (let j = 0; j < acstate.length; j++) {
+      acstate[j] ? acResult.push(insideTemp[j]) : acResult.push(NaN);
     }
 
 
@@ -46,6 +46,7 @@ function TempGraph({ acstate, insideTemp, insideTemp2, outsideTemp, timelabels }
       backgroundColor: '#004638',
       cubicInterpolationMode: 'monotone',
       tension: 0.4,
+      order: 1
     })
     result.push({
       label: 'Extérieur',
@@ -54,11 +55,12 @@ function TempGraph({ acstate, insideTemp, insideTemp2, outsideTemp, timelabels }
       borderColor: '#82bf00',
       backgroundColor: '#82bf00',
       cubicInterpolationMode: 'monotone',
-      tension: 0.4
+      tension: 0.4,
+      order: 3
     })
     result.push({
       label: 'A/C',
-      data: acResult,
+      data: acResult.slice(2),
       borderColor: '#51b2fd00',
       backgroundColor: '#51b2fd77',
       fill: true,
@@ -66,6 +68,7 @@ function TempGraph({ acstate, insideTemp, insideTemp2, outsideTemp, timelabels }
       pointHoverRadius: 0,
       borderWidth: 0,
       pointHitRadius: 0,
+      order: 2
     })
     setGraphDatasets(result)
   }, [insideTemp, outsideTemp]);

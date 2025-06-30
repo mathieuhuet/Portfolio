@@ -32,8 +32,8 @@ function HumiGraph({ acstate, insideHumi, insideHumi2, outsideHumi, timelabels }
     //   if (insideHumi.slice(2)[k] > biggestNumber) { biggestNumber = insideHumi.slice(2)[k] } 
     //   if (outsideHumi.slice(2)[k] > biggestNumber) { biggestNumber = outsideHumi.slice(2)[k] }
     // }
-    for (let j = 0; j < acstate.slice(2).length; j++) {
-      acstate.slice(2)[j] ? acResult.push(insideHumi[j]) : acResult.push(NaN);
+    for (let j = 0; j < acstate.length; j++) {
+      acstate[j] ? acResult.push(insideHumi[j]) : acResult.push(NaN);
     }
 
     let result = [];
@@ -43,7 +43,8 @@ function HumiGraph({ acstate, insideHumi, insideHumi2, outsideHumi, timelabels }
       borderColor: '#004638',
       backgroundColor: '#004638',
       cubicInterpolationMode: 'monotone',
-      tension: 0.4
+      tension: 0.4,
+      order: 1
     })
     result.push({
       label: 'Extérieur',
@@ -51,11 +52,12 @@ function HumiGraph({ acstate, insideHumi, insideHumi2, outsideHumi, timelabels }
       borderColor: '#82bf00',
       backgroundColor: '#82bf00',
       cubicInterpolationMode: 'monotone',
-      tension: 0.4
+      tension: 0.4,
+      order: 3
     })
     result.push({
       label: 'A/C',
-      data: acResult,
+      data: acResult.slice(2),
       borderColor: '#51b2fd00',
       backgroundColor: '#51b2fd77',
       fill: true,
@@ -63,6 +65,7 @@ function HumiGraph({ acstate, insideHumi, insideHumi2, outsideHumi, timelabels }
       pointHoverRadius: 0,
       borderWidth: 0,
       pointHitRadius: 0,
+      order: 2
     })
     setGraphDatasets(result)
   }, [insideHumi, outsideHumi]);
