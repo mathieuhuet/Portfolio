@@ -18,6 +18,8 @@ import { useWindowDimensions } from '../../Utilities/windowDimension';
 import { MenuItem } from '@mui/material';
 import AutomaticState from '../../Components/State/automatic';
 import { getAutomaticModeData } from '../../Services/read/getAutomaticModeData';
+import MessageInfo from '../../Components/MessageBroadcast/messageInfo';
+import { getMessageBroadcast } from '../../Services/read/getMessageBroadcast';
 
 
 /*
@@ -47,6 +49,9 @@ const Login = (props) => {
   const [actualMin, setactualMin] = useState(0);
   const [actualMax, setactualMax] = useState(0);
   const [isAutoOn, setIsAutoOn] = useState(false);
+  const [broadcastEnable, setBroadcastEnable] = useState(false);
+  const [broadcastTime, setBroadcastTime] = useState(3);
+  const [broadcastMessage, setBroadcastMessage] = useState("");
   
 
   const graphData = useMemo(() => {
@@ -151,6 +156,14 @@ const Login = (props) => {
         setactualMax(autoInfo.data.upperThreshold)
       } else {
         console.log('No info about Automatic Mode found 😞');
+      }
+      const broadcastInfo = await getMessageBroadcast();
+      if (broadcastInfo) {
+        setBroadcastEnable(broadcastInfo.data.broadcastEnable)
+        setBroadcastTime(broadcastInfo.data.broadcastTime)
+        setBroadcastMessage(broadcastInfo.data.message)
+      } else {
+        console.log('No info about Broadcast message found 😞');
       }
     }
     fetchData();
@@ -511,6 +524,13 @@ const Login = (props) => {
                   automaticMode={isAutoOn}
                   lowerThreshold={actualMin}
                   upperThreshold={actualMax}
+                />
+              </div>
+              <div style={{marginTop: 5, width: 'fit-content', justifySelf: 'center'}}>
+                <MessageInfo
+                  broadcastEnable={broadcastEnable}
+                  broadcastTime={broadcastTime}
+                  message={broadcastMessage}
                 />
               </div>
             </div>
