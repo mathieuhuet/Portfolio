@@ -7,12 +7,15 @@ import { RiSettings4Line } from "react-icons/ri";
 import { useNavigate } from 'react-router-dom';
 import { turnOffAC } from '../../Services/control/turnOffAC';
 import { turnOnAC } from '../../Services/control/turnOnAC';
+import { triggerLight } from '../../Services/control/triggerLight';
+import { getMessageBroadcast } from '../../Services/read/getMessageBroadcast';
 import TempGraph from '../../Components/Graphs/tempGraph';
 import HumiGraph from '../../Components/Graphs/humiGraph';
 import FormControlLabel from '@mui/material/FormControlLabel';
 import Checkbox from '@mui/material/Checkbox';
 import FormControl from '@mui/material/FormControl';
 import Select from '@mui/material/Select';
+import MessageInfo from '../../Components/MessageBroadcast/messageInfo';
 import { getAllData } from '../../Services/read/getAllData';
 import { getAllDataHistory } from '../../Services/read/getAllDataHistory';
 import { useMediaQuery } from 'react-responsive';
@@ -40,6 +43,9 @@ const Control = () => {
   const [actualMin, setactualMin] = useState(0);
   const [actualMax, setactualMax] = useState(0);
   const [isAutoOn, setIsAutoOn] = useState(false);
+  const [broadcastEnable, setBroadcastEnable] = useState(false);
+  const [broadcastTime, setBroadcastTime] = useState(3);
+  const [broadcastMessage, setBroadcastMessage] = useState("");
   
 
   const graphData = useMemo(() => {
@@ -118,6 +124,14 @@ const Control = () => {
       } else {
         console.log('No info about Automatic Mode found 😞');
       }
+      const broadcastInfo = await getMessageBroadcast();
+      if (broadcastInfo) {
+        setBroadcastEnable(broadcastInfo.data.broadcastEnable)
+        setBroadcastTime(broadcastInfo.data.broadcastTime)
+        setBroadcastMessage(broadcastInfo.data.message)
+      } else {
+        console.log('No info about Broadcast message found 😞');
+      }
     }
     fetchData();
   }, [nbJours, refresh]);
@@ -132,11 +146,29 @@ const Control = () => {
     setRefresh(refresh + 1);
   }
 
+  const triggerOutsideLight = async () => {
+    const trigger = await triggerLight(cookies.accessToken);
+    setRefresh(refresh + 1);
+  }
+
   return (
     <div>
       {isMobile &&
         <div className='ControlPage'>
           <div className='LeftControl'>
+            <button
+              className='TriggerLightButton'
+              onClick={triggerOutsideLight}
+            >
+              Trigger Light
+            </button>
+            <div style={{marginTop: 5, width: 'fit-content', justifySelf: 'center'}}>
+              <MessageInfo
+                broadcastEnable={broadcastEnable}
+                broadcastTime={broadcastTime}
+                message={broadcastMessage}
+              />
+            </div>
             <div className='Ac'>
               <div className='MobileControl'>
                 <div className='AcState'>
@@ -302,11 +334,26 @@ const Control = () => {
           </div>
           <div className='RightControl'>
             <div className='Ac'>
-              <div 
-                className='UserPageButton'
-                onClick={() => navigate('/user')}
-              >
-                <RiSettings4Line />
+              <div className='LightAndUser'>
+                <button
+                  className='TriggerLightButton'
+                  onClick={triggerOutsideLight}
+                >
+                  Trigger Light
+                </button>
+                <button
+                  className='UserPageButton'
+                  onClick={() => navigate('/user')}
+                >
+                  <RiSettings4Line />
+                </button>
+              </div>
+              <div style={{marginBottom: 32, marginTop: -8, width: 'fit-content', justifySelf: 'center'}}>
+                <MessageInfo
+                  broadcastEnable={broadcastEnable}
+                  broadcastTime={broadcastTime}
+                  message={broadcastMessage}
+                />
               </div>
               <div className='AcState'>
                 <h1>

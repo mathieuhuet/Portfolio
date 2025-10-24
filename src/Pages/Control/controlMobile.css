@@ -85,6 +85,21 @@
     cursor: pointer;
     background-color: #d32f2f;
   }
+
+  .TriggerLightButton {
+    margin-top: 16px;
+    background-color: #d32f2f;
+    color: #f6f6f6;
+    border: solid 4px #004638;
+    padding: 2vh;
+    border-radius: 10px;
+    font-size: larger;
+  }
+
+  .TriggerLightButton:active {
+    cursor: pointer;
+    background-color: #004638;
+  }
   
   .UserPageButton {
     background-color: #004638;

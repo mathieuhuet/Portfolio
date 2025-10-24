@@ -113,4 +113,31 @@
     background-color: #d32f2f;
   }
 
+  .TriggerLightButton {
+    background-color: #d32f2f;
+    color: #f6f6f6;
+    border: solid 4px #004638;
+    padding: 2vh;
+    border-radius: 10px;
+    font-size: x-large;
+  }
+  
+  .TriggerLightButton:hover {
+    cursor: pointer;
+    background-color: #004638;
+  }
+  
+  .TriggerLightButton:active {
+    cursor: pointer;
+    background-color: #004638;
+    border: solid 4px #d32f2f;
+  }
+
+  .LightAndUser {
+    width: 400px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
 }

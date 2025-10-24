@@ -1,5 +1,6 @@
 import { color } from 'framer-motion';
 import './messageInfo.css';
+import './messageInfoMobile.css';
 
 
 
