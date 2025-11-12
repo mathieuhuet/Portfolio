@@ -23,6 +23,7 @@ import { useWindowDimensions } from '../../Utilities/windowDimension';
 import { MenuItem } from '@mui/material';
 import AutomaticState from '../../Components/State/automatic';
 import { getAutomaticModeData } from '../../Services/read/getAutomaticModeData';
+import Toggle from '../../Components/Buttons/toggle';
 
 
 
@@ -156,6 +157,10 @@ const Control = () => {
       {isMobile &&
         <div className='ControlPage'>
           <div className='LeftControl'>
+            <Toggle
+              name={'Light'}
+              state={'OFF'}
+            />
             <button
               className='TriggerLightButton'
               onClick={triggerOutsideLight}
