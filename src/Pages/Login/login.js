@@ -20,6 +20,7 @@ import AutomaticState from '../../Components/State/automatic';
 import { getAutomaticModeData } from '../../Services/read/getAutomaticModeData';
 import MessageInfo from '../../Components/MessageBroadcast/messageInfo';
 import { getMessageBroadcast } from '../../Services/read/getMessageBroadcast';
+import Toggle from '../../Components/Buttons/toggle';
 
 
 /*
@@ -43,6 +44,7 @@ const Login = (props) => {
   const [outsideTemp, setOutsideTemp] = useState('');
   const [outsideHumi, setOutsideHumi] = useState('');
   const [acState, setAcState] = useState('');
+  const [lightState, setLightState] = useState('');
   const [insideCheck, setInsideCheck] = useState(true);
   const [outsideCheck, setOutsideCheck] = useState(true);
   const [nbJours, setNbJours] = useState(2);
@@ -64,16 +66,6 @@ const Login = (props) => {
     const insideHumi2 = [];
     const acstate = [];
 
-    // for (let k = 0; k < allData.length; k++) {
-    //   timeLabels.push(new Date(allData[k].createdAt).toString().slice(4, -46) + new Date(allData[k].createdAt).toString().slice(16, -36));
-    //   !allData[k].InsideTemp ? insideTemp.push(NaN) : insideTemp.push(allData[k].InsideTemp);
-    //   !allData[k].InsideHumi ? insideHumi.push(NaN) : insideHumi.push(allData[k].InsideHumi);
-    //   !allData[k].InsideTemp2 ? insideTemp2.push(NaN) : insideTemp2.push(allData[k].InsideTemp2);
-    //   !allData[k].InsideHumi2 ? insideHumi2.push(NaN) : insideHumi2.push(allData[k].InsideHumi2);
-    //   !allData[k].OutsideTemp ? outsideTemp.push(NaN) : outsideTemp.push(allData[k].OutsideTemp);
-    //   !allData[k].OutsideHumi ? outsideHumi.push(NaN) : outsideHumi.push(allData[k].OutsideHumi);
-    //   allData[k].acstate == 'ON' ? acstate.push('ON') : acstate.push('OFF');
-    // }
     for (let k = 0; k < allData.length; k++) {
       timeLabels.push(new Date(allData[k].createdAt).toLocaleTimeString("en-GB").slice(0, -3));
       !allData[k].InsideTemp ? insideTemp.push(NaN) : insideTemp.push(allData[k].InsideTemp);
@@ -140,6 +132,7 @@ const Login = (props) => {
         setOutsideTemp(allData.data.outsideTemp);
         setOutsideHumi(allData.data.outsideHumi);
         setAcState(allData.data.acstate);
+        setLightState(allData.data.lightstate);
       } else {
         console.log('problem fetching data');
       }
@@ -172,50 +165,8 @@ const Login = (props) => {
   return (
     <div>
       {isMobile &&
-          <div className='LoginPage'>
+        <div className='LoginPage'>
           <div className='Login'>
-            <div className='TempBox'>
-            <div className='OptionSelect'>
-                <div className='DateSelect'>
-                  Données des 
-                    <FormControl variant='standard' sx={{ m: 1, maxWidth: 50}}>
-                      <Select
-                        labelId="demo-simple-select-standard-label"
-                        id="demo-simple-select-standard"
-                        value={nbJours}
-                        onChange={handleNbJoursChange}
-                      >
-                        <MenuItem value={1}>1</MenuItem>
-                        <MenuItem value={2}>2</MenuItem>
-                        <MenuItem value={3}>3</MenuItem>
-                        <MenuItem value={4}>4</MenuItem>
-                        <MenuItem value={5}>5</MenuItem>
-                        <MenuItem value={6}>6</MenuItem>
-                        <MenuItem value={7}>7</MenuItem>
-                      </Select>
-                    </FormControl>
-                  derniers jour(s)
-                </div>
-                <div className='ButtonSelect'>
-                  Intérieur
-                  <FormControlLabel control={<Checkbox checked={insideCheck} onChange={handleInsideCheckChange} sx={{color: '#004638', '&.Mui-checked': {color: '#004638'}}} size='large' />} />
-                  Extérieur
-                  <FormControlLabel control={<Checkbox checked={outsideCheck} onChange={handleOutsideCheckChange} sx={{color: '#82bf00', '&.Mui-checked': {color: '#82bf00'}}} size='large'/>} />
-                </div>
-              </div>
-              <TempGraph 
-                insideTemp={insideCheck ? graphData.insideTemp : []}
-                acstate={insideCheck ? graphData.acstate : []}
-                outsideTemp={outsideCheck ? graphData.outsideTemp : []}
-                timelabels={graphData.timeLabels}
-              />
-              <HumiGraph 
-                insideHumi={insideCheck ? graphData.insideHumi : []}
-                acstate={insideCheck ? graphData.acstate : []}
-                outsideHumi={outsideCheck ? graphData.outsideHumi : []}
-                timelabels={graphData.timeLabels}
-              />
-            </div>
             <div className='WeatherBoxTemp'>
                 <div className='TopWeatherBox'>
                   Température Actuelle
@@ -262,17 +213,26 @@ const Login = (props) => {
                   </div>
                 </div>
                 <div className='LoginAcState'>
-                  <h1>
-                    A/C {acState === 'OFF' ? <p style={{backgroundColor: '#d32f2f'}}>OFF</p> : acState === 'ON' ? <p style={{backgroundColor: '#82bf00'}}>ON</p> : acState}
-                  </h1>
+                  <Toggle
+                    name={'A/C'}
+                    state={acState}
+                    trigger={null}
+                  />
+                  <div style={{width: 16}}>
+                  </div>
+                  <Toggle
+                    name={'Light'}
+                    state={lightState}
+                    trigger={null}
+                  />
                 </div>
                 <div style={{ width: 'fit-content', justifySelf: 'center'}}>
-                <AutomaticState
-                  automaticMode={isAutoOn}
-                  lowerThreshold={actualMin}
-                  upperThreshold={actualMax}
-                />
-              </div>
+                  <AutomaticState
+                    automaticMode={isAutoOn}
+                    lowerThreshold={actualMin}
+                    upperThreshold={actualMax}
+                  />
+                </div>
               </div>
             <div className='Formik'>
               <Formik
@@ -346,6 +306,48 @@ const Login = (props) => {
                   </form>
                 )}
               </Formik>
+            </div>
+            <div className='TempBox'>
+              <div className='OptionSelect'>
+                <div className='DateSelect'>
+                  Données des 
+                    <FormControl variant='standard' sx={{ m: 1, maxWidth: 50}}>
+                      <Select
+                        labelId="demo-simple-select-standard-label"
+                        id="demo-simple-select-standard"
+                        value={nbJours}
+                        onChange={handleNbJoursChange}
+                      >
+                        <MenuItem value={1}>1</MenuItem>
+                        <MenuItem value={2}>2</MenuItem>
+                        <MenuItem value={3}>3</MenuItem>
+                        <MenuItem value={4}>4</MenuItem>
+                        <MenuItem value={5}>5</MenuItem>
+                        <MenuItem value={6}>6</MenuItem>
+                        <MenuItem value={7}>7</MenuItem>
+                      </Select>
+                    </FormControl>
+                  derniers jour(s)
+                </div>
+                <div className='ButtonSelect'>
+                  Intérieur
+                  <FormControlLabel control={<Checkbox checked={insideCheck} onChange={handleInsideCheckChange} sx={{color: '#004638', '&.Mui-checked': {color: '#004638'}}} size='large' />} />
+                  Extérieur
+                  <FormControlLabel control={<Checkbox checked={outsideCheck} onChange={handleOutsideCheckChange} sx={{color: '#82bf00', '&.Mui-checked': {color: '#82bf00'}}} size='large'/>} />
+                </div>
+              </div>
+              <TempGraph 
+                insideTemp={insideCheck ? graphData.insideTemp : []}
+                acstate={insideCheck ? graphData.acstate : []}
+                outsideTemp={outsideCheck ? graphData.outsideTemp : []}
+                timelabels={graphData.timeLabels}
+              />
+              <HumiGraph 
+                insideHumi={insideCheck ? graphData.insideHumi : []}
+                acstate={insideCheck ? graphData.acstate : []}
+                outsideHumi={outsideCheck ? graphData.outsideHumi : []}
+                timelabels={graphData.timeLabels}
+              />
             </div>
           </div>
         </div>
@@ -514,24 +516,35 @@ const Login = (props) => {
                   </div>
                 </div>
                 <div className='LoginAcState'>
-                  <h1>
-                    A/C {acState === 'OFF' ? <p style={{backgroundColor: '#d32f2f'}}>OFF</p> : acState === 'ON' ? <p style={{backgroundColor: '#82bf00'}}>ON</p> : acState}
-                  </h1>
+                  <Toggle
+                    name={'A/C'}
+                    state={acState}
+                    trigger={null}
+                  />
+                  <div style={{width: 16}}>
+                  </div>
+                  <Toggle
+                    name={'Light'}
+                    state={lightState}
+                    trigger={null}
+                  />
                 </div>
               </div>
-              <div style={{marginTop: 5, width: 'fit-content', justifySelf: 'center'}}>
-                <AutomaticState
-                  automaticMode={isAutoOn}
-                  lowerThreshold={actualMin}
-                  upperThreshold={actualMax}
-                />
-              </div>
-              <div style={{marginTop: 5, width: 'fit-content', justifySelf: 'center'}}>
-                <MessageInfo
-                  broadcastEnable={broadcastEnable}
-                  broadcastTime={broadcastTime}
-                  message={broadcastMessage}
-                />
+              <div style={{display: 'flex', justifyContent: 'center'}}>
+                <div style={{marginTop: 5, width: 'fit-content', justifySelf: 'center'}}>
+                  <AutomaticState
+                    automaticMode={isAutoOn}
+                    lowerThreshold={actualMin}
+                    upperThreshold={actualMax}
+                  />
+                </div>
+                <div style={{marginTop: 5, width: 'fit-content', justifySelf: 'center'}}>
+                  <MessageInfo
+                    broadcastEnable={broadcastEnable}
+                    broadcastTime={broadcastTime}
+                    message={broadcastMessage}
+                  />
+                </div>
               </div>
             </div>
           </div>

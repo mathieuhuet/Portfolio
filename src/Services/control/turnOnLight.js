@@ -2,10 +2,10 @@ import axios from 'axios';
 import { API } from '../../secret';
 
 
-export const triggerLight = (accessToken) => {
+export const turnOnLight = (accessToken) => {
   return new Promise((resolve, reject) => {
     axios.post(
-      `${API}/triggerLight/`,
+      `${API}/turnonlight/`,
       {data: 'no data'},
       {
         headers: {

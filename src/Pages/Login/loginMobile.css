@@ -154,10 +154,9 @@
     font-size: 12px;
     margin-top: 16px;
     margin-bottom: 16px;
-    width: 256px;
-    border-radius: 10px;
-    background-color: #004638;
     color: #f6f6f6;
+    display: flex;
+    justify-content: space-between;
   }
 
   .OptionSelect {

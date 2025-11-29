@@ -7,7 +7,8 @@ import { RiSettings4Line } from "react-icons/ri";
 import { useNavigate } from 'react-router-dom';
 import { turnOffAC } from '../../Services/control/turnOffAC';
 import { turnOnAC } from '../../Services/control/turnOnAC';
-import { triggerLight } from '../../Services/control/triggerLight';
+import { turnOffLight } from '../../Services/control/turnOffLight';
+import { turnOnLight } from '../../Services/control/turnOnLight';
 import { getMessageBroadcast } from '../../Services/read/getMessageBroadcast';
 import TempGraph from '../../Components/Graphs/tempGraph';
 import HumiGraph from '../../Components/Graphs/humiGraph';
@@ -32,6 +33,7 @@ const Control = () => {
   const isMobile = useMediaQuery({ query: '(max-width: 1023px)' });
   const [cookies, setCookie] = useCookies(['accessToken']);
   const [acState, setAcState] = useState('unknown');
+  const [lightState, setLightState] = useState('unknown');
   const [refresh, setRefresh] = useState(0);
   const [allData, setAllData] = useState([]);
   const [insideTemp, setInsideTemp] = useState('');
@@ -107,6 +109,7 @@ const Control = () => {
         setOutsideTemp(allData.data.outsideTemp);
         setOutsideHumi(allData.data.outsideHumi);
         setAcState(allData.data.acstate);
+        setLightState(allData.data.lightstate);
       } else {
         console.log('problem fetching data');
       }
@@ -137,19 +140,24 @@ const Control = () => {
     fetchData();
   }, [nbJours, refresh]);
 
-  const turnOff = async () => {
-    const off = await turnOffAC(cookies.accessToken);
-    setRefresh(refresh + 1);
-  }
-
-  const turnOn = async () => {
-    const on = await turnOnAC(cookies.accessToken);
-    setRefresh(refresh + 1);
+  const triggerAC = async () => {
+    if (acState === 'OFF') {
+      await turnOnAC(cookies.accessToken);
+      setRefresh(refresh + 1);
+    } else {
+      await turnOffAC(cookies.accessToken);
+      setRefresh(refresh + 1);
+    }
   }
 
   const triggerOutsideLight = async () => {
-    const trigger = await triggerLight(cookies.accessToken);
-    setRefresh(refresh + 1);
+    if (lightState === 'OFF') {
+      await turnOnLight(cookies.accessToken);
+      setRefresh(refresh + 1);
+    } else {
+      await turnOffLight(cookies.accessToken);
+      setRefresh(refresh + 1);
+    }
   }
 
   return (
@@ -157,44 +165,25 @@ const Control = () => {
       {isMobile &&
         <div className='ControlPage'>
           <div className='LeftControl'>
-            <Toggle
-              name={'Light'}
-              state={'OFF'}
-            />
-            <button
-              className='TriggerLightButton'
-              onClick={triggerOutsideLight}
-            >
-              Trigger Light
-            </button>
-            <div style={{marginTop: 5, width: 'fit-content', justifySelf: 'center'}}>
-              <MessageInfo
-                broadcastEnable={broadcastEnable}
-                broadcastTime={broadcastTime}
-                message={broadcastMessage}
-              />
-            </div>
             <div className='Ac'>
               <div className='MobileControl'>
-                <div className='AcState'>
-                  <h1>
-                    A/C {acState === 'OFF' ? <p style={{backgroundColor: '#d32f2f'}}>OFF</p> : acState === 'ON' ? <p style={{backgroundColor: '#82bf00'}}>ON</p> : acState}
-                  </h1>
-                </div>
-              </div>
-              <div className='AcButtons'>
-                <button
-                  className='TurnOnButton'
-                  onClick={turnOn}
-                >
-                  Turn ON A/C
-                </button>
-                <button
-                  className='TurnOffButton'
-                  onClick={turnOff}
-                >
-                  Turn OFF A/C
-                </button>
+                <Toggle
+                  name={'A/C'}
+                  state={acState}
+                  trigger={triggerAC}
+                />
+                <Toggle
+                  name={'Light'}
+                  state={lightState}
+                  trigger={triggerOutsideLight}
+                />
+              <div style={{marginTop: 5, width: 'fit-content', justifySelf: 'center'}}>
+                <MessageInfo
+                  broadcastEnable={broadcastEnable}
+                  broadcastTime={broadcastTime}
+                  message={broadcastMessage}
+                />
+            </div>
               </div>
               <div className='WeatherBoxTemp'>
                 <div className='TopWeatherBox'>
@@ -340,12 +329,13 @@ const Control = () => {
           <div className='RightControl'>
             <div className='Ac'>
               <div className='LightAndUser'>
-                <button
-                  className='TriggerLightButton'
-                  onClick={triggerOutsideLight}
-                >
-                  Trigger Light
-                </button>
+                <div style={{width: 'fit-content', justifySelf: 'center'}}>
+                  <MessageInfo
+                    broadcastEnable={broadcastEnable}
+                    broadcastTime={broadcastTime}
+                    message={broadcastMessage}
+                  />
+                </div>
                 <button
                   className='UserPageButton'
                   onClick={() => navigate('/user')}
@@ -353,32 +343,16 @@ const Control = () => {
                   <RiSettings4Line />
                 </button>
               </div>
-              <div style={{marginBottom: 32, marginTop: -8, width: 'fit-content', justifySelf: 'center'}}>
-                <MessageInfo
-                  broadcastEnable={broadcastEnable}
-                  broadcastTime={broadcastTime}
-                  message={broadcastMessage}
-                />
-              </div>
-              <div className='AcState'>
-                <h1>
-                  A/C {acState === 'OFF' ? <p style={{backgroundColor: '#d32f2f'}}>OFF</p> : acState === 'ON' ? <p style={{backgroundColor: '#82bf00'}}>ON</p> : acState}
-                </h1>
-              </div>
-              <div className='AcButtons'>
-                <button
-                  className='TurnOnButton'
-                  onClick={turnOn}
-                >
-                  Turn ON A/C
-                </button>
-                <button
-                  className='TurnOffButton'
-                  onClick={turnOff}
-                >
-                  Turn OFF A/C
-                </button>
-              </div>
+              <Toggle
+                name={'A/C'}
+                state={acState}
+                trigger={triggerAC}
+              />
+              <Toggle
+                name={'Light'}
+                state={lightState}
+                trigger={triggerOutsideLight}
+              />
               <div className='WeatherBoxTemp'>
                 <div className='TopWeatherBox'>
                   Température Actuelle
