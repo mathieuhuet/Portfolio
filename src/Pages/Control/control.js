@@ -18,6 +18,7 @@ import FormControl from '@mui/material/FormControl';
 import Select from '@mui/material/Select';
 import MessageInfo from '../../Components/MessageBroadcast/messageInfo';
 import { getAllData } from '../../Services/read/getAllData';
+import { broadcastMessageNow } from '../../Services/control/broadcastMessage';
 import { getAllDataHistory } from '../../Services/read/getAllDataHistory';
 import { useMediaQuery } from 'react-responsive';
 import { useWindowDimensions } from '../../Utilities/windowDimension';
@@ -25,6 +26,8 @@ import { MenuItem } from '@mui/material';
 import AutomaticState from '../../Components/State/automatic';
 import { getAutomaticModeData } from '../../Services/read/getAutomaticModeData';
 import Toggle from '../../Components/Buttons/toggle';
+import { Formik } from 'formik';
+import Spinner from '../../Spinner';
 
 
 
@@ -49,6 +52,7 @@ const Control = () => {
   const [broadcastEnable, setBroadcastEnable] = useState(false);
   const [broadcastTime, setBroadcastTime] = useState(3);
   const [broadcastMessage, setBroadcastMessage] = useState("");
+  const [message, setMessage] = useState('');
   
 
   const graphData = useMemo(() => {
@@ -160,6 +164,23 @@ const Control = () => {
     }
   }
 
+  const handleSendingMessage = async (credentials, setSubmitting) => {
+    setMessage('');
+    try {
+      const result = await broadcastMessageNow(credentials, cookies.accessToken);
+      if (result.data) {
+        setMessage('Message is being broadcasted!')
+      }
+      setSubmitting(false);
+    } catch (error) {
+      if (error.message) {
+        setMessage(error.message);
+      }
+      console.log(error);
+      setSubmitting(false);
+    }
+  }
+
   return (
     <div>
       {isMobile &&
@@ -177,13 +198,71 @@ const Control = () => {
                   state={lightState}
                   trigger={triggerOutsideLight}
                 />
-              <div style={{marginTop: 5, width: 'fit-content', justifySelf: 'center'}}>
-                <MessageInfo
-                  broadcastEnable={broadcastEnable}
-                  broadcastTime={broadcastTime}
-                  message={broadcastMessage}
-                />
-            </div>
+                <div style={{marginTop: 5, width: 'fit-content', justifySelf: 'center'}}>
+                  <MessageInfo
+                    broadcastEnable={broadcastEnable}
+                    broadcastTime={broadcastTime}
+                    message={broadcastMessage}
+                  />
+                </div>
+                <div className='Formik'>
+                  <Formik
+                    initialValues={{ messageToSend: '' }}
+                    validate={values => {
+                      const errors = {};
+                      if (!values.messageToSend) {
+                        errors.messageToSend = 'Required';
+                      }
+                      return errors;
+                    }}
+                    onSubmit={(values, { setSubmitting }) => {
+                      handleSendingMessage({message: values.messageToSend.toLowerCase()}, setSubmitting)
+                    }}
+                  >
+                    {({
+                      values,
+                      errors,
+                      touched,
+                      handleChange,
+                      handleBlur,
+                      handleSubmit,
+                      isSubmitting,
+                    }) => (
+                      <form onSubmit={handleSubmit} className='MessageToSendNowForm'>
+                        {isSubmitting && 
+                          <div className='Loading'>
+                            <Spinner/>
+                          </div>
+                        }
+                        {!isSubmitting && 
+                          <>
+                            <div className='MessageToSendNowInput'>
+                              <label
+                                className='label'
+                              >
+                                Send a message NOW
+                              </label>
+                              <input
+                                type="text"
+                                name="messageToSend"
+                                onChange={handleChange}
+                                onBlur={handleBlur}
+                                value={values.messageToSend}
+                                className='messageToSend'
+                              />
+                              <h6>
+                                {message || ' '}
+                              </h6>
+                            </div>
+                            <button type="submit" disabled={isSubmitting} className='SubmitMessageToSendNow'>
+                              Broadcast message
+                            </button>
+                          </>
+                        }
+                      </form>
+                    )}
+                  </Formik>
+                </div>
               </div>
               <div className='WeatherBoxTemp'>
                 <div className='TopWeatherBox'>
@@ -343,16 +422,77 @@ const Control = () => {
                   <RiSettings4Line />
                 </button>
               </div>
-              <Toggle
-                name={'A/C'}
-                state={acState}
-                trigger={triggerAC}
-              />
-              <Toggle
-                name={'Light'}
-                state={lightState}
-                trigger={triggerOutsideLight}
-              />
+              <div style={{display: 'flex'}}>
+                <Toggle
+                  name={'A/C'}
+                  state={acState}
+                  trigger={triggerAC}
+                />
+                <div style={{width: 16}} />
+                <Toggle
+                  name={'Light'}
+                  state={lightState}
+                  trigger={triggerOutsideLight}
+                />
+              </div>
+              <div className='Formik'>
+                <Formik
+                  initialValues={{ messageToSend: '' }}
+                  validate={values => {
+                    const errors = {};
+                    if (!values.messageToSend) {
+                      errors.messageToSend = 'Required';
+                    }
+                    return errors;
+                  }}
+                  onSubmit={(values, { setSubmitting }) => {
+                    handleSendingMessage({message: values.messageToSend.toLowerCase()}, setSubmitting)
+                  }}
+                >
+                  {({
+                    values,
+                    errors,
+                    touched,
+                    handleChange,
+                    handleBlur,
+                    handleSubmit,
+                    isSubmitting,
+                  }) => (
+                      <form onSubmit={handleSubmit} className='MessageToSendNowForm'>
+                        {isSubmitting && 
+                          <div className='Loading'>
+                            <Spinner/>
+                          </div>
+                        }
+                        {!isSubmitting && 
+                          <>
+                            <div className='MessageToSendNowInput'>
+                              <label
+                                className='label'
+                              >
+                                Send a message NOW
+                              </label>
+                              <input
+                                type="text"
+                                name="messageToSend"
+                                onChange={handleChange}
+                                onBlur={handleBlur}
+                                value={values.messageToSend}
+                                className='messageToSend'
+                              />
+                              <h6>
+                                {message || ' '}
+                              </h6>
+                            </div>
+                            <button type="submit" disabled={isSubmitting} className='SubmitMessageToSendNow'>
+                              Broadcast message
+                            </button>
+                          </>
+                        }
+                      </form>
+                  )}
+                </Formik>
+              </div>
               <div className='WeatherBoxTemp'>
                 <div className='TopWeatherBox'>
                   Température Actuelle

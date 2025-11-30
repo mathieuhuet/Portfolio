@@ -1,7 +1,7 @@
 import axios from 'axios';
 import { API } from '../../secret';
 
-export const broadcastMessage = (message, accessToken) => {
+export const broadcastMessageNow = (message, accessToken) => {
   return new Promise((resolve, reject) => {
     axios.post(
       `${API}/broadcastMessage/`, 
