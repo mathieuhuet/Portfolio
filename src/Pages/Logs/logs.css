@@ -1,0 +1,25 @@
+@media (min-width: 1024px) {
+
+  .LogsPage {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    color: #004638;
+  }
+
+  .TableauLogs {
+    width: 1024px;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .LigneLogs {
+    display: flex;
+    justify-content: space-evenly;
+    border: 2px solid #004638;
+    border-top: hidden;
+  }
+
+}

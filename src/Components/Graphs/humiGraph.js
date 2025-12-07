@@ -1,4 +1,5 @@
 import './graph.css';
+import './graphMobile.css';
 import Spinner from '../../Spinner';
 import {
   Chart as ChartJS,

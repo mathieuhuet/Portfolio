@@ -1,4 +1,5 @@
 import './graph.css';
+import './graphMobile.css';
 import Spinner from '../../Spinner';
 import {
   Chart as ChartJS,
@@ -117,7 +118,7 @@ function TempGraph({ acstate, insideTemp, insideTemp2, outsideTemp, timelabels }
     };
   
     return (
-      <div className="Charts">
+      <div className="Charts" style={{borderBottomStyle: 'hidden'}}>
         Température (°C)
         <Line 
           options={config} 

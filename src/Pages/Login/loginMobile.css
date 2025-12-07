@@ -18,7 +18,7 @@
   .Formik {
     display: flex;
     flex-direction: column;
-    margin-bottom: 64px;
+    margin-bottom: 32px;
   }
   
   .Loading {
@@ -70,6 +70,7 @@
   
   .SubmitEmail {
     background-color: #004638;
+    margin-top: 16px;
     font-size: 16px;
     height: 8vh;
     width: 80vw;
@@ -178,6 +179,10 @@
     align-items: center;
     font-weight: bold;
     font-size: larger;
+  }
+
+  .TempBox {
+    margin-top: -32px;
   }
 
 }

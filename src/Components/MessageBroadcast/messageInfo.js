@@ -11,22 +11,28 @@ function MessageInfo({ broadcastEnable, broadcastTime, message }) {
     <div className="MessageInfo">
       <div className='MessageBoxLeft'>
         <div>
-          Broadcast Message
-        </div>
-        <div className='UpperBorder'>
           Broadcast Time
         </div>
         <div className='UpperBorder'>
-          Message
+          Broadcast Enabled?
+        </div>
+        <div className='UpperBorder'>
+          Broadcart Message
         </div>
       </div>
       <div className='MessageBoxRight'>
         <div>
-          {broadcastEnable ? 'Yes' : 'No'}
-        </div>
-        <div className='UpperBorder' style={{color: '#d32f2f'}}>
           {broadcastTime}h
         </div>
+        {broadcastEnable ? 
+          <div className='UpperBorder' style={{color: '#82bf00'}}>
+            True
+          </div>
+         : 
+         <div className='UpperBorder' style={{color: '#d32f2f'}}>
+            False
+          </div>
+         }
         <div className='UpperBorder' style={{color: '#82bf00'}}>
           {message}
         </div>

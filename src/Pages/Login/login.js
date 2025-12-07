@@ -348,6 +348,7 @@ const Login = (props) => {
                 outsideHumi={outsideCheck ? graphData.outsideHumi : []}
                 timelabels={graphData.timeLabels}
               />
+              <div style={{height: 32}}/>
             </div>
           </div>
         </div>

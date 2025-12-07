@@ -18,7 +18,7 @@ import FormControl from '@mui/material/FormControl';
 import Select from '@mui/material/Select';
 import MessageInfo from '../../Components/MessageBroadcast/messageInfo';
 import { getAllData } from '../../Services/read/getAllData';
-import { broadcastMessageNow } from '../../Services/control/broadcastMessage';
+import { broadcastMessageNow } from '../../Services/control/broadcastMessageNow';
 import { getAllDataHistory } from '../../Services/read/getAllDataHistory';
 import { useMediaQuery } from 'react-responsive';
 import { useWindowDimensions } from '../../Utilities/windowDimension';
@@ -198,13 +198,6 @@ const Control = () => {
                   state={lightState}
                   trigger={triggerOutsideLight}
                 />
-                <div style={{marginTop: 5, width: 'fit-content', justifySelf: 'center'}}>
-                  <MessageInfo
-                    broadcastEnable={broadcastEnable}
-                    broadcastTime={broadcastTime}
-                    message={broadcastMessage}
-                  />
-                </div>
                 <div className='Formik'>
                   <Formik
                     initialValues={{ messageToSend: '' }}
@@ -264,6 +257,7 @@ const Control = () => {
                   </Formik>
                 </div>
               </div>
+              <div style={{height: 32}} />
               <div className='WeatherBoxTemp'>
                 <div className='TopWeatherBox'>
                   Température Actuelle
@@ -355,6 +349,7 @@ const Control = () => {
                 outsideHumi={outsideCheck ? graphData.outsideHumi : []}
                 timelabels={graphData.timeLabels}
               />
+              <div style={{height: 32}}/>
             </div>
           </div>
         </div>
@@ -408,11 +403,11 @@ const Control = () => {
           <div className='RightControl'>
             <div className='Ac'>
               <div className='LightAndUser'>
-                <div style={{width: 'fit-content', justifySelf: 'center'}}>
-                  <MessageInfo
-                    broadcastEnable={broadcastEnable}
-                    broadcastTime={broadcastTime}
-                    message={broadcastMessage}
+                <div style={{width: 'fit-content', marginRight: 16}}>
+                  <AutomaticState
+                    automaticMode={isAutoOn}
+                    lowerThreshold={actualMin}
+                    upperThreshold={actualMax}
                   />
                 </div>
                 <button
@@ -458,38 +453,38 @@ const Control = () => {
                     handleSubmit,
                     isSubmitting,
                   }) => (
-                      <form onSubmit={handleSubmit} className='MessageToSendNowForm'>
-                        {isSubmitting && 
-                          <div className='Loading'>
-                            <Spinner/>
+                    <form onSubmit={handleSubmit} className='MessageToSendNowForm'>
+                      {isSubmitting && 
+                        <div className='Loading'>
+                          <Spinner/>
+                        </div>
+                      }
+                      {!isSubmitting && 
+                        <>
+                          <div className='MessageToSendNowInput'>
+                            <label
+                              className='label'
+                            >
+                              Send a message NOW
+                            </label>
+                            <input
+                              type="text"
+                              name="messageToSend"
+                              onChange={handleChange}
+                              onBlur={handleBlur}
+                              value={values.messageToSend}
+                              className='messageToSend'
+                            />
+                            <h6>
+                              {message || ' '}
+                            </h6>
                           </div>
-                        }
-                        {!isSubmitting && 
-                          <>
-                            <div className='MessageToSendNowInput'>
-                              <label
-                                className='label'
-                              >
-                                Send a message NOW
-                              </label>
-                              <input
-                                type="text"
-                                name="messageToSend"
-                                onChange={handleChange}
-                                onBlur={handleBlur}
-                                value={values.messageToSend}
-                                className='messageToSend'
-                              />
-                              <h6>
-                                {message || ' '}
-                              </h6>
-                            </div>
-                            <button type="submit" disabled={isSubmitting} className='SubmitMessageToSendNow'>
-                              Broadcast message
-                            </button>
-                          </>
-                        }
-                      </form>
+                          <button type="submit" disabled={isSubmitting} className='SubmitMessageToSendNow'>
+                            Broadcast message
+                          </button>
+                        </>
+                      }
+                    </form>
                   )}
                 </Formik>
               </div>
@@ -540,10 +535,10 @@ const Control = () => {
                 </div>
               </div>
               <div style={{marginTop: 5}}>
-                <AutomaticState
-                  automaticMode={isAutoOn}
-                  lowerThreshold={actualMin}
-                  upperThreshold={actualMax}
+               <MessageInfo
+                  broadcastEnable={broadcastEnable}
+                  broadcastTime={broadcastTime}
+                  message={broadcastMessage}
                 />
               </div>
             </div>

@@ -62,7 +62,7 @@
   .LightAndUser {
     width: 400px;
     display: flex;
-    justify-content: space-between;
+    justify-content: flex-end;
     align-items: center;
   }
 
@@ -76,6 +76,8 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    align-self: center;
+    justify-self: center;
   }
   
   .MessageToSendNowInput {
@@ -117,13 +119,14 @@
     -webkit-font-smoothing: antialiased;
   }
   
-  .SubmitMessageToSend:hover {
+  .SubmitMessageToSendNow:hover {
     cursor: pointer;
     background-color: #82bf00;
   }
 
-  .Formik {
-    align-self: flex-start;
+  .SubmitMessageToSendNow:active {
+    color: #004638;
+    background-color: #d8f537;
   }
 
 }

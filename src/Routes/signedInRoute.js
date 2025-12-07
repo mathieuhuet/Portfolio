@@ -14,6 +14,7 @@ import STI from '../Pages/STI/STI';
 import Telecom from '../Pages/Telecom/telecom';
 import User from '../Pages/User/user';
 import Control from '../Pages/Control/control';
+import Logs from '../Pages/Logs/logs';
 
 
 
@@ -75,6 +76,10 @@ const SignedInRoute = (props) => {
         <Route
           path='/sti'
           element={<STI />}
+        />
+        <Route
+          path='/logs'
+          element={<Logs />}
         />
         <Route
           path="/"
