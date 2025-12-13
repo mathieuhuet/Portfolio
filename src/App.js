@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import './App.css';
 import { BrowserRouter as Router } from 'react-router-dom';
+import ScrollToTop from "./Utilities/scrollToTop";
 import Header from "./Components/Header/header";
 import Bottom from "./Components/Bottom/bottom";
 // Auth
@@ -29,6 +30,7 @@ function App() {
   return (
     <div className="app">
       <Router>
+        <ScrollToTop />
         <Header
           allowMobileMenu={allowMobileMenu}
         />

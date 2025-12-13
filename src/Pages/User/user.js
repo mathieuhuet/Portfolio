@@ -2,6 +2,7 @@ import './user.css';
 import './userMobile.css';
 import React, { useEffect, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
+import { useMediaQuery } from 'react-responsive';
 import Box from '@mui/material/Box';
 import Slider from '@mui/material/Slider';
 import { useCookies } from "react-cookie";
@@ -15,11 +16,14 @@ import { getMessageBroadcast } from '../../Services/read/getMessageBroadcast';
 import MessageInfo from '../../Components/MessageBroadcast/messageInfo';
 import { turnOnBroadcast } from '../../Services/control/turnOnBroadcast';
 import { turnOffBroadcast } from '../../Services/control/turnOffBroadcast';
-import { modifyBroadcastMessage } from '../../Services/control/modifyBroadcastMessage';
+import { modifyMessageBroadcast } from '../../Services/control/modifyMessageBroadcast';
+import { modifyTimeBroadcast } from '../../Services/control/modifyTimeBroadcast';
 import { Formik } from 'formik';
 import Spinner from '../../Spinner';
 import { CgNotes } from "react-icons/cg";
-
+import FormControl from '@mui/material/FormControl';
+import Select from '@mui/material/Select';
+import { MenuItem } from '@mui/material';
 
 
 const initialState = {
@@ -30,6 +34,7 @@ const initialState = {
 
 const User = () => {
   let navigate = useNavigate();
+  const isMobile = useMediaQuery({ query: '(max-width: 1023px)' });
   const [cookies, setCookie] = useCookies(['accessToken']);
   const [state, setState] = useState(initialState);
   const [refresh, setRefresh] = useState(0);
@@ -137,8 +142,9 @@ const User = () => {
 
   const handleSendingScheduledMessage = async (credentials, setSubmitting) => {
     setMessage('');
+    credentials.time = broadcastTime;
     try {
-      const result = await modifyBroadcastMessage(credentials, cookies.accessToken);
+      const result = await modifyMessageBroadcast(credentials, cookies.accessToken);
       if (result.data) {
         setMessage('Message has been modified.')
       }
@@ -162,6 +168,11 @@ const User = () => {
     const on = await turnOnBroadcast(cookies.accessToken);
     setRefresh(refresh + 1);
   }
+
+    const handleModifyBroadcastTime = async (event) => {
+    const time = await modifyTimeBroadcast({time: event.target.value}, cookies.accessToken);
+    setRefresh(refresh + 1);
+  };
 
   return (
     <div className='UserPage'>
@@ -221,19 +232,77 @@ const User = () => {
           <CgNotes />
         </div>
       </div>
-      <div style={{marginTop: '2%', marginBottom: '-2%'}}>
-        <AutomaticState
-          automaticMode={isAutoOn}
-          lowerThreshold={actualMin}
-          upperThreshold={actualMax}
-        />
-      </div>
-      <div style={{marginTop: '2%', width: 'fit-content', justifySelf: 'center'}}>
-        <MessageInfo
-          broadcastEnable={broadcastEnable}
-          broadcastTime={broadcastTime}
-          message={broadcastMessage}
-        />
+      {!isMobile &&
+        <div style={{display: 'flex'}}>
+          <div style={{marginTop: '2%', marginBottom: '-2%'}}>
+            <AutomaticState
+              automaticMode={isAutoOn}
+              lowerThreshold={actualMin}
+              upperThreshold={actualMax}
+            />
+          </div>
+          <div style={{marginTop: '2%', width: 'fit-content', justifySelf: 'center'}}>
+            <MessageInfo
+              broadcastEnable={broadcastEnable}
+              broadcastTime={broadcastTime}
+              message={broadcastMessage}
+            />
+          </div>
+        </div>
+      }
+      {isMobile &&
+        <div style={{display: 'flex', flexDirection: 'column', alignItems: 'center'}}>
+          <div style={{marginTop: '2%', marginBottom: '-2%', width: 'fit-content'}}>
+            <AutomaticState
+              automaticMode={isAutoOn}
+              lowerThreshold={actualMin}
+              upperThreshold={actualMax}
+            />
+          </div>
+          <div style={{marginTop: '2%', width: 'fit-content', justifySelf: 'center'}}>
+            <MessageInfo
+              broadcastEnable={broadcastEnable}
+              broadcastTime={broadcastTime}
+              message={broadcastMessage}
+            />
+          </div>
+        </div>
+      }
+      <div className='BroadcastTimeSelect' style={{display: 'flex', alignItems: 'center'}}>
+        Broadcast le message à  
+        <FormControl variant='standard' sx={{ m: 1, maxWidth: 100}}>
+          <Select
+            labelId="demo-simple-select-standard-label"
+            id="demo-simple-select-standard"
+            value={broadcastTime}
+            onChange={handleModifyBroadcastTime}
+          >
+            <MenuItem value={0}>Minuit</MenuItem>
+            <MenuItem value={1}>1am</MenuItem>
+            <MenuItem value={2}>2am</MenuItem>
+            <MenuItem value={3}>3am</MenuItem>
+            <MenuItem value={4}>4am</MenuItem>
+            <MenuItem value={5}>5am</MenuItem>
+            <MenuItem value={6}>6am</MenuItem>
+            <MenuItem value={7}>7am</MenuItem>
+            <MenuItem value={8}>8am</MenuItem>
+            <MenuItem value={9}>9am</MenuItem>
+            <MenuItem value={10}>10am</MenuItem>
+            <MenuItem value={11}>11am</MenuItem>
+            <MenuItem value={12}>Midi</MenuItem>
+            <MenuItem value={13}>1pm</MenuItem>
+            <MenuItem value={14}>2pm</MenuItem>
+            <MenuItem value={15}>3pm</MenuItem>
+            <MenuItem value={16}>4pm</MenuItem>
+            <MenuItem value={17}>5pm</MenuItem>
+            <MenuItem value={18}>6pm</MenuItem>
+            <MenuItem value={19}>7pm</MenuItem>
+            <MenuItem value={20}>8pm</MenuItem>
+            <MenuItem value={21}>9pm</MenuItem>
+            <MenuItem value={22}>10pm</MenuItem>
+            <MenuItem value={23}>11pm</MenuItem>
+          </Select>
+        </FormControl>
       </div>
       <div className='FormikUser' style={{width: 'fit-content', alignSelf: 'center'}}>
         <Formik
@@ -246,7 +315,7 @@ const User = () => {
             return errors;
           }}
           onSubmit={(values, { setSubmitting }) => {
-            handleSendingScheduledMessage({time: 3, message: values.messageToSend}, setSubmitting)
+            handleSendingScheduledMessage({message: values.messageToSend}, setSubmitting)
           }}
         >
           {({
@@ -279,6 +348,7 @@ const User = () => {
                       onBlur={handleBlur}
                       value={values.messageToSend}
                       className='messageToSend'
+                      placeholder={broadcastMessage}
                     />
                     <h6>
                       {message || ' '}
@@ -293,19 +363,21 @@ const User = () => {
           )}
         </Formik>
       </div>
-      <button
-        className='TurnOnAuto'
-        onClick={turnOnScheduledMessage}
-      >
-        Turn ON Broadcast
-      </button>
-      <button
-        className='TurnOffAuto'
-        onClick={turnOffScheduledMessage}
-        style={{marginTop: '1%'}}
-      >
-        Turn OFF Broadcast
-      </button>
+      <div>
+        <button
+          className='TurnOnAuto'
+          onClick={turnOnScheduledMessage}
+        >
+          Turn ON Broadcast
+        </button>
+        <button
+          className='TurnOffAuto'
+          onClick={turnOffScheduledMessage}
+          style={{marginTop: '1%'}}
+        >
+          Turn OFF Broadcast
+        </button>
+      </div>
       <div className='namefield'>
         <h1>
           {state.firstName} {state.lastName}

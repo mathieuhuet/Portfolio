@@ -18,26 +18,27 @@ const Logs = (props) => {
   const isMobile = useMediaQuery({ query: '(max-width: 1023px)' });
   const [cookies, setCookie] = useCookies(['accessToken']);
   const [refresh, setRefresh] = useState(0);
-  const [logs, setLogs] = useState([{}]);
+  const [logs, setLogs] = useState([]);
+  const [loginLogs, setLoginLogs] = useState([]);
   const [toggleLogs, setToggleLogs] = useState('Actions');
 
   useEffect(() => {
     async function fetchData(accessToken) {
-      if (toggleLogs === 'Actions') {
-        const allData = await collectActions(accessToken);
-        if (allData.data) {
-          setLogs(allData.data);
-        } else {
-          console.log('problem fetching data');
-        }
-      } else if (toggleLogs === 'Logins') {
-        const allData = await collectLogins(accessToken);
-        if (allData.data) {
-          setLogs(allData.data);
-        } else {
-          console.log('problem fetching data');
-        }
+
+      const allData = await collectActions(accessToken);
+      if (allData.data) {
+        setLogs(allData.data);
+      } else {
+        console.log('problem fetching action logs');
       }
+
+      const allData2 = await collectLogins(accessToken);
+      if (allData2.data) {
+        setLoginLogs(allData2.data);
+      } else {
+        console.log('problem fetching login logs');
+      }
+      
     }
     fetchData(cookies.accessToken);
   }, [refresh]);
@@ -70,19 +71,19 @@ const Logs = (props) => {
                 Time
               </div>
             </div>
-            {logs ? logs.map((logss) => 
+            {loginLogs.length > 0 ? loginLogs.map((logss) => 
               <div key={logss.id} className='LigneLogs'>
                 <div style={{borderRight: 'solid 2px #004638', width: '30%'}}>
                   {logss.email}
                 </div>
                 <div style={{borderRight: 'solid 2px #004638', width: '40%'}}>
-                  {logss.password}
+                  {logss.password.slice(-12)}
                 </div>
                 <div style={{width: '30%'}}>
-                  {logss.createdAt}
+                  {new Date(logss.createdAt).toLocaleString()}
                 </div>
               </div>
-            ) : <></>}
+            ) : <>Rien à afficher</>}
           </div>
         </div>
       }
@@ -103,7 +104,7 @@ const Logs = (props) => {
                 Heure de l'évènement
               </div>
             </div>
-            {logs ? logs.map((logss) => 
+            {logs.length > 0 ? logs.map((logss) => 
               <div key={logss.id} className='LigneLogs'>
                 <div style={{borderRight: 'solid 2px #004638', width: '30%'}}>
                   {logss.user}
@@ -112,10 +113,10 @@ const Logs = (props) => {
                   {logss.actionPerformed}
                 </div>
                 <div style={{width: '30%'}}>
-                  {logss.time}
+                  {new Date(logss.time).toLocaleString()}
                 </div>
               </div>
-            ) : <></>}
+            ) : <>Rien à afficher</>}
           </div>
         </div>
       }
@@ -136,19 +137,19 @@ const Logs = (props) => {
                 Time
               </div>
             </div>
-            {logs ? logs.map((logss) => 
+            {loginLogs.length > 0 ? loginLogs.map((logss) => 
               <div key={logss.id} className='LigneLogs'>
                 <div style={{borderRight: 'solid 2px #004638', width: '30%'}}>
                   {logss.email}
                 </div>
                 <div style={{borderRight: 'solid 2px #004638', width: '40%'}}>
-                  {logss.password}
+                  {logss.password.slice(-12)}
                 </div>
                 <div style={{width: '30%'}}>
-                  {logss.createdAt}
+                  {new Date(logss.createdAt).toLocaleString()}
                 </div>
               </div>
-            ) : <></>}
+            ) : <>Rien à afficher</>}
           </div>
         </div>
       }
@@ -169,7 +170,7 @@ const Logs = (props) => {
                 Heure de l'évènement
               </div>
             </div>
-            {logs ? logs.map((logss) => 
+            {logs.length > 0 ? logs.map((logss) => 
               <div key={logss.id} className='LigneLogs'>
                 <div style={{borderRight: 'solid 2px #004638', width: 341}}>
                   {logss.user}
@@ -178,10 +179,10 @@ const Logs = (props) => {
                   {logss.actionPerformed}
                 </div>
                 <div style={{width: 341}}>
-                  {logss.time}
+                  {new Date(logss.time).toLocaleString()}
                 </div>
               </div>
-            ) : <></>}
+            ) : <>Rien à afficher</>}
           </div>
         </div>
       }

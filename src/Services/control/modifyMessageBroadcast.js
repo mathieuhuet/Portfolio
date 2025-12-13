@@ -1,10 +1,10 @@
 import axios from 'axios';
 import { API } from '../../secret';
 
-export const modifyBroadcastMessage = (message, accessToken) => {
+export const modifyMessageBroadcast = (message, accessToken) => {
   return new Promise((resolve, reject) => {
     axios.post(
-      `${API}/modifybroadcast/`, 
+      `${API}/modifymessagebroadcast/`, 
       message,
       {
         headers: {

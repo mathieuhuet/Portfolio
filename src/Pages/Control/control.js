@@ -86,7 +86,6 @@ const Control = () => {
       outsideHumi: outsideHumi,
       acstate: acstate
     }
-    console.log(result);
 
     return result;
   }, [allData])
@@ -120,7 +119,6 @@ const Control = () => {
       const allDataHistory = await getAllDataHistory({numberOfDays: nbJours});
       if (allDataHistory.data) {
         setAllData(allDataHistory.data);
-        console.log(allDataHistory.data[0].createdAt);
       } else {
         console.log('problem fetching data');
       }
