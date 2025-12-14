@@ -6,11 +6,8 @@ import { useMediaQuery } from 'react-responsive';
 
 
 function Telecom() {
-  const isMobile = useMediaQuery({ query: '(max-width: 1023px)' });
+  const isMobile = useMediaQuery({ query: '(max-width: 1200px)' });
 
-  useEffect(() => {
-    window.scrollTo(0, 0)
-  }, [])
 
 
   return (

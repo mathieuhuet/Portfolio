@@ -38,7 +38,7 @@ Component that display the page about the Battery Montiroring project. http://ww
 
 
 function GPMM (props) {
-  const isMobile = useMediaQuery({ query: '(max-width: 1023px)' });
+  const isMobile = useMediaQuery({ query: '(max-width: 1200px)' });
   const { height, width } = useWindowDimensions();
   const [currentImage, setCurrentImage] = useState(0);
   const [isViewerOpen, setIsViewerOpen] = useState(false);
@@ -77,10 +77,6 @@ function GPMM (props) {
     setIsViewerOpen(false);
     props.setAllowMobileMenu(true);
   };
-
-  useEffect(() => {
-    window.scrollTo(0, 0)
-  }, [])
 
   return (
     <div className='gpmm'>

@@ -5,9 +5,7 @@ import React, { useEffect } from 'react';
 
 const Codecademy = () => {
 
-  useEffect(() => {
-    window.scrollTo(0, 0)
-  }, [])
+
   const codecademyFR = (
   <div className="experience-detail">
     <div className="exp-line">Compléter "Learn PHP Course" de Codecademy</div>

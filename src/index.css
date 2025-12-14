@@ -2,7 +2,7 @@ body {
   margin: 0;
   position: relative;
   display: flex;
-  width: 100%;
+  width: 100vw;
   overflow-x: hidden;
   justify-content: center;
   font-family: Gilroy-Medium,Helvetica,Arial,sans-serif;
@@ -14,6 +14,8 @@ body {
   background-color: #f6f6f6;
   -webkit-font-smoothing: antialiased;
 }
+
+
 body::-webkit-scrollbar {
   width: 8px;
 }
@@ -26,6 +28,7 @@ body::-webkit-scrollbar-thumb {
 body::-webkit-scrollbar-thumb:hover {
   background: #004638; 
 }
+
 
 button {
   font-family: Gilroy-Medium,Helvetica,Arial,sans-serif;

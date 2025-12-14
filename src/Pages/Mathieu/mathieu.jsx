@@ -1,6 +1,5 @@
 import './mathieu.css';
 import './mathieuMobile.css';
-import React, { useEffect } from 'react'
 import { useNavigate } from 'react-router-dom';
 
 
@@ -11,9 +10,6 @@ Main page of the website, where you go when entering http://www.mathieuhuet.com/
 function Mathieu () {
   let navigate = useNavigate();
 
-  useEffect(() => {
-    window.scrollTo(0, 0)
-  }, [])
 
     // Function will execute on click of button
     const onButtonClick = () => {

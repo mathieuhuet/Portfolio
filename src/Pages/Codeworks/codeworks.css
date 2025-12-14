@@ -1,4 +1,4 @@
-@media (min-width: 1024px) {
+@media (min-width: 1200px) {
   .displayed-experience {
     margin-bottom: 32px;
     max-width: 1280px;
@@ -6,7 +6,7 @@
     display: flex;
     flex-direction: column;
     align-items: flex-start;
-    min-height: 90vh;
+    min-height: 100vh;
   }
   
   

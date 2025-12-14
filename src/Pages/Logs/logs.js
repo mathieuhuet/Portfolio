@@ -15,7 +15,7 @@ import { MdOutlineSwitchLeft, MdOutlineSwitchRight } from "react-icons/md";
 
 const Logs = (props) => {
   let navigate = useNavigate();
-  const isMobile = useMediaQuery({ query: '(max-width: 1023px)' });
+  const isMobile = useMediaQuery({ query: '(max-width: 1200px)' });
   const [cookies, setCookie] = useCookies(['accessToken']);
   const [refresh, setRefresh] = useState(0);
   const [logs, setLogs] = useState([]);

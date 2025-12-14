@@ -14,11 +14,7 @@ Main page of the website, where you go when entering http://www.mathieuhuet.com/
 
 function Dev () {
 
-  const isMobile = useMediaQuery({ query: '(max-width: 1023px)' });
-
-  useEffect(() => {
-    window.scrollTo(0, 0)
-  }, [])
+  const isMobile = useMediaQuery({ query: '(max-width: 1200px)' });
 
   return (
     <div>

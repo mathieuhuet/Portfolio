@@ -22,7 +22,7 @@ import { SiMysql } from "react-icons/si"
 function DisplayExperiences () {
   let navigate = useNavigate();
   const { height, width } = useWindowDimensions();
-  const isMobile = useMediaQuery({ query: '(max-width: 1023px)' });
+  const isMobile = useMediaQuery({ query: '(max-width: 1200px)' });
   const experiences = useMemo(() => [
     {
       id: 0,

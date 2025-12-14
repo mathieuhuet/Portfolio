@@ -1,9 +1,10 @@
-@media (max-width: 1023px) {
+@media (max-width: 1200px) {
   .battery-project-container{
     width: 100%;
     display: flex;
     flex-direction: column;
     align-items: center;
+    min-height: 100vh;
   }
 
   .battery-slide-1 {

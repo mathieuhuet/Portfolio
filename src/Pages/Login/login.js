@@ -33,7 +33,7 @@ The Registration form is also on that page.
 
 
 const Login = (props) => {
-  const isMobile = useMediaQuery({ query: '(max-width: 1023px)' });
+  const isMobile = useMediaQuery({ query: '(max-width: 1200px)' });
   const { height, width } = useWindowDimensions();
   const [cookies, setCookie] = useCookies(['accessToken']);
   const [message, setMessage] = useState('');
@@ -231,6 +231,13 @@ const Login = (props) => {
                     automaticMode={isAutoOn}
                     lowerThreshold={actualMin}
                     upperThreshold={actualMax}
+                  />
+                </div>
+                <div style={{marginTop: 5, width: 'fit-content', justifySelf: 'center'}}>
+                  <MessageInfo
+                    broadcastEnable={broadcastEnable}
+                    broadcastTime={broadcastTime}
+                    message={broadcastMessage}
                   />
                 </div>
               </div>

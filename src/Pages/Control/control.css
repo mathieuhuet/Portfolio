@@ -1,6 +1,7 @@
-@media (min-width: 1024px) {
+@media (min-width: 1200px) {
 
   .ControlPage {
+    min-height: 100vh;
     display: flex;
     justify-content: flex-start;
     align-items: flex-start;
@@ -16,7 +17,7 @@
   }
 
   .RightControl {
-    max-width: 1280px;
+    max-width: 1200px;
     width: 98vw;
     display: flex;
     justify-content: flex-end;

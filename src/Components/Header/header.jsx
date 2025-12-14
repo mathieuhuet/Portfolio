@@ -18,7 +18,7 @@ import MHRem from '../Icons/MHRem';
 
 const Header = (props) => {
   let navigate = useNavigate();
-  const isMobile = useMediaQuery({ query: '(max-width: 1023px)' });
+  const isMobile = useMediaQuery({ query: '(max-width: 1200px)' });
   const [showNavbar, setShowNavbar] = useState(true);
   const [drawerState, setDrawerState] = useState(false);
 

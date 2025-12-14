@@ -1,12 +1,12 @@
-@media (max-width: 1023px) {
+@media (max-width: 1200px) {
   .displayed-experience {
     margin-bottom: 32px;
-    max-width: 1280px;
+    max-width: 1200px;
     width: calc(100vw - 8px);
     display: flex;
     flex-direction: column;
-    align-items: flex-start;
-    min-height: 90vh;
+    align-items: center;
+    min-height: 100vh;
   }
   
   

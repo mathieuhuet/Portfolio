@@ -13,11 +13,7 @@ Component that display the page about the Battery Montiroring project. http://ww
 */
 
 function BatteryMonitoring() {
-  const isMobile = useMediaQuery({ query: '(max-width: 1023px)' });
-
-  useEffect(() => {
-    window.scrollTo(0, 0)
-  }, [])
+  const isMobile = useMediaQuery({ query: '(max-width: 1200px)' });
 
 
   return (

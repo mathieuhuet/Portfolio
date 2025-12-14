@@ -34,7 +34,7 @@ const initialState = {
 
 const User = () => {
   let navigate = useNavigate();
-  const isMobile = useMediaQuery({ query: '(max-width: 1023px)' });
+  const isMobile = useMediaQuery({ query: '(max-width: 1200px)' });
   const [cookies, setCookie] = useCookies(['accessToken']);
   const [state, setState] = useState(initialState);
   const [refresh, setRefresh] = useState(0);
@@ -228,9 +228,11 @@ const User = () => {
             Turn OFF Auto
           </button>
         </div>
-        <div className='UserPageButton' onClick={() => navigate('/logs')}>
-          <CgNotes />
-        </div>
+        {!isMobile &&
+          <div className='UserPageButton' onClick={() => navigate('/logs')}>
+            <CgNotes />
+          </div>
+        }
       </div>
       {!isMobile &&
         <div style={{display: 'flex'}}>
@@ -378,6 +380,11 @@ const User = () => {
           Turn OFF Broadcast
         </button>
       </div>
+      {isMobile &&
+        <div className='UserPageButton' onClick={() => navigate('/logs')}>
+          <CgNotes />
+        </div>
+      }
       <div className='namefield'>
         <h1>
           {state.firstName} {state.lastName}

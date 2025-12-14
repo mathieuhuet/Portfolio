@@ -1,6 +1,7 @@
-@media (max-width: 1023px) {
+@media (max-width: 1200px) {
   .dev {
-    width: 97vw;
+    width: 100vw;
+    min-height: 100vh;
     display: flex;
     flex-direction: column;
     justify-content: center;

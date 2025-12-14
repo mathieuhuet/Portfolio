@@ -33,7 +33,7 @@ import Spinner from '../../Spinner';
 
 const Control = () => {
   let navigate = useNavigate();
-  const isMobile = useMediaQuery({ query: '(max-width: 1023px)' });
+  const isMobile = useMediaQuery({ query: '(max-width: 1200px)' });
   const [cookies, setCookie] = useCookies(['accessToken']);
   const [acState, setAcState] = useState('unknown');
   const [lightState, setLightState] = useState('unknown');

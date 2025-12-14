@@ -1,12 +1,8 @@
 import './uqam.css';
 import './uqamMobile.css';
-import React, { useEffect } from 'react';
 
 const Uqam = () => {
 
-  useEffect(() => {
-    window.scrollTo(0, 0)
-  }, [])
 
   const uqamFR = (
   <div className="experience-detail">
