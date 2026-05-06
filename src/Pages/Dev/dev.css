@@ -1,5 +1,23 @@
 @media (min-width: 1200px) {
   .dev {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+  }
+
+  .dev-top {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    font-weight: 700;
+    max-width: 1200px;
+    width: 98vw;
+    text-align: left;
+    margin-top: 32px;
+  }
+
+  .dev-bottom {
     min-height: 100vh;
     display: flex;
     flex-direction: row;
@@ -9,7 +27,7 @@
     color: #004638;
     background-color: #f6f6f6;
   }
-  
+
   .mathieu-huet {
     margin: 16px 0px -24px 0px;
   }

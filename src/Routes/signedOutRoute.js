@@ -10,8 +10,6 @@ import Uqam from '../Pages/UQAM/uqam';
 import Mi8 from '../Pages/Mi8/mi8';
 import FriendlyBets from '../Pages/FriendlyBets/friendlyBets';
 import GPMM from '../Pages/GPMM/gpmm';
-import STI from '../Pages/STI/STI';
-import Telecom from '../Pages/Telecom/telecom';
 import Login from '../Pages/Login/login';
 
 
@@ -62,25 +60,22 @@ const SignedOutRoute = (props) => {
         path="/dev" 
         element={<Dev />} 
       />
-      <Route
-        path='/telecom'
-        element={<Telecom />}
-      />
-      <Route
-        path='/sti'
-        element={<STI />}
-      />
+
       <Route 
         path="/me" 
         element={<Mathieu />} 
       />
       <Route 
-        path="/" 
+        path="/login" 
         element={<Login/>}
       />
       <Route
+        path="/"
+        element={<Navigate to="/login" replace={true} />}
+      />
+      <Route
         path="*"
-        element={<Navigate to="/" replace={true} />}
+        element={<Navigate to="/login" replace={true} />}
       />
     </Routes>
   )

@@ -3,9 +3,9 @@ import './headerMobile.css';
 import React, { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { useMediaQuery } from 'react-responsive';
-import { RiRadarFill } from "react-icons/ri";
 import { RiUserHeartFill } from "react-icons/ri";
-import { MdCable } from "react-icons/md";
+import { MdMonitorHeart } from "react-icons/md";
+import { AiFillControl } from "react-icons/ai";
 import Box from '@mui/material/Box';
 import Drawer from '@mui/material/Drawer';
 import List from '@mui/material/List';
@@ -42,11 +42,21 @@ const Header = (props) => {
       <List>
         <ListItem disablePadding>
           <ListItemButton
-            onClick={() => navigate('/me')}
+            onClick={() => navigate('/monitoring')}
           >
             <div className='menu-button'>
-              {"- Mathieu "}
-              <RiUserHeartFill />
+              {"- Monitoring "}
+              <MdMonitorHeart />
+            </div>
+          </ListItemButton>
+        </ListItem>
+        <ListItem disablePadding>
+          <ListItemButton
+            onClick={() => navigate('/control')}
+          >
+            <div className='menu-button'>
+              {"- Control "}
+              <AiFillControl />
             </div>
           </ListItemButton>
         </ListItem>
@@ -61,21 +71,11 @@ const Header = (props) => {
         </ListItem>
         <ListItem disablePadding>
           <ListItemButton
-            onClick={() => navigate('/telecom')}
+            onClick={() => navigate('/me')}
           >
             <div className='menu-button'>
-              {"- Télécom "}
-              <MdCable />
-            </div>
-          </ListItemButton>
-        </ListItem>
-        <ListItem disablePadding>
-          <ListItemButton
-            onClick={() => navigate('/sti')}
-          >
-            <div className='menu-button'>
-              {"- STI "}
-              <RiRadarFill />
+              {"- Mathieu "}
+              <RiUserHeartFill />
             </div>
           </ListItemButton>
         </ListItem>
@@ -88,7 +88,7 @@ const Header = (props) => {
           style={{width: '80%'}}
         >
           <MHRem 
-            onClick={() => navigate('/')}
+            onClick={() => navigate('/monitoring')}
           />
         </div>
       </div>
@@ -137,7 +137,7 @@ const Header = (props) => {
           <MHRem 
             size={48}
             style={{cursor: 'pointer', marginLeft: 16}}
-            onClick={() => navigate('/login')}
+            onClick={() => navigate('/monitoring')}
           />
           <React.Fragment>
             <div
@@ -164,13 +164,19 @@ const Header = (props) => {
         <MHRem 
           size={70}
           style={{cursor: 'pointer', marginLeft: 16}}
-          onClick={() => navigate('/')}
+          onClick={() => navigate('/monitoring')}
         />
         <div className='header-selection'
-          onClick={() => navigate('/me')}
+          onClick={() => navigate('/monitoring')}
         >
-          {"Mathieu"}
-          <RiUserHeartFill />
+          <MdMonitorHeart />
+          {"Monitoring"}
+        </div>
+        <div className='header-selection'
+          onClick={() => navigate('/control')}
+        >
+          <AiFillControl />
+          {"Control"}
         </div>
         <div className='header-selection'
           onClick={() => navigate('/dev')}
@@ -178,16 +184,10 @@ const Header = (props) => {
           {`< Dev >`}
         </div>
         <div className='header-selection'
-          onClick={() => navigate('/telecom')}
+          onClick={() => navigate('/me')}
         >
-          {"Télécom"}
-          <MdCable />
-        </div>
-        <div className='header-selection'
-          onClick={() => navigate('/sti')}
-        >
-          {"STI"}
-          <RiRadarFill />
+          <RiUserHeartFill />
+          {"Mathieu"}
         </div>
       </div>
     )
