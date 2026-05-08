@@ -11,6 +11,7 @@ import Mi8 from '../Pages/Mi8/mi8';
 import FriendlyBets from '../Pages/FriendlyBets/friendlyBets';
 import GPMM from '../Pages/GPMM/gpmm';
 import Login from '../Pages/Login/login';
+import Monitoring from '../Pages/Monitoring/monitoring'
 
 
 const SignedOutRoute = (props) => {
@@ -18,7 +19,7 @@ const SignedOutRoute = (props) => {
     <Routes>
       <Route
         path="/control"
-        element={<Navigate to="/" replace={true} />}
+        element={<Navigate to="/login" replace={true} />}
       />
       <Route
         path="/user"
@@ -60,7 +61,6 @@ const SignedOutRoute = (props) => {
         path="/dev" 
         element={<Dev />} 
       />
-
       <Route 
         path="/me" 
         element={<Mathieu />} 
@@ -71,11 +71,11 @@ const SignedOutRoute = (props) => {
       />
       <Route
         path="/"
-        element={<Navigate to="/login" replace={true} />}
+        element={<Monitoring />}
       />
       <Route
         path="*"
-        element={<Navigate to="/login" replace={true} />}
+        element={<Navigate to="/" replace={true} />}
       />
     </Routes>
   )

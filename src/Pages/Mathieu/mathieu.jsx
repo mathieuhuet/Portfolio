@@ -3,9 +3,6 @@ import './mathieuMobile.css';
 import { useNavigate } from 'react-router-dom';
 
 
-/*
-Main page of the website, where you go when entering http://www.mathieuhuet.com/
-*/
 
 function Mathieu () {
   let navigate = useNavigate();

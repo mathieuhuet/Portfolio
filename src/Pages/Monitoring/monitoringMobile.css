@@ -1,0 +1,13 @@
+@media (max-width: 1200px) {
+  .monitoring {
+    min-height: 100vh;
+    font-weight: 700;
+    margin-top: 32px;
+    width: 98vw;
+    text-align: left;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+}

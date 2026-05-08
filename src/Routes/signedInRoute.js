@@ -13,6 +13,7 @@ import GPMM from '../Pages/GPMM/gpmm';
 import User from '../Pages/User/user';
 import Control from '../Pages/Control/control';
 import Logs from '../Pages/Logs/logs';
+import Monitoring from '../Pages/Monitoring/monitoring';
 
 
 
@@ -73,7 +74,7 @@ const SignedInRoute = (props) => {
         />
         <Route
           path="/"
-          element={<Navigate to="/control" replace={true} />}
+          element={<Monitoring />}
         />
         <Route
           path="/login"
@@ -81,7 +82,7 @@ const SignedInRoute = (props) => {
         />
         <Route
           path="*"
-          element={<Navigate to="/me" replace={true} />}
+          element={<Navigate to="/" replace={true} />}
         />
     </Routes>
   )
