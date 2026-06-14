@@ -1,0 +1,24 @@
+D0 - 
+D1 - 
+D2 - Relais prise de courant (non utilisé)
+D3 - Relais 5VDC
+D4 - Temperature sensor intérieur
+D5 - 
+D6 - Temperature sensor cabanon
+D7 - Relais 0VDC
+D8 - 
+D9 - Relais lumière extérieur
+D10 - 
+D11 - Motion Sensor exterieur cabanon 120vac
+D12 - Motion Sensor cabanon
+D13 - 
+A0 - Phone Hang-up
+A1 - Phone rotary wheel
+A2 - 
+A3 - 
+A4 - LCD Screen
+A5 - LCD Screen
+A6 - 
+A7 - Relais ALARME
+A8 - 
+

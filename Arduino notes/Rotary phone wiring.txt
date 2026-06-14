@@ -1,0 +1,8 @@
+BLEU	- Rotary wheel
+B-BLEU	- Commun Rotary/Hang-up
+ORANGE	- Commun handset
+B-ORANGE- Hang-up
+VERT	- Microphone or Speaker ^
+B-VERT	- Microphone or Speaker ^
+BRUN	- Ringer VAC
+B-BRUN	- Rigner VAC
