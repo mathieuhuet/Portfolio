@@ -27,28 +27,23 @@ function TempGraph({ acstate, insideTemp, insideTemp2, outsideTemp, timelabels }
   const [ graphDatasets, setGraphDatasets ] = useState([]);
 
   useEffect(() => {
-    let acResult = [];
-    // let biggestNumber = 0;
-    // for (let k = 0; k < insideTemp.slice(2).length; k++) {
-    //   if (insideTemp.slice(2)[k] > biggestNumber) { biggestNumber = insideTemp.slice(2)[k] } 
-    //   if (outsideTemp.slice(2)[k] > biggestNumber) { biggestNumber = outsideTemp.slice(2)[k] }
-    // }
-    for (let j = 0; j < acstate.length; j++) {
-      acstate[j] ? acResult.push(insideTemp[j]) : acResult.push(NaN);
-    }
+  //   let acResult = [];
 
+  //   for (let j = 0; j < acstate.length; j++) {
+  //     acstate[j] ? acResult.push(insideTemp[j]) : acResult.push(NaN);
+  //   }
 
 
     let result = [];
     result.push({
-      label: 'Intérieur',
+      label: 'Arduino',
       data: insideTemp.slice(2),
       borderColor: '#004638',
       backgroundColor: '#004638',
       cubicInterpolationMode: 'monotone',
       tension: 0.4,
       order: 1
-    })
+    });
     result.push({
       label: 'Extérieur',
       drawActiveElementsOnTop: false,
@@ -57,22 +52,32 @@ function TempGraph({ acstate, insideTemp, insideTemp2, outsideTemp, timelabels }
       backgroundColor: '#82bf00',
       cubicInterpolationMode: 'monotone',
       tension: 0.4,
-      order: 3
-    })
+      order: 4
+    });
     result.push({
-      label: 'A/C',
-      data: acResult.slice(2),
-      borderColor: '#51b2fd00',
-      backgroundColor: '#51b2fd77',
-      fill: true,
-      pointRadius: 0,
-      pointHoverRadius: 0,
-      borderWidth: 0,
-      pointHitRadius: 0,
-      order: 2
-    })
+      label: 'Sous-sol',
+      drawActiveElementsOnTop: false,
+      data: insideTemp2.slice(2),
+      borderColor: '#7300bf',
+      backgroundColor: '#7300bf',
+      cubicInterpolationMode: 'monotone',
+      tension: 0.4,
+      order: 3
+    });
+    // result.push({
+    //   label: 'A/C',
+    //   data: acResult.slice(2),
+    //   borderColor: '#51b2fd00',
+    //   backgroundColor: '#51b2fd77',
+    //   fill: true,
+    //   pointRadius: 0,
+    //   pointHoverRadius: 0,
+    //   borderWidth: 0,
+    //   pointHitRadius: 0,
+    //   order: 2
+    // })
     setGraphDatasets(result)
-  }, [insideTemp, outsideTemp]);
+  }, [insideTemp, outsideTemp, insideTemp2]);
 
   return (
     <div>

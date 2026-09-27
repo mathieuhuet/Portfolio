@@ -12,11 +12,16 @@ import FriendlyBets from '../Pages/FriendlyBets/friendlyBets';
 import GPMM from '../Pages/GPMM/gpmm';
 import Login from '../Pages/Login/login';
 import Monitoring from '../Pages/Monitoring/monitoring'
+import Register from '../Pages/Register/register';
 
 
 const SignedOutRoute = (props) => {
   return (
     <Routes>
+      {/* <Route
+        path="/register"
+        element={<Register/>}
+      /> */}
       <Route
         path="/control"
         element={<Navigate to="/login" replace={true} />}

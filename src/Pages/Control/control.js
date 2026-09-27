@@ -43,6 +43,8 @@ const Control = () => {
   const [insideHumi, setInsideHumi] = useState('');
   const [outsideTemp, setOutsideTemp] = useState('');
   const [outsideHumi, setOutsideHumi] = useState('');
+  const [insideTemp2, setInsideTemp2] = useState('');
+  const [insideHumi2, setInsideHumi2] = useState('');
   const [insideCheck, setInsideCheck] = useState(true);
   const [outsideCheck, setOutsideCheck] = useState(true);
   const [nbJours, setNbJours] = useState(2);
@@ -111,6 +113,8 @@ const Control = () => {
         setInsideHumi(allData.data.insideHumi);
         setOutsideTemp(allData.data.outsideTemp);
         setOutsideHumi(allData.data.outsideHumi);
+        setInsideTemp2(allData.data.insideTemp2);
+        setInsideHumi2(allData.data.insideHumi2);
         setAcState(allData.data.acstate);
         setLightState(allData.data.lightstate);
       } else {
@@ -337,12 +341,14 @@ const Control = () => {
               </div>
               <TempGraph 
                 insideTemp={insideCheck ? graphData.insideTemp : []}
+                insideTemp2={insideCheck ? graphData.insideTemp2 : []}
                 acstate={insideCheck ? graphData.acstate : []}
                 outsideTemp={outsideCheck ? graphData.outsideTemp : []}
                 timelabels={graphData.timeLabels}
               />
               <HumiGraph 
                 insideHumi={insideCheck ? graphData.insideHumi : []}
+                insideHumi2={insideCheck ? graphData.insideHumi2 : []}
                 acstate={insideCheck ? graphData.acstate : []}
                 outsideHumi={outsideCheck ? graphData.outsideHumi : []}
                 timelabels={graphData.timeLabels}
@@ -386,12 +392,14 @@ const Control = () => {
               </div>
               <TempGraph 
                 insideTemp={insideCheck ? graphData.insideTemp : []}
+                insideTemp2={insideCheck ? graphData.insideTemp2 : []}
                 acstate={insideCheck ? graphData.acstate : []}
                 outsideTemp={outsideCheck ? graphData.outsideTemp : []}
                 timelabels={graphData.timeLabels}
               />
               <HumiGraph 
                 insideHumi={insideCheck ? graphData.insideHumi : []}
+                insideHumi2={insideCheck ? graphData.insideHumi2 : []}
                 outsideHumi={outsideCheck ? graphData.outsideHumi : []}
                 acstate={insideCheck ? graphData.acstate : []}
                 timelabels={graphData.timeLabels}

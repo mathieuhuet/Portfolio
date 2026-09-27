@@ -27,19 +27,15 @@ function HumiGraph({ acstate, insideHumi, insideHumi2, outsideHumi, timelabels }
   const [ graphDatasets, setGraphDatasets ] = useState([]);
 
   useEffect(() => {
-    let acResult = [];
-    // let biggestNumber = 0;
-    // for (let k = 0; k < insideHumi.slice(2).length; k++) {
-    //   if (insideHumi.slice(2)[k] > biggestNumber) { biggestNumber = insideHumi.slice(2)[k] } 
-    //   if (outsideHumi.slice(2)[k] > biggestNumber) { biggestNumber = outsideHumi.slice(2)[k] }
-    // }
-    for (let j = 0; j < acstate.length; j++) {
-      acstate[j] ? acResult.push(insideHumi[j]) : acResult.push(NaN);
-    }
+  //   let acResult = [];
+
+  //   for (let j = 0; j < acstate.length; j++) {
+  //     acstate[j] ? acResult.push(insideHumi[j]) : acResult.push(NaN);
+  //   }
 
     let result = [];
     result.push({
-      label: 'Intérieur',
+      label: 'Arduino',
       data: insideHumi.slice(2),
       borderColor: '#004638',
       backgroundColor: '#004638',
@@ -54,22 +50,31 @@ function HumiGraph({ acstate, insideHumi, insideHumi2, outsideHumi, timelabels }
       backgroundColor: '#82bf00',
       cubicInterpolationMode: 'monotone',
       tension: 0.4,
-      order: 3
+      order: 4
     })
     result.push({
-      label: 'A/C',
-      data: acResult.slice(2),
-      borderColor: '#51b2fd00',
-      backgroundColor: '#51b2fd77',
-      fill: true,
-      pointRadius: 0,
-      pointHoverRadius: 0,
-      borderWidth: 0,
-      pointHitRadius: 0,
-      order: 2
+      label: 'Sous-sol',
+      data: insideHumi2.slice(2),
+      borderColor: '#7300bf',
+      backgroundColor: '#7300bf',
+      cubicInterpolationMode: 'monotone',
+      tension: 0.4,
+      order: 3
     })
+    // result.push({
+    //   label: 'A/C',
+    //   data: acResult.slice(2),
+    //   borderColor: '#51b2fd00',
+    //   backgroundColor: '#51b2fd77',
+    //   fill: true,
+    //   pointRadius: 0,
+    //   pointHoverRadius: 0,
+    //   borderWidth: 0,
+    //   pointHitRadius: 0,
+    //   order: 2
+    // })
     setGraphDatasets(result)
-  }, [insideHumi, outsideHumi]);
+  }, [insideHumi, outsideHumi, insideHumi2]);
 
   return (
     <div>
