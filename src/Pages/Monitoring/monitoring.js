@@ -10,9 +10,7 @@ import { getAllDataHistory } from '../../Services/read/getAllDataHistory';
 import Spinner from '../../Spinner';
 import HumiGraph from '../../Components/Graphs/humiGraph';
 import TempGraph from '../../Components/Graphs/tempGraph';
-import { useCookies } from 'react-cookie';
 import { useMediaQuery } from 'react-responsive';
-import { useWindowDimensions } from '../../Utilities/windowDimension';
 import { MenuItem } from '@mui/material';
 import AutomaticState from '../../Components/State/automatic';
 import { getAutomaticModeData } from '../../Services/read/getAutomaticModeData';
@@ -22,8 +20,7 @@ import Toggle from '../../Components/Buttons/toggle';
 
 
 /*
-Login Page, where you login when you navigate to the site.
-The Registration form is also on that page.
+Monitoring page, you can read the states of the devices and the history of some data.
 */
 
 
@@ -32,10 +29,6 @@ The Registration form is also on that page.
 
 const Monitoring = (props) => {
   const isMobile = useMediaQuery({ query: '(max-width: 1200px)' });
-  const { height, width } = useWindowDimensions();
-  const [cookies, setCookie] = useCookies(['accessToken']);
-  const [message, setMessage] = useState('');
-  const [refresh, setRefresh] = useState(0);
   const [allData, setAllData] = useState([]);
   const [insideTemp, setInsideTemp] = useState('');
   const [insideHumi, setInsideHumi] = useState('');
@@ -194,7 +187,7 @@ const Monitoring = (props) => {
                   </div>
                 </div>
               </div>
-              <div className='LoginAcState'>
+              <div className='AcState'>
                 <Toggle
                   name={'A/C'}
                   state={acState}
@@ -272,7 +265,7 @@ const Monitoring = (props) => {
       }
       {!isMobile &&
           <div className='MonitoringPage' style={{marginTop: 64}}>
-            <div className='TempBox'>
+            <div className='GraphBox'>
               <div className='OptionSelect'>
                 <div className='DateSelect'>
                   Données des 
@@ -316,6 +309,7 @@ const Monitoring = (props) => {
                 timelabels={graphData.timeLabels}
               />
             </div>
+            <div className='WeatherBox'>
               <div className='WeatherBoxTemp'>
                 <div className='TopWeatherBox'>
                   Température Actuelle
@@ -361,7 +355,7 @@ const Monitoring = (props) => {
                     </div>
                   </div>
                 </div>
-                <div className='LoginAcState'>
+                <div className='AcState'>
                   <Toggle
                     name={'A/C'}
                     state={acState}
@@ -392,6 +386,7 @@ const Monitoring = (props) => {
                   />
                 </div>
               </div>
+            </div>
         </div>
       }
     </div>
